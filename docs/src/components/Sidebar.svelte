@@ -36,6 +36,9 @@
   <p class="sidebar-label">UI Components</p>
   <ul>
     <li>
+      <a href="/components/collapse">Collapse</a>
+    </li>
+    <li>
       <a href="/components/icon">Icon</a>
     </li>
   </ul>
