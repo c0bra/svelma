@@ -1,36 +1,49 @@
 {
-  "name": "svelte-bulma",
+  "name": "svelma",
+  "description": "Bulma components for Svelte",
   "version": "0.0.1",
   "author": "Brian Hann",
   "license": "MIT",
-  "keywords": ["svelte", "bulma", "component"],
+  "keywords": [
+    "svelte",
+    "bulma",
+    "component"
+  ],
   "repository": {
-    "url": "https://github.com/c0bra/svelte-bulma"
+    "url": "https://github.com/c0bra/svelma"
   },
   "bugs": {
-    "url": "https://github.com/c0bra/svelte-bulma/issues"
+    "url": "https://github.com/c0bra/svelma/issues"
   },
-  "module": "dist/index.mjs",
+  "module": "dist/module.js",
   "main": "dist/index.js",
   "devDependencies": {
     "browser-sync": "^2.26.5",
+    "cross-env": "^5.2.0",
+    "get-port-cli": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.17.1",
     "prettier-plugin-svelte": "^0.5.1",
     "rollup": "^1.2.2",
     "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-copy": "^2.0.1",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
     "sirv-cli": "^0.3.1",
-    "svelte": "^3.4.2"
+    "svelte": "^3.4.2",
+    "wait-for-localhost-cli": "^1.1.0"
   },
   "scripts": {
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
-    "dev": "run-p start:dev autobuild",
-    "start": "browser-sync public dist --no-ghost-mode",
-    "start:dev": "browser-sync public dist --no-ghost-mode"
+    "dev": "run-p autobuild autodocs",
+    "docs": "rollup -c docs/rollup.config.js",
+    "autodocs": "(cd docs; npx sapper dev)",
+    "OLD:start": "browser-sync --serveStatic dist --files dist --no-ghost-mode",
+    "OLD:dev": "cross-env SAPPER_PORT=$(get-port) run-p autobuild autodocs:ported start:dev",
+    "OLD:start:dev": "echo \"Waiting for $SAPPER_PORT\" && wait-for-localhost $SAPPER_PORT --use-get && browser-sync start --proxy localhost:$SAPPER_PORT --serveStatic dist --files dist",
+    "autodocs:ported": "(cd docs; npx sapper dev -p $SAPPER_PORT)"
   }
 }

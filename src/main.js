@@ -1,10 +1,11 @@
-import App from './App.svelte'
+import Button from '@components/Button.svelte'
+import Icon from '@components/Icon.svelte'
+import Message from '@components/Message.svelte'
 
-const app = new App({
-  target: document.body,
-  props: {
-    name: 'world',
-  },
-})
+export { Button, Icon, Message }
 
-export default app
+export const Svelma = {
+  Button,
+  Icon,
+  Message,
+}
