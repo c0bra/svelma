@@ -18,8 +18,6 @@
   "module": "dist/module.js",
   "main": "dist/index.js",
   "devDependencies": {
-    "browser-sync": "^2.26.5",
-    "cross-env": "^5.2.0",
     "get-port-cli": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.17.1",
@@ -41,10 +39,6 @@
     "autobuild": "rollup -c -w",
     "dev": "run-p autobuild autodocs",
     "docs": "rollup -c docs/rollup.config.js",
-    "autodocs": "(cd docs; npx sapper dev)",
-    "OLD:start": "browser-sync --serveStatic dist --files dist --no-ghost-mode",
-    "OLD:dev": "cross-env SAPPER_PORT=$(get-port) run-p autobuild autodocs:ported start:dev",
-    "OLD:start:dev": "echo \"Waiting for $SAPPER_PORT\" && wait-for-localhost $SAPPER_PORT --use-get && browser-sync start --proxy localhost:$SAPPER_PORT --serveStatic dist --files dist",
-    "autodocs:ported": "(cd docs; npx sapper dev -p $SAPPER_PORT)"
+    "autodocs": "(cd docs; npx sapper dev)"
   }
 }

@@ -1,5 +1,5 @@
 <script>
-  import 'bulma/css/bulma.css'
+  // import 'bulma/css/bulma.css'
   import { afterUpdate } from 'svelte'
   import Nav from '../components/Nav.svelte'
   import Sidebar from '../components/Sidebar.svelte'
