@@ -1,7 +1,6 @@
 import path from 'path'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
-import includePaths from 'rollup-plugin-includepaths'
 import resolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
 import svelte from 'rollup-plugin-svelte'
@@ -13,6 +12,25 @@ const mode = process.env.NODE_ENV
 const dev = mode === 'development'
 const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
+function resolveSvelma() {
+  return {
+    name: 'resolveSvelma',
+    resolveId(source) {
+      if (dev && source === 'svelma') {
+        console.log('SOURCE', source, `${__dirname}/../src/main.js`)
+        return { id: `${__dirname}/../src/main.js` }
+      }
+      if (dev && source.indexOf('svelma') === 0) {
+        console.log('SOURCEY', source, source.replace('svelma', `${__dirname}/../src/`))
+        return { id: source.replace('svelma', `${__dirname}/../src/`) }
+      }
+      if (source.indexOf('~') === 0) return { id: source.replace('~', `${__dirname}/../src/`) }
+
+      return null // other ids should be handled as usually
+    },
+  }
+}
+
 export default {
   client: {
     input: config.client.input(),
@@ -21,13 +39,9 @@ export default {
       replace({
         'process.browser': true,
         'process.env.NODE_ENV': JSON.stringify(mode),
-        'SVELMA': dev ? path.resolve(__dirname, '../dist/module.js') : 'svelma',
+        SVELMA: dev ? path.resolve(__dirname, '../dist/module.js') : 'svelma',
       }),
-      // includePaths({
-      //   // include: {
-      //   //   svelma: path.resolve(__dirname, '../dist/module.js'),
-      //   // },
-      // }),
+      // resolveSvelma(),
       svelte({
         dev,
         hydratable: true,
@@ -74,7 +88,7 @@ export default {
       replace({
         'process.browser': false,
         'process.env.NODE_ENV': JSON.stringify(mode),
-        'SVELMA': dev ? path.resolve(__dirname, '../dist/module.js') : 'svelma',
+        SVELMA: dev ? path.resolve(__dirname, '../dist/module.js') : 'svelma',
       }),
       svelte({
         generate: 'ssr',
@@ -84,7 +98,7 @@ export default {
       commonjs(),
     ],
     external: Object.keys(pkg.dependencies).concat(
-      require('module').builtinModules || Object.keys(process.binding('natives')),
+      require('module').builtinModules || Object.keys(process.binding('natives'))
     ),
   },
 

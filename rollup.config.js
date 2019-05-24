@@ -13,7 +13,7 @@ function customResolve() {
   return {
     name: 'customResolve',
     resolveId(source) {
-      if (source.indexOf('@') === 0) return { id: source.replace('@', `${__dirname}/src/`) }
+      if (source.indexOf('~') === 0) return { id: source.replace('~', `${__dirname}/src/`) }
 
       return null // other ids should be handled as usually
     },

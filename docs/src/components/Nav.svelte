@@ -48,12 +48,14 @@
         </span>
       </a>
     </div>
-    <div class="navbar-end">
-      <a class="navbar-item is-hidden-desktop-only" href={github} target="_blank">
-        <span class="icon" style="color: #333;">
-          <i class="fab fa-lg fa-github-alt" />
-        </span>
-      </a>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item is-hidden-desktop-only" href={github} target="_blank">
+          <span class="icon" style="color: #333;">
+            <i class="fab fa-lg fa-github-alt" />
+          </span>
+        </a>
+      </div>
     </div>
   </div>
 </nav>

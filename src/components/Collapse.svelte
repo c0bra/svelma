@@ -2,16 +2,17 @@
   import * as transitions from 'svelte/transition'
 
   export let open = true
-  export let animation = 'fly'
+  export let animation = 'slide'
 
-  $: _animation = transitions[animation]
+  let _animation = transitions[animation]
+  $: _animation = typeof animation === 'function' ? animation : transitions[animation]
 
   function toggle() {
     open = !open
   }
 </script>
 
-<div class="collase">
+<div class="collapse">
   <div class="collapse-trigger" on:click={toggle}>
     <slot name="trigger" />
   </div>
