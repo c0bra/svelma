@@ -1,3 +1,4 @@
+<!-- TODO: turn Doc into a simple header instead of a slotted thingie -->
 <script>
   export let title
   export let subtitle

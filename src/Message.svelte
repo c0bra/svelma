@@ -1,6 +1,6 @@
 <script>
-  import { fade } from 'svelte/transition'
-  import Icon from './Icon.svelte'
+  // import { fade } from 'svelte/transition'
+  // import Icon from './Icon.svelte'
 
   export let type = ''
   export let active = true
@@ -58,7 +58,7 @@
 </style>
 
 {#if active}
-  <article class="message {type} {size}" transition:fade|local>
+  <article class="message {type} {size}">
     {#if title || closable}
       <div class="message-header">
         {#if title}
@@ -73,7 +73,7 @@
       <div class="media">
         {#if icon}
           <div class="media-left">
-            <Icon {icon} size={newIconSize} />
+            <!-- <Icon {icon} size={newIconSize} /> -->
           </div>
         {/if}
         <div class="media-content">

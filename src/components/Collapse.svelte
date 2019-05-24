@@ -17,7 +17,7 @@
     <slot name="trigger" />
   </div>
   {#if open}
-    <div class="collapse-content" transition:_animation>
+    <div class="collapse-content" transition:_animation|local>
       <slot />
     </div>
   {/if}

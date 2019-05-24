@@ -13,11 +13,11 @@
       <p class="title">NPM</p>
       <p class="subtitle is-spaced">For use with a project using a bundler like Webpack, Rollup, or Parcel</p>
       <p class="title is-4">Installation</p>
-      <Codeview>npm install svelma</Codeview>
+      <Codeview lang="bash">npm install svelma</Codeview>
     </div>
   </div>
 
-  <div class="media">
+  <!-- <div class="media">
     <div class="media-left">
       <p class="title">2</p>
     </div>
@@ -25,5 +25,5 @@
       <p class="title is-spaced">CDN</p>
       <Message type="is-info" closable={false} title="Coming soon..">This feature is in progress</Message>
     </div>
-  </div>
+  </div> -->
 </Doc>

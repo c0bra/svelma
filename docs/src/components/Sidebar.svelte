@@ -1,3 +1,15 @@
+<script context="module">
+  export async function preload({ params, query }) {
+    // const res = await this.fetch('')
+  }
+</script>
+
+<script>
+  import { Svelma as Components } from 'svelma'
+
+  const components = Object.keys(Components).sort();
+</script>
+
 <style>
   .sidebar {
     display: flex;
@@ -35,11 +47,16 @@
   </ul>
   <p class="sidebar-label">UI Components</p>
   <ul>
-    <li>
+    {#each components as c}
+      <li>
+        <a href="/components/{c.toLowerCase()}">{c}</a>
+      </li>
+    {/each}
+    <!-- <li>
       <a href="/components/collapse">Collapse</a>
     </li>
     <li>
       <a href="/components/icon">Icon</a>
-    </li>
+    </li> -->
   </ul>
 </aside>
