@@ -1,4 +1,5 @@
 import path from 'path'
+import alias from 'rollup-plugin-alias'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
@@ -12,25 +13,6 @@ const mode = process.env.NODE_ENV
 const dev = mode === 'development'
 const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
-function resolveSvelma() {
-  return {
-    name: 'resolveSvelma',
-    resolveId(source) {
-      if (dev && source === 'svelma') {
-        console.log('SOURCE', source, `${__dirname}/../src/main.js`)
-        return { id: `${__dirname}/../src/main.js` }
-      }
-      if (dev && source.indexOf('svelma') === 0) {
-        console.log('SOURCEY', source, source.replace('svelma', `${__dirname}/../src/`))
-        return { id: source.replace('svelma', `${__dirname}/../src/`) }
-      }
-      if (source.indexOf('~') === 0) return { id: source.replace('~', `${__dirname}/../src/`) }
-
-      return null // other ids should be handled as usually
-    },
-  }
-}
-
 export default {
   client: {
     input: config.client.input(),
@@ -41,7 +23,11 @@ export default {
         'process.env.NODE_ENV': JSON.stringify(mode),
         SVELMA: dev ? path.resolve(__dirname, '../dist/module.js') : 'svelma',
       }),
-      // resolveSvelma(),
+      alias({
+        resolve: ['.js', '.mjs', '.html', '.svelte'],
+        '~': path.join(__dirname, '../src'),
+        svelma: '../src/index.js',
+      }),
       svelte({
         dev,
         hydratable: true,
@@ -89,6 +75,11 @@ export default {
         'process.browser': false,
         'process.env.NODE_ENV': JSON.stringify(mode),
         SVELMA: dev ? path.resolve(__dirname, '../dist/module.js') : 'svelma',
+      }),
+      alias({
+        resolve: ['.js', '.mjs', '.html', '.svelte'],
+        '~': path.join(__dirname, '../src'),
+        svelma: '../src/index.js',
       }),
       svelte({
         generate: 'ssr',

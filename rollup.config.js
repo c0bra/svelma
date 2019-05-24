@@ -1,5 +1,6 @@
+import path from 'path'
+import alias from 'rollup-plugin-alias'
 import commonjs from 'rollup-plugin-commonjs'
-// import livereload from 'rollup-plugin-livereload'
 import resolve from 'rollup-plugin-node-resolve'
 import svelte from 'rollup-plugin-svelte'
 import { terser } from 'rollup-plugin-terser'
@@ -21,7 +22,7 @@ function customResolve() {
 }
 
 export default {
-  input: 'src/main.js',
+  input: 'src/index.js',
   output: [
     {
       file: pkg.module,
@@ -37,7 +38,10 @@ export default {
     },
   ],
   plugins: [
-    customResolve(),
+    alias({
+      resolve: ['.js', '.mjs', '.html', '.svelte'],
+      '~': path.join(__dirname, './src'),
+    }),
     svelte({
       // enable run-time checks when not in production
       dev: !production,
@@ -47,8 +51,6 @@ export default {
 
     resolve(),
     commonjs(),
-
-    // !production && livereload('dist'),
 
     production && terser(),
   ],

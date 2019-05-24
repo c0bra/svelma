@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "svelma-site",
+  "description": "Docs and examples for Svelma",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",

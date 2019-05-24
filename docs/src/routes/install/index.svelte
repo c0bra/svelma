@@ -1,5 +1,5 @@
 <script>
-  import { Message } from 'SVELMA'
+  import { Message } from 'svelma'
   import Doc from '../../components/Doc.svelte'
   import Codeview from '../../components/Code.svelte'
 </script>
