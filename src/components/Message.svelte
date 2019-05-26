@@ -1,4 +1,5 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   import { fade } from 'svelte/transition'
   import Icon from './Icon.svelte'
 
@@ -13,6 +14,8 @@
   export let ariaCloseLabel = 'delete'
 
   let icon
+
+  const dispatch = createEventDispatcher()
 
   if (autoClose) {
     setTimeout(() => {
@@ -43,6 +46,7 @@
 
   function close() {
     active = false
+    dispatch('close', active)
   }
 </script>
 

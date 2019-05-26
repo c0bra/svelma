@@ -1,9 +1,9 @@
 <script>
   import { Icon, Message } from 'svelma'
-  import Doc from '../../components/Doc.svelte'
+  import DocHeader from '../../components/DocHeader.svelte'
   import Codeview from '../../components/Code.svelte'
 </script>
 
-<Doc title="Icon" subtitle="Font Awesome icons">
-  <Icon pack="fab" icon="github"></Icon>
-</Doc>
+<DocHeader title="Icon" subtitle="Font Awesome icons" />
+
+<Icon pack="fab" icon="github"></Icon>

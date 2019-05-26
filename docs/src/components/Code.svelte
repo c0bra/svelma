@@ -12,8 +12,9 @@
   let compiled
 
   onMount(async () => {
+    code = code || codeElm.innerHTML
     clip = new Clipboard(button, {
-      text: trigger => code.innerHTML
+      text: trigger => code
     })
 
     code = code || codeElm.innerHTML
