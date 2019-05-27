@@ -4,10 +4,6 @@
 
   export let lang = 'xml'
   export let code
-
-  onMount(() => {
-    console.log('code', code)
-  })
 </script>
 
 <style>

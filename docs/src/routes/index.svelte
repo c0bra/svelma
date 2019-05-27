@@ -36,21 +36,25 @@
       font-size: 4em;
     }
   }
+
+  pre {
+    display: inline-flex;
+  }
 </style>
 
 <svelte:head>
   <title>Svelma</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<div class="hero is-full-height">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">Svelma</h1>
+      <h2 class="subtitle">Bulma components for Svelte</h2>
 
-<figure>
-  <img alt="Borat" src="great-success.png" />
-  <figcaption>HIGH FIVE!</figcaption>
-</figure>
-
-<p>
-  <strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong>
-</p>
-
-<!-- <Button class="is-primary">foo</Button> -->
+      <pre>
+        <code>$ npm install svelma</code>
+      </pre>
+    </div>
+  </div>
+</div>

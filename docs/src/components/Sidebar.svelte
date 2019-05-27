@@ -32,8 +32,19 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
+
+  .sidebar-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 50%;
+    background: #f5f5f5;
+    min-height: calc(100vh - 4rem);
+  }
 </style>
 
+<!-- <div class="sidebar-bg"></div> -->
 <aside class="sidebar">
   <p class="sidebar-label">Installation</p>
   <ul>
