@@ -18,7 +18,9 @@
   "module": "dist/module.js",
   "main": "dist/index.js",
   "devDependencies": {
+    "bulma": "^0.7.5",
     "get-port-cli": "^2.0.0",
+    "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.17.1",
     "prettier-plugin-svelte": "^0.5.1",
@@ -32,6 +34,7 @@
     "rollup-plugin-terser": "^4.0.4",
     "sirv-cli": "^0.3.1",
     "svelte": "^3.4.2",
+    "svelte-preprocess-sass": "^0.2.0",
     "wait-for-localhost-cli": "^1.1.0"
   },
   "scripts": {
