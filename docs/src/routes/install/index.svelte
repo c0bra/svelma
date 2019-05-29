@@ -23,6 +23,6 @@
   </div>
   <div class="media-content">
     <p class="title is-spaced">CDN</p>
-    <Message type="is-info" closable={false} title="Coming soon..">This feature is in progress</Message>
+    <Message type="is-info" showClose={false} title="Coming soon..">This feature is in progress</Message>
   </div>
 </div> -->

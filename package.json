@@ -41,7 +41,8 @@
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p autobuild autodocs",
-    "docs": "rollup -c docs/rollup.config.js",
-    "autodocs": "(cd docs; npx sapper dev)"
+    "docs": "(cd docs; npx sapper export --basepath svelma)",
+    "docs:deploy": "./docs.sh",
+    "autodocs": "(cd docs; npx sapper dev --basepath svelma)"
   }
 }

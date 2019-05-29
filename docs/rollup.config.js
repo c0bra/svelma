@@ -22,7 +22,6 @@ export default {
       replace({
         'process.browser': true,
         'process.env.NODE_ENV': JSON.stringify(mode),
-        SVELMA: dev ? path.resolve(__dirname, '../dist/module.js') : 'svelma',
       }),
       alias({
         resolve: ['.js', '.mjs', '.html', '.svelte'],
@@ -78,7 +77,6 @@ export default {
       replace({
         'process.browser': false,
         'process.env.NODE_ENV': JSON.stringify(mode),
-        SVELMA: dev ? path.resolve(__dirname, '../dist/module.js') : 'svelma',
       }),
       alias({
         resolve: ['.js', '.mjs', '.html', '.svelte'],

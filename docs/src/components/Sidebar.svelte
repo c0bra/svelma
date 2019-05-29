@@ -49,7 +49,7 @@
   <p class="sidebar-label">Installation</p>
   <ul>
     <li>
-      <a href="/install">Start</a>
+      <a href="install">Start</a>
     </li>
   </ul>
   <p class="sidebar-label">Bulma Components</p>
@@ -60,7 +60,7 @@
   <ul>
     {#each components as c}
       <li>
-        <a href="/components/{c.toLowerCase()}">{c}</a>
+        <a href="components/{c.toLowerCase()}">{c}</a>
       </li>
     {/each}
     <!-- <li>

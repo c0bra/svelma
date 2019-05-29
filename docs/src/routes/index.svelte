@@ -1,5 +1,5 @@
 <script>
-  import { Button } from 'SVELMA'
+  import { Button , Message } from 'svelma'
 </script>
 
 <style>
@@ -55,6 +55,15 @@
       <pre>
         <code>$ npm install svelma</code>
       </pre>
+
+      <br/>
+      <br/>
+
+      <p>
+        <Message title="Note!" type="is-primary" showClose={false}>
+          This library is a very early work-in-progress. Please forgive all broken and missing features and documentation.
+        </Message>
+      </p>
     </div>
   </div>
 </div>
