@@ -9,6 +9,8 @@
 <DocHeader title="Message" subtitle="Message blocks to convey information" />
 
 <Example code={`<script>
+  import { Button, Message } from 'svelma'
+
   let open
 </script>
 

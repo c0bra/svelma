@@ -8,7 +8,11 @@
 
 <DocHeader title="Buttons" subtitle="Tasty clickable buttons" />
 
-<Example code={`<Button type="is-primary" on:click={() => counter++}>
+<Example code={`<script>
+  import { Button } from 'svelma'
+</script>
+
+<Button type="is-primary" on:click={() => counter++}>
   Click!: {counter}
 </Button>`}>
   <div slot="preview">
