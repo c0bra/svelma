@@ -22,8 +22,9 @@
   export let animation = 'scale'
   export let animProps = { start: 1.2 }
   export let showClose = true
+  // TODO: programmatic subcomponents
   export let subComponent = null
-  export let onBody = true
+  export let appendToBody = true
 
   let modal
   let cancelButton
@@ -32,7 +33,7 @@
 
   $: _animation = chooseAnimation(animation)
   $: {
-    if (modal && active && onBody) {
+    if (modal && active && appendToBody) {
       modal.parentNode.removeChild(modal)
       document.body.appendChild(modal)
     }
@@ -40,7 +41,7 @@
 
   onMount(async () => {
     await tick()
-    
+
     if (hasInput) {
       input.focus()
     } else if (focusOn === 'cancel' && showCancel) {
@@ -136,7 +137,7 @@
 {#if active}
   <div class="modal dialog {size} is-active" bind:this={modal}>
     <div class="modal-background" on:click={close}></div>
-    <div class="modal-card" transition:_animation|local={animProps}>
+    <div class="modal-card" transition:_animation={animProps}>
       {#if title}
         <header class="modal-card-head">
           <p class="modal-card-title">{title}</p>
