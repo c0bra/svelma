@@ -1,7 +1,19 @@
+<script context="module">
+	export async function preload() {
+		const res = await this.fetch(`components/collapse.json`);
+    const jsdoc = await res.json();
+
+		return { jsdoc };
+	}
+</script>
+
 <script>
   import { Collapse } from 'svelma'
   import DocHeader from '../../components/DocHeader.svelte'
   import Example from '../../components/Example.svelte'
+  import JSDoc from '../../components/JSDoc.svelte'
+
+  export let jsdoc
 </script>
 
 <template>
@@ -46,3 +58,5 @@
     </Collapse>
   </div>
 </Example>
+
+<JSDoc {jsdoc}></JSDoc>

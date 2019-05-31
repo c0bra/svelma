@@ -2,12 +2,8 @@
   "Button": [
     {
       "meta": {
-        "range": [
-          167,
-          192
-        ],
         "filename": "Button.svelte",
-        "lineno": 8,
+        "lineno": 5,
         "columnno": 2,
         "path": "src/components"
       },
@@ -15,7 +11,9 @@
       "type": [
         "String"
       ],
+      "optional": true,
       "defaultvalue": "button",
+      "name": "tag",
       "_isSvelteDoc": true,
       "_svelteProps": {
         "type": {
@@ -28,20 +26,15 @@
         "name": "tag"
       },
       "kind": "prop",
-      "name": "tag",
-      "longname": "module:Button.tag",
+      "longname": "module:Button~tag",
+      "scope": "inner",
       "memberof": "module:Button",
-      "scope": "static",
       "___s": true
     },
     {
       "meta": {
-        "range": [
-          318,
-          338
-        ],
         "filename": "Button.svelte",
-        "lineno": 14,
+        "lineno": 10,
         "columnno": 2,
         "path": "src/components"
       },
@@ -49,6 +42,8 @@
       "type": [
         "String"
       ],
+      "optional": true,
+      "name": "type",
       "_isSvelteDoc": true,
       "_svelteProps": {
         "type": {
@@ -62,20 +57,15 @@
       },
       "kind": "prop",
       "values": "<code>is-white</code>, <code>is-black</code>, <code>is-light</code>, <code>is-dark</code>, <code>is-primary</code>, <code>is-info</code>, <code>is-success</code>, <code>is-warning</code>, <code>is-danger</code>",
-      "name": "type",
-      "longname": "module:Button.type",
+      "longname": "module:Button~type",
+      "scope": "inner",
       "memberof": "module:Button",
-      "scope": "static",
       "___s": true
     },
     {
       "meta": {
-        "range": [
-          431,
-          451
-        ],
         "filename": "Button.svelte",
-        "lineno": 19,
+        "lineno": 16,
         "columnno": 2,
         "path": "src/components"
       },
@@ -83,6 +73,8 @@
       "type": [
         "String"
       ],
+      "optional": true,
+      "name": "href",
       "_isSvelteDoc": true,
       "_svelteProps": {
         "type": {
@@ -94,14 +86,77 @@
         "name": "href"
       },
       "kind": "prop",
-      "name": "href",
-      "longname": "module:Button.href",
+      "longname": "module:Button~href",
+      "scope": "inner",
       "memberof": "module:Button",
-      "scope": "static",
       "___s": true
     }
   ],
-  "Collapse": [],
+  "Collapse": [
+    {
+      "meta": {
+        "filename": "Collapse.svelte",
+        "lineno": 5,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Whether the Collapse is open or not",
+      "type": [
+        "boolean"
+      ],
+      "optional": true,
+      "defaultvalue": true,
+      "name": "open",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "name": "open"
+      },
+      "kind": "prop",
+      "longname": "module:Collapse~open",
+      "scope": "inner",
+      "memberof": "module:Collapse",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Collapse.svelte",
+        "lineno": 10,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Animation to use when opening/closing",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "defaultvalue": "slide",
+      "name": "animation",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": "slide",
+        "name": "animation"
+      },
+      "kind": "prop",
+      "values": "Any animation that ships with Svelte",
+      "longname": "module:Collapse~animation",
+      "scope": "inner",
+      "memberof": "module:Collapse",
+      "___s": true
+    }
+  ],
   "Dialog": [],
   "Dropdown": [],
   "Icon": [],

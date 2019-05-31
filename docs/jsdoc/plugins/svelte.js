@@ -25,8 +25,8 @@ exports.defineTags = function(dictionary) {
     canHaveName: true,
     onTagged: function(doclet, tag) {
       if (tag.value) {
+        Object.assign(doclet, tag.value)
         if (tag.value.type) doclet.type = tag.value.type.names
-        doclet.defaultvalue = tag.value.defaultvalue
       };
 
       doclet._isSvelteDoc = true;

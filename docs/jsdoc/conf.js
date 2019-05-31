@@ -10,7 +10,6 @@ module.exports = {
   },
   source: {
     include: [resolve(root, 'src/components')],
-    // include: [resolve(root, 'src/components/Button.svelte')],
     includePattern: '.+\\.svelte$', // (js(doc|x)?
   },
   plugins: ['plugins/svelte.js'],

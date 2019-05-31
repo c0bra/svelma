@@ -27,7 +27,7 @@ hr.is-medium {
       {#each jsdoc as doc}
         <tr>
           <td><code>{doc.name}</code></td>
-          <td>{@html doc.description}</td>
+          <td>{@html doc.description}{#if doc.optional}, optional{/if}</td>
           <td>{doc.type.join('|')}</td>
           <td>{@html doc.values || '&mdash;'}</td>
           <td>{@html doc.defaultvalue && `<code>${doc.defaultvalue}</code>` || '&mdash;'}</td>

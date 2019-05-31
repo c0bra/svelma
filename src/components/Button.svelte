@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
 
   /** HTML tag to use for button (either 'a' or 'button')
-   * @svelte-prop {String} [tag=button]
+   * @svelte-prop {String} tag=button
    * */
   export let tag = 'button'
 
