@@ -15,15 +15,22 @@
   border-radius: 6px;
   border-top-left-radius: 0;
   border: 2px solid #f5f5f5;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1087px) {
+  .snippet {
+    flex-direction: column;
+  }
 }
 
 .preview {
-  width: 50%;
+  min-width: 50%;
   padding: 1.5rem;
 }
 
 .code {
-  width: 50%;
+  min-width: 50%;
   display: flex;
   align-items: stretch;
   border-radius: 0 6px 6px 0;

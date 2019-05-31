@@ -42,6 +42,13 @@
     background: #f5f5f5;
     min-height: calc(100vh - 4rem);
   }
+
+  @media screen and (max-width: 1087px) {
+    .sidebar {
+      order: 2;
+      width: 100%;
+    }
+  }
 </style>
 
 <!-- <div class="sidebar-bg"></div> -->

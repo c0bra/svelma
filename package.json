@@ -43,6 +43,7 @@
     "dev": "run-p autobuild autodocs",
     "docs": "(cd docs; npx sapper export --basepath svelma)",
     "docs:deploy": "./docs.sh",
-    "autodocs": "(cd docs; npx sapper dev --basepath svelma)"
+    "autodocs": "(cd docs; npx sapper dev --basepath svelma)",
+    "jsdocs": "(cd docs; npx jsdoc -c jsdoc/conf.js)"
   }
 }

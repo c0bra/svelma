@@ -2,6 +2,7 @@ import path from 'path'
 import alias from 'rollup-plugin-alias'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
+import json from 'rollup-plugin-json'
 import resolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
 import svelte from 'rollup-plugin-svelte'
@@ -38,6 +39,7 @@ export default {
       }),
       resolve(),
       commonjs(),
+      json(),
 
       legacy &&
         babel({
@@ -67,6 +69,13 @@ export default {
         terser({
           module: true,
         }),
+
+      // {
+      //   name: 'jsdocs',
+      //   async generateBundle(opts, bundle) {
+      //     console.log('bundle', bundle)
+      //   },
+      // }
     ],
   },
 
@@ -92,6 +101,7 @@ export default {
       }),
       resolve(),
       commonjs(),
+      json(),
     ],
     external: Object.keys(pkg.dependencies).concat(
       require('module').builtinModules || Object.keys(process.binding('natives'))

@@ -13,10 +13,17 @@
   // })
 </script>
 
-<style>
+<style lang="sass">
   .docs {
     display: flex;
     position: relative;
+    flex-direction: row;
+  }
+
+  @media screen and (max-width: 1087px) {
+    .docs {
+      flex-direction: column;
+    }
   }
 
   .docs-main {

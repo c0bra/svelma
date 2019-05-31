@@ -1,0 +1,111 @@
+{
+  "Button": [
+    {
+      "meta": {
+        "filename": "Button.svelte",
+        "lineno": 0,
+        "columnno": 0,
+        "path": "src/components"
+      },
+      "kind": "module",
+      "name": "Button",
+      "longname": "module:Button",
+      "___s": true
+    },
+    {
+      "meta": {
+        "range": [
+          167,
+          192
+        ],
+        "filename": "Button.svelte",
+        "lineno": 8,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "HTML tag to use for button (either 'a' or 'button')",
+      "_isSvelteDoc": true,
+      "_svelteProps": [
+        {
+          "type": {
+            "names": [
+              "String"
+            ]
+          },
+          "optional": true,
+          "defaultvalue": "button",
+          "name": "tag"
+        }
+      ],
+      "kind": "prop",
+      "name": "tag",
+      "longname": "module:Button.tag",
+      "memberof": "module:Button",
+      "scope": "static",
+      "___s": true
+    },
+    {
+      "meta": {
+        "range": [
+          315,
+          335
+        ],
+        "filename": "Button.svelte",
+        "lineno": 12,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Type (color of control) $$colors$$",
+      "_isSvelteDoc": true,
+      "_svelteProps": [
+        {
+          "type": {
+            "names": [
+              "String"
+            ]
+          },
+          "optional": true,
+          "description": "Type (color of control) $$colors$$",
+          "name": "type"
+        }
+      ],
+      "kind": "prop",
+      "name": "type",
+      "longname": "module:Button.type",
+      "memberof": "module:Button",
+      "scope": "static",
+      "___s": true
+    },
+    {
+      "meta": {
+        "range": [
+          427,
+          442
+        ],
+        "filename": "Button.svelte",
+        "lineno": 16,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Href to use when <code>tag</code> is 'a'",
+      "_isSvelteDoc": true,
+      "_svelteProps": [
+        {
+          "type": {
+            "names": [
+              "String"
+            ]
+          },
+          "optional": true,
+          "name": "href"
+        }
+      ],
+      "kind": "prop",
+      "name": "href",
+      "longname": "module:Button.href",
+      "memberof": "module:Button",
+      "scope": "static",
+      "___s": true
+    }
+  ]
+}
