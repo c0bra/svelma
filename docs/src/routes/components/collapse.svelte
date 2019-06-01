@@ -16,21 +16,8 @@
   export let jsdoc
 </script>
 
-<template>
-  <Collapse>
-    <button class="button is-primary" slot="trigger">
-      Click Me!
-    </button>
-    <div class="notification">
-      <div class="content">
-        <h3>Subtitle</h3>
-        <p>Lorem ipsum dolor...</p>
-      </div>
-    </div>
-  </Collapse>
-</template>
-
 <DocHeader title="Collapse" subtitle="Collapsible elements" />
+
 <Example code={`<script>
   import { Collapse } from 'svelma'
 </script>

@@ -15,6 +15,7 @@
   import JSDoc from '../../components/JSDoc.svelte'
 
   export let jsdoc
+
   let counter = 0
 </script>
 

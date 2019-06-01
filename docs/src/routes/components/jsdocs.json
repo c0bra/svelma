@@ -11,7 +11,6 @@
       "type": [
         "String"
       ],
-      "optional": true,
       "defaultvalue": "button",
       "name": "tag",
       "_isSvelteDoc": true,
@@ -21,7 +20,6 @@
             "String"
           ]
         },
-        "optional": true,
         "defaultvalue": "button",
         "name": "tag"
       },
@@ -104,7 +102,6 @@
       "type": [
         "boolean"
       ],
-      "optional": true,
       "defaultvalue": true,
       "name": "open",
       "_isSvelteDoc": true,
@@ -114,7 +111,6 @@
             "boolean"
           ]
         },
-        "optional": true,
         "defaultvalue": true,
         "name": "open"
       },
@@ -135,7 +131,6 @@
       "type": [
         "String"
       ],
-      "optional": true,
       "defaultvalue": "slide",
       "name": "animation",
       "_isSvelteDoc": true,
@@ -145,7 +140,6 @@
             "String"
           ]
         },
-        "optional": true,
         "defaultvalue": "slide",
         "name": "animation"
       },
@@ -159,7 +153,130 @@
   ],
   "Dialog": [],
   "Dropdown": [],
+  "Field": [
+    {
+      "meta": {
+        "filename": "Field.svelte",
+        "lineno": 3,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Label for input",
+      "type": [
+        "String"
+      ],
+      "name": "label",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "name": "label"
+      },
+      "kind": "prop",
+      "longname": "module:Field~label",
+      "scope": "inner",
+      "memberof": "module:Field",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Field.svelte",
+        "lineno": 8,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Type (color of control)",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "type",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "type"
+      },
+      "kind": "prop",
+      "values": "<code>is-white</code>, <code>is-black</code>, <code>is-light</code>, <code>is-dark</code>, <code>is-primary</code>, <code>is-info</code>, <code>is-success</code>, <code>is-warning</code>, <code>is-danger</code>",
+      "longname": "module:Field~type",
+      "scope": "inner",
+      "memberof": "module:Field",
+      "___s": true
+    }
+  ],
   "Icon": [],
+  "Input": [
+    {
+      "meta": {
+        "filename": "Input.svelte",
+        "lineno": 3,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Input type, or <code>textarea</code>",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "defaultvalue": "text",
+      "name": "type",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": "text",
+        "name": "type"
+      },
+      "kind": "prop",
+      "values": "Any native type, <code>textarea</code>",
+      "longname": "module:Input~type",
+      "scope": "inner",
+      "memberof": "module:Input",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Input.svelte",
+        "lineno": 9,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Size of input",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "size",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "size"
+      },
+      "kind": "prop",
+      "values": "$$sizes$$",
+      "longname": "module:Input~size",
+      "scope": "inner",
+      "memberof": "module:Input",
+      "___s": true
+    }
+  ],
   "Message": [],
   "Modal": []
 }

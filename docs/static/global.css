@@ -50,3 +50,7 @@ header.header {
 header.header .subtitle {
   color: #7a7a7a;
 }
+
+hr.is-medium {
+  margin: 3rem 0
+}

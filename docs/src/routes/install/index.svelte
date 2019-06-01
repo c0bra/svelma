@@ -13,9 +13,18 @@
     <p class="title">NPM</p>
     <p class="subtitle is-spaced">For use with a project using a bundler like Webpack, Rollup, or Parcel</p>
     <p class="title is-4">Installation</p>
-    <Codeview lang="bash">npm install -S bulma svelma</Codeview>
+    <Codeview lang="bash">npm install --save bulma svelma</Codeview>
 
     <p class="title is-4">Usage</p>
+    <div class="content">Import Bulma's CSS in your main app's component</div>
+    <Codeview lang="html" code={`
+<!-- App.svelte -->
+<script>
+  import 'bulma/css/bulma.css'
+</script>
+    `}>
+    </Codeview>
+
     <div class="content">
       Svelma components can be imported one at a time like so:
     </div>
@@ -28,11 +37,24 @@
     `}>
     </Codeview>
 
+    <div class="content">
+      Or import the full Svelma package.
+    </div>
+    <Codeview lang="html" code={`
+<script>
+  import { Svelma } from 'svelma'
+</script>
+
+<Svelma.Button>I am a Button</Svelma.Button>
+    `}>
+    </Codeview>
     
   </div>
 </div>
 
-<!-- <div class="media">
+<hr class="is-medium">
+
+<div class="media">
   <div class="media-left">
     <p class="title">2</p>
   </div>
@@ -40,4 +62,4 @@
     <p class="title is-spaced">CDN</p>
     <Message type="is-info" showClose={false} title="Coming soon..">This feature is in progress</Message>
   </div>
-</div> -->
+</div>
