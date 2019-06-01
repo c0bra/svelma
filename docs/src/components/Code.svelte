@@ -13,11 +13,11 @@
 
   onMount(async () => {
     code = code || codeElm.innerHTML
+    code = code.trim()
     clip = new Clipboard(button, {
       text: trigger => code
     })
 
-    code = code || codeElm.innerHTML
     compiled = hljs.highlightAuto(code, [lang]).value
 
     await tick()

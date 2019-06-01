@@ -13,7 +13,22 @@
     <p class="title">NPM</p>
     <p class="subtitle is-spaced">For use with a project using a bundler like Webpack, Rollup, or Parcel</p>
     <p class="title is-4">Installation</p>
-    <Codeview lang="bash">npm install svelma</Codeview>
+    <Codeview lang="bash">npm install -S bulma svelma</Codeview>
+
+    <p class="title is-4">Usage</p>
+    <div class="content">
+      Svelma components can be imported one at a time like so:
+    </div>
+    <Codeview lang="html" code={`
+<script>
+  import { Button } from 'svelma'
+</script>
+
+<Button>I am a Button</Button>
+    `}>
+    </Codeview>
+
+    
   </div>
 </div>
 
