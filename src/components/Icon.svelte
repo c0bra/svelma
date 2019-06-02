@@ -5,8 +5,10 @@
   export let size = ''
   export let customClass = ''
   export let customSize = ''
+  export let isRight = false
 
   let newCustomSize = ''
+  let newType = ''
 
   $: {
     if (customSize) newCustomSize = customSize
@@ -25,8 +27,26 @@
       }
     }
   }
+
+  $: {
+    if (!type) newType = ''
+    let splitType = []
+    if (typeof type === 'string') {
+        splitType = type.split('-')
+    } else {
+      for (let key in type) {
+        if (type[key]) {
+          splitType = key.split('-')
+          break
+        }
+      }
+    }
+    if (splitType.length <= 1) newType = ''
+
+    newType = `has-text-${splitType[1]}`
+  }
 </script>
 
-<span class="icon {size}">
+<span class="icon {size} {newType} {isRight && 'is-right'}">
   <i class="{pack} fa-{icon} {customClass} {newCustomSize}" />
 </span>

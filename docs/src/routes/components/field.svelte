@@ -36,8 +36,12 @@
       <Input value="Rich Harris" />
     </Field>
 
-    <Field label="Name" type="is-danger" message="Pick a better name than {name}">
-      <Input bind:value={name} />
+    <Field label="Email" type="is-danger" message="Email is invalid">
+      <Input value="john@" />
+    </Field>
+
+    <Field label="Username" type="is-success" message="Username is available">
+      <Input value="joey55" />
     </Field>
   </div>
 </Example>

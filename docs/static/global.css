@@ -54,3 +54,8 @@ header.header .subtitle {
 hr.is-medium {
   margin: 3rem 0
 }
+
+.is-clickable {
+  pointer-events: auto;
+  cursor: pointer;
+}
