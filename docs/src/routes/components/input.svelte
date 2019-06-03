@@ -115,7 +115,33 @@
 
 <p class="title is-4">States, plus more styles</p>
 
-<Example code={``}>
+<Example code={`<script>
+  import { Field, Input } from 'svelma'
+</script>
+
+<Field>
+  <Input placeholder="No label" />
+</Field>
+
+<Field label="Rounded">
+  <Input class="is-rounded" placeholder="Rounded" />
+</Field>
+
+<Field label="Info" type="is-info"> 
+  <Input placeholder="Info" />
+</Field>
+
+<Field label="Warning" type="is-warning"> 
+  <Input placeholder="Warning" />
+</Field>
+
+<Field label="Disabled"> 
+  <Input placeholder="Disabled" disabled />
+</Field>
+
+<Field label="Loading">
+  <Input placeholder="Loading" loading />
+</Field>`}>
   <div slot="preview">
     <Field>
       <Input placeholder="No label" />
@@ -134,11 +160,11 @@
     </Field>
 
     <Field label="Disabled"> 
-      <Input placeholder="Disabled" disabled={true} />
+      <Input placeholder="Disabled" disabled />
     </Field>
 
     <Field label="Loading">
-      <Input placeholder="Loading" loading={true} />
+      <Input placeholder="Loading" loading />
     </Field>
   </div>
 </Example>
@@ -147,7 +173,25 @@
 
 <p class="title is-4">Sizes</p>
 
-<Example code={``}>
+<Example code={`<script>
+  import { Field, Input } from 'svelma'
+</script>
+
+<Field>
+  <Input placeholder="Small" size="is-small" />
+</Field>
+
+<Field>
+  <Input placeholder="Default" />
+</Field>
+
+<Field>
+  <Input placeholder="Medium" size="is-medium" />
+</Field>
+
+<Field>
+  <Input placeholder="Large" size="is-large" />
+</Field>`}>
   <div slot="preview">
     <Field>
       <Input placeholder="Small" size="is-small" />

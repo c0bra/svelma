@@ -19,6 +19,14 @@
   let counter = 0
 </script>
 
+<style>
+  .buttons {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+</style>
+
 <DocHeader title="Buttons" subtitle="Tasty clickable buttons" />
 
 <Example code={`<script>
@@ -32,6 +40,64 @@
     <Button type="is-primary" on:click={() => counter++}>
       Click!: {counter}
     </Button>
+  </div>
+</Example>
+
+<hr class="is-medium">
+
+<p class="title is-4">States and styles</p>
+
+<Example code={`<script>
+  import { Button } from 'svelma'
+</script>
+
+<div class="buttons">
+  <Button type="is-primary">Primary</Button>
+  <Button type="is-success">Success</Button>
+  <Button type="is-danger">Danger</Button>
+  <Button type="is-warning">Warning</Button>
+  <Button type="is-info">Info</Button>
+  <Button type="is-link">Link</Button>
+  <Button type="is-light">Light</Button>
+  <Button type="is-dark">Dark</Button>
+  <Button type="is-text">Text</Button>
+</div>
+<div class="buttons">
+  <Button disabled>Disabled</Button>
+  <Button type="is-primary" loading>Loading</Button>
+  <Button type="is-success" rounded>Rounded</Button>
+  <Button type="is-info" outline>Outlined</Button>
+</div>
+<div class="buttons">
+  <div class="notification is-primary">
+    <Button type="is-primary" inverted>Inverted</Button>
+    <Button type="is-primary" inverted outlined>Invert Outlined</Button>
+  </div>
+</div>`}>
+  <div slot="preview">
+    <div class="buttons">
+      <Button type="is-primary">Primary</Button>
+      <Button type="is-success">Success</Button>
+      <Button type="is-danger">Danger</Button>
+      <Button type="is-warning">Warning</Button>
+      <Button type="is-info">Info</Button>
+      <Button type="is-link">Link</Button>
+      <Button type="is-light">Light</Button>
+      <Button type="is-dark">Dark</Button>
+      <Button type="is-text">Text</Button>
+    </div>
+    <div class="buttons">
+      <Button disabled>Disabled</Button>
+      <Button type="is-primary" loading>Loading</Button>
+      <Button type="is-success" rounded>Rounded</Button>
+      <Button type="is-info" outline>Outlined</Button>
+    </div>
+    <div class="buttons">
+      <div class="notification is-primary">
+        <Button type="is-primary" inverted>Inverted</Button>
+        <Button type="is-primary" inverted outlined>Invert Outlined</Button>
+      </div>
+    </div>
   </div>
 </Example>
 

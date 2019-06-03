@@ -3,7 +3,7 @@
     {
       "meta": {
         "filename": "Button.svelte",
-        "lineno": 5,
+        "lineno": 6,
         "columnno": 2,
         "path": "src/components"
       },
@@ -32,7 +32,7 @@
     {
       "meta": {
         "filename": "Button.svelte",
-        "lineno": 10,
+        "lineno": 11,
         "columnno": 2,
         "path": "src/components"
       },
@@ -63,7 +63,7 @@
     {
       "meta": {
         "filename": "Button.svelte",
-        "lineno": 16,
+        "lineno": 17,
         "columnno": 2,
         "path": "src/components"
       },

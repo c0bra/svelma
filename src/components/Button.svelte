@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte'
+  import { omit } from '../utils'
 
   /** HTML tag to use for button (either 'a' or 'button')
    * @svelte-prop {String} tag=button
@@ -17,6 +18,11 @@
    * */
   export let href = ''
 
+  export let loading = false
+  export let inverted = false
+  export let outlined = false
+  export let rounded = false
+
   let klazz
   export { klazz as class }
 
@@ -26,13 +32,19 @@
 
   // let props = {}
   $: props = {
-    ...$$props,
+    ...omit($$props, 'loading', 'inverted', 'outlined', 'rounded'),
     class: `button ${type} ${$$props.class || ''}`,
   }
 </script>
 
 {#if tag === 'button'}
-  <button {...props} on:click>
+  <button
+    {...props}
+    class:is-inverted={inverted}
+    class:is-loading={loading}
+    class:is-outlined={outlined}
+    class:is-rounded={rounded}
+    on:click>
     <slot />
   </button>
 {:else if tag === 'a'}
