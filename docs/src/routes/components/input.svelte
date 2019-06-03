@@ -28,7 +28,7 @@
 <DocHeader title="Input" subtitle="User input controls" />
 
 <p class="content">
-  Mostly just wraps <code>{`<input>`}</code>, <code>{`<select>`}</code>  and <code>{`<textarea>`}</code> so additional Bulma features can be bound easily.
+  Mostly just wraps <code>{`<input>`}</code>  and <code>{`<textarea>`}</code> so additional Bulma features can be bound easily.
 </p>
 
 <br>
@@ -45,9 +45,10 @@
 </Example>
 
 <br>
-<p class="content">Wrap with <strong>Field</strong> for additional features</p>
 
 <p class="title is-4">Types and colors</p>
+
+<p class="content">Wrap with <a href="components/field"><strong>Field</strong></a> for additional features</p>
 
 <Example code={`<script>
   import { Field, Input } from 'svelma'
@@ -59,11 +60,6 @@
     password: 'secret123',
   }
 </script>
-
-<Codeview lang="js">
-// Bound values
-{JSON.stringify(bound, null, 2)}
-</Codeview>
 
 <Field label="Name">
   <Input type="text" bind:value={bound.name} placeholder="Text input" />
@@ -80,12 +76,18 @@
 <Field label="Password"> 
   <Input type="password" bind:value={bound.password} passwordReveal={true} />
 </Field>
+
+<Field label="Textarea"> 
+  <Input type="textarea" maxlength="200" />
+</Field>
 `}>
   <div slot="preview">
-    <Codeview lang="js">
+    <Codeview lang="js" showCopy={false}>
 // Bound values
 {JSON.stringify(bound, null, 2)}
     </Codeview>
+
+    <br>
 
     <Field label="Name">
       <Input type="text" bind:value={bound.name} placeholder="Text input" />
@@ -101,6 +103,66 @@
 
     <Field label="Password"> 
       <Input type="password" bind:value={bound.password} passwordReveal={true} />
+    </Field>
+
+    <Field label="Textarea"> 
+      <Input type="textarea" maxlength="200" />
+    </Field>
+  </div>
+</Example>
+
+<hr class="is-medium">
+
+<p class="title is-4">States, plus more styles</p>
+
+<Example code={``}>
+  <div slot="preview">
+    <Field>
+      <Input placeholder="No label" />
+    </Field>
+
+    <Field label="Rounded">
+      <Input class="is-rounded" placeholder="Rounded" />
+    </Field>
+
+    <Field label="Info" type="is-info"> 
+      <Input placeholder="Info" />
+    </Field>
+
+    <Field label="Warning" type="is-warning"> 
+      <Input placeholder="Warning" />
+    </Field>
+
+    <Field label="Disabled"> 
+      <Input placeholder="Disabled" disabled={true} />
+    </Field>
+
+    <Field label="Loading">
+      <Input placeholder="Loading" loading={true} />
+    </Field>
+  </div>
+</Example>
+
+<hr class="is-medium">
+
+<p class="title is-4">Sizes</p>
+
+<Example code={``}>
+  <div slot="preview">
+    <Field>
+      <Input placeholder="Small" size="is-small" />
+    </Field>
+
+    <Field>
+      <Input placeholder="Default" />
+    </Field>
+
+    <Field>
+      <Input placeholder="Medium" size="is-medium" />
+    </Field>
+
+    <Field>
+      <Input placeholder="Large" size="is-large" />
     </Field>
   </div>
 </Example>

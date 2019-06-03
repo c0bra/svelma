@@ -3,7 +3,7 @@
 </script>
 
 {#if jsdoc}
-  <hr class="is-medium">
+  <hr class="is-medium" />
 
   <section class="api-view">
     <h2 class="title is-4">API</h2>
@@ -21,11 +21,20 @@
       <tbody>
         {#each jsdoc as doc}
           <tr>
-            <td><code>{doc.name}</code></td>
-            <td>{@html doc.description}{#if doc.optional}, optional{/if}</td>
+            <td>
+              <code>{doc.name}</code>
+            </td>
+            <td>
+              {@html doc.description}
+              {#if doc.optional}, optional{/if}
+            </td>
             <td>{doc.type.join(', ')}</td>
-            <td>{@html doc.values || '&mdash;'}</td>
-            <td>{@html doc.defaultvalue && `<code>${doc.defaultvalue}</code>` || '&mdash;'}</td>
+            <td>
+              {@html doc.values || '&mdash;'}
+            </td>
+            <td>
+              {@html ('defaultvalue' in doc && `<code>${doc.defaultvalue}</code>`) || '&mdash;'}
+            </td>
           </tr>
         {/each}
       </tbody>

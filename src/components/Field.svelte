@@ -1,10 +1,11 @@
 <script>
   import { onMount, setContext } from 'svelte'
+  import { omit } from '../utils'
 
   /** Label for input
-   * @svelte-prop {String} label
+   * @svelte-prop {String} [label]
    * */
-  export let label
+  export let label = null
 
   /** Type (color of control)
    * @svelte-prop {String} [type]
@@ -12,6 +13,9 @@
    * */
   export let type = ''
 
+  /** Message to show beneath input
+   * @svelte-prop {String} [message]
+   * */
   export let message = ''
 
   export let labelFor = ''
@@ -27,11 +31,11 @@
       iconType = type
     }
   }
+
+  $: props = { ...omit($$props, 'class') }
 </script>
 
-<div class="field {type}"
-  has-icons-right={hasIcons}>
-
+<div {...props} class="field {type} {$$props.class || ''}" has-icons-right={hasIcons}>
   {#if label}
     <label for={labelFor} class="label">{label}</label>
   {/if}

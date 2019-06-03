@@ -5,9 +5,16 @@ export function chooseAnimation(animation) {
 }
 
 export function isEnterKey(e) {
-  return e.keyCode && e.keyCode === 13;
+  return e.keyCode && e.keyCode === 13
 }
 
 export function isEscKey(e) {
-  return e.keyCode && e.keyCode === 27;
+  return e.keyCode && e.keyCode === 27
+}
+
+export function omit(obj, ...keysToOmit) {
+  return Object.keys(obj).reduce((acc, key) => {
+    if (keysToOmit.indexOf(key) === -1) acc[key] = obj[key]
+    return acc
+  }, {})
 }

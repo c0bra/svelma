@@ -1,6 +1,12 @@
 <script>
   import { onMount, getContext, tick } from 'svelte'
+  import { omit } from '../utils'
   import Icon from './Icon.svelte'
+
+  /** Binding value
+   * @svelte-prop {String|Number} [value]
+   * */
+  export let value = ''
 
   /** Input type, or <code>textarea</code>
    * @svelte-prop {String} [type=text]
@@ -14,38 +20,70 @@
    * */
   export let size = ''
 
-  /** Binding value
-   * @svelte-prop {String|Number} [value]
-   * */
-  export let value = null
-
   /** Show the password reveal toggle button
    * @svelte-prop {boolean} [passwordReveal]
    * */
   export let passwordReveal = false
 
+  /** Set input maxlength and show a counter
+   * @svelte-prop {Number} [maxlength]
+   * */
+  export let maxlength = null
+
+  /** Show the character counter when <code>maxlength<code> is set
+   * @svelte-prop {boolean} [hasCounter=true]
+   * */
+  export let hasCounter = true
+
   /** Show loading indicator
-   * @svelte-prop {boolean} [loading]
+   * @svelte-prop {boolean} [loading=false]
    * */
   export let loading = false
 
+  /** Input is disabled
+   * @svelte-prop {boolean} [disabled=false]
+   * */
+  export let disabled = false
+
   let input
+  let isFocused
   let isPasswordVisible = false
-  let newType
+  let newType = 'text'
   let statusType = ''
   let statusTypeIcon = ''
+  let valueLength = null
 
   const getType = getContext('type')
-  if (getType) statusType = getType()
+  if (getType) statusType = getType() || ''
 
+  $: props = {
+    ...omit($$props, 'class', 'value', 'type', 'size', 'passwordReveal', 'hasCounter', 'loading', 'disabled'),
+  }
   $: hasIconRight = passwordReveal || loading || statusType
   $: passwordVisibleIcon = isPasswordVisible ? 'eye-slash' : 'eye'
   $: {
     switch (statusType) {
-      case 'is-success': statusTypeIcon = 'check'; break;
-      case 'is-danger': statusTypeIcon = 'exclamation-circle'; break;
-      case 'is-info': statusTypeIcon = 'info-circle'; break;
-      case 'is-warning': statusTypeIcon = 'exclamation-triangle'; break;
+      case 'is-success':
+        statusTypeIcon = 'check'
+        break
+      case 'is-danger':
+        statusTypeIcon = 'exclamation-circle'
+        break
+      case 'is-info':
+        statusTypeIcon = 'info-circle'
+        break
+      case 'is-warning':
+        statusTypeIcon = 'exclamation-triangle'
+        break
+    }
+  }
+  $: {
+    if (typeof value === 'string') {
+      valueLength = value.length
+    } else if (typeof value === 'number') {
+      valueLength = value.toString().length
+    } else {
+      valueLength = 0
     }
   }
 
@@ -60,18 +98,48 @@
     input.focus()
   }
 
-  function onInput(e) {
+  const onInput = e => {
     value = e.target.value
+    $$props.value = value
   }
+  const onFocus = () => (isFocused = true)
+  const onBlur = () => (isFocused = false)
 </script>
 
-<div class="control"
-  class:has-icons-right={hasIconRight}
-  class:is-loading={loading}>
+<style>
+  .control .help.counter {
+    float: right;
+    margin-left: 0.5em;
+  }
+</style>
 
+<div class="control" class:has-icons-right={hasIconRight} class:is-loading={loading}>
 
-  <input type={newType} {value} class="input {statusType} {size}" bind:this={input} on:input={onInput} on:focus on:blur>
-  <!-- <input type="text" {value} on:input={onInput}> -->
+  {#if type !== 'textarea'}
+    <input
+      {...props}
+      type={newType}
+      {value}
+      class="input {statusType}
+      {size}
+      {$$props.class || ''}"
+      bind:this={input}
+      on:input={onInput}
+      on:focus={onFocus}
+      on:blur={onBlur}
+      {disabled} />
+  {:else}
+    <textarea
+      {...props}
+      {value}
+      class="textarea {statusType}
+      {size}"
+      bind:this={input}
+      on:input={onInput}
+      on:focus={onFocus}
+      on:blur={onBlur}
+      {disabled} />
+  {/if}
 
   {#if !loading && (passwordReveal || statusType)}
     <!-- pack={iconPack}
@@ -83,5 +151,9 @@
       icon={passwordReveal ? passwordVisibleIcon : statusTypeIcon}
       type={!passwordReveal ? statusType : 'is-primary'}
       on:click={togglePasswordVisibility} />
+  {/if}
+
+  {#if maxlength && hasCounter && type !== 'number'}
+    <small class="help counter" class:is-invisible={!isFocused}>{valueLength} / {maxlength}</small>
   {/if}
 </div>

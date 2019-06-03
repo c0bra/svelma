@@ -17,12 +17,14 @@
    * */
   export let href = ''
 
+  let klazz
+  export { klazz as class }
 
   onMount(() => {
     if (!['button', 'a'].includes(tag)) throw new Error(`'${tag}' cannot be used as a tag for a Bulma button`)
   })
 
-  let props
+  // let props = {}
   $: props = {
     ...$$props,
     class: `button ${type} ${$$props.class || ''}`,

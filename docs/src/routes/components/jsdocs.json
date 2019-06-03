@@ -157,7 +157,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 5,
+        "lineno": 6,
         "columnno": 2,
         "path": "src/components"
       },
@@ -165,6 +165,7 @@
       "type": [
         "String"
       ],
+      "optional": true,
       "name": "label",
       "_isSvelteDoc": true,
       "_svelteProps": {
@@ -173,6 +174,7 @@
             "String"
           ]
         },
+        "optional": true,
         "name": "label"
       },
       "kind": "prop",
@@ -184,7 +186,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 10,
+        "lineno": 11,
         "columnno": 2,
         "path": "src/components"
       },
@@ -210,6 +212,35 @@
       "scope": "inner",
       "memberof": "module:Field",
       "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Field.svelte",
+        "lineno": 17,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Message to show beneath input",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "message",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "message"
+      },
+      "kind": "prop",
+      "longname": "module:Field~message",
+      "scope": "inner",
+      "memberof": "module:Field",
+      "___s": true
     }
   ],
   "Icon": [],
@@ -217,7 +248,38 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 6,
+        "lineno": 7,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Binding value",
+      "type": [
+        "String",
+        "Number"
+      ],
+      "optional": true,
+      "name": "value",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String",
+            "Number"
+          ]
+        },
+        "optional": true,
+        "name": "value"
+      },
+      "kind": "prop",
+      "longname": "module:Input~value",
+      "scope": "inner",
+      "memberof": "module:Input",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Input.svelte",
+        "lineno": 12,
         "columnno": 2,
         "path": "src/components"
       },
@@ -249,7 +311,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 12,
+        "lineno": 18,
         "columnno": 2,
         "path": "src/components"
       },
@@ -279,38 +341,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 18,
-        "columnno": 2,
-        "path": "src/components"
-      },
-      "description": "Binding value",
-      "type": [
-        "String",
-        "Number"
-      ],
-      "optional": true,
-      "name": "value",
-      "_isSvelteDoc": true,
-      "_svelteProps": {
-        "type": {
-          "names": [
-            "String",
-            "Number"
-          ]
-        },
-        "optional": true,
-        "name": "value"
-      },
-      "kind": "prop",
-      "longname": "module:Input~value",
-      "scope": "inner",
-      "memberof": "module:Input",
-      "___s": true
-    },
-    {
-      "meta": {
-        "filename": "Input.svelte",
-        "lineno": 23,
+        "lineno": 24,
         "columnno": 2,
         "path": "src/components"
       },
@@ -339,7 +370,67 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 28,
+        "lineno": 29,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Set input maxlength and show a counter",
+      "type": [
+        "Number"
+      ],
+      "optional": true,
+      "name": "maxlength",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Number"
+          ]
+        },
+        "optional": true,
+        "name": "maxlength"
+      },
+      "kind": "prop",
+      "longname": "module:Input~maxlength",
+      "scope": "inner",
+      "memberof": "module:Input",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Input.svelte",
+        "lineno": 34,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Show the character counter when <code>maxlength<code> is set",
+      "type": [
+        "boolean"
+      ],
+      "optional": true,
+      "defaultvalue": true,
+      "name": "hasCounter",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "name": "hasCounter"
+      },
+      "kind": "prop",
+      "longname": "module:Input~hasCounter",
+      "scope": "inner",
+      "memberof": "module:Input",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Input.svelte",
+        "lineno": 39,
         "columnno": 2,
         "path": "src/components"
       },
@@ -348,6 +439,7 @@
         "boolean"
       ],
       "optional": true,
+      "defaultvalue": false,
       "name": "loading",
       "_isSvelteDoc": true,
       "_svelteProps": {
@@ -357,10 +449,42 @@
           ]
         },
         "optional": true,
+        "defaultvalue": false,
         "name": "loading"
       },
       "kind": "prop",
       "longname": "module:Input~loading",
+      "scope": "inner",
+      "memberof": "module:Input",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Input.svelte",
+        "lineno": 44,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Input is disabled",
+      "type": [
+        "boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "disabled",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "disabled"
+      },
+      "kind": "prop",
+      "longname": "module:Input~disabled",
       "scope": "inner",
       "memberof": "module:Input",
       "___s": true

@@ -40,7 +40,7 @@
 <Nav {segment} />
 
 <main>
-  <section class="docs">
+  <section class="docs container">
     <Sidebar />
 
     <div class="docs-main">

@@ -1,16 +1,18 @@
 <script>
   import Clipboard from 'clipboard'
-  import hljs from 'highlight.js/lib/highlight';
+  import hljs from 'highlight.js/lib/highlight'
   import { beforeUpdate, tick, onMount, onDestroy } from 'svelte'
 
   export let lang = 'js'
   export let code = ''
+  export let showCopy = true
   let _code = ''
   let button
   let codeElm
   let clip
   let show = false
   let compiled
+  let observer
 
   $: {
     _code = code || (codeElm && codeElm.innerHTML) || _code
@@ -26,22 +28,20 @@
   onMount(async () => {
     if (codeElm.innerHTML) code = codeElm.innerHTML
 
-    clip = new Clipboard(button, {
-      text: trigger => code
-    })
+    if (button) {
+      clip = new Clipboard(button, {
+        text: trigger => code,
+      })
+    }
 
-    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver
-    var observer = new MutationObserver(() => {
-      if (codeElm.innerHTML) updateCode(codeElm.innerHTML)
-    });
+    const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver
+    observer = new MutationObserver(() => {
+      if (codeElm && codeElm.innerHTML) updateCode(codeElm.innerHTML)
+    })
     observer.observe(codeElm, {
       subtree: true,
       childList: true,
       characterData: true,
-    })
-
-    onDestroy(() => {
-      observer.disconnect()
     })
 
     await tick()
@@ -51,6 +51,7 @@
 
   onDestroy(() => {
     if (clip) clip.destroy()
+    if (observer) observer.disconnect()
   })
 </script>
 
@@ -90,11 +91,15 @@
 
 <div class="codeview">
   <figure class="highlight is-expanded">
-    <div class="button-container">
-      <button class="button is-text is-small copy-code" bind:this={button}>Copy</button>
-    </div>
+    {#if showCopy}
+      <div class="button-container">
+        <button class="button is-text is-small copy-code" bind:this={button}>Copy</button>
+      </div>
+    {/if}
     <pre class="hidden">
-      <code class="{lang}" bind:this={codeElm}><slot /></code>
+      <code class={lang} bind:this={codeElm}>
+        <slot />
+      </code>
     </pre>
     <pre class:hidden={!show} class:show>
       <code>

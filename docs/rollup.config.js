@@ -8,7 +8,7 @@ import json from 'rollup-plugin-json'
 import resolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
 import svelte from 'rollup-plugin-svelte'
-import { sass } from 'svelte-preprocess-sass';
+import { sass } from 'svelte-preprocess-sass'
 import { terser } from 'rollup-plugin-terser'
 import config from 'sapper/config/rollup.js'
 import pkg from './package.json'
@@ -78,7 +78,7 @@ export default {
         async generateBundle(opts, bundle) {
           return await exec('npx jsdoc -c jsdoc/conf.js')
         },
-      }
+      },
     ],
   },
 
