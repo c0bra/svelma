@@ -54,5 +54,6 @@
     "docs:deploy": "./docs.sh",
     "autodocs": "(cd docs; npx sapper dev --basepath svelma)",
     "jsdocs": "(cd docs; npx jsdoc -c jsdoc/conf.js)"
-  }
+  },
+  "pre-publish": "build"
 }

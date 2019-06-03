@@ -51,9 +51,35 @@
 
 <Example code={`<script>
   import { Field, Input } from 'svelma'
+
+  let bound = {
+    name: 'Rich Harris',
+    email: 'rich@',
+    username: 'richie55',
+    password: 'secret123',
+  }
 </script>
 
-<Input type="text" placeholder="Text input" />
+<Codeview lang="js">
+// Bound values
+{JSON.stringify(bound, null, 2)}
+</Codeview>
+
+<Field label="Name">
+  <Input type="text" bind:value={bound.name} placeholder="Text input" />
+</Field>
+
+<Field label="Email" type="is-danger" message="Invalid email"> 
+  <Input type="email" bind:value={bound.email} maxlength="30" />
+</Field>
+
+<Field label="Username" type="is-success" message="Username available"> 
+  <Input type="email" bind:value={bound.username} />
+</Field>
+
+<Field label="Password"> 
+  <Input type="password" bind:value={bound.password} passwordReveal={true} />
+</Field>
 `}>
   <div slot="preview">
     <Codeview lang="js">

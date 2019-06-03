@@ -1,4 +1,3 @@
-import analyzer from 'rollup-plugin-analyzer'
 import bundleSize from 'rollup-plugin-bundle-size'
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
