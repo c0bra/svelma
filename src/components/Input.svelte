@@ -15,7 +15,7 @@
   export let size = ''
 
   /** Binding value
-   * @svelte-prop {String, Number } [value]
+   * @svelte-prop {String|Number} [value]
    * */
   export let value = null
 
@@ -38,16 +38,8 @@
   const getType = getContext('type')
   if (getType) statusType = getType()
 
-  $: props = {
-    ...$$props
-  }
-
   $: hasIconRight = passwordReveal || loading || statusType
-
   $: passwordVisibleIcon = isPasswordVisible ? 'eye-slash' : 'eye'
-
-  $: console.log('passwordVisibleIcon', passwordVisibleIcon)
-
   $: {
     switch (statusType) {
       case 'is-success': statusTypeIcon = 'check'; break;
@@ -62,11 +54,14 @@
   })
 
   async function togglePasswordVisibility() {
-    console.log('isPasswordVisible', !isPasswordVisible)
     isPasswordVisible = !isPasswordVisible
     newType = isPasswordVisible ? 'text' : 'password'
     await tick()
     input.focus()
+  }
+
+  function onInput(e) {
+    value = e.target.value
   }
 </script>
 
@@ -74,7 +69,9 @@
   class:has-icons-right={hasIconRight}
   class:is-loading={loading}>
 
-  <input {...props} type={newType} {value} class="input {statusType} {size}" bind:this={input} on:input on:focus on:blur>
+
+  <input type={newType} {value} class="input {statusType} {size}" bind:this={input} on:input={onInput} on:focus on:blur>
+  <!-- <input type="text" {value} on:input={onInput}> -->
 
   {#if !loading && (passwordReveal || statusType)}
     <!-- pack={iconPack}

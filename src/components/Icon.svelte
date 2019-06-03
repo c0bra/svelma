@@ -46,8 +46,6 @@
 
     newType = `has-text-${splitType[1]}`
   }
-
-  $: console.log('icon', icon)
 </script>
 
 <span class="icon {size} {newType} {isRight && 'is-right'}"

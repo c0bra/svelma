@@ -1,4 +1,6 @@
 import path from 'path'
+import { promisify } from 'util'
+import { exec as execRaw } from 'child_process'
 import alias from 'rollup-plugin-alias'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
@@ -11,6 +13,7 @@ import { terser } from 'rollup-plugin-terser'
 import config from 'sapper/config/rollup.js'
 import pkg from './package.json'
 
+const exec = promisify(execRaw)
 const mode = process.env.NODE_ENV
 const dev = mode === 'development'
 const legacy = !!process.env.SAPPER_LEGACY_BUILD
@@ -70,12 +73,12 @@ export default {
           module: true,
         }),
 
-      // {
-      //   name: 'jsdocs',
-      //   async generateBundle(opts, bundle) {
-      //     console.log('bundle', bundle)
-      //   },
-      // }
+      {
+        name: 'jsdocs',
+        async generateBundle(opts, bundle) {
+          return await exec('npx jsdoc -c jsdoc/conf.js')
+        },
+      }
     ],
   },
 

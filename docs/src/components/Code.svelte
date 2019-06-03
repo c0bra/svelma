@@ -5,20 +5,44 @@
 
   export let lang = 'js'
   export let code = ''
+  let _code = ''
   let button
   let codeElm
   let clip
   let show = false
   let compiled
 
+  $: {
+    _code = code || (codeElm && codeElm.innerHTML) || _code
+    updateCode(code)
+  }
+
+  function updateCode(newCode) {
+    if (!newCode) return
+    code = newCode.trim()
+    compiled = hljs.highlightAuto(code, [lang]).value
+  }
+
   onMount(async () => {
-    code = code || codeElm.innerHTML
-    code = code.trim()
+    if (codeElm.innerHTML) code = codeElm.innerHTML
+
     clip = new Clipboard(button, {
       text: trigger => code
     })
 
-    compiled = hljs.highlightAuto(code, [lang]).value
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver
+    var observer = new MutationObserver(() => {
+      if (codeElm.innerHTML) updateCode(codeElm.innerHTML)
+    });
+    observer.observe(codeElm, {
+      subtree: true,
+      childList: true,
+      characterData: true,
+    })
+
+    onDestroy(() => {
+      observer.disconnect()
+    })
 
     await tick()
 
@@ -52,12 +76,15 @@
     padding: 1.25rem 1.5rem;
   } */
 
-  pre {
-    display: none;
+  pre.hidden {
+    visibility: hidden;
+    height: 0px;
+    padding: 0px;
   }
 
-  .show {
-    display: block;
+  pre.show {
+    /* display: block; */
+    visibility: visible;
   }
 </style>
 
@@ -66,10 +93,10 @@
     <div class="button-container">
       <button class="button is-text is-small copy-code" bind:this={button}>Copy</button>
     </div>
-    <pre>
+    <pre class="hidden">
       <code class="{lang}" bind:this={codeElm}><slot /></code>
     </pre>
-    <pre class:show>
+    <pre class:hidden={!show} class:show>
       <code>
         {@html compiled}
       </code>

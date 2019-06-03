@@ -5,6 +5,11 @@ const colorStr = ['is-white', 'is-black', 'is-light', 'is-dark', 'is-primary', '
   .map(c => `<code>${c}</code>`)
   .join(', ')
 
+  
+const sizeStr = ['is-small', 'is-medium', 'is-large']
+  .map(c => `<code>${c}</code>`)
+  .join(', ')
+
 /**
  * Publish hook for the JSDoc template.  Writes to JSON stdout.
  * @param {function} data The root of the Taffy DB containing doclet records.
@@ -25,6 +30,7 @@ exports.publish = function(data, opts) {
   docs = mapValues(docs, cs => cs.filter(x => x.kind !== 'module'))
   docs = mapValues(docs, cs => cs.map(c => {
     if (c.values) c.values = c.values.replace(/\$\$colors\$\$/, colorStr)
+    if (c.values) c.values = c.values.replace(/\$\$sizes\$\$/, sizeStr)
 
     return c
   }))

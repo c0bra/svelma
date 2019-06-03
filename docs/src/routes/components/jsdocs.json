@@ -157,7 +157,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 3,
+        "lineno": 5,
         "columnno": 2,
         "path": "src/components"
       },
@@ -184,7 +184,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 8,
+        "lineno": 10,
         "columnno": 2,
         "path": "src/components"
       },
@@ -217,7 +217,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 3,
+        "lineno": 6,
         "columnno": 2,
         "path": "src/components"
       },
@@ -249,7 +249,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 9,
+        "lineno": 12,
         "columnno": 2,
         "path": "src/components"
       },
@@ -270,8 +270,97 @@
         "name": "size"
       },
       "kind": "prop",
-      "values": "$$sizes$$",
+      "values": "<code>is-small</code>, <code>is-medium</code>, <code>is-large</code>",
       "longname": "module:Input~size",
+      "scope": "inner",
+      "memberof": "module:Input",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Input.svelte",
+        "lineno": 18,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Binding value",
+      "type": [
+        "String",
+        "Number"
+      ],
+      "optional": true,
+      "name": "value",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String",
+            "Number"
+          ]
+        },
+        "optional": true,
+        "name": "value"
+      },
+      "kind": "prop",
+      "longname": "module:Input~value",
+      "scope": "inner",
+      "memberof": "module:Input",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Input.svelte",
+        "lineno": 23,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Show the password reveal toggle button",
+      "type": [
+        "boolean"
+      ],
+      "optional": true,
+      "name": "passwordReveal",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "name": "passwordReveal"
+      },
+      "kind": "prop",
+      "longname": "module:Input~passwordReveal",
+      "scope": "inner",
+      "memberof": "module:Input",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Input.svelte",
+        "lineno": 28,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Show loading indicator",
+      "type": [
+        "boolean"
+      ],
+      "optional": true,
+      "name": "loading",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "name": "loading"
+      },
+      "kind": "prop",
+      "longname": "module:Input~loading",
       "scope": "inner",
       "memberof": "module:Input",
       "___s": true
