@@ -19,6 +19,12 @@
 
 <DocHeader title="Input" subtitle="User input controls" />
 
+<p class="content">
+  Mostly just wraps <code>{`<input>`}</code>, <code>{`<select>`}</code>  and <code>{`<textarea>`}</code> so additional Bulma features can be bound easily.
+</p>
+
+<br>
+
 <Example code={`<script>
   import { Input } from 'svelma'
 </script>
@@ -54,8 +60,8 @@
       <Input type="email" value="richie55" />
     </Field>
 
-    <Field label="Password" password-reveal> 
-      <Input type="password" value="secret123" />
+    <Field label="Password"> 
+      <Input type="password" value="secret123" passwordReveal={true} />
     </Field>
   </div>
 </Example>

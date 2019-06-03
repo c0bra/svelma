@@ -1,10 +1,11 @@
 <script>
   export let type = ''
-  export let pack = 'fa'
+  export let pack = 'fas'
   export let icon
   export let size = ''
   export let customClass = ''
   export let customSize = ''
+  export let isClickable = false
   export let isRight = false
 
   let newCustomSize = ''
@@ -45,8 +46,12 @@
 
     newType = `has-text-${splitType[1]}`
   }
+
+  $: console.log('icon', icon)
 </script>
 
-<span class="icon {size} {newType} {isRight && 'is-right'}">
+<span class="icon {size} {newType} {isRight && 'is-right'}"
+  class:is-clickable={isClickable}
+  on:click>
   <i class="{pack} fa-{icon} {customClass} {newCustomSize}" />
 </span>

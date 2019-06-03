@@ -55,7 +55,7 @@ hr.is-medium {
   margin: 3rem 0
 }
 
-.is-clickable {
+.control .icon.is-clickable, .control.has-icons-left .icon.is-clickable, .control.has-icons-right .icon.is-clickable {
   pointer-events: auto;
   cursor: pointer;
 }

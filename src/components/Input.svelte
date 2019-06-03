@@ -29,8 +29,6 @@
    * */
   export let loading = false
 
-  export let hasIcons = false
-
   let input
   let isPasswordVisible = false
   let newType
@@ -46,7 +44,9 @@
 
   $: hasIconRight = passwordReveal || loading || statusType
 
-  $: passwordVisibleIcon = isPasswordVisible ? 'eye' : 'eye-slash'
+  $: passwordVisibleIcon = isPasswordVisible ? 'eye-slash' : 'eye'
+
+  $: console.log('passwordVisibleIcon', passwordVisibleIcon)
 
   $: {
     switch (statusType) {
@@ -62,6 +62,7 @@
   })
 
   async function togglePasswordVisibility() {
+    console.log('isPasswordVisible', !isPasswordVisible)
     isPasswordVisible = !isPasswordVisible
     newType = isPasswordVisible ? 'text' : 'password'
     await tick()
@@ -73,17 +74,17 @@
   class:has-icons-right={hasIconRight}
   class:is-loading={loading}>
 
-  <input {...props} {newType} {value} class="input {statusType} {size}" bind:this={input} on:input on:focus on:blur>
+  <input {...props} type={newType} {value} class="input {statusType} {size}" bind:this={input} on:input on:focus on:blur>
 
   {#if !loading && (passwordReveal || statusType)}
     <!-- pack={iconPack}
     size={iconSize} -->
     <Icon
+      pack="fas"
       isRight={true}
-      customClass={passwordReveal && 'is-clickable'}
+      isClickable={passwordReveal}
       icon={passwordReveal ? passwordVisibleIcon : statusTypeIcon}
       type={!passwordReveal ? statusType : 'is-primary'}
       on:click={togglePasswordVisibility} />
-
-  {/if}  
+  {/if}
 </div>
