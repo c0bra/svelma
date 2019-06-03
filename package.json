@@ -6,10 +6,14 @@
   "license": "MIT",
   "keywords": [
     "svelte",
+    "svelte.js",
+    "sveltejs",
     "bulma",
-    "component"
+    "component",
+    "components"
   ],
   "repository": {
+    "type": "git",
     "url": "https://github.com/c0bra/svelma"
   },
   "bugs": {
@@ -17,6 +21,10 @@
   },
   "module": "dist/module.js",
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "devDependencies": {
     "bulma": "^0.7.5",
     "get-port-cli": "^2.0.0",
@@ -26,6 +34,7 @@
     "prettier-plugin-svelte": "^0.5.1",
     "rollup": "^1.2.2",
     "rollup-plugin-alias": "^1.5.1",
+    "rollup-plugin-bundle-size": "^1.0.3",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-copy": "^2.0.1",
     "rollup-plugin-livereload": "^1.0.0",
