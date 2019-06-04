@@ -11,6 +11,8 @@
   let newCustomSize = ''
   let newType = ''
 
+  $: newPack = pack || 'fas'
+
   $: {
     if (customSize) newCustomSize = customSize
     else {
@@ -18,13 +20,13 @@
         case 'is-small':
           break
         case 'is-medium':
-          newCustomSize = 'fa-2x'
+          newCustomSize = 'fa-lg'
           break
         case 'is-large':
-          newCustomSize = 'fa-3x'
+          newCustomSize = 'fa-2x'
           break
         default:
-          newCustomSize = 'fa-lg'
+          newCustomSize = ''
       }
     }
   }
@@ -33,7 +35,7 @@
     if (!type) newType = ''
     let splitType = []
     if (typeof type === 'string') {
-        splitType = type.split('-')
+      splitType = type.split('-')
     } else {
       for (let key in type) {
         if (type[key]) {
@@ -43,13 +45,10 @@
       }
     }
     if (splitType.length <= 1) newType = ''
-
-    newType = `has-text-${splitType[1]}`
+    else newType = `has-text-${splitType[1]}`
   }
 </script>
 
-<span class="icon {size} {newType} {isRight && 'is-right'}"
-  class:is-clickable={isClickable}
-  on:click>
-  <i class="{pack} fa-{icon} {customClass} {newCustomSize}" />
+<span class="icon {size} {newType} {(isRight && 'is-right') || ''}" class:is-clickable={isClickable} on:click>
+  <i class="{newPack} fa-{icon} {customClass} {newCustomSize}" />
 </span>
