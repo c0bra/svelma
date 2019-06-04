@@ -31,6 +31,8 @@
 
 <Example code={`<script>
   import { Button } from 'svelma'
+
+  let counter = 0
 </script>
 
 <Button type="is-primary" on:click={() => counter++}>
@@ -127,17 +129,34 @@
 
 <hr class="is-medium">
 
-<p class="title is-4">Sizes</p>
+<p class="title is-4">Icons</p>
 
 <Example code={`<script>
-  import { Button } from 'svelma'
+  import { Button, Icon } from 'svelma'
 </script>
 
 <div class="buttons">
-  <Button size="is-small">Small</Button>
-  <Button>Default</Button>
-  <Button size="is-medium">Medium</Button>
-  <Button size="is-large">Large</Button>
+  <Button>
+    <Icon icon="bold" />
+  </Button>
+  <Button>
+    <Icon icon="underline" />
+  </Button>
+  <Button>
+    <Icon icon="italic" />
+  </Button>
+</div>
+<div class="buttons">
+  <Button iconPack="fab" iconLeft="github">GitHub</Button>
+  <Button type="is-primary" iconPack="fab" iconLeft="twitter">Twitter</Button>
+  <Button type="is-success" iconPack="fa" iconLeft="check">Save</Button>
+  <Button type="is-danger" outline iconPack="fa" iconRight="times">Delete</Button>
+</div>
+<div class="buttons">
+  <Button size="is-small" iconPack="fab" iconLeft="github">GitHub</Button>
+  <Button iconLeft="github" iconPack="fab">GitHub</Button>
+  <Button size="is-medium" iconPack="fab" iconLeft="github">GitHub</Button>
+  <Button size="is-large" iconPack="fab" iconLeft="github">GitHub</Button>
 </div>`}>
   <div slot="preview">
     <div class="buttons">

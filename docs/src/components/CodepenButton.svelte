@@ -1,38 +1,124 @@
 <script>
+  import { getParameters } from 'codesandbox/lib/api/define'
+
   export let title = 'Svelma Example'
   export let code
 
   let form
 
   const externalStyles = [
-    'https://unpkg.com/buefy/dist/buefy.min.css',
+    'https://unpkg.com/bulma/css/bulma.min.css',
     'https://use.fontawesome.com/releases/v5.3.1/css/all.css',
   ]
 
-  const externalScripts = ['https://bundle.run/svelma']
+  const externalScripts = ['https://unpkg.com/svelma/dist/index.js']
 
   function extractTag(code, tag) {
-    const start = code.indexOf(`<${tag}>`)
+    let start = code.indexOf(`<${tag}>`)
+    if (start === -1) return
+
+    start = start + tag.length + 2
     const end = code.lastIndexOf(`<\/${tag}>`)
 
     const extracted = code.substring(start, end)
 
-    console.log({ extracted })
+    return extracted
+  }
+
+  function extractHTML(code) {
+    code = code.replace(/<script>[\s\S]*<\/script>/im, '')
+    code = code.replace(/<script>[\s\S]*<\/style>/im, '')
+
+    return code
   }
 
   // $: html = code.
 
-  $: value = JSON.stringify({
-    title,
-    tags: ['svelma', 'svelte', 'bulma'],
-    // html,
-    js_pre_processor: 'babel',
-    css_pre_processor: 'scss',
-    html_classes: 'section',
-    head: "<meta name='viewport' content='width=device-width, initial-scale=1'>",
-    css_external: externalStyles.join(';'),
-    js_external: externalScripts.join(';'),
+  // $: value = JSON.stringify({
+  //   title,
+  //   tags: ['svelma', 'svelte', 'bulma'],
+  //   html: extractHTML(code),
+  //   css: extractTag(code, 'style'),
+  //   js: extractTag(code, 'script'),
+  //   js_pre_processor: 'babel',
+  //   css_pre_processor: 'scss',
+  //   html_classes: 'section',
+  //   head: "<meta name='viewport' content='width=device-width, initial-scale=1'>",
+  //   css_external: externalStyles.join(';'),
+  //   js_external: externalScripts.join(';'),
+  // })
+
+  $: value = getParameters({
+    externalResources: externalStyles,
+    files: {
+      'sandbox.config.json': {
+        content: {
+          template: 'svelte',
+        },
+      },
+      'index.html': {
+        content: `<html>
+  <body>
+    <link
+      id="external-css"
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/bulma/css/bulma.min.css"
+      media="all"
+    />
+    <link
+      id="external-css2"
+      rel="stylesheet"
+      type="text/css"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      media="all"
+    />
+  </body>
+</html>`,
+      },
+      'index.js': {
+        content: `import '@fortawesome/fontawesome-free/css/all.css';
+import 'bulma/css/bulma.css';
+import App from "./App.svelte";
+
+const app = new App({
+  target: document.body
+});
+
+export default app;`,
+      },
+      'App.svelte': { content: code },
+      'package.json': {
+        content: {
+          name: 'svelma-example',
+          version: '1.0.0',
+          devDependencies: {
+            'npm-run-all': '^4.1.5',
+            rollup: '^1.10.1',
+            'rollup-plugin-commonjs': '^9.3.4',
+            'rollup-plugin-node-resolve': '^4.2.3',
+            'rollup-plugin-svelte': '^5.0.3',
+            'rollup-plugin-terser': '^4.0.4',
+            'sirv-cli': '^0.3.1',
+          },
+          dependencies: {
+            svelte: '^3.4.4',
+            svelma: 'latest',
+            '@fortawesome/fontawesome-free': 'latest',
+            bulma: 'latest',
+          },
+          scripts: {
+            build: 'rollup -c',
+            autobuild: 'rollup -c -w',
+            dev: 'run-p start:dev autobuild',
+            start: 'sirv public',
+            'start:dev': 'sirv public --dev',
+          },
+        },
+      },
+    },
   })
+  // $: console.log('value', value, 'value-end')
 
   function open() {
     form.submit()
@@ -46,8 +132,8 @@
   }
 </style>
 
-<form action="https://codepen.io/pen/define" method="POST" target="_blank" bind:this={form}>
-  <input type="hidden" name="data" {value} />
+<form action="https://codesandbox.io/api/v1/sandboxes/define" method="POST" target="_blank" bind:this={form}>
+  <input type="hidden" name="parameters" {value} />
   <div class="slot-wrap" on:click={open}>
     <slot />
   </div>

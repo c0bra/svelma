@@ -168,7 +168,7 @@
 <div class="snippet">
   <CodepenButton {code}>
     <div class="codepen-button">
-      CodePen
+      Codesandbox
       <i class="icon is-small fas fa-external-link-alt" />
     </div>
   </CodepenButton>

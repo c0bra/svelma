@@ -5,6 +5,7 @@
 
   /** HTML tag to use for button (either 'a' or 'button')
    * @svelte-prop {String} tag=button
+   * @values <code>button</code>, <code>a</code>
    * */
   export let tag = 'button'
 
