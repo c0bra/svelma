@@ -2,6 +2,7 @@
   import { onMount } from 'svelte'
   import { Button } from 'svelma'
   import Code from './Code.svelte'
+  import CodepenButton from './CodepenButton.svelte'
 
   export let lang = 'xml'
   export let code
@@ -37,12 +38,12 @@
   }
 
   .preview {
-    width: 50%;
+    min-width: 50%;
     padding: 1.5rem;
   }
 
   .code {
-    width: 50%;
+    min-width: 50%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -121,6 +122,22 @@
     display: flex;
   }
 
+  .codepen-button {
+    position: absolute;
+    display: inline-flex;
+    background: #ffdd57;
+    border-radius: 4px 4px 0 0;
+    bottom: 100%;
+    font-size: 7px;
+    font-weight: 700;
+    right: -1px;
+    padding: 0 0 0 8px;
+    vertical-align: top;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 17px;
+  }
+
   /*.code {
     :global(.codeview) {
       height: 100%;
@@ -149,6 +166,12 @@
 </style>
 
 <div class="snippet">
+  <CodepenButton {code}>
+    <div class="codepen-button">
+      CodePen
+      <i class="icon is-small fas fa-external-link-alt" />
+    </div>
+  </CodepenButton>
   <div class="preview">
     <slot name="preview" />
   </div>
