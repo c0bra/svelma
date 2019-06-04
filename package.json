@@ -1,7 +1,7 @@
 {
   "name": "svelma",
   "description": "Bulma components for Svelte",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Brian Hann",
   "license": "MIT",
   "keywords": [
