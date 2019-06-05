@@ -609,7 +609,7 @@
         "name": "position"
       },
       "kind": "prop",
-      "values": "<code>is-top</code>, <code>is-bottom</code>, <code>is-top-left</code>, <code>is-top<-right/code>, <code>is-bottom-left</code>, <code>is-bottom<-right/code>",
+      "values": "<code>is-top</code>, <code>is-bottom</code>, <code>is-top-left</code>, <code>is-top-right</code>, <code>is-bottom-left</code>, <code>is-bottom-right</code>",
       "longname": "module:Toast~position",
       "scope": "inner",
       "memberof": "module:Toast",

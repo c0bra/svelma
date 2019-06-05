@@ -19,7 +19,7 @@
 
   /** Where the toast will show on the screen
    * @svelte-prop {String} [position=is-top]
-   * @values <code>is-top</code>, <code>is-bottom</code>, <code>is-top-left</code>, <code>is-top<-right/code>, <code>is-bottom-left</code>, <code>is-bottom<-right/code>
+   * @values <code>is-top</code>, <code>is-bottom</code>, <code>is-top-left</code>, <code>is-top-right</code>, <code>is-bottom-left</code>, <code>is-bottom-right</code>
    * */
   export let position = 'is-top'
 

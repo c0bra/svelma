@@ -32,7 +32,8 @@
 
 <Button on:click={() => open()}>Toast</Button>
 <Button type="is-success" on:click={() => open('is-success')}>Success</Button>
-<Button type="is-danger" on:click={() => open('is-danger', 'is-bottom-right')}>Bottom Right</Button>`}>
+<Button type="is-danger" on:click={() => open('is-danger', 'is-bottom-right')}>Bottom Right</Button>
+<Button type="is-primary" on:click={() => open('is-primary', 'is-top', 'has-background-grey-lighter')}>Custom Background</Button>`}>
   <div slot="preview">
     <Button on:click={() => open()}>Toast</Button>
     <Button type="is-success" on:click={() => open('is-success')}>Success</Button>
