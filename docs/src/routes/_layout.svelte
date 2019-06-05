@@ -41,6 +41,11 @@
 
 <svelte:head>
   <title>Svelma</title>
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Svelma" />
+  <!-- <meta property="og:title" value="Svelma" />
+  <meta property="og:description" value="Bulma components for Svelte" />
+  <meta property="og:image" value="https://c0bra.github.io/svelma/svelma-logo.svg" /> -->
 </svelte:head>
 
 <Nav {segment} />
