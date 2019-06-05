@@ -39,6 +39,7 @@
     "rollup-plugin-copy": "^2.0.1",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-scss": "^1.0.1",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
     "sirv-cli": "^0.3.1",

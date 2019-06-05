@@ -7,7 +7,7 @@
 <script>
   import { Svelma as Components } from 'svelma'
 
-  const components = Object.keys(Components).sort();
+  const components = Object.keys(Components).sort()
 </script>
 
 <style>
@@ -41,6 +41,7 @@
     right: 50%;
     background: #f5f5f5;
     min-height: calc(100vh - 4rem);
+    z-index: -1;
   }
 
   @media screen and (max-width: 1087px) {
@@ -51,7 +52,7 @@
   }
 </style>
 
-<!-- <div class="sidebar-bg"></div> -->
+<div class="sidebar-bg" />
 <aside class="sidebar">
   <p class="sidebar-label">Installation</p>
   <ul>

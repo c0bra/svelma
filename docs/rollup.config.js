@@ -7,6 +7,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 import resolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
+import scss from 'rollup-plugin-scss'
 import svelte from 'rollup-plugin-svelte'
 import { sass } from 'svelte-preprocess-sass'
 import { terser } from 'rollup-plugin-terser'
@@ -32,6 +33,7 @@ export default {
         '~': path.join(__dirname, '../src'),
         svelma: '../src/index.js',
       }),
+      // scss(),
       svelte({
         dev,
         hydratable: true,
@@ -95,6 +97,7 @@ export default {
         '~': path.join(__dirname, '../src'),
         svelma: '../src/index.js',
       }),
+      // scss(),
       svelte({
         generate: 'ssr',
         dev,

@@ -6,13 +6,6 @@
 
   let form
 
-  const externalStyles = [
-    'https://unpkg.com/bulma/css/bulma.min.css',
-    'https://use.fontawesome.com/releases/v5.3.1/css/all.css',
-  ]
-
-  const externalScripts = ['https://unpkg.com/svelma/dist/index.js']
-
   function extractTag(code, tag) {
     let start = code.indexOf(`<${tag}>`)
     if (start === -1) return
@@ -32,24 +25,7 @@
     return code
   }
 
-  // $: html = code.
-
-  // $: value = JSON.stringify({
-  //   title,
-  //   tags: ['svelma', 'svelte', 'bulma'],
-  //   html: extractHTML(code),
-  //   css: extractTag(code, 'style'),
-  //   js: extractTag(code, 'script'),
-  //   js_pre_processor: 'babel',
-  //   css_pre_processor: 'scss',
-  //   html_classes: 'section',
-  //   head: "<meta name='viewport' content='width=device-width, initial-scale=1'>",
-  //   css_external: externalStyles.join(';'),
-  //   js_external: externalScripts.join(';'),
-  // })
-
   $: value = getParameters({
-    externalResources: externalStyles,
     files: {
       'sandbox.config.json': {
         content: {
@@ -77,9 +53,7 @@
 </html>`,
       },
       'index.js': {
-        content: `import '@fortawesome/fontawesome-free/css/all.css';
-import 'bulma/css/bulma.css';
-import App from "./App.svelte";
+        content: `import App from "./App.svelte";
 
 const app = new App({
   target: document.body
@@ -118,7 +92,6 @@ export default app;`,
       },
     },
   })
-  // $: console.log('value', value, 'value-end')
 
   function open() {
     form.submit()

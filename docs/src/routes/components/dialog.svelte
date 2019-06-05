@@ -11,7 +11,7 @@
 <DocHeader title="Modal" subtitle="Modal popups" />
 
 <Example code={`<script>
-  import { Dialog } from Svelma
+  import { Button, Dialog } from 'svelma'
 
   function alert() {
     Dialog.alert('Alles ist gut')

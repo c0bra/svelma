@@ -1,11 +1,10 @@
 <script context="module">
   export async function preload() {
-  const res = await this.fetch(`components/input.json`);
-  const jsdoc = await res.json();
+    const res = await this.fetch(`components/input.json`);
+    const jsdoc = await res.json();
 
-  return { jsdoc };
-}
-
+    return { jsdoc };
+  }
 </script>
 
 <script>

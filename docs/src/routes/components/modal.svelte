@@ -9,6 +9,8 @@
 <DocHeader title="Modal" subtitle="Modal popups" />
 
 <Example code={`<script>
+  import { Button, Modal } from 'svelma'
+  
   let active = false
 </script>
 

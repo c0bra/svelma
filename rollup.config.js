@@ -1,6 +1,7 @@
 import bundleSize from 'rollup-plugin-bundle-size'
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
+import scss from 'rollup-plugin-scss'
 import svelte from 'rollup-plugin-svelte'
 import { sass } from 'svelte-preprocess-sass';
 import { terser } from 'rollup-plugin-terser'
@@ -27,6 +28,9 @@ export default {
     },
   ],
   plugins: [
+    scss({
+      output: false,
+    }),
     svelte({
       // enable run-time checks when not in production
       dev: !production,

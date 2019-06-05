@@ -522,5 +522,160 @@
     }
   ],
   "Message": [],
-  "Modal": []
+  "Modal": [],
+  "Notice": [],
+  "Toast": [
+    {
+      "meta": {
+        "filename": "Toast.svelte",
+        "lineno": 9,
+        "columnno": 2,
+        "path": "src/components/Toast"
+      },
+      "description": "Text or html message for toast",
+      "type": [
+        "String"
+      ],
+      "name": "message",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "name": "message"
+      },
+      "kind": "prop",
+      "longname": "module:Toast~message",
+      "scope": "inner",
+      "memberof": "module:Toast",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Toast.svelte",
+        "lineno": 16,
+        "columnno": 2,
+        "path": "src/components/Toast"
+      },
+      "description": "Duration toast will remain on screen",
+      "type": [
+        "Number"
+      ],
+      "optional": true,
+      "defaultvalue": 2000,
+      "name": "duration",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Number"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": 2000,
+        "name": "duration"
+      },
+      "kind": "prop",
+      "longname": "module:Toast~duration",
+      "scope": "inner",
+      "memberof": "module:Toast",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Toast.svelte",
+        "lineno": 21,
+        "columnno": 2,
+        "path": "src/components/Toast"
+      },
+      "description": "Where the toast will show on the screen",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "defaultvalue": "is-top",
+      "name": "position",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": "is-top",
+        "name": "position"
+      },
+      "kind": "prop",
+      "values": "<code>is-top</code>, <code>is-bottom</code>, <code>is-top-left</code>, <code>is-top<-right/code>, <code>is-bottom-left</code>, <code>is-bottom<-right/code>",
+      "longname": "module:Toast~position",
+      "scope": "inner",
+      "memberof": "module:Toast",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Toast.svelte",
+        "lineno": 27,
+        "columnno": 2,
+        "path": "src/components/Toast"
+      },
+      "description": "Type (color)",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "defaultvalue": "is-dark",
+      "name": "type",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": "is-dark",
+        "name": "type"
+      },
+      "kind": "prop",
+      "values": "<code>is-white</code>, <code>is-black</code>, <code>is-light</code>, <code>is-dark</code>, <code>is-primary</code>, <code>is-info</code>, <code>is-success</code>, <code>is-warning</code>, <code>is-danger</code>",
+      "longname": "module:Toast~type",
+      "scope": "inner",
+      "memberof": "module:Toast",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Toast.svelte",
+        "lineno": 33,
+        "columnno": 2,
+        "path": "src/components/Toast"
+      },
+      "description": "Background type (any of the Bulma <code>has-background-</code> classes will work)",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "background",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "background"
+      },
+      "kind": "prop",
+      "values": "<code>has-background-*</code>",
+      "longname": "module:Toast~background",
+      "scope": "inner",
+      "memberof": "module:Toast",
+      "___s": true
+    }
+  ]
 }

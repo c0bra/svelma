@@ -20,16 +20,22 @@
     flex-direction: row;
   }
 
-  @media screen and (max-width: 1087px) {
-    .docs {
-      flex-direction: column;
-    }
-  }
-
   .docs-main {
     flex-grow: 1;
     flex-shrink: 1;
     padding: 3rem;
+    background-color: white;
+    min-height: calc(100vh - 4rem);
+  }
+
+  @media screen and (max-width: 1087px) {
+    .docs {
+      flex-direction: column;
+    }
+
+    .docs-main {
+      min-height: unset;
+    }
   }
 </style>
 
@@ -40,7 +46,7 @@
 <Nav {segment} />
 
 <main>
-  <section class="docs container">
+  <section class="docs">
     <Sidebar />
 
     <div class="docs-main">
