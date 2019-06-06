@@ -51,6 +51,7 @@
       filter: invert(1) brightness(2.5) grayscale(1) contrast(9);
       background: inherit;
       background-clip: text !important;
+      -webkit-background-clip: text !important;
     }
   }
 </style>
