@@ -12,9 +12,9 @@ Much thanks to the [Buefy](https://buefy.org) project! It provided the inspirati
 
 # Features
 
-* Extremely lightweight thanks to Svelte, a compile-only javascript framework. The bundle is `37K` minified, `11K` gzipped.
+* Extremely lightweight thanks to Svelte, a compile-only javascript framework. The bundle is `50K` minified, `14K` gzipped.
+* Components can be used independently, so a modern tree-shaking bundler will reduce the final bundle size even further.
 * Svelma does not bundle Bulma, so you are free to include it in your project however you wish, themes and all.
-* 
 
 # Documentation
 

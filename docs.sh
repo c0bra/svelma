@@ -3,6 +3,8 @@
 # abort on errors
 set -e
 
+NODE_ENV=production npm run build
+NODE_ENV=production npm run jsdocs
 NODE_ENV=production npm run docs
 
 # navigate into the build output directory
