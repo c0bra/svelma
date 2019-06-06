@@ -1,7 +1,7 @@
 {
   "name": "svelma",
   "description": "Bulma components for Svelte",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Brian Hann",
   "license": "MIT",
   "keywords": [
@@ -55,7 +55,7 @@
     "docs": "(cd docs; npx sapper export --basepath svelma)",
     "docs:deploy": "./docs.sh",
     "autodocs": "(cd docs; npx sapper dev --basepath svelma)",
-    "jsdocs": "(cd docs; npx jsdoc -c jsdoc/conf.js)"
-  },
-  "prepublish": "build"
+    "jsdocs": "(cd docs; npx jsdoc -c jsdoc/conf.js)",
+    "prepublish": "npm run build"
+  }
 }
