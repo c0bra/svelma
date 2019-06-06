@@ -34,7 +34,7 @@ Demos and docs live together as a [Sapper](https://sapper.svelte.dev) site.
 <!-- App.svelte -->
 <script>
   import 'bulma/css/bulma.css'
-  import Button from 'svelma'
+  import { Button } from 'svelma'
 </script>
 
 <Button type="primary">I'm a Button!</Button>
