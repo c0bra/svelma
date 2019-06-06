@@ -55,7 +55,6 @@
     parent = notices.top
     if (position && position.indexOf('is-bottom') === 0) parent = notices.bottom
 
-    // el.parentNode.removeChild(el)
     parent.insertAdjacentElement('afterbegin', el)
   }
 
@@ -64,7 +63,7 @@
     chooseParent()
 
     timer = setTimeout(() => {
-      // close()
+      close()
     }, duration)
   })
 </script>

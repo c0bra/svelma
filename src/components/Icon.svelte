@@ -23,7 +23,7 @@
           newCustomSize = 'fa-lg'
           break
         case 'is-large':
-          newCustomSize = 'fa-2x'
+          newCustomSize = 'fa-3x'
           break
         default:
           newCustomSize = ''

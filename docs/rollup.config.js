@@ -7,7 +7,6 @@ import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 import resolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
-import scss from 'rollup-plugin-scss'
 import svelte from 'rollup-plugin-svelte'
 import { sass } from 'svelte-preprocess-sass'
 import { terser } from 'rollup-plugin-terser'
@@ -21,6 +20,7 @@ const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
 export default {
   client: {
+    watch: { chokidar: true },
     input: config.client.input(),
     output: config.client.output(),
     plugins: [
@@ -85,6 +85,7 @@ export default {
   },
 
   server: {
+    watch: { chokidar: true },
     input: config.server.input(),
     output: config.server.output(),
     plugins: [
@@ -115,6 +116,7 @@ export default {
   },
 
   serviceworker: {
+    watch: { chokidar: true },
     input: config.serviceworker.input(),
     output: config.serviceworker.output(),
     plugins: [

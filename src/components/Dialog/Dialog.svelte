@@ -1,27 +1,99 @@
 <script>
-  import { onDestroy, onMount, tick } from 'svelte'
+  import { createEventDispatcher, onDestroy, onMount, tick } from 'svelte'
   import Icon from '../Icon.svelte'
   import { chooseAnimation, isEnterKey, isEscKey } from '../../utils'
-
+  
+  /** Show a header on the dialog with this text
+   * @svelte-prop {String} [message]
+   * */
   export let title = ''
+
+  /** Text or html message for this dialog
+   * @svelte-prop {String} message
+   * */
   export let message
+
+  /** Text to show on the confirmation button
+   * @svelte-prop {String} [confirmText=OK]
+   * */
   export let confirmText = 'OK'
+
+  /** Text to show on the cancel  button
+   * @svelte-prop {String} [cancelText=Cancel]
+   * */
   export let cancelText = 'Cancel'
+
+  /** Focus on confirm or cancel button when dialog opens
+   * @svelte-prop {String} [focusOn=confirm]
+   * @values <code>confirm</code>, <code>cancel</code>
+   * */
   export let focusOn = 'confirm'
+
+  /** Show this icon on left-side of dialog. It will use the color from <code>type</code>
+   * @svelte-prop {String} [icom]
+   * */
   export let icon = ''
+
+  /** Fontawesome icon pack to use. By default the <code>Icon</code> component uses <code>fas</code>
+   * @svelte-prop {String} [iconPack]
+   * @values <code>fas</code>, <code>fab</code>, etc...
+   * */
   export let iconPack = ''
+
+  /** Show an input field
+   * @svelte-prop {Boolean} [hasInput=false]
+   * */
   export let hasInput = false
+
+  /** Handler to fire when user clicks cancel button
+   * @svelte-prop {Function} [onCancel]
+   * */
   export let onCancel = () => {}
+
+  /** Handler to fire when user clicks confirm button
+   * @svelte-prop {Function} [onConfirm]
+   * */
   export let onConfirm = () => {}
+  
   export let prompt = null
-  export let showCancel = true
+
+  /** Show the cancel button. True for <code>confirm()</code>
+   * @svelte-prop {Boolean} [showCancel=false]
+   * */
+  export let showCancel = false
+
+  /** Dialog's size
+   * @svelte-prop {String} [size]
+   * @values $$sizes$$
+   * */
   export let size = ''
+
+  /** Type (color) to use on confirm button and icon
+   * @svelte-prop {String} [type=is-primary]
+   * @values $$colors$$
+   * */
   export let type = 'is-primary'
 
   export let active = true
+
+  /** Animation to use when showing dialog
+   * @svelte-prop {String|Function} [animation=scale]
+   * @values Any transition name that ships with Svelte, or a custom function
+   * */
   export let animation = 'scale'
+
+  /** Props to pass to animation function
+   * @svelte-prop {Object} [animProps={ start: 1.2 }]
+   * */
   export let animProps = { start: 1.2 }
-  export let showClose = true
+
+  /** Props (attributes) to use to on prompt input element
+   * @svelte-prop {Object} [inputProps]
+   * */
+  export let inputProps = {}
+
+  // export let showClose = true
+
   // TODO: programmatic subcomponents
   export let subComponent = null
   export let appendToBody = true
@@ -30,6 +102,9 @@
   let cancelButton
   let confirmButton
   let input
+  let validationMessage = ''
+
+  const dispatch = createEventDispatcher()
 
   $: _animation = chooseAnimation(animation)
   $: {
@@ -38,6 +113,7 @@
       document.body.appendChild(modal)
     }
   }
+  $: newInputProps = { required: true, ...inputProps }
 
   onMount(async () => {
     await tick()
@@ -59,10 +135,22 @@
 
   function close() {
     active = false
+    dispatch('destroyed')
   }
 
-  function confirm() {
-    onConfirm()
+  async function confirm() {
+    if (input && !input.checkValidity()) {
+      validationMessage = input.validationMessage
+
+      await tick()
+      input.select()
+
+      return
+    }
+    
+    validationMessage = ''
+
+    onConfirm(prompt)
     close()
   }
 
@@ -141,9 +229,10 @@
       {#if title}
         <header class="modal-card-head">
           <p class="modal-card-title">{title}</p>
-          {#if showClose}
+          <!-- NOTE: don't think we need this... -->
+          <!-- {#if showClose}
             <button class="delete" aria-label="close" on:click={close}></button>
-          {/if}
+          {/if} -->
         </header>
       {/if}
       <section class="modal-card-body" class:is-titleless={!title} class:is-flex={icon}>
@@ -163,8 +252,9 @@
                       bind:value={prompt}
                       class="input"
                       bind:this={input}
-                      v-bind="inputAttrs"
-                      on:keyup={e => isEnterKey(e) && confirm}>
+                      {...newInputProps}
+                      on:keyup={e => isEnterKey(e) && confirm()}>
+                  <p class="help is-danger">{validationMessage}</p>
                 </div>
               </div>
             {/if}
@@ -178,14 +268,14 @@
               class="button"
               bind:this={cancelButton}
               on:click={cancel}>
-              { cancelText }
+              {cancelText}
           </button>
         {/if}
         <button
             class="button {type}"
             bind:this={confirmButton}
             on:click={confirm}>
-            { confirmText }
+            {confirmText}
         </button>
       </footer>
     </div>

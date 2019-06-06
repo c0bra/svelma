@@ -52,5 +52,4 @@
   </div>
 </Example>
 
-
 <JSDoc {jsdoc} />

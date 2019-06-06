@@ -1,10 +1,6 @@
 import Dialog from './Dialog.svelte'
 
-Dialog.alert = alert
-
-export default Dialog
-
-export function alert(props) {
+function createDialog(props) {
   if (typeof props === 'string') props = { message: props }
 
   const dialog = new Dialog({
@@ -13,7 +9,31 @@ export function alert(props) {
     intro: true,
   });
 
-  dialog.close = () => dialog.$destroy();
+  dialog.$on('destroy', () => {
+    dialog.$destroy
+  })
 
   return dialog;
 }
+
+export function alert(props) {
+  return createDialog(props);
+}
+
+export function confirm(props) {
+  if (typeof props === 'string') props = { message: props }
+
+  return createDialog({ showCancel: true, ...props });
+}
+
+export function prompt(props) {
+  if (typeof props === 'string') props = { message: props }
+
+  return createDialog({ hasInput: true, confirmText: 'Done', ...props });
+}
+
+Dialog.alert = alert
+Dialog.confirm = confirm
+Dialog.prompt = prompt
+
+export default Dialog
