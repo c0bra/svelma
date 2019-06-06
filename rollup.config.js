@@ -1,3 +1,4 @@
+import analyze from 'rollup-plugin-analyzer'
 import bundleSize from 'rollup-plugin-bundle-size'
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
@@ -47,7 +48,8 @@ export default {
 
     production && terser(),
 
-    bundleSize(),
+    production && analyze(),
+    production && bundleSize(),
   ],
   watch: {
     clearScreen: false,

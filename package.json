@@ -34,6 +34,7 @@
     "prettier-plugin-svelte": "^0.5.1",
     "rollup": "^1.2.2",
     "rollup-plugin-alias": "^1.5.1",
+    "rollup-plugin-analyzer": "^3.0.1",
     "rollup-plugin-bundle-size": "^1.0.3",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-copy": "^2.0.1",
@@ -56,5 +57,5 @@
     "autodocs": "(cd docs; npx sapper dev --basepath svelma)",
     "jsdocs": "(cd docs; npx jsdoc -c jsdoc/conf.js)"
   },
-  "pre-publish": "build"
+  "prepublish": "build"
 }

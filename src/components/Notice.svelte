@@ -1,61 +1,104 @@
 <script context="module">
-  // import { writable } from 'svelte/store'
-
-  // export let noticesTop
-  // export let noticesBottom
-  export const notices = {}
+  export function fitlerProps(props) {
+    const { active, type, position, duration } = props
+    return { active, type, position, duration }
+  }
 </script>
 
 <script>
-  // import { onMount } from 'svelte'
+  import { createEventDispatcher, onDestroy, onMount } from 'svelte'
+  import { fly, fade } from 'svelte/transition'
+  import Notices, { notices } from './Notices.svelte'
 
-  // const div = () => document.createElement('div')
+  const dispatch = createEventDispatcher()
 
-  // onMount(() => {
-  //   if (!noticesTop) {
-  //     noticesTop = div()
-  //     noticesTop.className = 'notices is-top'
-  //     document.body.appendChild(noticesTop)
-  //   }
-  //   if (!noticesBottom) {
-  //     noticesBottom = div()
-  //     noticesBottom.className = 'notices is-bottom'
-  //     document.body.appendChild(noticesBottom)
-  //   }
-  // })
+  export let active = true
+  export let type = 'is-dark'
+  export let position = 'is-top'
+  export let duration = 2000
+
+  let el
+  let parent
+  let timer
+  const div = () => document.createElement('div')
+
+  $: transitionY = ~position.indexOf('is-top') ? -200 : 200
+
+  function close() {
+    active = false
+  }
+
+  function remove() {
+    clearTimeout(timer)
+
+    // Just making sure
+    active = false
+
+    dispatch('destroyed')
+  }
+
+  function setupContainers() {
+    if (!notices.top) {
+      notices.top = div()
+      notices.top.className = 'notices is-top'
+      document.body.appendChild(notices.top)
+    }
+    if (!notices.bottom) {
+      notices.bottom = div()
+      notices.bottom.className = 'notices is-bottom'
+      document.body.appendChild(notices.bottom)
+    }
+  }
+
+  function chooseParent() {
+    parent = notices.top
+    if (position && position.indexOf('is-bottom') === 0) parent = notices.bottom
+
+    // el.parentNode.removeChild(el)
+    parent.insertAdjacentElement('afterbegin', el)
+  }
+
+  onMount(() => {
+    setupContainers()
+    chooseParent()
+
+    timer = setTimeout(() => {
+      close()
+    }, duration)
+  })
 </script>
 
 <style lang="sass">
-  :global(.notices) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    padding: 3em;
-    z-index: 1000;
-    pointer-events: none;
-    display: flex;
+  .notice {
+    display: inline-flex;
+    pointer-events: auto;
 
-    &.is-top {
-      flex-direction: column;
-    }
-
+    &.is-top,
     &.is-bottom {
-      flex-direction: column-reverse;
+      align-self: center;
     }
 
-    [class*='has-background-'] * {
-      color: transparent !important;
-      filter: invert(1) brightness(2.5) grayscale(1) contrast(9);
-      background: inherit;
-      background-clip: text !important;
-      -webkit-background-clip: text !important;
+    &.is-top-left,
+    &.is-bottom-left {
+      align-self: flex-start;
+    }
+
+    &.is-top-right,
+    &.is-bottom-right {
+      align-self: flex-end;
     }
   }
 </style>
 
-<div class="notice">
-  <slot />
-</div>
+{#if active}
+  <div
+    class="notice {position}"
+    aria-hidden={!active}
+    in:fly={{ y: transitionY }}
+    out:fade
+    on:outroend={remove}
+    bind:this={el}>
+
+    <slot />
+  </div>
+{/if}
