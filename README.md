@@ -1,7 +1,7 @@
 # Svelma
 > Svelma is a set of UI components for [Svelte](https://svelte.dev) based on the [Bulma](http://bulma.io) CSS framework.
 
-<a href="https://www.npmjs.com/package/buefy"><img src="https://img.shields.io/npm/v/svelma.svg" /></a>
+<a href="https://www.npmjs.com/package/svelma"><img src="https://img.shields.io/npm/v/svelma.svg" /></a>
 <a href="https://www.npmjs.com/package/svelma"><img src="https://img.shields.io/npm/l/svelma.svg" /></a>
 <a href="https://bundlephobia.com/result?p=svelma"><img src="https://badgen.net/bundlephobia/minzip/svelma"></a>
 <!-- <a href="https://circleci.com/gh/c0bra/svelma"><img src="https://img.shields.io/circleci/project/c0bra/svelma/svelma.svg?style=flat-square" /></a> -->
