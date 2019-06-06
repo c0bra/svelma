@@ -5,12 +5,15 @@
 </script>
 
 <script>
+  import difference from 'lodash/difference'
   import { Svelma as Components } from 'svelma'
 
-  const components = Object.keys(Components).sort()
+  const formComponents = ['Input', 'Field'].sort()
+  let components = ['Form', ...Object.keys(Components)].sort()
+  components = difference(components, formComponents)
 </script>
 
-<style>
+<style lang="sass">
   .sidebar {
     display: flex;
     flex-direction: column;
@@ -23,6 +26,14 @@
   .sidebar > ul {
     margin-bottom: 1.5em;
     margin-top: 0;
+
+    ul {
+      margin-left: 1.5em;
+    }
+  }
+
+  .sidebar li {
+    font-weight: 600;
   }
 
   .sidebar-label {
@@ -68,7 +79,18 @@
   <ul>
     {#each components as c}
       <li>
-        <a href="components/{c.toLowerCase()}">{c}</a>
+        {#if c === 'Form'}
+          <p>{c}</p>
+          <ul>
+            {#each formComponents as fc}
+              <li>
+                <a href="components/{fc.toLowerCase()}">{fc}</a>
+              </li>
+            {/each}
+          </ul>
+        {:else}
+          <a href="components/{c.toLowerCase()}">{c}</a>
+        {/if}
       </li>
     {/each}
     <!-- <li>
