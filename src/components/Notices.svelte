@@ -23,7 +23,7 @@
       flex-direction: column-reverse;
     }
 
-    [class*='has-background-'] * {
+    [class*='has-background-'] .text {
       color: transparent !important;
       filter: invert(1) brightness(2.5) grayscale(1) contrast(9);
       background: inherit;

@@ -16,6 +16,7 @@
   export let type = 'is-dark'
   export let position = 'is-top'
   export let duration = 2000
+  export let transitionOut = true
 
   let el
   let parent
@@ -24,7 +25,7 @@
 
   $: transitionY = ~position.indexOf('is-top') ? -200 : 200
 
-  function close() {
+  export function close() {
     active = false
   }
 
@@ -63,7 +64,7 @@
     chooseParent()
 
     timer = setTimeout(() => {
-      close()
+      // close()
     }, duration)
   })
 </script>
@@ -95,7 +96,7 @@
     class="notice {position}"
     aria-hidden={!active}
     in:fly={{ y: transitionY }}
-    out:fade
+    out:fade={{ duration: transitionOut ? 400 : 0 }}
     on:outroend={remove}
     bind:this={el}>
 

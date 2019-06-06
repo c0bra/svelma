@@ -33,7 +33,7 @@
    * */
   export let background = ''
 
-  $: newBbackground = background || type.replace(/^is-(.*)/, 'has-background-$1')
+  $: newBackground = background || type.replace(/^is-(.*)/, 'has-background-$1')
 </script>
 
 <style lang="sass">
@@ -48,8 +48,8 @@
 </style>
 
 <Notice {...fitlerProps($$props)}>
-  <div class="toast {type} {newBbackground}" role="alert">
-    <div> <!-- NOTE: this extra div is for dynamic text styling with background-clip -->
+  <div class="toast {type} {newBackground}" role="alert">
+    <div class="text"> <!-- NOTE: this extra div is for dynamic text styling with background-clip -->
       {@html message}
     </div>
   </div>
