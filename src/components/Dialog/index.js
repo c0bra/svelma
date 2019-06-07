@@ -13,7 +13,7 @@ function createDialog(props) {
     dialog.$destroy
   })
 
-  return dialog;
+  return dialog.promise
 }
 
 export function alert(props) {

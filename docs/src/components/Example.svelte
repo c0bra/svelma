@@ -29,6 +29,7 @@
     border-top-left-radius: 0;
     border: 2px solid #f5f5f5;
     flex-direction: row;
+    margin-top: 3em;
   }
 
   @media screen and (max-width: 1087px) {

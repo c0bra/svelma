@@ -426,65 +426,7 @@
     {
       "meta": {
         "filename": "Dialog.svelte",
-        "lineno": 49,
-        "columnno": 2,
-        "path": "src/components/Dialog"
-      },
-      "description": "Handler to fire when user clicks cancel button",
-      "type": [
-        "function"
-      ],
-      "optional": true,
-      "name": "onCancel",
-      "_isSvelteDoc": true,
-      "_svelteProps": {
-        "type": {
-          "names": [
-            "function"
-          ]
-        },
-        "optional": true,
-        "name": "onCancel"
-      },
-      "kind": "prop",
-      "longname": "module:Dialog~onCancel",
-      "scope": "inner",
-      "memberof": "module:Dialog",
-      "___s": true
-    },
-    {
-      "meta": {
-        "filename": "Dialog.svelte",
-        "lineno": 54,
-        "columnno": 2,
-        "path": "src/components/Dialog"
-      },
-      "description": "Handler to fire when user clicks confirm button",
-      "type": [
-        "function"
-      ],
-      "optional": true,
-      "name": "onConfirm",
-      "_isSvelteDoc": true,
-      "_svelteProps": {
-        "type": {
-          "names": [
-            "function"
-          ]
-        },
-        "optional": true,
-        "name": "onConfirm"
-      },
-      "kind": "prop",
-      "longname": "module:Dialog~onConfirm",
-      "scope": "inner",
-      "memberof": "module:Dialog",
-      "___s": true
-    },
-    {
-      "meta": {
-        "filename": "Dialog.svelte",
-        "lineno": 61,
+        "lineno": 51,
         "columnno": 2,
         "path": "src/components/Dialog"
       },
@@ -515,7 +457,7 @@
     {
       "meta": {
         "filename": "Dialog.svelte",
-        "lineno": 66,
+        "lineno": 56,
         "columnno": 2,
         "path": "src/components/Dialog"
       },
@@ -545,7 +487,7 @@
     {
       "meta": {
         "filename": "Dialog.svelte",
-        "lineno": 72,
+        "lineno": 62,
         "columnno": 2,
         "path": "src/components/Dialog"
       },
@@ -577,7 +519,7 @@
     {
       "meta": {
         "filename": "Dialog.svelte",
-        "lineno": 80,
+        "lineno": 70,
         "columnno": 2,
         "path": "src/components/Dialog"
       },
@@ -611,7 +553,7 @@
     {
       "meta": {
         "filename": "Dialog.svelte",
-        "lineno": 86,
+        "lineno": 76,
         "columnno": 2,
         "path": "src/components/Dialog"
       },
@@ -642,7 +584,7 @@
     {
       "meta": {
         "filename": "Dialog.svelte",
-        "lineno": 91,
+        "lineno": 81,
         "columnno": 2,
         "path": "src/components/Dialog"
       },

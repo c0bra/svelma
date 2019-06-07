@@ -44,16 +44,6 @@
    * @svelte-prop {Boolean} [hasInput=false]
    * */
   export let hasInput = false
-
-  /** Handler to fire when user clicks cancel button
-   * @svelte-prop {Function} [onCancel]
-   * */
-  export let onCancel = () => {}
-
-  /** Handler to fire when user clicks confirm button
-   * @svelte-prop {Function} [onConfirm]
-   * */
-  export let onConfirm = () => {}
   
   export let prompt = null
 
@@ -93,7 +83,9 @@
   export let inputProps = {}
 
   // export let showClose = true
-
+  let resolve
+  export let promise = new Promise((fulfil) => (resolve = fulfil))
+  
   // TODO: programmatic subcomponents
   export let subComponent = null
   export let appendToBody = true
@@ -129,11 +121,12 @@
 
 
   function cancel() {
-    onCancel()
+    resolve(hasInput ? null : false)
     close()
   }
 
   function close() {
+    resolve(hasInput ? null : false)
     active = false
     dispatch('destroyed')
   }
@@ -147,10 +140,10 @@
 
       return
     }
-    
+
     validationMessage = ''
 
-    onConfirm(prompt)
+    resolve(hasInput ? prompt: true)
     close()
   }
 
@@ -221,6 +214,7 @@
 </style>
 
 <svelte:window on:keydown={keydown}></svelte:window>
+<svelte:options accessors/>
 
 {#if active}
   <div class="modal dialog {size} is-active" bind:this={modal}>
