@@ -8,7 +8,7 @@
 </script>
 
 <script>
-  import { Button, Dialog } from 'svelma'
+  import { Button, Dialog, Toast } from 'svelma'
   import DocHeader from '../../components/DocHeader.svelte'
   import Example from '../../components/Example.svelte'
   import JSDoc from '../../components/JSDoc.svelte'
@@ -34,7 +34,13 @@
   }
 
   function prompt(opts) {
-    Dialog.prompt({ message: "What is your quest?", ...opts })
+    Dialog.prompt({
+      message: "What is your quest?",
+      onConfirm(prompt) {
+        Toast.create(`Your quest is: '${prompt}`)
+      },
+      ...opts
+    })
   }
 </script>
 
@@ -50,8 +56,8 @@
 
 <Button class="block" on:click={() => alert()}>Toggle</Button>`}>
   <div slot="preview">
-    <Button class="block is-primary" on:click={alert}>Dialog</Button>
-    <Button class="block is-info" on:click={confirm}>Confirm</Button>
+    <Button class="block is-primary" on:click={() => alert()}>Dialog</Button>
+    <Button class="block is-info" on:click={() => confirm()}>Confirm</Button>
     <Button class="block is-danger" on:click={() => confirm('custom')}>Confirm (custom</Button>
   </div>
 </Example>
