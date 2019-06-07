@@ -11,6 +11,8 @@
   const formComponents = ['Input', 'Field'].sort()
   let components = ['Form', ...Object.keys(Components)].sort()
   components = difference(components, formComponents)
+
+  const bulmaElements = ['Media', 'Progress', 'Table', 'Hero', 'Tiles'].sort()
 </script>
 
 <style lang="sass">
@@ -71,11 +73,16 @@
       <a href="install">Start</a>
     </li>
   </ul>
-  <p class="sidebar-label">Bulma Components</p>
+  <p class="sidebar-label">Bulma Elements</p>
   <ul>
-    <li />
+    <li><a href="bulma/intro">Intro</a></li>
+    {#each bulmaElements as c}
+      <li>
+        <a href="bulma/{c.toLowerCase()}">{c}</a>
+      </li>
+    {/each}
   </ul>
-  <p class="sidebar-label">UI Components</p>
+  <p class="sidebar-label">Svelma Components</p>
   <ul>
     {#each components as c}
       <li>

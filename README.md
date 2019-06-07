@@ -46,7 +46,7 @@ Demos and docs live together as a [Sapper](https://sapper.svelte.dev) site.
 CDN in your HTML page:
 
 ```html
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/   all.css"></link>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"></link>
 ```
 
 ...or as an npm package imported into your root component:
