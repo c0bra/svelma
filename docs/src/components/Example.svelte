@@ -6,6 +6,7 @@
 
   export let lang = 'xml'
   export let code
+  export let horizontal = false
 
   let showCode = false
 
@@ -30,6 +31,10 @@
     border: 2px solid #f5f5f5;
     flex-direction: row;
     margin-top: 3em;
+
+    &.horizontal {
+      flex-direction: column;
+    }
   }
 
   @media screen and (max-width: 1087px) {
@@ -166,7 +171,7 @@
   }
 </style>
 
-<div class="snippet">
+<div class="snippet" class:horizontal>
   <CodepenButton {code}>
     <div class="codepen-button">
       Codesandbox
