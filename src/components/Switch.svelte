@@ -1,10 +1,25 @@
 
 <script>
-  /** Binding value
-   * @svelte-prop {Any} [value=false]
+  /** Binding for whether the switch to "on" or not
+   * @svelte-prop {Any} [checked=false]
    * */
-  export let value = false
+  export let checked = false
+
+  /** Type (color of control)
+   * @svelte-prop {String} [type] - Type (color of control)
+   * @values $$colors$$
+   * */
   export let type = 'is-primary'
+
+  /** Size of switch
+   * @svelte-prop {String} [size]
+   * @values $$sizes$$
+   * */
+  export let size = ''
+
+  /** Whether switch is disabled or not
+   * @svelte-prop {Boolean} [disabled=false]
+   * */
   export let disabled = false
 
   let label
@@ -26,6 +41,8 @@
 </script>
 
 <style lang="scss">
+@import 'node_modules/bulma/sass/utilities/all';
+
 .switch {
   position: relative;
   cursor: pointer;
@@ -68,7 +85,7 @@
     
     &:not(:checked) {
       & + .check {
-        background-color: hsla(0,0%,71%,.9) !important;
+        background-color: $grey-light !important;
       }
     }
 
@@ -86,11 +103,21 @@
   .control-label {
     padding-left: .5em;
   }
+
+  &.is-small {
+    @include control-small;
+  }
+  &.is-medium{
+    @include control-medium;
+  }
+  &.is-large {
+    @include control-large;
+  }
 }
 </style>
 
-<label ref="label" class="switch" bind:this={label}>
-  <input type="checkbox" bind:value bind:this={input}/>
+<label ref="label" class="switch {size}" bind:this={label}>
+  <input type="checkbox" bind:checked bind:this={input} on:input on:click />
 
   <div class="check {newBackground}"></div>
 
