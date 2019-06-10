@@ -17,7 +17,7 @@
   }
 </script>
 
-<DocHeader title="Media" subtitle="Social media UI element" />
+<DocHeader title="Hero" subtitle="Hero headers" />
 
 <Example horizontal={true} code={`<script>
   import { fade } from 'svelte/transition'

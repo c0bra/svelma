@@ -953,6 +953,157 @@
   "Modal": [],
   "Notice": [],
   "Notices": [],
+  "Progress": [
+    {
+      "meta": {
+        "filename": "Progress.svelte",
+        "lineno": 7,
+        "columnno": 0,
+        "path": "src/components"
+      },
+      "description": "Value of progress bar",
+      "type": [
+        "Number"
+      ],
+      "name": "value",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Number"
+          ]
+        },
+        "name": "value"
+      },
+      "kind": "prop",
+      "longname": "module:Progress~value",
+      "scope": "inner",
+      "memberof": "module:Progress",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Progress.svelte",
+        "lineno": 12,
+        "columnno": 0,
+        "path": "src/components"
+      },
+      "description": "Type (color) of progress bar",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "type",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "type"
+      },
+      "kind": "prop",
+      "values": "<code>is-white</code>, <code>is-black</code>, <code>is-light</code>, <code>is-dark</code>, <code>is-primary</code>, <code>is-info</code>, <code>is-success</code>, <code>is-warning</code>, <code>is-danger</code>",
+      "longname": "module:Progress~type",
+      "scope": "inner",
+      "memberof": "module:Progress",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Progress.svelte",
+        "lineno": 18,
+        "columnno": 0,
+        "path": "src/components"
+      },
+      "description": "Maximum value of progress bar",
+      "type": [
+        "Number"
+      ],
+      "optional": true,
+      "defaultvalue": 100,
+      "name": "max",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Number"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": 100,
+        "name": "max"
+      },
+      "kind": "prop",
+      "longname": "module:Progress~max",
+      "scope": "inner",
+      "memberof": "module:Progress",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Progress.svelte",
+        "lineno": 23,
+        "columnno": 0,
+        "path": "src/components"
+      },
+      "description": "Duration of progress change animation (in ms)",
+      "type": [
+        "Number"
+      ],
+      "optional": true,
+      "defaultvalue": 400,
+      "name": "duration",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Number"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": 400,
+        "name": "duration"
+      },
+      "kind": "prop",
+      "longname": "module:Progress~duration",
+      "scope": "inner",
+      "memberof": "module:Progress",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Progress.svelte",
+        "lineno": 28,
+        "columnno": 0,
+        "path": "src/components"
+      },
+      "description": "Easing function to use for animation",
+      "type": [
+        "function"
+      ],
+      "optional": true,
+      "name": "cubicOut",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "optional": true,
+        "name": "cubicOut"
+      },
+      "kind": "prop",
+      "values": "Any function from <code>svelte/easing</code>, or a custom one",
+      "longname": "module:Progress~cubicOut",
+      "scope": "inner",
+      "memberof": "module:Progress",
+      "___s": true
+    }
+  ],
   "Snackbar": [
     {
       "meta": {

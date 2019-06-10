@@ -12,7 +12,7 @@
   let components = ['Form', ...Object.keys(Components)].sort()
   components = difference(components, formComponents)
 
-  const bulmaElements = ['Media', 'Progress', 'Table', 'Hero', 'Tiles'].sort()
+  const bulmaElements = ['Media', 'Table', 'Hero', 'Tiles'].sort()
 </script>
 
 <style lang="sass">
