@@ -61,6 +61,19 @@ CDN in your HTML page:
 </script>
 ```
 
+### SSR 
+
+If you are doing server-side rendering with Sapper,  ou'll need to import the .svelte files directly so that your app
+can compile them, rather than importing from the compiled module.
+
+i.e.:
+
+import Button from 'svelma/src/components/Button.svelte'
+
+instead of
+
+import { Button } from 'svelma'
+
 # Development
 
 1. Clone this repo: `git clone https://github.com/c0bra/svelma.git`
