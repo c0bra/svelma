@@ -61,7 +61,8 @@
     "docs:deploy": "./docs.sh",
     "autodocs": "(cd docs; npx sapper dev --basepath svelma)",
     "jsdocs": "(cd docs; npx jsdoc -c jsdoc/conf.js)",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "changelog": "conventional-changelog -i CHANGELOG.md -p angular"
   },
   "browserslist": "last 2 versions"
 }
