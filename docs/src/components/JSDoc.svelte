@@ -37,7 +37,7 @@
                 {@html doc.description}
                 {#if doc.optional}, optional{/if}
               </td>
-              <td>{doc.type.join(', ')}</td>
+              <td>{(doc.type || []).join(', ')}</td>
               <td>
                 {@html doc.values || '&mdash;'}
               </td>

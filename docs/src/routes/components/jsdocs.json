@@ -1383,6 +1383,58 @@
       "___s": true
     }
   ],
+  "Tab": [],
+  "Tabs": [
+    {
+      "meta": {
+        "range": [
+          164,
+          184
+        ],
+        "filename": "Tabs.svelte",
+        "lineno": 9,
+        "columnno": 2,
+        "path": "src/components/Tabs"
+      },
+      "description": "The active tab",
+      "name": "value",
+      "longname": "module:Tabs.value",
+      "kind": "member",
+      "memberof": "module:Tabs",
+      "scope": "static",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Tabs.svelte",
+        "lineno": 11,
+        "columnno": 2,
+        "path": "src/components/Tabs"
+      },
+      "description": "Size of tabs",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "size",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "size"
+      },
+      "kind": "prop",
+      "values": "<code>is-small</code>, <code>is-medium</code>, <code>is-large</code>",
+      "longname": "module:Tabs~size",
+      "scope": "inner",
+      "memberof": "module:Tabs",
+      "___s": true
+    }
+  ],
   "Toast": [
     {
       "meta": {
