@@ -122,7 +122,7 @@
               <p class="title">Middle tile</p>
               <p class="subtitle">With an image</p>
               <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/640x480.png" />
+                <img src="https://bulma.io/images/placeholders/640x480.png" alt="profile" />
               </figure>
             </article>
           </div>
