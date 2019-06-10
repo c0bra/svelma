@@ -13,7 +13,7 @@
   // })
 </script>
 
-<style lang="sass">
+<style lang="scss">
   .docs {
     display: flex;
     position: relative;

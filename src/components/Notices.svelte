@@ -2,7 +2,7 @@
   export const notices = {}
 </script>
 
-<style lang="sass">
+<style lang="scss">
   :global(.notices) {
     position: fixed;
     top: 0;

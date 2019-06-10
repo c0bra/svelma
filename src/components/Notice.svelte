@@ -68,7 +68,7 @@
   })
 </script>
 
-<style lang="sass">
+<style lang="scss">
   .notice {
     display: inline-flex;
     pointer-events: auto;

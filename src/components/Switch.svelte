@@ -1,19 +1,47 @@
 
 <script>
-  export let value
+  /** Binding value
+   * @svelte-prop {Any} [value=false]
+   * */
+  export let value = false
   export let type = 'is-primary'
+  export let disabled = false
+
+  let label
+  let input
 
   $: newBackground = type && type.replace(/^is-(.*)/, 'has-background-$1') || ''
+
+  $: {
+    if (input) {
+      if (disabled) {
+        label.setAttribute('disabled', 'disabled')
+        input.setAttribute('disabled', 'disabled')
+      } else {
+        label.removeAttribute('disabled')
+        input.removeAttribute('disabled')
+      }
+    }
+  }
 </script>
 
-<style lang="sass">
+<style lang="scss">
 .switch {
   position: relative;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+
+  :global(&[disabled]) {
+    opacity: .5;
+    cursor: not-allowed;
+  }
 
   input {
     position: absolute;
     opacity: 0;
     left: 0;
+    z-index: -1;
 
     & + .check {
       display: flex;
@@ -22,7 +50,6 @@
       width: 2.75em;
       height: 1.575em;
       padding: .2em;
-      background: #b5b5b5;
       border-radius: 1em;
       transition: background .15s ease-out;
 
@@ -38,9 +65,21 @@
         will-change: transform;
       }
     }
+    
+    &:not(:checked) {
+      & + .check {
+        background-color: hsla(0,0%,71%,.9) !important;
+      }
+    }
 
-    &:checked + .check {
-      transform: translate3d(100%,0,0);
+    &:checked {
+      & + .check {
+        background-color: unset;
+
+        &::before {
+          transform: translate3d(100%,0,0);
+        }
+      }
     }
   }
 
@@ -50,8 +89,8 @@
 }
 </style>
 
-<label ref="label" class="switch">
-  <input type="checkbox" bind:value />
+<label ref="label" class="switch" bind:this={label}>
+  <input type="checkbox" bind:value bind:this={input}/>
 
   <div class="check {newBackground}"></div>
 

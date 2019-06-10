@@ -36,7 +36,7 @@
   $: newBackground = background || type.replace(/^is-(.*)/, 'has-background-$1')
 </script>
 
-<style lang="sass">
+<style lang="scss">
   .toast {
     text-align: center;
     padding: 0.75em 1.5em;

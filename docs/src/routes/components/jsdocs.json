@@ -1258,7 +1258,39 @@
       "___s": true
     }
   ],
-  "Switch": [],
+  "Switch": [
+    {
+      "meta": {
+        "filename": "Switch.svelte",
+        "lineno": 4,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Binding value",
+      "type": [
+        "Any"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "value",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Any"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "value"
+      },
+      "kind": "prop",
+      "longname": "module:Switch~value",
+      "scope": "inner",
+      "memberof": "module:Switch",
+      "___s": true
+    }
+  ],
   "Toast": [
     {
       "meta": {

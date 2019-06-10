@@ -154,7 +154,7 @@
   }
 </script>
 
-<style lang="sass">
+<style lang="scss">
 @import 'node_modules/bulma/sass/utilities/all';
 
  .dialog {

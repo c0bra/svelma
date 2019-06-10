@@ -20,7 +20,7 @@
   }
 </script>
 
-<style lang="sass">
+<style lang="scss">
   .snippet {
     position: relative;
     display: flex;

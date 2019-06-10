@@ -9,9 +9,10 @@ import Message from './components/Message.svelte'
 import Modal from './components/Modal'
 import Progress from './components/Progress.svelte'
 import Snackbar from './components/Snackbar'
+import Switch from './components/Switch.svelte'
 import Toast from './components/Toast'
 
-export { Button, Collapse, Dialog, Field, Icon, Input, Message, Progress, Modal, Snackbar, Toast }
+export { Button, Collapse, Dialog, Field, Icon, Input, Message, Progress, Modal, Snackbar, Switch, Toast }
 
 export const Svelma = {
   Button,
@@ -24,5 +25,6 @@ export const Svelma = {
   Modal,
   Progress,
   Snackbar,
+  Switch,
   Toast,
 }

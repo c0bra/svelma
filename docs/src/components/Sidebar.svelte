@@ -8,14 +8,14 @@
   import difference from 'lodash/difference'
   import { Svelma as Components } from 'svelma'
 
-  const formComponents = ['Input', 'Field'].sort()
+  const formComponents = ['Input', 'Field', 'Switch'].sort()
   let components = ['Form', ...Object.keys(Components)].sort()
   components = difference(components, formComponents)
 
   const bulmaElements = ['Media', 'Table', 'Hero', 'Tiles'].sort()
 </script>
 
-<style lang="sass">
+<style lang="scss">
   .sidebar {
     display: flex;
     flex-direction: column;

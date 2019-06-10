@@ -51,7 +51,7 @@
   $: props = { ...fitlerProps($$props), position, duration }
 </script>
 
-<style lang="sass">
+<style lang="scss">
   .snackbar {
     display: inline-flex;
     align-items: center;
