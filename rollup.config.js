@@ -1,4 +1,5 @@
 import analyze from 'rollup-plugin-analyzer'
+import autoPreprocess from 'svelte-preprocess'
 import bundleSize from 'rollup-plugin-bundle-size'
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
@@ -34,9 +35,11 @@ export default {
       // generate: production ? 'dom' : 'ssr',
       hydratable: true,
 
-      preprocess: {
-        style: sass(),
-      },
+      preprocess: autoPreprocess({
+        postcss: {
+          plugins: [require('autoprefixer')()],
+        },
+      })
     }),
 
     resolve(),

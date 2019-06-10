@@ -2,6 +2,7 @@ import path from 'path'
 import { promisify } from 'util'
 import { exec as execRaw } from 'child_process'
 import alias from 'rollup-plugin-alias'
+import autoPreprocess from 'svelte-preprocess'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
@@ -38,9 +39,11 @@ export default {
         dev,
         hydratable: true,
         emitCss: true,
-        preprocess: {
-          style: sass(),
-        },
+        preprocess: autoPreprocess({
+          postcss: {
+            plugins: [require('autoprefixer')()],
+          },
+        })
       }),
       resolve(),
       commonjs(),
@@ -102,9 +105,11 @@ export default {
       svelte({
         generate: 'ssr',
         dev,
-        preprocess: {
-          style: sass(),
-        },
+        preprocess: autoPreprocess({
+          postcss: {
+            plugins: [require('autoprefixer')()],
+          },
+        })
       }),
       resolve(),
       commonjs(),
