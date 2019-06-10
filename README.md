@@ -68,11 +68,15 @@ can compile them, rather than importing from the compiled module.
 
 i.e.:
 
+```js
 import Button from 'svelma/src/components/Button.svelte'
+```
 
 instead of
 
+```js
 import { Button } from 'svelma'
+```
 
 # Development
 
