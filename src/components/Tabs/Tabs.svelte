@@ -2,8 +2,8 @@
   import { setContext, getContext, onMount } from 'svelte'
   import { get, writable } from 'svelte/store'
 
-  /** The active tab
-   *
+  /** Index of the active tab (zero-based)
+   * @svelte-prop {Number} [value=0]
    * */
   export let value = 0
 
@@ -31,15 +31,16 @@
   tabs.subscribe(ts => {
     if (ts.length > 0 && ts.length > activeTab - 1) {
       ts.forEach(t => t.deactivate())
-      if(ts[activeTab]) ts[activeTab].activate()
+      if (ts[activeTab]) ts[activeTab].activate()
     }
   })
 
   function changeTab(tabNumber) {
     const ts = get(tabs)
-    if (ts[activeTab]) ts[activeTab].deactivate()
-    if (ts[tabNumber]) ts[tabNumber].activate()
-    activeTab = tabNumber
+    // if (ts[activeTab]) ts[activeTab].deactivate()
+    // if (ts[tabNumber]) ts[tabNumber].activate()
+    ts.forEach(t => t.changeTab({ from: activeTab, to: tabNumber }))
+    activeTab = tabConfig.activeTab = tabNumber
   }
 
   onMount(() => {
@@ -48,15 +49,18 @@
 </script>
 
 <style lang="scss">
-.tabs-wrapper {
-  &.is-fullwidth {
-    /* TODO */
-  }
+  .tabs-wrapper {
+    &.is-fullwidth {
+      /* TODO */
+    }
 
-  .tab-content {
-    
+    .tab-content {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow-x: hidden;
+    }
   }
-}
 </style>
 
 <div class="tabs-wrapper {size}" class:is-fullwidth={expanded}>

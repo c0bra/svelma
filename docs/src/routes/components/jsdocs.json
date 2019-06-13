@@ -1387,21 +1387,33 @@
   "Tabs": [
     {
       "meta": {
-        "range": [
-          164,
-          184
-        ],
         "filename": "Tabs.svelte",
-        "lineno": 9,
+        "lineno": 6,
         "columnno": 2,
         "path": "src/components/Tabs"
       },
-      "description": "The active tab",
+      "description": "Index of the active tab (zero-based)",
+      "type": [
+        "Number"
+      ],
+      "optional": true,
+      "defaultvalue": 0,
       "name": "value",
-      "longname": "module:Tabs.value",
-      "kind": "member",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Number"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": 0,
+        "name": "value"
+      },
+      "kind": "prop",
+      "longname": "module:Tabs~value",
+      "scope": "inner",
       "memberof": "module:Tabs",
-      "scope": "static",
       "___s": true
     },
     {
