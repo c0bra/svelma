@@ -1,0 +1,850 @@
+{
+  "RiskView2ResponseEx": {
+    "@xmlns": "http://webservices.seisint.com/WsRiskView",
+    "response": {
+      "Header": {
+        "Status": 0
+      },
+      "Result": {
+        "UniqueId": "13665912",
+        "InputEcho": {
+          "Name": {
+            "First": "TEDDY",
+            "Last": "FINGER"
+          },
+          "Address": {
+            "StreetAddress1": "202 EAST CLARKE ST",
+            "City": "RIO GRANDE CITY",
+            "State": "TX",
+            "Zip5": "78582"
+          },
+          "Age": 0,
+          "SSN": "216458459",
+          "HomePhone": "2149525972"
+        },
+        "Models": {
+          "Model": [
+            {
+              "Name": "CrossIndustryRVS1706_0",
+              "Scores": {
+                "Score": [
+                  {
+                    "Type": "0-999",
+                    "Value": 803,
+                    "ScoreReasons": {
+                      "ScoreReason": [
+                        {
+                          "Sequence": 1,
+                          "ReasonCode": "F00",
+                          "Description": "Certain input identity elements inconsistent with information on file"
+                        },
+                        {
+                          "Sequence": 2,
+                          "ReasonCode": "C23",
+                          "Description": "Too many identity variations associated with online activity"
+                        },
+                        {
+                          "Sequence": 3,
+                          "ReasonCode": "F05",
+                          "Description": "Input phone inconsistent with phone on file"
+                        },
+                        {
+                          "Sequence": 4,
+                          "ReasonCode": "C14",
+                          "Description": "Too many address changes on file"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "AttributesGroup": {
+          "Name": "RISKVIEWATTRV5",
+          "Attributes": {
+            "Attribute": [
+              {
+                "Name": "InputProvidedFirstName",
+                "Value": "1"
+              },
+              {
+                "Name": "InputProvidedLastName",
+                "Value": "1"
+              },
+              {
+                "Name": "InputProvidedStreetAddress",
+                "Value": "1"
+              },
+              {
+                "Name": "InputProvidedCity",
+                "Value": "1"
+              },
+              {
+                "Name": "InputProvidedState",
+                "Value": "1"
+              },
+              {
+                "Name": "InputProvidedZipCode",
+                "Value": "1"
+              },
+              {
+                "Name": "InputProvidedSSN",
+                "Value": "0"
+              },
+              {
+                "Name": "InputProvidedDateofBirth",
+                "Value": "7"
+              },
+              {
+                "Name": "InputProvidedPhone",
+                "Value": "1"
+              },
+              {
+                "Name": "InputProvidedLexID",
+                "Value": "0"
+              },
+              {
+                "Name": "SubjectRecordTimeOldest",
+                "Value": "296"
+              },
+              {
+                "Name": "SubjectRecordTimeNewest",
+                "Value": "1"
+              },
+              {
+                "Name": "SubjectNewestRecord12Month",
+                "Value": "1"
+              },
+              {
+                "Name": "SubjectActivityIndex03Month",
+                "Value": "3"
+              },
+              {
+                "Name": "SubjectActivityIndex06Month",
+                "Value": "3"
+              },
+              {
+                "Name": "SubjectActivityIndex12Month",
+                "Value": "2"
+              },
+              {
+                "Name": "SubjectAge",
+                "Value": "47"
+              },
+              {
+                "Name": "SubjectDeceased",
+                "Value": "0"
+              },
+              {
+                "Name": "SubjectSSNCount",
+                "Value": "1"
+              },
+              {
+                "Name": "SubjectStabilityIndex",
+                "Value": "7"
+              },
+              {
+                "Name": "SubjectStabilityPrimaryFactor",
+                "Value": "L78"
+              },
+              {
+                "Name": "SubjectAbilityIndex",
+                "Value": "9"
+              },
+              {
+                "Name": "SubjectAbilityPrimaryFactor",
+                "Value": "A40"
+              },
+              {
+                "Name": "SubjectWillingnessIndex",
+                "Value": "7"
+              },
+              {
+                "Name": "SubjectWillingnessPrimaryFactor",
+                "Value": "C12"
+              },
+              {
+                "Name": "ConfirmationSubjectFound",
+                "Value": "1"
+              },
+              {
+                "Name": "ConfirmationInputName",
+                "Value": "3"
+              },
+              {
+                "Name": "ConfirmationInputDOB",
+                "Value": "7"
+              },
+              {
+                "Name": "ConfirmationInputSSN",
+                "Value": "-1"
+              },
+              {
+                "Name": "ConfirmationInputAddress",
+                "Value": "1"
+              },
+              {
+                "Name": "SourceNonDerogProfileIndex",
+                "Value": "7"
+              },
+              {
+                "Name": "SourceNonDerogCount",
+                "Value": "5"
+              },
+              {
+                "Name": "SourceNonDerogCount03Month",
+                "Value": "2"
+              },
+              {
+                "Name": "SourceNonDerogCount06Month",
+                "Value": "2"
+              },
+              {
+                "Name": "SourceNonDerogCount12Month",
+                "Value": "3"
+              },
+              {
+                "Name": "SourceCredHeaderTimeOldest",
+                "Value": "296"
+              },
+              {
+                "Name": "SourceCredHeaderTimeNewest",
+                "Value": "1"
+              },
+              {
+                "Name": "SourceVoterRegistration",
+                "Value": "1"
+              },
+              {
+                "Name": "EducationAttendance",
+                "Value": "0"
+              },
+              {
+                "Name": "EducationEvidence",
+                "Value": "1"
+              },
+              {
+                "Name": "EducationProgramAttended",
+                "Value": "0"
+              },
+              {
+                "Name": "EducationInstitutionPrivate",
+                "Value": "-1"
+              },
+              {
+                "Name": "EducationInstitutionRating",
+                "Value": "0"
+              },
+              {
+                "Name": "ProfLicCount",
+                "Value": "3"
+              },
+              {
+                "Name": "ProfLicTypeCategory",
+                "Value": "5"
+              },
+              {
+                "Name": "BusinessAssociation",
+                "Value": "1"
+              },
+              {
+                "Name": "BusinessAssociationIndex",
+                "Value": "3"
+              },
+              {
+                "Name": "BusinessAssociationTimeOldest",
+                "Value": "132"
+              },
+              {
+                "Name": "BusinessTitleLeadership",
+                "Value": "2"
+              },
+              {
+                "Name": "AssetIndex",
+                "Value": "9"
+              },
+              {
+                "Name": "AssetIndexPrimaryFactor",
+                "Value": "A40"
+              },
+              {
+                "Name": "AssetOwnership",
+                "Value": "1"
+              },
+              {
+                "Name": "AssetProp",
+                "Value": "1"
+              },
+              {
+                "Name": "AssetPropIndex",
+                "Value": "3"
+              },
+              {
+                "Name": "AssetPropEverCount",
+                "Value": "3"
+              },
+              {
+                "Name": "AssetPropCurrentCount",
+                "Value": "1"
+              },
+              {
+                "Name": "AssetPropCurrentTaxTotal",
+                "Value": "366000"
+              },
+              {
+                "Name": "AssetPropPurchaseCount12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "AssetPropPurchaseTimeOldest",
+                "Value": "252"
+              },
+              {
+                "Name": "AssetPropPurchaseTimeNewest",
+                "Value": "162"
+              },
+              {
+                "Name": "AssetPropNewestMortgageType",
+                "Value": "1"
+              },
+              {
+                "Name": "AssetPropEverSoldCount",
+                "Value": "2"
+              },
+              {
+                "Name": "AssetPropSoldCount12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "AssetPropSaleTimeOldest",
+                "Value": "160"
+              },
+              {
+                "Name": "AssetPropSaleTimeNewest",
+                "Value": "130"
+              },
+              {
+                "Name": "AssetPropNewestSalePrice",
+                "Value": "-1"
+              },
+              {
+                "Name": "AssetPropSalePurchaseRatio",
+                "Value": "0"
+              },
+              {
+                "Name": "AssetPersonal",
+                "Value": "0"
+              },
+              {
+                "Name": "AssetPersonalCount",
+                "Value": "0"
+              },
+              {
+                "Name": "PurchaseActivityIndex",
+                "Value": "0"
+              },
+              {
+                "Name": "PurchaseActivityCount",
+                "Value": "-1"
+              },
+              {
+                "Name": "PurchaseActivityDollarTotal",
+                "Value": "-1"
+              },
+              {
+                "Name": "DerogSeverityIndex",
+                "Value": "0"
+              },
+              {
+                "Name": "DerogCount",
+                "Value": "0"
+              },
+              {
+                "Name": "DerogCount12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "DerogTimeNewest",
+                "Value": "-1"
+              },
+              {
+                "Name": "CriminalFelonyCount",
+                "Value": "0"
+              },
+              {
+                "Name": "CriminalFelonyCount12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "CriminalFelonyTimeNewest",
+                "Value": "-1"
+              },
+              {
+                "Name": "CriminalNonFelonyCount",
+                "Value": "0"
+              },
+              {
+                "Name": "CriminalNonFelonyCount12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "CriminalNonFelonyTimeNewest",
+                "Value": "-1"
+              },
+              {
+                "Name": "EvictionCount",
+                "Value": "0"
+              },
+              {
+                "Name": "EvictionCount12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "EvictionTimeNewest",
+                "Value": "-1"
+              },
+              {
+                "Name": "LienJudgmentSeverityIndex",
+                "Value": "0"
+              },
+              {
+                "Name": "LienJudgmentCount",
+                "Value": "0"
+              },
+              {
+                "Name": "LienJudgmentCount12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "LienJudgmentSmallClaimsCount",
+                "Value": "0"
+              },
+              {
+                "Name": "LienJudgmentCourtCount",
+                "Value": "0"
+              },
+              {
+                "Name": "LienJudgmentTaxCount",
+                "Value": "0"
+              },
+              {
+                "Name": "LienJudgmentForeclosureCount",
+                "Value": "0"
+              },
+              {
+                "Name": "LienJudgmentOtherCount",
+                "Value": "0"
+              },
+              {
+                "Name": "LienJudgmentTimeNewest",
+                "Value": "-1"
+              },
+              {
+                "Name": "LienJudgmentDollarTotal",
+                "Value": "0"
+              },
+              {
+                "Name": "BankruptcyCount",
+                "Value": "0"
+              },
+              {
+                "Name": "BankruptcyCount24Month",
+                "Value": "0"
+              },
+              {
+                "Name": "BankruptcyTimeNewest",
+                "Value": "-1"
+              },
+              {
+                "Name": "BankruptcyChapter",
+                "Value": "0"
+              },
+              {
+                "Name": "BankruptcyStatus",
+                "Value": "0"
+              },
+              {
+                "Name": "BankruptcyDismissed24Month",
+                "Value": "0"
+              },
+              {
+                "Name": "ShortTermLoanRequest",
+                "Value": "0"
+              },
+              {
+                "Name": "ShortTermLoanRequest12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "ShortTermLoanRequest24Month",
+                "Value": "0"
+              },
+              {
+                "Name": "InquiryAuto12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "InquiryBanking12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "InquiryTelcom12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "InquiryNonShortTerm12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "InquiryShortTerm12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "InquiryCollections12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "SSNSubjectCount",
+                "Value": "-1"
+              },
+              {
+                "Name": "SSNDeceased",
+                "Value": "-1"
+              },
+              {
+                "Name": "SSNDateLowIssued",
+                "Value": "-1"
+              },
+              {
+                "Name": "SSNProblems",
+                "Value": "-1"
+              },
+              {
+                "Name": "AddrOnFileCount",
+                "Value": "6"
+              },
+              {
+                "Name": "AddrOnFileCorrectional",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrOnFileCollege",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrOnFileHighRisk",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrInputTimeOldest",
+                "Value": "158"
+              },
+              {
+                "Name": "AddrInputTimeNewest",
+                "Value": "1"
+              },
+              {
+                "Name": "AddrInputLengthOfRes",
+                "Value": "157"
+              },
+              {
+                "Name": "AddrInputSubjectCount",
+                "Value": "2"
+              },
+              {
+                "Name": "AddrInputMatchIndex",
+                "Value": "2"
+              },
+              {
+                "Name": "AddrInputSubjectOwned",
+                "Value": "1"
+              },
+              {
+                "Name": "AddrInputDeedMailing",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrInputOwnershipIndex",
+                "Value": "4"
+              },
+              {
+                "Name": "AddrInputPhoneService",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrInputPhoneCount",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrInputDwellType",
+                "Value": "S"
+              },
+              {
+                "Name": "AddrInputDwellTypeIndex",
+                "Value": "3"
+              },
+              {
+                "Name": "AddrInputDelivery",
+                "Value": "-1"
+              },
+              {
+                "Name": "AddrInputTimeLastSale",
+                "Value": "162"
+              },
+              {
+                "Name": "AddrInputLastSalePrice",
+                "Value": "-1"
+              },
+              {
+                "Name": "AddrInputTaxValue",
+                "Value": "366000"
+              },
+              {
+                "Name": "AddrInputTaxYr",
+                "Value": "2016"
+              },
+              {
+                "Name": "AddrInputTaxMarketValue",
+                "Value": "366000"
+              },
+              {
+                "Name": "AddrInputAVMValue",
+                "Value": "282339"
+              },
+              {
+                "Name": "AddrInputAVMValue12Month",
+                "Value": "272924"
+              },
+              {
+                "Name": "AddrInputAVMRatio12MonthPrior",
+                "Value": "1.03"
+              },
+              {
+                "Name": "AddrInputAVMValue60Month",
+                "Value": "250162"
+              },
+              {
+                "Name": "AddrInputAVMRatio60MonthPrior",
+                "Value": "1.13"
+              },
+              {
+                "Name": "AddrInputCountyRatio",
+                "Value": "1.79"
+              },
+              {
+                "Name": "AddrInputTractRatio",
+                "Value": "1"
+              },
+              {
+                "Name": "AddrInputBlockRatio",
+                "Value": "1.15"
+              },
+              {
+                "Name": "AddrInputProblems",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrCurrentTimeOldest",
+                "Value": "158"
+              },
+              {
+                "Name": "AddrCurrentTimeNewest",
+                "Value": "1"
+              },
+              {
+                "Name": "AddrCurrentLengthOfRes",
+                "Value": "157"
+              },
+              {
+                "Name": "AddrCurrentSubjectOwned",
+                "Value": "1"
+              },
+              {
+                "Name": "AddrCurrentDeedMailing",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrCurrentOwnershipIndex",
+                "Value": "4"
+              },
+              {
+                "Name": "AddrCurrentPhoneService",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrCurrentDwellType",
+                "Value": "S"
+              },
+              {
+                "Name": "AddrCurrentDwellTypeIndex",
+                "Value": "3"
+              },
+              {
+                "Name": "AddrCurrentTimeLastSale",
+                "Value": "162"
+              },
+              {
+                "Name": "AddrCurrentLastSalesPrice",
+                "Value": "-1"
+              },
+              {
+                "Name": "AddrCurrentTaxValue",
+                "Value": "366000"
+              },
+              {
+                "Name": "AddrCurrentTaxYr",
+                "Value": "2016"
+              },
+              {
+                "Name": "AddrCurrentTaxMarketValue",
+                "Value": "366000"
+              },
+              {
+                "Name": "AddrCurrentAVMValue",
+                "Value": "282339"
+              },
+              {
+                "Name": "AddrCurrentAVMValue12Month",
+                "Value": "272924"
+              },
+              {
+                "Name": "AddrCurrentAVMRatio12MonthPrior",
+                "Value": "1.03"
+              },
+              {
+                "Name": "AddrCurrentAVMValue60Month",
+                "Value": "250162"
+              },
+              {
+                "Name": "AddrCurrentAVMRatio60MonthPrior",
+                "Value": "1.13"
+              },
+              {
+                "Name": "AddrCurrentCountyRatio",
+                "Value": "1.79"
+              },
+              {
+                "Name": "AddrCurrentTractRatio",
+                "Value": "1"
+              },
+              {
+                "Name": "AddrCurrentBlockRatio",
+                "Value": "1.15"
+              },
+              {
+                "Name": "AddrCurrentCorrectional",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrPreviousTimeOldest",
+                "Value": "205"
+              },
+              {
+                "Name": "AddrPreviousTimeNewest",
+                "Value": "1"
+              },
+              {
+                "Name": "AddrPreviousLengthOfRes",
+                "Value": "204"
+              },
+              {
+                "Name": "AddrPreviousSubjectOwned",
+                "Value": "-1"
+              },
+              {
+                "Name": "AddrPreviousOwnershipIndex",
+                "Value": "5"
+              },
+              {
+                "Name": "AddrPreviousDwellType",
+                "Value": "H"
+              },
+              {
+                "Name": "AddrPreviousDwellTypeIndex",
+                "Value": "1"
+              },
+              {
+                "Name": "AddrPreviousCorrectional",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrStabilityIndex",
+                "Value": "6"
+              },
+              {
+                "Name": "AddrChangeCount03Month",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrChangeCount06Month",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrChangeCount12Month",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrChangeCount24Month",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrChangeCount60Month",
+                "Value": "0"
+              },
+              {
+                "Name": "AddrLastMoveTaxRatioDiff",
+                "Value": "-1"
+              },
+              {
+                "Name": "AddrLastMoveEconTrajectory",
+                "Value": "1"
+              },
+              {
+                "Name": "AddrLastMoveEconTrajectoryIndex",
+                "Value": "5"
+              },
+              {
+                "Name": "PhoneInputProblems",
+                "Value": "0"
+              },
+              {
+                "Name": "PhoneInputSubjectCount",
+                "Value": "0"
+              },
+              {
+                "Name": "PhoneInputMobile",
+                "Value": "0"
+              },
+              {
+                "Name": "AlertRegulatoryCondition",
+                "Value": "1"
+              }
+            ]
+          }
+        },
+        "ConsumerStatements": {
+          "ConsumerStatement": [
+            {
+              "Timestamp": {
+                "Hour24": 0,
+                "Minute": 0,
+                "Second": 0
+              },
+              "StatementId": 0
+            },
+            {
+              "Timestamp": {
+                "Hour24": 0,
+                "Minute": 0,
+                "Second": 0
+              },
+              "StatementId": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}
