@@ -1,6 +1,7 @@
 <script>
   import { setContext, getContext, onMount } from 'svelte'
   import { get, writable } from 'svelte/store'
+  import Icon from '../Icon.svelte'
 
   /** Index of the active tab (zero-based)
    * @svelte-prop {Number} [value=0]
@@ -12,6 +13,18 @@
    * @values $$sizes$$
    * */
   export let size = ''
+
+  /** Position of tabs list, horizontally. By default they're positioned to the left
+   * @svelte-prop {String} [position]
+   * @values is-centered, is-right
+   * */
+  export let position = ''
+
+  /** Style of tabs
+   * @svelte-prop {String} [style]
+   * @values is-boxed, is-toggle, is-toggle-rounded, is-fullwidth
+   * */
+  export let style = ''
 
   export let expanded = false
 
@@ -37,9 +50,10 @@
 
   function changeTab(tabNumber) {
     const ts = get(tabs)
-    // if (ts[activeTab]) ts[activeTab].deactivate()
-    // if (ts[tabNumber]) ts[tabNumber].activate()
-    ts.forEach(t => t.changeTab({ from: activeTab, to: tabNumber }))
+    // NOTE: change this back to using changeTab instead of activate/deactivate once transitions/animations are working
+    if (ts[activeTab]) ts[activeTab].deactivate()
+    if (ts[tabNumber]) ts[tabNumber].activate()
+    // ts.forEach(t => t.changeTab({ from: activeTab, to: tabNumber }))
     activeTab = tabConfig.activeTab = tabNumber
   }
 
@@ -63,12 +77,16 @@
   }
 </style>
 
-<div class="tabs-wrapper {size}" class:is-fullwidth={expanded}>
-  <nav class="tabs">
+<div class="tabs-wrapper" class:is-fullwidth={expanded}>
+  <nav class="tabs {size} {position} {style}">
     <ul>
       {#each $tabs as tab, index}
         <li class:is-active={index === activeTab}>
           <a href on:click|preventDefault={() => changeTab(index)}>
+            {#if tab.icon}
+              <Icon pack={tab.iconPack} icon={tab.icon} />
+            {/if}
+
             <span>{tab.label}</span>
           </a>
         </li>

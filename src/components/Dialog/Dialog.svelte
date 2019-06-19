@@ -30,7 +30,7 @@
   export let focusOn = 'confirm'
 
   /** Show this icon on left-side of dialog. It will use the color from <code>type</code>
-   * @svelte-prop {String} [icom]
+   * @svelte-prop {String} [icon]
    * */
   export let icon = ''
 

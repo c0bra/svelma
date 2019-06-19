@@ -24,7 +24,7 @@
         "name": "tag"
       },
       "kind": "prop",
-      "values": "<code>button</code>, <code>a</code>",
+      "values": "<code><code>button</code></code>, <code><code>a</code></code>",
       "longname": "module:Button~tag",
       "scope": "inner",
       "memberof": "module:Button",
@@ -118,7 +118,8 @@
       "longname": "module:Button~href",
       "scope": "inner",
       "memberof": "module:Button",
-      "___s": true
+      "___s": true,
+      "values": ""
     }
   ],
   "Collapse": [
@@ -149,7 +150,8 @@
       "longname": "module:Collapse~open",
       "scope": "inner",
       "memberof": "module:Collapse",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -175,7 +177,7 @@
         "name": "animation"
       },
       "kind": "prop",
-      "values": "Any animation that ships with Svelte",
+      "values": "<code>Any animation that ships with Svelte</code>",
       "longname": "module:Collapse~animation",
       "scope": "inner",
       "memberof": "module:Collapse",
@@ -210,7 +212,8 @@
       "longname": "module:Dialog~message",
       "scope": "inner",
       "memberof": "module:Dialog",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -237,7 +240,8 @@
       "longname": "module:Dialog~message",
       "scope": "inner",
       "memberof": "module:Dialog",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -268,7 +272,8 @@
       "longname": "module:Dialog~confirmText",
       "scope": "inner",
       "memberof": "module:Dialog",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -299,7 +304,8 @@
       "longname": "module:Dialog~cancelText",
       "scope": "inner",
       "memberof": "module:Dialog",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -327,7 +333,7 @@
         "name": "focusOn"
       },
       "kind": "prop",
-      "values": "<code>confirm</code>, <code>cancel</code>",
+      "values": "<code><code>confirm</code></code>, <code><code>cancel</code></code>",
       "longname": "module:Dialog~focusOn",
       "scope": "inner",
       "memberof": "module:Dialog",
@@ -345,7 +351,7 @@
         "String"
       ],
       "optional": true,
-      "name": "icom",
+      "name": "icon",
       "_isSvelteDoc": true,
       "_svelteProps": {
         "type": {
@@ -354,13 +360,14 @@
           ]
         },
         "optional": true,
-        "name": "icom"
+        "name": "icon"
       },
       "kind": "prop",
-      "longname": "module:Dialog~icom",
+      "longname": "module:Dialog~icon",
       "scope": "inner",
       "memberof": "module:Dialog",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -386,7 +393,7 @@
         "name": "iconPack"
       },
       "kind": "prop",
-      "values": "<code>fas</code>, <code>fab</code>, etc...",
+      "values": "<code><code>fas</code></code>, <code><code>fab</code></code>, <code>etc...</code>",
       "longname": "module:Dialog~iconPack",
       "scope": "inner",
       "memberof": "module:Dialog",
@@ -421,7 +428,8 @@
       "longname": "module:Dialog~hasInput",
       "scope": "inner",
       "memberof": "module:Dialog",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -452,7 +460,8 @@
       "longname": "module:Dialog~showCancel",
       "scope": "inner",
       "memberof": "module:Dialog",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -544,7 +553,7 @@
         "name": "animation"
       },
       "kind": "prop",
-      "values": "Any transition name that ships with Svelte, or a custom function",
+      "values": "<code>Any transition name that ships with Svelte</code>, <code>or a custom function</code>",
       "longname": "module:Dialog~animation",
       "scope": "inner",
       "memberof": "module:Dialog",
@@ -579,7 +588,8 @@
       "longname": "module:Dialog~animProps",
       "scope": "inner",
       "memberof": "module:Dialog",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -608,7 +618,8 @@
       "longname": "module:Dialog~inputProps",
       "scope": "inner",
       "memberof": "module:Dialog",
-      "___s": true
+      "___s": true,
+      "values": ""
     }
   ],
   "Dropdown": [],
@@ -640,7 +651,8 @@
       "longname": "module:Field~label",
       "scope": "inner",
       "memberof": "module:Field",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -699,7 +711,8 @@
       "longname": "module:Field~message",
       "scope": "inner",
       "memberof": "module:Field",
-      "___s": true
+      "___s": true,
+      "values": ""
     }
   ],
   "Icon": [],
@@ -733,7 +746,8 @@
       "longname": "module:Input~value",
       "scope": "inner",
       "memberof": "module:Input",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -761,7 +775,7 @@
         "name": "type"
       },
       "kind": "prop",
-      "values": "Any native type, <code>textarea</code>",
+      "values": "<code>Any native type</code>, <code><code>textarea</code></code>",
       "longname": "module:Input~type",
       "scope": "inner",
       "memberof": "module:Input",
@@ -824,7 +838,8 @@
       "longname": "module:Input~passwordReveal",
       "scope": "inner",
       "memberof": "module:Input",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -853,7 +868,8 @@
       "longname": "module:Input~maxlength",
       "scope": "inner",
       "memberof": "module:Input",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -884,7 +900,8 @@
       "longname": "module:Input~hasCounter",
       "scope": "inner",
       "memberof": "module:Input",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -915,7 +932,8 @@
       "longname": "module:Input~loading",
       "scope": "inner",
       "memberof": "module:Input",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -946,7 +964,8 @@
       "longname": "module:Input~disabled",
       "scope": "inner",
       "memberof": "module:Input",
-      "___s": true
+      "___s": true,
+      "values": ""
     }
   ],
   "Message": [],
@@ -979,7 +998,8 @@
       "longname": "module:Progress~value",
       "scope": "inner",
       "memberof": "module:Progress",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -1040,7 +1060,8 @@
       "longname": "module:Progress~max",
       "scope": "inner",
       "memberof": "module:Progress",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -1071,7 +1092,8 @@
       "longname": "module:Progress~duration",
       "scope": "inner",
       "memberof": "module:Progress",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -1097,7 +1119,7 @@
         "name": "cubicOut"
       },
       "kind": "prop",
-      "values": "Any function from <code>svelte/easing</code>, or a custom one",
+      "values": "<code>Any function from <code>svelte/easing</code></code>, <code>or a custom one</code>",
       "longname": "module:Progress~cubicOut",
       "scope": "inner",
       "memberof": "module:Progress",
@@ -1130,7 +1152,8 @@
       "longname": "module:Snackbar~message",
       "scope": "inner",
       "memberof": "module:Snackbar",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -1161,7 +1184,8 @@
       "longname": "module:Snackbar~duration",
       "scope": "inner",
       "memberof": "module:Snackbar",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -1189,7 +1213,7 @@
         "name": "position"
       },
       "kind": "prop",
-      "values": "<code>is-top</code>, <code>is-bottom</code>, <code>is-top-left</code>, <code>is-top-right</code>, <code>is-bottom-left</code>, <code>is-bottom-right</code>",
+      "values": "<code><code>is-top</code></code>, <code><code>is-bottom</code></code>, <code><code>is-top-left</code></code>, <code><code>is-top-right</code></code>, <code><code>is-bottom-left</code></code>, <code><code>is-bottom-right</code></code>",
       "longname": "module:Snackbar~position",
       "scope": "inner",
       "memberof": "module:Snackbar",
@@ -1251,7 +1275,7 @@
         "name": "background"
       },
       "kind": "prop",
-      "values": "<code>has-background-*</code>",
+      "values": "<code><code>has-background-*</code></code>",
       "longname": "module:Snackbar~background",
       "scope": "inner",
       "memberof": "module:Snackbar",
@@ -1288,7 +1312,8 @@
       "longname": "module:Switch~checked",
       "scope": "inner",
       "memberof": "module:Switch",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -1380,15 +1405,105 @@
       "longname": "module:Switch~disabled",
       "scope": "inner",
       "memberof": "module:Switch",
+      "___s": true,
+      "values": ""
+    }
+  ],
+  "Tab": [
+    {
+      "meta": {
+        "filename": "Tab.svelte",
+        "lineno": 6,
+        "columnno": 2,
+        "path": "src/components/Tabs"
+      },
+      "description": "Label for tab",
+      "type": [
+        "String"
+      ],
+      "name": "label",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "name": "label"
+      },
+      "kind": "prop",
+      "longname": "module:Tab~label",
+      "scope": "inner",
+      "memberof": "module:Tab",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tab.svelte",
+        "lineno": 11,
+        "columnno": 2,
+        "path": "src/components/Tabs"
+      },
+      "description": "Show this icon on left-side of the tab.",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "icon",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "icon"
+      },
+      "kind": "prop",
+      "longname": "module:Tab~icon",
+      "scope": "inner",
+      "memberof": "module:Tab",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tab.svelte",
+        "lineno": 16,
+        "columnno": 2,
+        "path": "src/components/Tabs"
+      },
+      "description": "Fontawesome icon pack to use. By default the <code>Icon</code> component uses <code>fas</code>",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "iconPack",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "iconPack"
+      },
+      "kind": "prop",
+      "values": "<code><code>fas</code></code>, <code><code>fab</code></code>, <code>etc...</code>",
+      "longname": "module:Tab~iconPack",
+      "scope": "inner",
+      "memberof": "module:Tab",
       "___s": true
     }
   ],
-  "Tab": [],
   "Tabs": [
     {
       "meta": {
         "filename": "Tabs.svelte",
-        "lineno": 6,
+        "lineno": 7,
         "columnno": 2,
         "path": "src/components/Tabs"
       },
@@ -1414,12 +1529,13 @@
       "longname": "module:Tabs~value",
       "scope": "inner",
       "memberof": "module:Tabs",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
         "filename": "Tabs.svelte",
-        "lineno": 11,
+        "lineno": 12,
         "columnno": 2,
         "path": "src/components/Tabs"
       },
@@ -1442,6 +1558,66 @@
       "kind": "prop",
       "values": "<code>is-small</code>, <code>is-medium</code>, <code>is-large</code>",
       "longname": "module:Tabs~size",
+      "scope": "inner",
+      "memberof": "module:Tabs",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Tabs.svelte",
+        "lineno": 18,
+        "columnno": 2,
+        "path": "src/components/Tabs"
+      },
+      "description": "Position of tabs list, horizontally. By default they're positioned to the left",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "position",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "position"
+      },
+      "kind": "prop",
+      "values": "<code>is-centered</code>, <code>is-right</code>",
+      "longname": "module:Tabs~position",
+      "scope": "inner",
+      "memberof": "module:Tabs",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Tabs.svelte",
+        "lineno": 24,
+        "columnno": 2,
+        "path": "src/components/Tabs"
+      },
+      "description": "Style of tabs",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "style",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "style"
+      },
+      "kind": "prop",
+      "values": "<code>is-boxed</code>, <code>is-toggle</code>, <code>is-toggle-rounded</code>, <code>is-fullwidth</code>",
+      "longname": "module:Tabs~style",
       "scope": "inner",
       "memberof": "module:Tabs",
       "___s": true
@@ -1473,7 +1649,8 @@
       "longname": "module:Toast~message",
       "scope": "inner",
       "memberof": "module:Toast",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -1504,7 +1681,8 @@
       "longname": "module:Toast~duration",
       "scope": "inner",
       "memberof": "module:Toast",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
@@ -1532,7 +1710,7 @@
         "defaultvalue": "is-top",
         "name": "position"
       },
-      "values": "<code>is-top</code>, <code>is-bottom</code>, <code>is-top-left</code>, <code>is-top-right</code>, <code>is-bottom-left</code>, <code>is-bottom-right</code>",
+      "values": "<code><code>is-top</code></code>, <code><code>is-bottom</code></code>, <code><code>is-top-left</code></code>, <code><code>is-top-right</code></code>, <code><code>is-bottom-left</code></code>, <code><code>is-bottom-right</code></code>",
       "longname": "module:Toast~position",
       "scope": "inner",
       "memberof": "module:Toast",
@@ -1594,7 +1772,7 @@
         "name": "background"
       },
       "kind": "prop",
-      "values": "<code>has-background-*</code>",
+      "values": "<code><code>has-background-*</code></code>",
       "longname": "module:Toast~background",
       "scope": "inner",
       "memberof": "module:Toast",

@@ -1,5 +1,6 @@
 <script>
   export let jsdoc
+  export let showHeader = true
 </script>
 
 <style>
@@ -11,10 +12,10 @@
 </style>
 
 {#if jsdoc}
-  <hr class="is-medium" />
+  {#if showHeader}<hr class="is-medium" />{/if}
 
-  <section class="api-view">
-    <h2 class="title is-4">API</h2>
+  <section>
+    {#if showHeader}<h2 class="title is-4">API</h2>{/if}
 
     <div class="table-wrapper">
       <table class="table is-fullwidth">
@@ -34,8 +35,7 @@
                 <code>{doc.name}</code>
               </td>
               <td>
-                {@html doc.description}
-                {#if doc.optional}, optional{/if}
+                {@html doc.description}{#if doc.optional}, optional{/if}
               </td>
               <td>{(doc.type || []).join(', ')}</td>
               <td>

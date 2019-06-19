@@ -1,7 +1,23 @@
 <script>
   import { beforeUpdate, setContext, getContext, tick, onMount } from 'svelte'
+  import Icon from '../Icon.svelte'
 
+  /** Label for tab
+   * @svelte-prop {String} label
+   * */
   export let label
+
+  /** Show this icon on left-side of the tab.
+   * @svelte-prop {String} [icon]
+   * */
+  export let icon = ''
+
+  /** Fontawesome icon pack to use. By default the <code>Icon</code> component uses <code>fas</code>
+   * @svelte-prop {String} [iconPack]
+   * @values <code>fas</code>, <code>fab</code>, etc...
+   * */
+  export let iconPack = ''
+
   let active = false
 
   let el
@@ -36,7 +52,7 @@
 
   async function transitionend(event) {
     // console.log({ index, active, activeTab: tabConfig.activeTab })
-    console.log(event.target)
+    // console.log(event.target)
     active = index === tabConfig.activeTab
     await tick()
     direction = ''
@@ -53,6 +69,8 @@
       {
         index,
         label,
+        icon,
+        iconPack,
         activate: () => (active = true),
         deactivate: () => (active = false),
         changeTab,
@@ -62,7 +80,6 @@
   })
 
   beforeUpdate(async () => {
-    console.log(label, active, direction)
     if (index === tabConfig.activeTab && direction) {
       await tick()
       setTimeout(() => {
@@ -73,44 +90,41 @@
 </script>
 
 <style lang="scss">
+  // NOTE: add transitions/animations back once they're working
   .tab {
     display: none;
-    // width: 100%;
-    // flex-shrink: 0;
     flex: 1 0 100%;
-    will-change: transform;
-    transition: transform 400ms ease-in;
+    // will-change: transform;
+    // transition: transform 400ms ease-in;
 
     &.is-active {
       display: inline-block;
-      transform: translateX(0);
+      // transform: translateX(0);
     }
 
-    &.starting {
-      transition: none;
-    }
+    // &.starting {
+    //   transition: none;
+    // }
 
-    &.left {
-      transform: translateX(-100%);
-    }
+    // &.left {
+    //   transform: translateX(-100%);
+    // }
 
-    &.right {
-      transform: translateX(100%);
-    }
+    // &.right {
+    //   transform: translateX(100%);
+    // }
 
-    &.starting {
-      transition: none;
-    }
+    // &.starting {
+    //   transition: none;
+    // }
   }
 </style>
 
-<!-- {#if active} -->
 <div
   class="tab {direction}"
   class:is-active={active}
   bind:this={el}
   aria-hidden={!active}
   on:transitionend={transitionend}>
-  <slot {label} />
+  <slot {label} {iconPack} {icon} />
 </div>
-<!-- {/if} -->
