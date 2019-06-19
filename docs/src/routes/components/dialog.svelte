@@ -85,12 +85,12 @@ The first argument can either be an object of options or a string to use as the 
 
 <Button type="is-primary" on:click={() => alert()}>Dialog</Button>
 <Button type="is-info" on:click={() => confirm()}>Confirm</Button>
-<Button type="is-danger" on:click={() => confirm('custom')}>Confirm (custom</Button>
+<Button type="is-danger" on:click={() => confirm('custom')}>Confirm (custom)</Button>
 `}>
   <div slot="preview">
     <Button type="is-primary" on:click={() => alert()}>Dialog</Button>
     <Button type="is-info" on:click={() => confirm()}>Confirm</Button>
-    <Button type="is-danger" on:click={() => confirm('custom')}>Confirm (custom</Button>
+    <Button type="is-danger" on:click={() => confirm('custom')}>Confirm (custom)</Button>
   </div>
 </Example>
 

@@ -68,7 +68,7 @@
     <ul>
       {#each $tabs as tab, index}
         <li class:is-active={index === activeTab}>
-          <a on:click={() => changeTab(index)}>
+          <a href on:click|preventDefault={() => changeTab(index)}>
             <span>{tab.label}</span>
           </a>
         </li>

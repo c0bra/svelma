@@ -65,7 +65,9 @@
     console.log(label, active, direction)
     if (index === tabConfig.activeTab && direction) {
       await tick()
-      // direction = ''
+      setTimeout(() => {
+        direction = ''
+      })
     }
   })
 </script>
