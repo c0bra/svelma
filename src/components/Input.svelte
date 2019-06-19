@@ -1,7 +1,7 @@
 <script>
   import { onMount, getContext, tick } from 'svelte'
-  import { omit } from '../utils'
   import Icon from './Icon.svelte'
+  import { omit } from '../utils'
 
   /** Binding value
    * @svelte-prop {String|Number} [value]

@@ -1,4 +1,66 @@
 {
+  "Autocomplete": [
+    {
+      "meta": {
+        "filename": "Autocomplete.svelte",
+        "lineno": 8,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Binding value",
+      "type": [
+        "String",
+        "Number"
+      ],
+      "optional": true,
+      "name": "value",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String",
+            "Number"
+          ]
+        },
+        "optional": true,
+        "name": "value"
+      },
+      "kind": "prop",
+      "longname": "module:Autocomplete~value",
+      "scope": "inner",
+      "memberof": "module:Autocomplete",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Autocomplete.svelte",
+        "lineno": 13,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Options to show in dropdown",
+      "type": [
+        "Array"
+      ],
+      "name": "data",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "name": "data"
+      },
+      "kind": "prop",
+      "longname": "module:Autocomplete~data",
+      "scope": "inner",
+      "memberof": "module:Autocomplete",
+      "___s": true,
+      "values": ""
+    }
+  ],
   "Button": [
     {
       "meta": {

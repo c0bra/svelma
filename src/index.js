@@ -1,4 +1,5 @@
 // import './scss/main.scss'
+import Autocomplete from './components/Autocomplete.svelte'
 import Button from './components/Button.svelte'
 import Collapse from './components/Collapse.svelte'
 import Dialog from './components/Dialog'
@@ -13,9 +14,10 @@ import Switch from './components/Switch.svelte'
 import { Tabs, Tab } from './components/Tabs'
 import Toast from './components/Toast'
 
-export { Button, Collapse, Dialog, Field, Icon, Input, Message, Progress, Modal, Snackbar, Switch, Tabs, Tab, Toast }
+export { Autocomplete, Button, Collapse, Dialog, Field, Icon, Input, Message, Progress, Modal, Snackbar, Switch, Tabs, Tab, Toast }
 
 export const Svelma = {
+  Autocomplete,
   Button,
   Collapse,
   Dialog,
