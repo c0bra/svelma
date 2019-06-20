@@ -1,5 +1,5 @@
 <script>
-  import { onMount, getContext, tick } from 'svelte'
+  import { createEventDispatcher, getContext, onMount, tick } from 'svelte'
   import Icon from './Icon.svelte'
   import { omit } from '../utils'
 
@@ -56,6 +56,8 @@
   const getType = getContext('type')
   if (getType) statusType = getType() || ''
 
+  const dispatch = createEventDispatcher()
+
   $: props = {
     ...omit($$props, 'class', 'value', 'type', 'size', 'passwordReveal', 'hasCounter', 'loading', 'disabled'),
   }
@@ -98,12 +100,24 @@
     input.focus()
   }
 
-  const onInput = e => {
+  function onInput(e) {
     value = e.target.value
     $$props.value = value
+
+    dispatch('input', { value })
   }
-  const onFocus = () => (isFocused = true)
-  const onBlur = () => (isFocused = false)
+
+  function onFocus() {
+    isFocused = true
+
+    dispatch('focus')
+  }
+
+   function onBlur() {
+     isFocused = false
+
+     dispatch('blur')
+   }
 </script>
 
 <style>

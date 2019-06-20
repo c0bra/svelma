@@ -18,6 +18,7 @@
   
   let value
   let data = []
+  let selected = ''
 
   const options = [
     'Angular',
@@ -35,7 +36,8 @@
   ]
 
   $: {
-    data = options.map(o => o.toLowerCase()).filter(o => value && o.indexOf((value || '').toLowerCase() >= 0))
+    data = options.map(o => o.toLowerCase()).filter(o => value && o.indexOf(value.toLowerCase() >= 0))
+    console.log('data', value,data)
   }
 </script>
 
@@ -50,11 +52,11 @@
 <Input type="text" placeholder="Text input" />
 `}>
   <div slot="preview">
-    <strong>Selected:</strong> {value}
+    <strong>Selected:</strong> {selected}
     <br>
     <br>
     <Field label="Search for a JS framework">
-      <Autocomplete bind:value {data} />
+      <Autocomplete bind:value {data} on:select={option => selected = option} />
     </Field>
   </div>
 </Example>

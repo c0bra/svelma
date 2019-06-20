@@ -12,7 +12,6 @@
         "String",
         "Number"
       ],
-      "optional": true,
       "name": "value",
       "_isSvelteDoc": true,
       "_svelteProps": {
@@ -22,7 +21,6 @@
             "Number"
           ]
         },
-        "optional": true,
         "name": "value"
       },
       "kind": "prop",
