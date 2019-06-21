@@ -9,7 +9,7 @@
   import { Svelma as Components } from 'svelma'
 
   const formComponents = ['Input', 'Field', 'Switch'].sort()
-  const omittedComponents = ['Tab']
+  const omittedComponents = ['Tab', 'Taglist']
   let components = ['Form', ...Object.keys(Components)].sort()
   components = difference(components, [...formComponents, ...omittedComponents])
 
