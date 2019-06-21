@@ -137,7 +137,7 @@
   }
 
   // Base
-  .b-tooltip {
+  .tooltip {
       @include tooltip("is-top");
       @include tooltip("is-right");
       @include tooltip("is-bottom");
@@ -214,7 +214,7 @@
 
 <span data-label={label}
       class="{type} {position} {size}"
-      class:b-tooltip={active} 
+      class:tooltip={active} 
       class:is-square={square}
       class:is-animated={animated} 
       class:is-always={always} 
@@ -223,16 +223,3 @@
       >
   <slot/>
 </span>
-
-<!-- <span
-    
-    :class="[newType, position, size, {
-        'b-tooltip': active,
-        'is-square': square,
-        'is-animated': newAnimated,
-        'is-always': always,
-        'is-multiline': multilined,
-        'is-dashed': dashed
-}]">
-</span>
- -->
