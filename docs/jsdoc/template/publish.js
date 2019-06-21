@@ -2,12 +2,12 @@ const fs = require('fs')
 const { groupBy, mapKeys, mapValues, omit, pick } = require('lodash')
 
 const colorStr = ['is-white', 'is-black', 'is-light', 'is-dark', 'is-primary', 'is-info', 'is-success', 'is-warning', 'is-danger']
-  .map(c => `<code>${c}</code>`)
+  // .map(c => `<code>${c}</code>`)
   .join(', ')
 
   
 const sizeStr = ['is-small', 'is-medium', 'is-large']
-  .map(c => `<code>${c}</code>`)
+  // .map(c => `<code>${c}</code>`)
   .join(', ')
 
 /**
@@ -29,8 +29,11 @@ exports.publish = function(data, opts) {
   docs = mapValues(docs, cs => cs.map(c => omit(c, ['comment', '___id', 'meta.code'])))
   docs = mapValues(docs, cs => cs.filter(x => x.kind !== 'module'))
   docs = mapValues(docs, cs => cs.map(c => {
-    if (c.values) c.values = c.values.replace(/\$\$colors\$\$/, colorStr)
-    if (c.values) c.values = c.values.replace(/\$\$sizes\$\$/, sizeStr)
+    c.values = c.values || ''
+    if (~c.values.indexOf('$$colors$$')) c.values = c.values.replace(/\$\$colors\$\$/, colorStr)
+    if (~c.values.indexOf('$$sizes$$')) c.values = c.values.replace(/\$\$sizes\$\$/, sizeStr)
+    
+    c.values = c.values.split(/\s*,\s*/).filter(x => x).map(x => `<code>${x}</code>`).join(', ')
 
     return c
   }))

@@ -44,6 +44,9 @@
 
 <svelte:head>
   <title>Svelma</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Svelma" />
+  <meta property="og:description" content="Bulma components for Svelte" />
 </svelte:head>
 
 <div class="hero is-full-height">
