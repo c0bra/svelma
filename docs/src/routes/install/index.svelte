@@ -13,7 +13,24 @@
     <p class="title">NPM</p>
     <p class="subtitle is-spaced">For use with a project using a bundler like Webpack, Rollup, or Parcel</p>
     <p class="title is-4">Installation</p>
-    <Codeview lang="bash">npm install --save bulma svelma</Codeview>
+    <Codeview lang="bash">npm install --save bulma svelma rollup-plugin-postcss</Codeview>
+
+    <div class="content">Add <code>rollup-plugin-postcss</code> to your <code>rollup.config.js</code>.</div>
+
+    <Codeview lang="js" code={`import postcss from 'rollup-plugin-postcss'
+
+// ...
+
+export default {
+  // ... 
+  plugins: [
+    svelte({
+      // ...
+    }),
+
+    postcss(),
+  }
+}`} />
 
     <p class="title is-4">Usage</p>
     <div class="content">Import Bulma's CSS in your main app's component</div>

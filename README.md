@@ -27,23 +27,24 @@ Demos and docs live together as a [Sapper](https://sapper.svelte.dev) site.
 
 ### 1 Install via npm
 
-Note that you'll need a CSS processing plugin for rollup so that you can import css files. Here we're using `postcess`. If you're going to use a `<link>` in
-your HTML you can skip the plugin and the `import ... css` statement below in step #2
+Note that you'll need a CSS processing plugin for rollup so that you can import css files. Here we're using `rollup-plugin-postcss`. If you're going to use a
+`<link>` tag in your HTML you can skip the plugin and the `import ... css` statement below in step #2
 
-    $ npm install --save bulma svelma postcess
+    $ npm install --save bulma svelma rollup-plugin-postcss
 
 Add the CSS process plugin to your rollup config (I don't think the order really matters):
 
 ```js
+// rollup.config.js
 import postcss from 'rollup-plugin-postcss'
 
-...
+// ...
 
 export default {
-  ... 
+  // ... 
   plugins: [
     svelte({
-      ...
+      // ...
     }),
 
     postcss(),
