@@ -66,6 +66,7 @@
     updateIndex()
 
     tabConfig.tabs.update(tabs => [
+      ...tabs,
       {
         index,
         label,
@@ -75,7 +76,6 @@
         deactivate: () => (active = false),
         changeTab,
       },
-      ...tabs,
     ])
   })
 
