@@ -5,7 +5,7 @@
         "filename": "Button.svelte",
         "lineno": 7,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "HTML tag to use for button (either 'a' or 'button')",
       "type": [
@@ -35,7 +35,7 @@
         "filename": "Button.svelte",
         "lineno": 13,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Type (color of control)",
       "type": [
@@ -66,7 +66,7 @@
         "filename": "Button.svelte",
         "lineno": 19,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Size of button",
       "type": [
@@ -96,7 +96,7 @@
         "filename": "Button.svelte",
         "lineno": 25,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Href to use when <code>tag</code> is 'a'",
       "type": [
@@ -128,7 +128,7 @@
         "filename": "Collapse.svelte",
         "lineno": 5,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Whether the Collapse is open or not",
       "type": [
@@ -158,7 +158,7 @@
         "filename": "Collapse.svelte",
         "lineno": 10,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Animation to use when opening/closing",
       "type": [
@@ -190,7 +190,7 @@
         "filename": "Dialog.svelte",
         "lineno": 7,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Show a header on the dialog with this text",
       "type": [
@@ -220,7 +220,7 @@
         "filename": "Dialog.svelte",
         "lineno": 12,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Text or html message for this dialog",
       "type": [
@@ -248,7 +248,7 @@
         "filename": "Dialog.svelte",
         "lineno": 17,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Text to show on the confirmation button",
       "type": [
@@ -280,7 +280,7 @@
         "filename": "Dialog.svelte",
         "lineno": 22,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Text to show on the cancel  button",
       "type": [
@@ -312,7 +312,7 @@
         "filename": "Dialog.svelte",
         "lineno": 27,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Focus on confirm or cancel button when dialog opens",
       "type": [
@@ -344,7 +344,7 @@
         "filename": "Dialog.svelte",
         "lineno": 33,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Show this icon on left-side of dialog. It will use the color from <code>type</code>",
       "type": [
@@ -374,7 +374,7 @@
         "filename": "Dialog.svelte",
         "lineno": 38,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Fontawesome icon pack to use. By default the <code>Icon</code> component uses <code>fas</code>",
       "type": [
@@ -404,7 +404,7 @@
         "filename": "Dialog.svelte",
         "lineno": 44,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Show an input field",
       "type": [
@@ -436,7 +436,7 @@
         "filename": "Dialog.svelte",
         "lineno": 51,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Show the cancel button. True for <code>confirm()</code>",
       "type": [
@@ -468,7 +468,7 @@
         "filename": "Dialog.svelte",
         "lineno": 56,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Dialog's size",
       "type": [
@@ -498,7 +498,7 @@
         "filename": "Dialog.svelte",
         "lineno": 62,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Type (color) to use on confirm button and icon",
       "type": [
@@ -530,7 +530,7 @@
         "filename": "Dialog.svelte",
         "lineno": 70,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Animation to use when showing dialog",
       "type": [
@@ -564,7 +564,7 @@
         "filename": "Dialog.svelte",
         "lineno": 76,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Props to pass to animation function",
       "type": [
@@ -596,7 +596,7 @@
         "filename": "Dialog.svelte",
         "lineno": 81,
         "columnno": 2,
-        "path": "src/components/Dialog"
+        "path": "src\\components\\Dialog"
       },
       "description": "Props (attributes) to use to on prompt input element",
       "type": [
@@ -629,7 +629,7 @@
         "filename": "Field.svelte",
         "lineno": 6,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Label for input",
       "type": [
@@ -659,7 +659,7 @@
         "filename": "Field.svelte",
         "lineno": 11,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Type (color of control)",
       "type": [
@@ -689,7 +689,7 @@
         "filename": "Field.svelte",
         "lineno": 17,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Message to show beneath input",
       "type": [
@@ -722,7 +722,7 @@
         "filename": "Input.svelte",
         "lineno": 7,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Binding value",
       "type": [
@@ -754,7 +754,7 @@
         "filename": "Input.svelte",
         "lineno": 12,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Input type, or <code>textarea</code>",
       "type": [
@@ -786,7 +786,7 @@
         "filename": "Input.svelte",
         "lineno": 18,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Size of input",
       "type": [
@@ -816,7 +816,7 @@
         "filename": "Input.svelte",
         "lineno": 24,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Show the password reveal toggle button",
       "type": [
@@ -846,7 +846,7 @@
         "filename": "Input.svelte",
         "lineno": 29,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Set input maxlength and show a counter",
       "type": [
@@ -876,7 +876,7 @@
         "filename": "Input.svelte",
         "lineno": 34,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Show the character counter when <code>maxlength<code> is set",
       "type": [
@@ -908,7 +908,7 @@
         "filename": "Input.svelte",
         "lineno": 39,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Show loading indicator",
       "type": [
@@ -940,7 +940,7 @@
         "filename": "Input.svelte",
         "lineno": 44,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Input is disabled",
       "type": [
@@ -978,7 +978,7 @@
         "filename": "Progress.svelte",
         "lineno": 7,
         "columnno": 0,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Value of progress bar",
       "type": [
@@ -1006,7 +1006,7 @@
         "filename": "Progress.svelte",
         "lineno": 12,
         "columnno": 0,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Type (color) of progress bar",
       "type": [
@@ -1036,7 +1036,7 @@
         "filename": "Progress.svelte",
         "lineno": 18,
         "columnno": 0,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Maximum value of progress bar",
       "type": [
@@ -1068,7 +1068,7 @@
         "filename": "Progress.svelte",
         "lineno": 23,
         "columnno": 0,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Duration of progress change animation (in ms)",
       "type": [
@@ -1100,7 +1100,7 @@
         "filename": "Progress.svelte",
         "lineno": 28,
         "columnno": 0,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Easing function to use for animation",
       "type": [
@@ -1132,7 +1132,7 @@
         "filename": "Snackbar.svelte",
         "lineno": 7,
         "columnno": 2,
-        "path": "src/components/Snackbar"
+        "path": "src\\components\\Snackbar"
       },
       "description": "Text or html message for snackbar",
       "type": [
@@ -1160,7 +1160,7 @@
         "filename": "Snackbar.svelte",
         "lineno": 12,
         "columnno": 2,
-        "path": "src/components/Snackbar"
+        "path": "src\\components\\Snackbar"
       },
       "description": "Duration snackbar will remain on screen",
       "type": [
@@ -1192,7 +1192,7 @@
         "filename": "Snackbar.svelte",
         "lineno": 17,
         "columnno": 2,
-        "path": "src/components/Snackbar"
+        "path": "src\\components\\Snackbar"
       },
       "description": "Where the snackbar will show on the screen",
       "type": [
@@ -1224,7 +1224,7 @@
         "filename": "Snackbar.svelte",
         "lineno": 23,
         "columnno": 2,
-        "path": "src/components/Snackbar"
+        "path": "src\\components\\Snackbar"
       },
       "description": "Type (color)",
       "type": [
@@ -1256,7 +1256,7 @@
         "filename": "Snackbar.svelte",
         "lineno": 29,
         "columnno": 2,
-        "path": "src/components/Snackbar"
+        "path": "src\\components\\Snackbar"
       },
       "description": "Background type (any of the Bulma <code>has-background-</code> classes will work)",
       "type": [
@@ -1288,7 +1288,7 @@
         "filename": "Switch.svelte",
         "lineno": 4,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Binding for whether the switch to \"on\" or not",
       "type": [
@@ -1320,7 +1320,7 @@
         "filename": "Switch.svelte",
         "lineno": 9,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Type (color of control)",
       "type": [
@@ -1351,7 +1351,7 @@
         "filename": "Switch.svelte",
         "lineno": 15,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Size of switch",
       "type": [
@@ -1381,7 +1381,7 @@
         "filename": "Switch.svelte",
         "lineno": 21,
         "columnno": 2,
-        "path": "src/components"
+        "path": "src\\components"
       },
       "description": "Whether switch is disabled or not",
       "type": [
@@ -1415,7 +1415,7 @@
         "filename": "Tab.svelte",
         "lineno": 6,
         "columnno": 2,
-        "path": "src/components/Tabs"
+        "path": "src\\components\\Tabs"
       },
       "description": "Label for tab",
       "type": [
@@ -1443,7 +1443,7 @@
         "filename": "Tab.svelte",
         "lineno": 11,
         "columnno": 2,
-        "path": "src/components/Tabs"
+        "path": "src\\components\\Tabs"
       },
       "description": "Show this icon on left-side of the tab.",
       "type": [
@@ -1473,7 +1473,7 @@
         "filename": "Tab.svelte",
         "lineno": 16,
         "columnno": 2,
-        "path": "src/components/Tabs"
+        "path": "src\\components\\Tabs"
       },
       "description": "Fontawesome icon pack to use. By default the <code>Icon</code> component uses <code>fas</code>",
       "type": [
@@ -1505,7 +1505,7 @@
         "filename": "Tabs.svelte",
         "lineno": 7,
         "columnno": 2,
-        "path": "src/components/Tabs"
+        "path": "src\\components\\Tabs"
       },
       "description": "Index of the active tab (zero-based)",
       "type": [
@@ -1537,7 +1537,7 @@
         "filename": "Tabs.svelte",
         "lineno": 12,
         "columnno": 2,
-        "path": "src/components/Tabs"
+        "path": "src\\components\\Tabs"
       },
       "description": "Size of tabs",
       "type": [
@@ -1567,7 +1567,7 @@
         "filename": "Tabs.svelte",
         "lineno": 18,
         "columnno": 2,
-        "path": "src/components/Tabs"
+        "path": "src\\components\\Tabs"
       },
       "description": "Position of tabs list, horizontally. By default they're positioned to the left",
       "type": [
@@ -1597,7 +1597,7 @@
         "filename": "Tabs.svelte",
         "lineno": 24,
         "columnno": 2,
-        "path": "src/components/Tabs"
+        "path": "src\\components\\Tabs"
       },
       "description": "Style of tabs",
       "type": [
@@ -1629,7 +1629,7 @@
         "filename": "Toast.svelte",
         "lineno": 7,
         "columnno": 2,
-        "path": "src/components/Toast"
+        "path": "src\\components\\Toast"
       },
       "description": "Text or html message for toast",
       "type": [
@@ -1657,7 +1657,7 @@
         "filename": "Toast.svelte",
         "lineno": 12,
         "columnno": 2,
-        "path": "src/components/Toast"
+        "path": "src\\components\\Toast"
       },
       "description": "Duration toast will remain on screen",
       "name": "duration",
@@ -1689,7 +1689,7 @@
         "filename": "Toast.svelte",
         "lineno": 18,
         "columnno": 2,
-        "path": "src/components/Toast"
+        "path": "src\\components\\Toast"
       },
       "description": "Where the toast will show on the screen",
       "name": "position",
@@ -1721,7 +1721,7 @@
         "filename": "Toast.svelte",
         "lineno": 25,
         "columnno": 2,
-        "path": "src/components/Toast"
+        "path": "src\\components\\Toast"
       },
       "description": "Type (color)",
       "type": [
@@ -1753,7 +1753,7 @@
         "filename": "Toast.svelte",
         "lineno": 31,
         "columnno": 2,
-        "path": "src/components/Toast"
+        "path": "src\\components\\Toast"
       },
       "description": "Background type (any of the Bulma <code>has-background-</code> classes will work)",
       "type": [

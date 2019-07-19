@@ -31,3 +31,20 @@ export const Svelma = {
   Tab,
   Toast,
 }
+
+export default {
+  Button,
+  Collapse,
+  Dialog,
+  Icon,
+  Input,
+  Field,
+  Message,
+  Modal,
+  Progress,
+  Snackbar,
+  Switch,
+  Tabs,
+  Tab,
+  Toast,
+}
