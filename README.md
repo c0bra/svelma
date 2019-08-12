@@ -61,7 +61,7 @@ export default {
   import { Button } from 'svelma'
 </script>
 
-<Button type="primary">I'm a Button!</Button>
+<Button type="is-primary">I'm a Button!</Button>
 ```
 
 ### 3 Include [Font Awesome](https://fontawesome.com/) icons
