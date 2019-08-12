@@ -1503,7 +1503,7 @@
     {
       "meta": {
         "filename": "Tabs.svelte",
-        "lineno": 7,
+        "lineno": 9,
         "columnno": 2,
         "path": "src/components/Tabs"
       },
@@ -1535,7 +1535,7 @@
     {
       "meta": {
         "filename": "Tabs.svelte",
-        "lineno": 12,
+        "lineno": 14,
         "columnno": 2,
         "path": "src/components/Tabs"
       },
@@ -1565,7 +1565,7 @@
     {
       "meta": {
         "filename": "Tabs.svelte",
-        "lineno": 18,
+        "lineno": 20,
         "columnno": 2,
         "path": "src/components/Tabs"
       },
@@ -1595,7 +1595,7 @@
     {
       "meta": {
         "filename": "Tabs.svelte",
-        "lineno": 24,
+        "lineno": 26,
         "columnno": 2,
         "path": "src/components/Tabs"
       },
