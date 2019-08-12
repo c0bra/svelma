@@ -48,7 +48,7 @@
     "rollup-plugin-terser": "^4.0.4",
     "sirv-cli": "^0.3.1",
     "standard-version": "^6.0.1",
-    "svelte": "^3.6.5",
+    "svelte": "^3.8.0",
     "svelte-preprocess": "^2.12.0",
     "wait-for-localhost-cli": "^1.1.0"
   },
