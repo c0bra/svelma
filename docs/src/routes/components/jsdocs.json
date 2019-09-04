@@ -120,6 +120,36 @@
       "memberof": "module:Button",
       "___s": true,
       "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Button.svelte",
+        "lineno": 30,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Native button type",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "nativeType",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "nativeType"
+      },
+      "kind": "prop",
+      "values": "<code>Any native button type (button</code>, <code>submit</code>, <code>reset)</code>",
+      "longname": "module:Button~nativeType",
+      "scope": "inner",
+      "memberof": "module:Button",
+      "___s": true
     }
   ],
   "Collapse": [
