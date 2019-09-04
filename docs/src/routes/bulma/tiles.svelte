@@ -3,8 +3,22 @@
   import DocHeader from '../../components/DocHeader.svelte'
   import Example from '../../components/Example.svelte'
 
-  onMount(() => {
+  async function waitForDraggabilly() {
+    return new Promise((resolve, reject) => {
+      const interval = setInterval(() => {
+        if (Draggabilly) {
+          console.log('Draggabilly', Draggabilly);
+          clearInterval(interval);
+          resolve();
+        }
+      }, 250);
+    });
+  }
+
+  onMount(async () => {
     const draggables = document.querySelectorAll('.tile.is-child');
+
+    await waitForDraggabilly();
 
     for (const elm of draggables) {
       let drag = new Draggabilly(elm, { // .tile:not(.is-ancestor)
@@ -28,10 +42,23 @@
 <DocHeader title="Tiles" subtitle="2D grids with flexbox" />
 
 <Example code={`<script>
-  import { \onMount } from 'svelte'
+  import { onMount } from 'svelte'
 
-  onMount(() => {
+  waitForDraggabilly() {
+    return new Promise((resolve, reject) => {
+      const interval = setInterval({
+        if (Draggabilly) {
+          clearInterval(interval);
+          resolve();
+        }
+      }, 100);
+    });
+  }
+
+  onMount(async () => {
     const draggables = document.querySelectorAll('.tile.is-child');
+
+    await waitForDraggabilly();
 
     for (const elm of draggables) {
       let drag = new Draggabilly(elm, {
