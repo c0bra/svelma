@@ -108,6 +108,13 @@ import { Button } from 'svelma'
 3. Start the automated build and automated docs: `npm run dev`
 4. Open url that console prints in your browser
 
+# Publish
+
+```bash
+$ npm version <version>
+$ npm publish
+```
+
 # License
 
 Code released under MIT license.
