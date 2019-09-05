@@ -7,7 +7,6 @@
     return new Promise((resolve, reject) => {
       const interval = setInterval(() => {
         if (Draggabilly) {
-          console.log('Draggabilly', Draggabilly);
           clearInterval(interval);
           resolve();
         }

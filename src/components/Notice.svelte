@@ -1,7 +1,12 @@
 <script context="module">
+  const allowedProps = ['active', 'type', 'position', 'duration'];
+
   export function fitlerProps(props) {
-    const { active, type, position, duration } = props
-    return { active, type, position, duration }
+    Object.keys(props).forEach(key => {
+      if (!allowedProps.includes(key)) delete props[key]
+    })
+
+    return props
   }
 </script>
 

@@ -92,7 +92,7 @@
   }
 </style>
 
-<Notice {...props} bind:this={notice} transitionOut={false}>
+<Notice {...props} bind:this={notice} transitionOut={true}>
   <div class="snackbar {background}" class:has-background-dark={!background} role="alert">
     <div class="text"> <!-- NOTE: this extra div is for dynamic text styling with background-clip -->
       {@html message}
