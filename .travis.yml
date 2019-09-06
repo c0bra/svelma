@@ -5,6 +5,8 @@ branches:
   only:
   - master
   - dev
+  # Tags
+  - /^v.*/ 
 
 env:
   global:
