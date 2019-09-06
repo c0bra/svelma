@@ -104,9 +104,15 @@ import { Button } from 'svelma'
 # Development
 
 1. Clone this repo: `git clone https://github.com/c0bra/svelma.git`
-2. Install dependencies: `npm i && (cd docs; npm i)`
+2. Install dependencies:
+   1. `npm i && (cd docs; npm i)`
+   2. `npm install -g semantic-release-cli commitizen`
 3. Start the automated build and automated docs: `npm run dev`
 4. Open url that console prints in your browser
+
+## Commit
+
+    $ git cz
 
 # Publish
 
