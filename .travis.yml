@@ -1,6 +1,11 @@
 language: node_js
 node_js: lts/*
 
+branches:
+  only:
+  - master
+  - dev
+
 addons:
   apt:
     packages:
