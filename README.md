@@ -1,4 +1,7 @@
 # Svelma
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/c0bra/svelma.svg)](https://greenkeeper.io/)
+
 > Svelma is a set of UI components for [Svelte](https://svelte.dev) based on the [Bulma](http://bulma.io) CSS framework.
 
 <a href="https://www.npmjs.com/package/svelma"><img src="https://img.shields.io/npm/v/svelma.svg" /></a>
