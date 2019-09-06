@@ -6,7 +6,7 @@ branches:
   - master
   - dev
   # Tags
-  - /^v.*/ 
+  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 
 env:
   global:
