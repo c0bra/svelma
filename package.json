@@ -25,6 +25,9 @@
     "dist",
     "src"
   ],
+  "peerDependencies": {
+    "bulma": "^0.7.5"
+  },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
     "bulma": "^0.7.5",
