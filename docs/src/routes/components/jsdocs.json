@@ -1006,7 +1006,7 @@
     {
       "meta": {
         "filename": "Notification.svelte",
-        "lineno": 8,
+        "lineno": 9,
         "columnno": 2,
         "path": "src/components/Notification"
       },
@@ -1015,7 +1015,6 @@
         "String"
       ],
       "optional": true,
-      "defaultvalue": "is-dark",
       "name": "type",
       "_isSvelteDoc": true,
       "_svelteProps": {
@@ -1025,7 +1024,6 @@
           ]
         },
         "optional": true,
-        "defaultvalue": "is-dark",
         "name": "type"
       },
       "kind": "prop",
@@ -1038,7 +1036,7 @@
     {
       "meta": {
         "filename": "Notification.svelte",
-        "lineno": 14,
+        "lineno": 15,
         "columnno": 2,
         "path": "src/components/Notification"
       },
@@ -1068,7 +1066,7 @@
     {
       "meta": {
         "filename": "Notification.svelte",
-        "lineno": 19,
+        "lineno": 20,
         "columnno": 2,
         "path": "src/components/Notification"
       },
@@ -1098,7 +1096,37 @@
     {
       "meta": {
         "filename": "Notification.svelte",
-        "lineno": 24,
+        "lineno": 25,
+        "columnno": 2,
+        "path": "src/components/Notification"
+      },
+      "description": "Automatically close the notification after <code>duration</code>. Doesn't apply when opening programmatically",
+      "type": [
+        "boolean"
+      ],
+      "defaultvalue": false,
+      "name": "autoClose",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "defaultvalue": false,
+        "name": "autoClose"
+      },
+      "kind": "prop",
+      "longname": "module:Notification~autoClose",
+      "scope": "inner",
+      "memberof": "module:Notification",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Notification.svelte",
+        "lineno": 30,
         "columnno": 2,
         "path": "src/components/Notification"
       },
@@ -1130,13 +1158,14 @@
     {
       "meta": {
         "filename": "Notification.svelte",
-        "lineno": 29,
+        "lineno": 35,
         "columnno": 2,
         "path": "src/components/Notification"
       },
-      "description": "Show this icon on left-side of the notification",
+      "description": "Show icon on left-side of the notification. If set to <code>true</code>, icon will be determined from <code>type</code> property.",
       "type": [
-        "String"
+        "String",
+        "Boolean"
       ],
       "optional": true,
       "name": "icon",
@@ -1144,7 +1173,8 @@
       "_svelteProps": {
         "type": {
           "names": [
-            "String"
+            "String",
+            "Boolean"
           ]
         },
         "optional": true,
@@ -1160,7 +1190,7 @@
     {
       "meta": {
         "filename": "Notification.svelte",
-        "lineno": 34,
+        "lineno": 40,
         "columnno": 2,
         "path": "src/components/Notification"
       },
@@ -1190,7 +1220,7 @@
     {
       "meta": {
         "filename": "Notification.svelte",
-        "lineno": 40,
+        "lineno": 46,
         "columnno": 2,
         "path": "src/components/Notification"
       },
@@ -1220,11 +1250,11 @@
     {
       "meta": {
         "filename": "Notification.svelte",
-        "lineno": 45,
+        "lineno": 51,
         "columnno": 2,
         "path": "src/components/Notification"
       },
-      "description": "Text for notification",
+      "description": "Text for notification, when used programmatically",
       "type": [
         "String"
       ],
@@ -1248,16 +1278,16 @@
     {
       "meta": {
         "filename": "Notification.svelte",
-        "lineno": 49,
+        "lineno": 55,
         "columnno": 2,
         "path": "src/components/Notification"
       },
-      "description": "Where the notification will show on the screen",
+      "description": "Where the notification will show on the screen when used programmatically",
       "type": [
         "String"
       ],
       "optional": true,
-      "defaultvalue": "is-bottom-right",
+      "defaultvalue": "is-top-right",
       "name": "position",
       "_isSvelteDoc": true,
       "_svelteProps": {
@@ -1267,7 +1297,7 @@
           ]
         },
         "optional": true,
-        "defaultvalue": "is-bottom-right",
+        "defaultvalue": "is-top-right",
         "name": "position"
       },
       "kind": "prop",

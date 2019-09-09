@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher, onDestroy, onMount } from 'svelte'
   import { fly, fade } from 'svelte/transition'
-  import Notice, { fitlerProps } from '../Notice.svelte'
+  import Notice, { filterProps } from '../Notice.svelte'
 
   /** Text or html message for snackbar
    * @svelte-prop {String} message
@@ -48,7 +48,7 @@
 
   // $: newBackground = background
   $: newType = type && type.replace(/^is-(.*)/, 'has-text-$1')
-  $: props = { ...fitlerProps($$props), position, duration }
+  $: props = { ...filterProps($$props), position, duration }
 </script>
 
 <style lang="scss">
