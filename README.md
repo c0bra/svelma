@@ -20,9 +20,7 @@ Much thanks to the [Buefy](https://buefy.org) project! It provided the inspirati
 
 # Documentation
 
-Demos and docs live together as a [Sapper](https://sapper.svelte.dev) site.
-
-[Check out the docs here](https://c0bra.github.io/svelma)
+[See docs + demos site here](https://c0bra.github.io/svelma)
 
 # Quick Start
 
