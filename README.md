@@ -24,14 +24,24 @@ Much thanks to the [Buefy](https://buefy.org) project! It provided the inspirati
 
 # Quick Start
 
-### 1 Install via npm
+### 1. Create a svelte app from the template
+
+[https://github.com/sveltejs/template](sveltejs/template) is a template repo for svelte. [degit](https://www.npmjs.com/package/degit) will scaffold the repo for you:
+
+    $ npx degit sveltejs/template my-svelma-project
+    $ cd my-svelma-project
+    $ npm install
+
+_NOTE_: There are of course other ways to set up a project using svelte. This is just the quickest way to start.
+
+### 2. Install svelma and dependencies via npm
 
 Note that you'll need a CSS processing plugin for rollup so that you can import css files. Here we're using `rollup-plugin-postcss`. If you're going to use a
 `<link>` tag in your HTML you can skip the plugin and the `import ... css` statement below in step #2
 
     $ npm install --save bulma svelma rollup-plugin-postcss
 
-Add the CSS process plugin to your rollup config (I don't think the order really matters):
+Add the postcss plugin to your rollup config (I don't think the order really matters):
 
 ```js
 // rollup.config.js
@@ -51,7 +61,7 @@ export default {
 }
 ```
 
-### 2 Import Bulma's CSS and Svelma components
+### 3. Import Bulma's CSS and Svelma components
 
 ```html
 <!-- App.svelte -->
@@ -63,9 +73,9 @@ export default {
 <Button type="is-primary">I'm a Button!</Button>
 ```
 
-### 3 Include [Font Awesome](https://fontawesome.com/) icons
+### 4. Include [Font Awesome](https://fontawesome.com/) icons
 
-CDN in your HTML page:
+From CDN in your HTML page:
 
 ```html
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"></link>
@@ -85,8 +95,7 @@ CDN in your HTML page:
 
 ### SSR 
 
-If you are doing server-side rendering with Sapper,  ou'll need to import the .svelte files directly so that your app
-can compile them, rather than importing from the compiled module.
+If you are doing server-side rendering with Sapper, you'll need to import the .svelte files directly so that your app can compile them, rather than importing from the compiled module.
 
 i.e.:
 
@@ -114,6 +123,8 @@ import { Button } from 'svelma'
     $ git cz
 
 # Publish
+
+_NOTE_: CI should publish new versions using `semantic-release` automatically
 
 ```bash
 $ npm version <version>
