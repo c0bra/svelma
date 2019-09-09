@@ -18,3 +18,18 @@ export function omit(obj, ...keysToOmit) {
     return acc
   }, {})
 }
+
+export function typeToIcon(type) {
+  switch (type) {
+    case 'is-info':
+      return 'info-circle'
+    case 'is-success':
+      return 'check-circle'
+    case 'is-warning':
+      return 'exclamation-triangle'
+    case 'is-danger':
+      return 'exclamation-circle'
+    default:
+      return null
+  }
+}

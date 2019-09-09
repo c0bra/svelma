@@ -1,5 +1,5 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher } from 'svelte'
   import { fade } from 'svelte/transition'
   import Icon from './Icon.svelte'
 
