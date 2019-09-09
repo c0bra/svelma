@@ -7,7 +7,7 @@
    * */
   export let label
 
-  /** Show this icon on left-side of the tab.
+  /** Show this icon on left-side of the tab
    * @svelte-prop {String} [icon]
    * */
   export let icon = ''

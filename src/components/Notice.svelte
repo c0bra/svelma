@@ -1,12 +1,14 @@
 <script context="module">
   const allowedProps = ['active', 'type', 'position', 'duration'];
 
-  export function fitlerProps(props) {
+  export function filterProps(props) {
+    const newProps = {}
+
     Object.keys(props).forEach(key => {
-      if (!allowedProps.includes(key)) delete props[key]
+      if (allowedProps.includes(key)) newProps[key] = props[key]
     })
 
-    return props
+    return newProps
   }
 </script>
 
