@@ -37,6 +37,8 @@
 
 <Example
   code={`<script>
+  import { Button, Notification } from 'svelma';
+
   let isOpen = true
 </script>
 
@@ -59,7 +61,11 @@
 <p class="title is-4">Types</p>
 
 <Example
-  code={`<Notification>
+  code={`<script>
+  import { Notification } from 'svelma';
+</script>
+
+<Notification>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id fermentum quam. Proin sagittis, nibh id
   hendrerit imperdiet, elit sapien laoreet elit
 </Notification>
@@ -116,7 +122,11 @@
 <p class="title is-4">Icons</p>
 
 <Example
-  code={`<Notification icon="question-circle">
+  code={`<script>
+  import { Notification } from 'svelma';
+</script>
+
+<Notification icon="question-circle">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id fermentum quam. Proin sagittis, nibh id
   hendrerit imperdiet, elit sapien laoreet elit
 </Notification>
@@ -179,6 +189,8 @@
 </p>
 
 <Example code={`<script>
+  import { Button, Notification } from 'svelma';
+
   let autoIsOpen = false
 </script>
 
@@ -201,6 +213,8 @@
 <p class="title is-4">Opening with code</p>
 
 <Example code={`<script>
+  import { Button, Notification } from 'svelma';
+
   function showNotification(props) {
     Notification.create({
       message: 'You opened this programmatically!',
