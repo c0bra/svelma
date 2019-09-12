@@ -4,7 +4,7 @@
 set -e
 
 NODE_ENV=production npm run build
-if [[ $CI ]] then ; (cd docs; npm ci) ; fi
+if [[ $CI ]] ; then (cd docs; npm ci) ; fi
 NODE_ENV=production npm run jsdocs
 NODE_ENV=production npm run docs
 
