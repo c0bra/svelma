@@ -4,12 +4,12 @@
 set -e
 
 NODE_ENV=production npm run build
+if [[ $CI ]] then ; (cd docs; npm ci) ; fi
 NODE_ENV=production npm run jsdocs
 NODE_ENV=production npm run docs
 
 # navigate into the build output directory
 cd docs/__sapper__/export/svelma
-npm ci
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
