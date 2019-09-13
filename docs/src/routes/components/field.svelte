@@ -8,7 +8,7 @@
 </script>
 
 <script>
-  import { Button, Field, Input } from 'svelma'
+  import { Button, Field, Icon, Input } from 'svelma'
   import DocHeader from '../../components/DocHeader.svelte'
   import Example from '../../components/Example.svelte'
   import JSDoc from '../../components/JSDoc.svelte'
@@ -54,13 +54,42 @@
 
 <p class="title is-4">Addons</p>
 
-Attach controls together.  Use <code>expanded</code> property on the control to fill up space on the line.
+Multiple controls in a field get attached.  Use <code>expanded</code> property on the control to fill up space on the line.
 
 <Example code={`<script>
-  import { Button, Field, Input } from 'svelma'
+  import { Button, Field, Icon, Input } from 'svelma'
 </script>
 
-`}>
+<Field>
+  <Input type="search" placeholder="Search" icon="search" />
+  <p class="control">
+    <Button type="is-primary">Search</Button>
+  </p>
+</Field>
+
+<Field>
+  <Input type="search" placeholder="This is expanded" expanded />
+  <p class="control">
+    <Button type="is-static">@gmail.com</Button>
+  </p>
+</Field>
+
+<hr>
+
+<Field>
+  <div class="control"><Button><Icon icon="bold"></Icon></Button></div>
+  <div class="control"><Button><Icon icon="italic"></Icon></Button></div>
+  <div class="control"><Button><Icon icon="underline"></Icon></Button></div>
+  <div class="control"><Button><Icon icon="align-left"></Icon></Button></div>
+  <div class="control"><Button><Icon icon="align-center"></Icon></Button></div>
+  <div class="control"><Button><Icon icon="align-right"></Icon></Button></div>
+  <Input expanded icon="comment" placeholder="Text here" />
+</Field>
+
+<Field>
+  <div class="control"><Button type="is-primary">Button</Button></div>
+  <div class="control"><Button type="is-primary"><Icon icon="search" /></Button></div>
+</Field>`}>
   <div slot="preview">
     <Field>
       <Input type="search" placeholder="Search" icon="search" />
@@ -68,8 +97,141 @@ Attach controls together.  Use <code>expanded</code> property on the control to 
         <Button type="is-primary">Search</Button>
       </p>
     </Field>
+
+    <Field>
+      <Input type="search" placeholder="This is expanded" expanded />
+      <p class="control">
+        <Button type="is-static">@gmail.com</Button>
+      </p>
+    </Field>
+
+    <hr>
+
+    <Field>
+      <div class="control"><Button><Icon icon="bold"></Icon></Button></div>
+      <div class="control"><Button><Icon icon="italic"></Icon></Button></div>
+      <div class="control"><Button><Icon icon="underline"></Icon></Button></div>
+      <div class="control"><Button><Icon icon="align-left"></Icon></Button></div>
+      <div class="control"><Button><Icon icon="align-center"></Icon></Button></div>
+      <div class="control"><Button><Icon icon="align-right"></Icon></Button></div>
+      <Input expanded icon="comment" placeholder="Text here" />
+    </Field>
+
+    <Field>
+      <div class="control"><Button type="is-primary">Button</Button></div>
+      <div class="control"><Button type="is-primary"><Icon icon="search" /></Button></div>
+    </Field>
   </div>
 </Example>
 
+<hr class="is-medium">
+
+<p class="title is-4">Groups</p>
+
+Use the <code>grouped</code> property to group controls together. Use the <code>expanded</code> property to make a control take up remaining space.
+
+<Example code={`<script>
+  import { Button, Field, Input } from 'svelma'
+</script>
+
+<Field grouped>
+  <Input type="search" placeholder="Search" icon="search" />
+  <p class="control">
+    <Button type="is-primary">Search</Button>
+  </p>
+</Field>
+
+<Field grouped>
+  <Input type="search" placeholder="Search" icon="search" expanded />
+  <p class="control">
+    <Button type="is-primary">Search</Button>
+  </p>
+</Field>`}>
+  <div slot="preview">
+    <Field grouped>
+      <Input type="search" placeholder="Search" icon="search" />
+      <p class="control">
+        <Button type="is-primary">Search</Button>
+      </p>
+    </Field>
+
+    <Field grouped>
+      <Input type="search" placeholder="Search" icon="search" expanded />
+      <p class="control">
+        <Button type="is-primary">Search</Button>
+      </p>
+    </Field>
+  </div>
+</Example>
+
+<hr class="is-medium">
+
+<p class="title is-4">Nested Groups</p>
+
+You can nest fields inside fields. You have to use the <code>expanded</code> property on the <strong>Field</strong> to fill up the remaining space. 
+
+<Example code={`<script>
+  import { Button, Field, Input } from 'svelma'
+</script>
+
+<Field grouped>
+  <Field label="Button">
+    <Button type="is-primary">Button</Button>
+  </Field>
+
+  <Field label="Name" expanded>
+    <Input />
+  </Field>
+
+  <Field label="Email" expanded>
+    <Input />
+  </Field>
+</Field>`}>
+  <div slot="preview">
+    <Field grouped>
+      <Field label="Button">
+        <Button type="is-primary">Button</Button>
+      </Field>
+
+      <Field label="Name" expanded>
+        <Input />
+      </Field>
+
+      <Field label="Email" expanded>
+        <Input />
+      </Field>
+    </Field>
+  </div>
+</Example>
+
+<hr class="is-medium">
+
+<p class="title is-4">Responsive Groups</p>
+
+Add <code>groupMultiline</code> property to allow controls to fill up multiple lines.
+
+<Example code={`<script>
+  import { Button, Field, Input } from 'svelma'
+</script>
+
+<Field grouped groupMultiline>
+  <Input />
+  {#each Array(30).fill().map((x, i) => i+1) as num}
+    <div class="control">
+      <Button>{num}</Button>
+    </div>
+  {/each}
+</Field>`}>
+  <div slot="preview">
+    <Field grouped groupMultiline>
+      <Input />
+      {#each Array(30).fill().map((x, i) => i+1) as num}
+        <div class="control">
+          <Button>{num}</Button>
+        </div>
+      {/each}
+    </Field>
+  </div>
+</Example>
 
 <JSDoc {jsdoc}></JSDoc>

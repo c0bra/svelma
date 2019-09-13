@@ -28,6 +28,11 @@
    * */
   export let grouped = false
 
+  /** Allow grouped controls to cover multiple lines
+   * @svelte-prop {Boolean} groupMultiline=false
+   * */
+  export let groupMultiline = false
+
   /** Alter the alignment of the field
    * @svelte-prop {String} [position]
    * @values is-centered, is-right
@@ -38,6 +43,8 @@
    * @svelte-prop {Boolean} addons=true
    * */
   export let addons = true
+
+  export let expanded = false
 
   setContext('type', () => type)
 
@@ -78,14 +85,33 @@
     }
   }
 
-  $: props = { ...omit($$props, 'class') }
+  $: props = { ...omit($$props, 'addons', 'class', 'expanded', 'grouped', 'label', 'labelFor', 'position', 'type') }
 
   onMount(() => {
     mounted = true
   })
 </script>
 
-<div {...props} class="field {type} {fieldType} {newPosition} {$$props.class || ''}" bind:this={el}>
+<style lang="scss">
+  .field {
+    &.is-grouped {
+      .field {
+        flex-shrink: 0;
+
+        &:not(:last-child) {
+          margin-right: 0.75rem;
+        }
+
+        &.is-expanded {
+          flex-grow: 1;
+          flex-shrink: 1;
+        }
+      }
+    }
+  }
+</style>
+
+<div {...props} class="field {type} {fieldType} {newPosition} {$$props.class || ''}" class:is-expanded={expanded} class:is-grouped-multiline={groupMultiline} bind:this={el}>
   {#if label}
     <label for={labelFor} class="label" bind:this={labelEl}>{label}</label>
   {/if}

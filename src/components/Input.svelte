@@ -20,8 +20,13 @@
    * */
   export let size = ''
 
+  /** Makes input full-width when inside a grouped or addon field
+   * @svelte-prop {boolean} expanded=false
+   * */
+  export let expanded = false
+
   /** Show the password reveal toggle button
-   * @svelte-prop {boolean} [passwordReveal]
+   * @svelte-prop {boolean} passwordReveal=false
    * */
   export let passwordReveal = false
 
@@ -125,7 +130,7 @@
   }
 </style>
 
-<div class="control" class:has-icons-left={hasIconLeft} class:has-icons-right={hasIconRight} class:is-loading={loading}>
+<div class="control" class:has-icons-left={hasIconLeft} class:has-icons-right={hasIconRight} class:is-loading={loading} class:is-expanded={expanded}>
 
   {#if type !== 'textarea'}
     <input

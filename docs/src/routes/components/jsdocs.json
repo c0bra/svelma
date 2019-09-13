@@ -811,6 +811,36 @@
         "columnno": 2,
         "path": "src/components"
       },
+      "description": "Allow grouped controls to cover multiple lines",
+      "type": [
+        "Boolean"
+      ],
+      "defaultvalue": false,
+      "name": "groupMultiline",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "defaultvalue": false,
+        "name": "groupMultiline"
+      },
+      "kind": "prop",
+      "longname": "module:Field~groupMultiline",
+      "scope": "inner",
+      "memberof": "module:Field",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Field.svelte",
+        "lineno": 37,
+        "columnno": 2,
+        "path": "src/components"
+      },
       "description": "Alter the alignment of the field",
       "type": [
         "String"
@@ -837,7 +867,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 38,
+        "lineno": 43,
         "columnno": 2,
         "path": "src/components"
       },
@@ -968,11 +998,41 @@
         "columnno": 2,
         "path": "src/components"
       },
+      "description": "Makes input full-width when inside a grouped or addon field",
+      "type": [
+        "boolean"
+      ],
+      "defaultvalue": false,
+      "name": "expanded",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "defaultvalue": false,
+        "name": "expanded"
+      },
+      "kind": "prop",
+      "longname": "module:Input~expanded",
+      "scope": "inner",
+      "memberof": "module:Input",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Input.svelte",
+        "lineno": 29,
+        "columnno": 2,
+        "path": "src/components"
+      },
       "description": "Show the password reveal toggle button",
       "type": [
         "boolean"
       ],
-      "optional": true,
+      "defaultvalue": false,
       "name": "passwordReveal",
       "_isSvelteDoc": true,
       "_svelteProps": {
@@ -981,7 +1041,7 @@
             "boolean"
           ]
         },
-        "optional": true,
+        "defaultvalue": false,
         "name": "passwordReveal"
       },
       "kind": "prop",
@@ -994,7 +1054,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 29,
+        "lineno": 34,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1024,7 +1084,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 34,
+        "lineno": 39,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1056,7 +1116,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 39,
+        "lineno": 44,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1088,7 +1148,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 44,
+        "lineno": 49,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1118,7 +1178,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 49,
+        "lineno": 54,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1148,7 +1208,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 55,
+        "lineno": 60,
         "columnno": 2,
         "path": "src/components"
       },
