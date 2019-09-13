@@ -24,7 +24,7 @@ git commit -m 'deploy'
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 if [[ $CI ]]
 then
-  git push -f ${GITHUB_TOKEN}@github.com:c0bra/svelma.git master:gh-pages
+  git push -f https://${GITHUB_TOKEN}@github.com/c0bra/svelma.git master:gh-pages
 else
   git push -f git@github.com:c0bra/svelma.git master:gh-pages
 fi
