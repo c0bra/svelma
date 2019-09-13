@@ -20,8 +20,13 @@
    * */
   export let size = ''
 
+  /** Makes input full-width when inside a grouped or addon field
+   * @svelte-prop {boolean} expanded=false
+   * */
+  export let expanded = false
+
   /** Show the password reveal toggle button
-   * @svelte-prop {boolean} [passwordReveal]
+   * @svelte-prop {boolean} passwordReveal=false
    * */
   export let passwordReveal = false
 
@@ -39,6 +44,17 @@
    * @svelte-prop {boolean} [loading=false]
    * */
   export let loading = false
+
+  /** Show this icon on left side of input
+   * @svelte-prop {String} [icon]
+   * */
+  export let icon = ''
+
+  /** Fontawesome icon pack to use. By default the <code>Icon</code> component uses <code>fas</code>
+   * @svelte-prop {String} [iconPack]
+   * @values <code>fas</code>, <code>fab</code>, etc...
+   * */
+  export let iconPack = ''
 
   /** Input is disabled
    * @svelte-prop {boolean} [disabled=false]
@@ -59,6 +75,7 @@
   $: props = {
     ...omit($$props, 'class', 'value', 'type', 'size', 'passwordReveal', 'hasCounter', 'loading', 'disabled'),
   }
+  $: hasIconLeft = !!icon
   $: hasIconRight = passwordReveal || loading || statusType
   $: passwordVisibleIcon = isPasswordVisible ? 'eye-slash' : 'eye'
   $: {
@@ -113,16 +130,14 @@
   }
 </style>
 
-<div class="control" class:has-icons-right={hasIconRight} class:is-loading={loading}>
+<div class="control" class:has-icons-left={hasIconLeft} class:has-icons-right={hasIconRight} class:is-loading={loading} class:is-expanded={expanded}>
 
   {#if type !== 'textarea'}
     <input
       {...props}
       type={newType}
       {value}
-      class="input {statusType}
-      {size}
-      {$$props.class || ''}"
+      class="input {statusType} {size} {$$props.class || ''}"
       bind:this={input}
       on:input={onInput}
       on:focus={onFocus}
@@ -139,6 +154,13 @@
       on:focus={onFocus}
       on:blur={onBlur}
       {disabled} />
+  {/if}
+
+  {#if icon}
+    <Icon
+      pack={iconPack}
+      isLeft={true}
+      {icon} />
   {/if}
 
   {#if !loading && (passwordReveal || statusType)}

@@ -661,6 +661,36 @@
         "columnno": 2,
         "path": "src/components"
       },
+      "description": "Type (color) of the field and help message. Also adds a matching icon.",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "type",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "type"
+      },
+      "kind": "prop",
+      "values": "<code>is-white</code>, <code>is-black</code>, <code>is-light</code>, <code>is-dark</code>, <code>is-primary</code>, <code>is-info</code>, <code>is-success</code>, <code>is-warning</code>, <code>is-danger</code>",
+      "longname": "module:Field~type",
+      "scope": "inner",
+      "memberof": "module:Field",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Field.svelte",
+        "lineno": 12,
+        "columnno": 2,
+        "path": "src/components"
+      },
       "description": "Label for input",
       "type": [
         "String"
@@ -687,16 +717,16 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 11,
+        "lineno": 17,
         "columnno": 2,
         "path": "src/components"
       },
-      "description": "Type (color of control)",
+      "description": "Same as native <code>for</code> on label",
       "type": [
         "String"
       ],
       "optional": true,
-      "name": "type",
+      "name": "labelFor",
       "_isSvelteDoc": true,
       "_svelteProps": {
         "type": {
@@ -705,19 +735,19 @@
           ]
         },
         "optional": true,
-        "name": "type"
+        "name": "labelFor"
       },
       "kind": "prop",
-      "values": "<code>is-white</code>, <code>is-black</code>, <code>is-light</code>, <code>is-dark</code>, <code>is-primary</code>, <code>is-info</code>, <code>is-success</code>, <code>is-warning</code>, <code>is-danger</code>",
-      "longname": "module:Field~type",
+      "longname": "module:Field~labelFor",
       "scope": "inner",
       "memberof": "module:Field",
-      "___s": true
+      "___s": true,
+      "values": ""
     },
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 17,
+        "lineno": 22,
         "columnno": 2,
         "path": "src/components"
       },
@@ -739,6 +769,126 @@
       },
       "kind": "prop",
       "longname": "module:Field~message",
+      "scope": "inner",
+      "memberof": "module:Field",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Field.svelte",
+        "lineno": 27,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Direct child components/elements of Field will be grouped horizontally",
+      "type": [
+        "Boolean"
+      ],
+      "defaultvalue": false,
+      "name": "grouped",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "defaultvalue": false,
+        "name": "grouped"
+      },
+      "kind": "prop",
+      "longname": "module:Field~grouped",
+      "scope": "inner",
+      "memberof": "module:Field",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Field.svelte",
+        "lineno": 32,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Allow grouped controls to cover multiple lines",
+      "type": [
+        "Boolean"
+      ],
+      "defaultvalue": false,
+      "name": "groupMultiline",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "defaultvalue": false,
+        "name": "groupMultiline"
+      },
+      "kind": "prop",
+      "longname": "module:Field~groupMultiline",
+      "scope": "inner",
+      "memberof": "module:Field",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Field.svelte",
+        "lineno": 37,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Alter the alignment of the field",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "position",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "position"
+      },
+      "kind": "prop",
+      "values": "<code>is-centered</code>, <code>is-right</code>",
+      "longname": "module:Field~position",
+      "scope": "inner",
+      "memberof": "module:Field",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Field.svelte",
+        "lineno": 43,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Automatically attach child controls together",
+      "type": [
+        "Boolean"
+      ],
+      "defaultvalue": true,
+      "name": "addons",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "defaultvalue": true,
+        "name": "addons"
+      },
+      "kind": "prop",
+      "longname": "module:Field~addons",
       "scope": "inner",
       "memberof": "module:Field",
       "___s": true,
@@ -848,11 +998,41 @@
         "columnno": 2,
         "path": "src/components"
       },
+      "description": "Makes input full-width when inside a grouped or addon field",
+      "type": [
+        "boolean"
+      ],
+      "defaultvalue": false,
+      "name": "expanded",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "defaultvalue": false,
+        "name": "expanded"
+      },
+      "kind": "prop",
+      "longname": "module:Input~expanded",
+      "scope": "inner",
+      "memberof": "module:Input",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Input.svelte",
+        "lineno": 29,
+        "columnno": 2,
+        "path": "src/components"
+      },
       "description": "Show the password reveal toggle button",
       "type": [
         "boolean"
       ],
-      "optional": true,
+      "defaultvalue": false,
       "name": "passwordReveal",
       "_isSvelteDoc": true,
       "_svelteProps": {
@@ -861,7 +1041,7 @@
             "boolean"
           ]
         },
-        "optional": true,
+        "defaultvalue": false,
         "name": "passwordReveal"
       },
       "kind": "prop",
@@ -874,7 +1054,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 29,
+        "lineno": 34,
         "columnno": 2,
         "path": "src/components"
       },
@@ -904,7 +1084,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 34,
+        "lineno": 39,
         "columnno": 2,
         "path": "src/components"
       },
@@ -936,7 +1116,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 39,
+        "lineno": 44,
         "columnno": 2,
         "path": "src/components"
       },
@@ -968,7 +1148,67 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 44,
+        "lineno": 49,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Show this icon on left side of input",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "icon",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "icon"
+      },
+      "kind": "prop",
+      "longname": "module:Input~icon",
+      "scope": "inner",
+      "memberof": "module:Input",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Input.svelte",
+        "lineno": 54,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Fontawesome icon pack to use. By default the <code>Icon</code> component uses <code>fas</code>",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "iconPack",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "iconPack"
+      },
+      "kind": "prop",
+      "values": "<code><code>fas</code></code>, <code><code>fab</code></code>, <code>etc...</code>",
+      "longname": "module:Input~iconPack",
+      "scope": "inner",
+      "memberof": "module:Input",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Input.svelte",
+        "lineno": 60,
         "columnno": 2,
         "path": "src/components"
       },
