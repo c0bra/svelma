@@ -234,4 +234,36 @@ Add <code>groupMultiline</code> property to allow controls to fill up multiple l
   </div>
 </Example>
 
+<hr class="is-medium">
+
+<p class="title is-4">Positions</p>
+
+Use <code>position</code> property to align Field horizontally.
+
+<Example code={`<script>
+  import { Button, Field, Input } from 'svelma'
+</script>
+
+<Field position="is-centered">
+  <Input />
+  <div class="control"><Button type="is-primary">Button</Button></div>
+</Field>
+
+<Field grouped position="is-right">
+  <Input />
+  <div class="control"><Button type="is-primary">Button</Button></div>
+</Field>`}>
+  <div slot="preview">
+    <Field position="is-centered">
+      <Input />
+      <div class="control"><Button type="is-primary">Button</Button></div>
+    </Field>
+
+    <Field grouped position="is-right">
+      <Input />
+      <div class="control"><Button type="is-primary">Button</Button></div>
+    </Field>
+  </div>
+</Example>
+
 <JSDoc {jsdoc}></JSDoc>

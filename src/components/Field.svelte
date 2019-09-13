@@ -80,7 +80,7 @@
       const pos = position.split('-')
       if (pos.length >= 1) {
         const prefix = grouped ? 'is-grouped-' : 'has-addons-'
-        newPosition = prefix + position[1]
+        newPosition = prefix + pos[1]
       }
     }
   }
