@@ -42,6 +42,7 @@
     padding: 3rem;
     background-color: white;
     min-height: calc(100vh - 4rem);
+    overflow: auto;
   }
 
   @media screen and (max-width: 1087px) {
