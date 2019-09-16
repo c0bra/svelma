@@ -1,5 +1,9 @@
 // Thanks @antony for this code! https://svelte.dev/repl/54d159b954d9412c8247807125d9fe1b?version=3.12.1
 
+<<<<<<< HEAD
+=======
+import { tick } from 'svelte'
+>>>>>>> WIP: select component and validation
 import { writable } from 'svelte/store'
 
 export default function (...validators) {
@@ -35,15 +39,28 @@ export default function (...validators) {
   return [ { subscribe }, action ]
 }
 
-export function validity() {
+export function validity({ type, isValid, validationMessage }) {
   function action(node) {
 
+  }
+
+  async function setValidity(newType, message) {
+    await tick
+
+    if (type) $type = newType
+    if (validationMessage) $validationMessage = message
+  }
+
+  function setInvalid() {
+    let message = 
+    setValidity('is-danger', message)
   }
 
   function checkHtml5Validity(el) {
     // Get element
     if (!el.checkValidity()) {
       setInvalid()
+      $isValid = false
     }
   }
 
