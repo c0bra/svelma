@@ -1,5 +1,6 @@
 <script>
   import { onMount, setContext } from 'svelte'
+  import { writable } from 'svelte/store'
   import { omit } from '../utils'
 
   /** Type (color) of the field and help message. Also adds a matching icon.
@@ -46,7 +47,9 @@
 
   export let expanded = false
 
-  setContext('type', () => type)
+  let type$ = writable(type)
+  $: type$.set(type)
+  setContext('type', type$)
 
   let el
   let labelEl
@@ -59,8 +62,8 @@
 
   // Determine the icon type
   $: {
-    if (['is-danger', 'is-success'].includes(type)) {
-      iconType = type
+    if (['is-danger', 'is-success'].includes($type$)) {
+      iconType = $type$
     }
   }
 
@@ -111,12 +114,12 @@
   }
 </style>
 
-<div {...props} class="field {type} {fieldType} {newPosition} {$$props.class || ''}" class:is-expanded={expanded} class:is-grouped-multiline={groupMultiline} bind:this={el}>
+<div {...props} class="field {$type$} {fieldType} {newPosition} {$$props.class || ''}" class:is-expanded={expanded} class:is-grouped-multiline={groupMultiline} bind:this={el}>
   {#if label}
     <label for={labelFor} class="label" bind:this={labelEl}>{label}</label>
   {/if}
-  <slot statusType={type} />
+  <slot statusType={$type$} />
   {#if message}
-    <p class="help {type}" bind:this={messageEl}>{message}</p>
+    <p class="help {$type$}" bind:this={messageEl}>{message}</p>
   {/if}
 </div>

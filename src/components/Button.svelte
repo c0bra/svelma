@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte'
   import Icon from './Icon.svelte'
-  import { omit } from '../utils'
+  import { getIconSize, omit } from '../utils'
 
   /** HTML tag to use for button (either 'a' or 'button')
    * @svelte-prop {String} tag=button
@@ -51,16 +51,7 @@
     ...omit($$props, 'loading', 'inverted', 'nativeType', 'outlined', 'rounded', 'type'),
     class: `button ${type} ${size} ${$$props.class || ''}`,
   }
-
-  $: {
-    if (!size || size === 'is-medium') {
-      iconSize = 'is-small'
-    } else if (size === 'is-large') {
-      iconSize = 'is-medium'
-    } else {
-      iconSize = size
-    }
-  }
+  $: iconSize = getIconSize(size)
 </script>
 
 {#if tag === 'button'}

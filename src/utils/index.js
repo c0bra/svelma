@@ -33,3 +33,13 @@ export function typeToIcon(type) {
       return null
   }
 }
+
+export function getIconSize(size) {
+  if (!size || size === 'is-medium') {
+    return 'is-small'
+  } else if (size === 'is-large') {
+    return 'is-medium'
+  } else {
+    return size
+  }
+}

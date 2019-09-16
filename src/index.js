@@ -9,6 +9,7 @@ import Message from './components/Message.svelte'
 import Modal from './components/Modal'
 import Notification from './components/Notification'
 import Progress from './components/Progress.svelte'
+import Select from './components/Select.svelte'
 import Snackbar from './components/Snackbar'
 import Switch from './components/Switch.svelte'
 import { Tabs, Tab } from './components/Tabs'
@@ -25,6 +26,7 @@ export {
   Progress,
   Modal,
   Notification,
+  Select,
   Snackbar,
   Switch,
   Tabs,
@@ -43,6 +45,7 @@ export const Svelma = {
   Modal,
   Notification,
   Progress,
+  Select,
   Snackbar,
   Switch,
   Tabs,

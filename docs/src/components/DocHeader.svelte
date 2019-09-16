@@ -1,6 +1,6 @@
 <script>
   export let title
-  export let subtitle
+  export let subtitle = ''
 
   $: newTitle = `${title} | Svelma`
 </script>
@@ -14,5 +14,9 @@
 <!-- Doc for a Svelma Component -->
 <header class="header">
   <h1 class="title">{title}</h1>
-  <h2 class="subtitle">{subtitle}</h2>
+  <h2 class="subtitle">
+    <slot name="subtitle">
+      {subtitle}
+    </slot>
+  </h2>
 </header>

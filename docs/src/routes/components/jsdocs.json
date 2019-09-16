@@ -657,7 +657,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 6,
+        "lineno": 7,
         "columnno": 2,
         "path": "src/components"
       },
@@ -687,7 +687,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 12,
+        "lineno": 13,
         "columnno": 2,
         "path": "src/components"
       },
@@ -717,7 +717,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 17,
+        "lineno": 18,
         "columnno": 2,
         "path": "src/components"
       },
@@ -747,7 +747,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 22,
+        "lineno": 23,
         "columnno": 2,
         "path": "src/components"
       },
@@ -777,7 +777,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 27,
+        "lineno": 28,
         "columnno": 2,
         "path": "src/components"
       },
@@ -807,7 +807,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 32,
+        "lineno": 33,
         "columnno": 2,
         "path": "src/components"
       },
@@ -837,7 +837,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 37,
+        "lineno": 38,
         "columnno": 2,
         "path": "src/components"
       },
@@ -867,7 +867,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 43,
+        "lineno": 44,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1701,6 +1701,310 @@
       "scope": "inner",
       "memberof": "module:Progress",
       "___s": true
+    }
+  ],
+  "Select": [
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 7,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Binding value",
+      "type": [
+        "Any"
+      ],
+      "optional": true,
+      "name": "value",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Any"
+          ]
+        },
+        "optional": true,
+        "name": "value"
+      },
+      "kind": "prop",
+      "longname": "module:Select~value",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 12,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Size of input",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "size",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "size"
+      },
+      "kind": "prop",
+      "values": "<code>is-small</code>, <code>is-medium</code>, <code>is-large</code>",
+      "longname": "module:Select~size",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 18,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Text when nothing is selected",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "placeholder",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "placeholder"
+      },
+      "kind": "prop",
+      "longname": "module:Select~placeholder",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 23,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Put rounded corners on the select",
+      "type": [
+        "boolean"
+      ],
+      "defaultvalue": false,
+      "name": "rounded",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "defaultvalue": false,
+        "name": "rounded"
+      },
+      "kind": "prop",
+      "longname": "module:Select~rounded",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 28,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Show loading indicator",
+      "type": [
+        "boolean"
+      ],
+      "defaultvalue": false,
+      "name": "loading",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "defaultvalue": false,
+        "name": "loading"
+      },
+      "kind": "prop",
+      "longname": "module:Select~loading",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 33,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Makes select full-width",
+      "type": [
+        "boolean"
+      ],
+      "defaultvalue": false,
+      "name": "expanded",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "defaultvalue": false,
+        "name": "expanded"
+      },
+      "kind": "prop",
+      "longname": "module:Select~expanded",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 38,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Allow selecting multiple options",
+      "type": [
+        "String"
+      ],
+      "defaultvalue": true,
+      "name": "multiple",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "defaultvalue": true,
+        "name": "multiple"
+      },
+      "kind": "prop",
+      "longname": "module:Select~multiple",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 43,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Show this icon on left side of input",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "icon",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "icon"
+      },
+      "kind": "prop",
+      "longname": "module:Select~icon",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 48,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Fontawesome icon pack to use. By default the <code>Icon</code> component uses <code>fas</code>",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "iconPack",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "iconPack"
+      },
+      "kind": "prop",
+      "values": "<code><code>fas</code></code>, <code><code>fab</code></code>, <code>etc...</code>",
+      "longname": "module:Select~iconPack",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 54,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Input is disabled",
+      "type": [
+        "boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "disabled",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "disabled"
+      },
+      "kind": "prop",
+      "longname": "module:Select~disabled",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
     }
   ],
   "Snackbar": [
