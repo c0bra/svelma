@@ -128,7 +128,7 @@
   function close() {
     resolve(hasInput ? null : false)
     active = false
-    dispatch('destroyed')
+    dispatch('destroy')
   }
 
   async function confirm() {
