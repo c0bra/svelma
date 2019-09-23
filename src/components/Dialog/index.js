@@ -10,7 +10,7 @@ function createDialog(props) {
   });
 
   dialog.$on('destroy', () => {
-    dialog.$destroy
+    dialog.$destroy()
   })
 
   return dialog.promise
