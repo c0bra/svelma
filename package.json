@@ -1,5 +1,6 @@
 {
   "name": "svelma",
+  "svelte": "src/index.js",
   "description": "Bulma components for Svelte",
   "version": "0.2.4",
   "author": "Brian Hann",

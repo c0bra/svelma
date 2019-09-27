@@ -39,7 +39,8 @@ _NOTE_: There are of course other ways to set up a project using svelte. This is
 Note that you'll need a CSS processing plugin for rollup so that you can import css files. Here we're using `rollup-plugin-postcss`. If you're going to use a
 `<link>` tag in your HTML you can skip the plugin and the `import ... css` statement below in step #2
 
-    $ npm install --save bulma svelma rollup-plugin-postcss
+    $ npm install --save bulma svelma
+    $ npm install sass rollup-plugin-postcss --save-dev
 
 Add the postcss plugin to your rollup config (I don't think the order really matters):
 
