@@ -58,7 +58,7 @@ value will be <code>false</code>. If the user clicks the confirm button the valu
 The first argument can either be an object of options or a string to use as the message.</p>
 
 <Example code={`<script>
-  import { Button, Dialog } from 'svelma'
+  import { Button, Dialog, Toast } from 'svelma'
 
   function alert() {
     Dialog.alert('Alles ist gut')
