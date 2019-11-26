@@ -20,7 +20,7 @@
 <DocHeader title="Hero" subtitle="Hero headers" />
 
 <Example horizontal={true} code={`<script>
-  import { fade } from 'svelte/transition'
+  import { slide } from 'svelte/transition'
 
   const types = ['is-primary', 'is-success', 'is-danger', 'is-warning', 'is-info', 'is-link']
   let type = 'is-primary'
