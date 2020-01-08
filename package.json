@@ -27,11 +27,11 @@
     "src"
   ],
   "peerDependencies": {
-    "bulma": "^0.7.5"
+    "bulma": "^0.8.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
-    "bulma": "^0.7.5",
+    "bulma": "^0.8.0",
     "conventional-changelog-cli": "^2.0.21",
     "get-port-cli": "^2.0.0",
     "node-sass": "^4.12.0",
@@ -45,17 +45,17 @@
     "rollup-plugin-bundle-size": "^1.0.3",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-copy": "^2.0.1",
-    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-livereload": "^1.0.4",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-scss": "^1.0.1",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
+    "semantic-release": "^15.13.24",
     "sirv-cli": "^0.3.1",
     "standard-version": "^6.0.1",
     "svelte": "^3.9.2",
     "svelte-preprocess": "^2.12.0",
-    "wait-for-localhost-cli": "^1.1.0",
-    "semantic-release": "^15.13.24"
+    "wait-for-localhost-cli": "^1.1.0"
   },
   "scripts": {
     "build": "rollup -c",
