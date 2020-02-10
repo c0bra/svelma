@@ -1,5 +1,5 @@
 <script context="module">
-  const allowedProps = ['active', 'type', 'position', 'duration'];
+  const allowedProps = ['active', 'position', 'duration'];
 
   export function filterProps(props) {
     const newProps = {}
@@ -20,7 +20,6 @@
   const dispatch = createEventDispatcher()
 
   export let active = true
-  export let type = 'is-dark'
   export let position = 'is-top'
   export let duration = 2000
   export let transitionOut = true
