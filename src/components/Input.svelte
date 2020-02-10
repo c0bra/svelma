@@ -1,5 +1,5 @@
 <script>
-  import { onMount, getContext, tick } from 'svelte'
+  import { createEventDispatcher, onMount, getContext, tick } from 'svelte'
   import { omit } from '../utils'
   import Icon from './Icon.svelte'
 
@@ -69,6 +69,8 @@
   let statusTypeIcon = ''
   let valueLength = null
 
+  const dispatch = createEventDispatcher();
+
   const getType = getContext('type')
   if (getType) statusType = getType() || ''
 
@@ -118,6 +120,8 @@
   const onInput = e => {
     value = e.target.value
     $$props.value = value
+
+    dispatch('input', e)
   }
   const onFocus = () => (isFocused = true)
   const onBlur = () => (isFocused = false)
@@ -142,6 +146,7 @@
       on:input={onInput}
       on:focus={onFocus}
       on:blur={onBlur}
+      on:change
       {disabled} />
   {:else}
     <textarea
@@ -153,6 +158,7 @@
       on:input={onInput}
       on:focus={onFocus}
       on:blur={onBlur}
+      on:change
       {disabled} />
   {/if}
 
