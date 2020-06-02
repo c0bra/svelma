@@ -7,7 +7,8 @@
   export let animProps = { start: 1.2 }
   export let size = ''
   export let showClose = true
-  export let subComponent = null
+  // TODO: programmatic subcomponents
+  // export let subComponent = null
   export let onBody = true
 
   let modal
@@ -21,7 +22,7 @@
   }
 
   onMount(() => {
-    
+
   })
 
   function close() {

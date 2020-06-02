@@ -2,7 +2,7 @@
   import { createEventDispatcher, onDestroy, onMount, tick } from 'svelte'
   import Icon from '../Icon.svelte'
   import { chooseAnimation, isEnterKey, isEscKey } from '../../utils'
-  
+
   /** Show a header on the dialog with this text
    * @svelte-prop {String} [message]
    * */
@@ -44,7 +44,7 @@
    * @svelte-prop {Boolean} [hasInput=false]
    * */
   export let hasInput = false
-  
+
   export let prompt = null
 
   /** Show the cancel button. True for <code>confirm()</code>
@@ -84,10 +84,10 @@
 
   // export let showClose = true
   let resolve
-  export let promise = new Promise((fulfil) => (resolve = fulfil))
-  
+  export const promise = new Promise((fulfil) => (resolve = fulfil))
+
   // TODO: programmatic subcomponents
-  export let subComponent = null
+  // export let subComponent = null
   export let appendToBody = true
 
   let modal
