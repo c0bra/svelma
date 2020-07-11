@@ -1,6 +1,8 @@
 <script>
   import { createEventDispatcher, onMount, getContext, tick } from 'svelte'
-  import { omit } from '../utils'
+  import { omit, getEventsAction } from '../utils'
+  import { current_component } from 'svelte/internal'
+	
   import Icon from './Icon.svelte'
 
   /** Binding value
@@ -125,6 +127,8 @@
   }
   const onFocus = () => (isFocused = true)
   const onBlur = () => (isFocused = false)
+
+  const events = getEventsAction(current_component);
 </script>
 
 <style>
@@ -138,6 +142,7 @@
 
   {#if type !== 'textarea'}
     <input
+      use:events
       {...props}
       type={newType}
       {value}
@@ -150,6 +155,7 @@
       {disabled} />
   {:else}
     <textarea
+      use:events
       {...props}
       {value}
       class="textarea {statusType}
