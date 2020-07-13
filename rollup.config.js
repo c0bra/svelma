@@ -46,7 +46,7 @@ export default {
 
     production && terser(),
 
-    production && analyze(),
+    // production && analyze(),
     production && bundleSize(),
   ],
   watch: {

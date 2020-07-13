@@ -4,6 +4,7 @@
 <a href="https://www.npmjs.com/package/svelma"><img src="https://img.shields.io/npm/v/svelma.svg" /></a>
 <a href="https://www.npmjs.com/package/svelma"><img src="https://img.shields.io/npm/l/svelma.svg" /></a>
 <a href="https://bundlephobia.com/result?p=svelma"><img src="https://badgen.net/bundlephobia/minzip/svelma"></a>
+<a href="https://travis-ci.com/c0bra/svelma"><img src="https://travis-ci.com/c0bra/svelma.svg?branch=master"></a>
 <!-- <a href="https://circleci.com/gh/c0bra/svelma"><img src="https://img.shields.io/circleci/project/c0bra/svelma/svelma.svg?style=flat-square" /></a> -->
 <!-- <a href="https://codecov.io/gh/svelma/svelma"><img src="https://img.shields.io/codecov/c/github/svelma/svelma.svg?style=flat-square" /></a> -->
 
@@ -19,17 +20,49 @@ Much thanks to the [Buefy](https://buefy.org) project! It provided the inspirati
 
 # Documentation
 
-Demos and docs live together as a [Sapper](https://sapper.svelte.dev) site.
-
-[Check out the docs here](https://c0bra.github.io/svelma)
+[See docs + demos site here](https://c0bra.github.io/svelma)
 
 # Quick Start
 
-### 1 Install via npm
+### 1. Create a svelte app from the template
+
+[https://github.com/sveltejs/template](sveltejs/template) is a template repo for svelte. [degit](https://www.npmjs.com/package/degit) will scaffold the repo for you:
+
+    $ npx degit sveltejs/template my-svelma-project
+    $ cd my-svelma-project
+    $ npm install
+
+_NOTE_: There are of course other ways to set up a project using svelte. This is just the quickest way to start.
+
+### 2. Install svelma and dependencies via npm
+
+Note that you'll need a CSS processing plugin for rollup so that you can import css files. Here we're using `rollup-plugin-postcss`. If you're going to use a
+`<link>` tag in your HTML you can skip the plugin and the `import ... css` statement below in step #2
 
     $ npm install --save bulma svelma
+    $ npm install sass rollup-plugin-postcss --save-dev
 
-### 2 Import Bulma's CSS and Svelma components
+Add the postcss plugin to your rollup config (I don't think the order really matters):
+
+```js
+// rollup.config.js
+import postcss from 'rollup-plugin-postcss'
+
+// ...
+
+export default {
+  // ... 
+  plugins: [
+    svelte({
+      // ...
+    }),
+
+    postcss(),
+  }
+}
+```
+
+### 3. Import Bulma's CSS and Svelma components
 
 ```html
 <!-- App.svelte -->
@@ -38,12 +71,12 @@ Demos and docs live together as a [Sapper](https://sapper.svelte.dev) site.
   import { Button } from 'svelma'
 </script>
 
-<Button type="primary">I'm a Button!</Button>
+<Button type="is-primary">I'm a Button!</Button>
 ```
 
-### 3 Include [Font Awesome](https://fontawesome.com/) icons
+### 4. Include [Font Awesome](https://fontawesome.com/) icons
 
-CDN in your HTML page:
+From CDN in your HTML page:
 
 ```html
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"></link>
@@ -63,8 +96,7 @@ CDN in your HTML page:
 
 ### SSR 
 
-If you are doing server-side rendering with Sapper,  ou'll need to import the .svelte files directly so that your app
-can compile them, rather than importing from the compiled module.
+If you are doing server-side rendering with Sapper, you'll need to import the .svelte files directly so that your app can compile them, rather than importing from the compiled module.
 
 i.e.:
 
@@ -81,9 +113,24 @@ import { Button } from 'svelma'
 # Development
 
 1. Clone this repo: `git clone https://github.com/c0bra/svelma.git`
-2. Install dependencies: `npm i && (cd docs; npm i)`
+2. Install dependencies:
+   1. `npm i && (cd docs; npm i)`
+   2. `npm install -g semantic-release-cli commitizen`
 3. Start the automated build and automated docs: `npm run dev`
 4. Open url that console prints in your browser
+
+## Commit
+
+    $ git cz
+
+# Publish
+
+_NOTE_: CI should publish new versions using `semantic-release` automatically
+
+```bash
+$ npm version <version>
+$ npm publish
+```
 
 # License
 

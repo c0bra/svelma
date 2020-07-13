@@ -7,6 +7,7 @@ import Icon from './components/Icon.svelte'
 import Input from './components/Input.svelte'
 import Message from './components/Message.svelte'
 import Modal from './components/Modal'
+import Notification from './components/Notification'
 import Progress from './components/Progress.svelte'
 import Select from './components/Select.svelte'
 import Snackbar from './components/Snackbar'
@@ -27,6 +28,7 @@ export const Svelma = {
   Field,
   Message,
   Modal,
+  Notification,
   Progress,
   Select,
   Snackbar,

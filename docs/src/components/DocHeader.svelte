@@ -6,6 +6,7 @@
 </script>
 
 <svelte:head>
+  <meta property="og:type" content="article" />
   <meta property="og:title" content={newTitle} />
   <meta property="og:description" content={subtitle} />
 </svelte:head>

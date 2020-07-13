@@ -7,7 +7,7 @@
    * */
   export let label
 
-  /** Show this icon on left-side of the tab.
+  /** Show this icon on left-side of the tab
    * @svelte-prop {String} [icon]
    * */
   export let icon = ''
@@ -66,6 +66,7 @@
     updateIndex()
 
     tabConfig.tabs.update(tabs => [
+      ...tabs,
       {
         index,
         label,
@@ -75,7 +76,6 @@
         deactivate: () => (active = false),
         changeTab,
       },
-      ...tabs,
     ])
   })
 

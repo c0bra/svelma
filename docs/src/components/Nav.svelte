@@ -1,6 +1,7 @@
 <script>
   export let segment
 
+  const rootUrl = process.env.NODE_ENV === 'development' ? '/' : '/svelma'
   const github = 'https://github.com/c0bra/svelma'
 </script>
 
@@ -38,7 +39,7 @@
 <nav id="navbar" class="navbar has-shadow is-spaced">
   <div class="container">
     <div class="navbar-brand">
-      <a href="/" class="navbar-item brand">
+      <a href={rootUrl} class="navbar-item brand">
         <img src="svelma-logo.svg" class="logo" alt="Svelma: Bulma components for Svelte" />
         Svelma
       </a>

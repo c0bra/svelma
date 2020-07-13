@@ -22,11 +22,12 @@
 <DocHeader title="Hero" subtitle="Hero headers" />
 
 <Example code={`<script>
-  import { fade } from 'svelte/transition'
-
+  import { onDestroy, onMount } from 'svelte'
+  import { Progress } from 'svelma'
+  
   const types = ['is-primary', 'is-success', 'is-danger', 'is-warning', 'is-info', 'is-link']
-  let type = 'is-primary'
-
+  const progresses = Array(6).fill(0)
+  
   function update() {
     types.forEach((type, i) => {
       progresses[i] = Math.floor(Math.random() * 100)

@@ -7,6 +7,7 @@
   export let customSize = ''
   export let isClickable = false
   export let isLeft = false
+  export let isRight = false
 
   let newCustomSize = ''
   let newType = ''
@@ -49,6 +50,6 @@
   }
 </script>
 
-<span class="icon {size} {newType} {(isLeft && 'is-left') || ''}" class:is-clickable={isClickable} on:click>
+<span class="icon {size} {newType} {(isLeft && 'is-left') || ''} {(isRight && 'is-right') || ''}" class:is-clickable={isClickable} on:click>
   <i class="{newPack} fa-{icon} {customClass} {newCustomSize}" />
 </span>

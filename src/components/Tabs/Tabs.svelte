@@ -1,7 +1,9 @@
 <script>
-  import { setContext, getContext, onMount } from 'svelte'
+  import { setContext, getContext, onMount, onDestroy, createEventDispatcher } from 'svelte'
   import { get, writable } from 'svelte/store'
   import Icon from '../Icon.svelte'
+
+  const dispatch = createEventDispatcher()
 
   /** Index of the active tab (zero-based)
    * @svelte-prop {Number} [value=0]
@@ -29,7 +31,7 @@
   export let expanded = false
 
   let activeTab = 0
-  $: activeTab = value || 0
+  $: changeTab(value)
 
   const tabs = writable([])
 
@@ -41,10 +43,10 @@
   setContext('tabs', tabConfig)
 
   // This only runs as tabs are added/removed
-  tabs.subscribe(ts => {
-    if (ts.length > 0 && ts.length > activeTab - 1) {
+  const unsubscribe = tabs.subscribe(ts => {
+    if (ts.length > 0 && ts.length > value - 1) {
       ts.forEach(t => t.deactivate())
-      if (ts[activeTab]) ts[activeTab].activate()
+      if (ts[value]) ts[value].activate()
     }
   })
 
@@ -55,10 +57,15 @@
     if (ts[tabNumber]) ts[tabNumber].activate()
     // ts.forEach(t => t.changeTab({ from: activeTab, to: tabNumber }))
     activeTab = tabConfig.activeTab = tabNumber
+    dispatch('activeTabChanged', tabNumber)
   }
 
   onMount(() => {
     changeTab(activeTab)
+  })
+
+  onDestroy(() => {
+    unsubscribe()
   })
 </script>
 
