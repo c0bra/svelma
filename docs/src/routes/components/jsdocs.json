@@ -900,7 +900,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 7,
+        "lineno": 9,
         "columnno": 2,
         "path": "src/components"
       },
@@ -932,7 +932,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 12,
+        "lineno": 14,
         "columnno": 2,
         "path": "src/components"
       },
@@ -964,7 +964,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 18,
+        "lineno": 20,
         "columnno": 2,
         "path": "src/components"
       },
@@ -994,7 +994,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 24,
+        "lineno": 26,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1024,7 +1024,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 29,
+        "lineno": 31,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1054,7 +1054,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 34,
+        "lineno": 36,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1084,7 +1084,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 39,
+        "lineno": 41,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1116,7 +1116,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 44,
+        "lineno": 46,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1148,7 +1148,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 49,
+        "lineno": 51,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1178,7 +1178,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 54,
+        "lineno": 56,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1208,7 +1208,7 @@
     {
       "meta": {
         "filename": "Input.svelte",
-        "lineno": 60,
+        "lineno": 62,
         "columnno": 2,
         "path": "src/components"
       },
@@ -1701,6 +1701,412 @@
       "scope": "inner",
       "memberof": "module:Progress",
       "___s": true
+    }
+  ],
+  "Select": [
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 6,
+        "columnno": 4,
+        "path": "src/components"
+      },
+      "description": "Binding value",
+      "type": [
+        "Any"
+      ],
+      "optional": true,
+      "name": "selected",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Any"
+          ]
+        },
+        "optional": true,
+        "name": "selected"
+      },
+      "kind": "prop",
+      "longname": "module:Select~selected",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 11,
+        "columnno": 4,
+        "path": "src/components"
+      },
+      "description": "Type (color) of the select",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "type",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "type"
+      },
+      "kind": "prop",
+      "values": "<code><code>is-white</code></code>, <code><code>is-black</code></code>, <code><code>is-light</code></code>, <code><code>is-dark</code></code>, <code><code>is-primary</code></code>, <code><code>is-info</code></code>, <code><code>is-success</code></code>, <code><code>is-warning</code></code>, <code><code>is-danger</code></code>, <code>and any other colors you've set in the <code>$colors</code> list on Sass</code>",
+      "longname": "module:Select~type",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 17,
+        "columnno": 4,
+        "path": "src/components"
+      },
+      "description": "Text when nothing is selected",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "placeholder",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "placeholder"
+      },
+      "kind": "prop",
+      "longname": "module:Select~placeholder",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 22,
+        "columnno": 4,
+        "path": "src/components"
+      },
+      "description": "Multiple Select",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "multiple",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "multiple"
+      },
+      "kind": "prop",
+      "longname": "module:Select~multiple",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 27,
+        "columnno": 4,
+        "path": "src/components"
+      },
+      "description": "Size of the select",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "size",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "size"
+      },
+      "kind": "prop",
+      "values": "<code><code>is-small</code></code>, <code><code>is-medium</code></code>, <code><code>is-large</code></code>",
+      "longname": "module:Select~size",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 33,
+        "columnno": 4,
+        "path": "src/components"
+      },
+      "description": "Same as native size",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "nativeSize",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "nativeSize"
+      },
+      "kind": "prop",
+      "longname": "module:Select~nativeSize",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 38,
+        "columnno": 4,
+        "path": "src/components"
+      },
+      "description": "Select will be expanded (full-width)",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "expanded",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "expanded"
+      },
+      "kind": "prop",
+      "longname": "module:Select~expanded",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 43,
+        "columnno": 4,
+        "path": "src/components"
+      },
+      "description": "Select will be rounded",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "rounded",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "rounded"
+      },
+      "kind": "prop",
+      "longname": "module:Select~rounded",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 48,
+        "columnno": 4,
+        "path": "src/components"
+      },
+      "description": "Select value is required",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "required",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "required"
+      },
+      "kind": "prop",
+      "longname": "module:Select~required",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 53,
+        "columnno": 4,
+        "path": "src/components"
+      },
+      "description": "Add the loading state to the Select",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "loading",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "loading"
+      },
+      "kind": "prop",
+      "longname": "module:Select~loading",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 58,
+        "columnno": 4,
+        "path": "src/components"
+      },
+      "description": "Icon name to be added",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "icon",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "icon"
+      },
+      "kind": "prop",
+      "longname": "module:Select~icon",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 63,
+        "columnno": 4,
+        "path": "src/components"
+      },
+      "description": "Icon pack to use",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "defaultvalue": "mdi",
+      "name": "iconPack",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": "mdi",
+        "name": "iconPack"
+      },
+      "kind": "prop",
+      "values": "<code><code>mdi</code></code>, <code><code>fa</code></code>, <code><code>fas</code></code>, <code><code>far</code></code>, <code><code>fad</code></code>, <code><code>fal</code></code>",
+      "longname": "module:Select~iconPack",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Select.svelte",
+        "lineno": 69,
+        "columnno": 4,
+        "path": "src/components"
+      },
+      "description": "Add the disabled state to the Select",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "disabled",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "disabled"
+      },
+      "kind": "prop",
+      "longname": "module:Select~disabled",
+      "scope": "inner",
+      "memberof": "module:Select",
+      "___s": true,
+      "values": ""
     }
   ],
   "Snackbar": [
@@ -2200,6 +2606,290 @@
       "___s": true
     }
   ],
+  "Tag": [
+    {
+      "meta": {
+        "filename": "Tag.svelte",
+        "lineno": 6,
+        "columnno": 4,
+        "path": "src/components/Tag"
+      },
+      "description": "Type (color) of the icon",
+      "type": [
+        "String"
+      ],
+      "name": "type",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "name": "type"
+      },
+      "kind": "prop",
+      "values": "<code><code>is-white</code></code>, <code><code>is-black</code></code>, <code><code>is-light</code></code>, <code><code>is-dark</code></code>, <code><code>is-primary</code></code>, <code><code>is-info</code></code>, <code><code>is-success</code></code>, <code><code>is-warning</code></code>, <code><code>is-danger</code></code>, <code>and any other colors you've set in the <code>$colors</code> list on Sass</code>",
+      "longname": "module:Tag~type",
+      "scope": "inner",
+      "memberof": "module:Tag",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Tag.svelte",
+        "lineno": 12,
+        "columnno": 4,
+        "path": "src/components/Tag"
+      },
+      "description": "Size of the tab",
+      "type": [
+        "String"
+      ],
+      "name": "size",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "name": "size"
+      },
+      "kind": "prop",
+      "values": "<code><code>is-medium</code></code>, <code><code>is-large</code></code>",
+      "longname": "module:Tag~size",
+      "scope": "inner",
+      "memberof": "module:Tag",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Tag.svelte",
+        "lineno": 18,
+        "columnno": 4,
+        "path": "src/components/Tag"
+      },
+      "description": "Tag border rounded",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "rounded",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "rounded"
+      },
+      "kind": "prop",
+      "longname": "module:Tag~rounded",
+      "scope": "inner",
+      "memberof": "module:Tag",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tag.svelte",
+        "lineno": 23,
+        "columnno": 4,
+        "path": "src/components/Tag"
+      },
+      "description": "Add close/delete button to the tag",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "closable",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "closable"
+      },
+      "kind": "prop",
+      "longname": "module:Tag~closable",
+      "scope": "inner",
+      "memberof": "module:Tag",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tag.svelte",
+        "lineno": 28,
+        "columnno": 4,
+        "path": "src/components/Tag"
+      },
+      "description": "Close/delete button style equal to attached tags",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "attached",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "attached"
+      },
+      "kind": "prop",
+      "longname": "module:Tag~attached",
+      "scope": "inner",
+      "memberof": "module:Tag",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tag.svelte",
+        "lineno": 33,
+        "columnno": 4,
+        "path": "src/components/Tag"
+      },
+      "description": "Adds ellipsis to not overflow the text",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "ellipsis",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "ellipsis"
+      },
+      "kind": "prop",
+      "longname": "module:Tag~ellipsis",
+      "scope": "inner",
+      "memberof": "module:Tag",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tag.svelte",
+        "lineno": 38,
+        "columnno": 4,
+        "path": "src/components/Tag"
+      },
+      "description": "If should stop when using tab key",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": true,
+      "name": "tabstop",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "name": "tabstop"
+      },
+      "kind": "prop",
+      "longname": "module:Tag~tabstop",
+      "scope": "inner",
+      "memberof": "module:Tag",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tag.svelte",
+        "lineno": 43,
+        "columnno": 4,
+        "path": "src/components/Tag"
+      },
+      "description": "Disable delete button",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "disabled",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "disabled"
+      },
+      "kind": "prop",
+      "longname": "module:Tag~disabled",
+      "scope": "inner",
+      "memberof": "module:Tag",
+      "___s": true,
+      "values": ""
+    }
+  ],
+  "Taglist": [
+    {
+      "meta": {
+        "filename": "Taglist.svelte",
+        "lineno": 3,
+        "columnno": 1,
+        "path": "src/components/Tag"
+      },
+      "description": "Tags inside are attached together",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "attached",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "attached"
+      },
+      "kind": "prop",
+      "longname": "module:Taglist~attached",
+      "scope": "inner",
+      "memberof": "module:Taglist",
+      "___s": true,
+      "values": ""
+    }
+  ],
   "Toast": [
     {
       "meta": {
@@ -2353,6 +3043,324 @@
       "longname": "module:Toast~background",
       "scope": "inner",
       "memberof": "module:Toast",
+      "___s": true
+    }
+  ],
+  "Tooltip": [
+    {
+      "meta": {
+        "filename": "Tooltip.svelte",
+        "lineno": 3,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Type (color) of the tooltip",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "defaultvalue": "is-primary",
+      "name": "type",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": "is-primary",
+        "name": "type"
+      },
+      "kind": "prop",
+      "values": "<code><code>is-white</code></code>, <code><code>is-black</code></code>, <code><code>is-light</code></code>, <code><code>is-dark</code></code>, <code><code>is-primary</code></code>, <code><code>is-info</code></code>, <code><code>is-success</code></code>, <code><code>is-warning</code></code>, <code><code>is-danger</code></code>, <code>and any other colors you've set in the <code>$colors</code> list on Sass</code>",
+      "longname": "module:Tooltip~type",
+      "scope": "inner",
+      "memberof": "module:Tooltip",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Tooltip.svelte",
+        "lineno": 9,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Whether tooltip is active or not",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": true,
+      "name": "active",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "name": "active"
+      },
+      "kind": "prop",
+      "longname": "module:Tooltip~active",
+      "scope": "inner",
+      "memberof": "module:Tooltip",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tooltip.svelte",
+        "lineno": 14,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Tooltip text",
+      "type": [
+        "String"
+      ],
+      "name": "label",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "name": "label"
+      },
+      "kind": "prop",
+      "longname": "module:Tooltip~label",
+      "scope": "inner",
+      "memberof": "module:Tooltip",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tooltip.svelte",
+        "lineno": 19,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Tooltip position in relation to the element",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "defaultvalue": "is-top",
+      "name": "position",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": "is-top",
+        "name": "position"
+      },
+      "kind": "prop",
+      "values": "<code><code>is-top</code></code>, <code><code>is-bottom</code></code>, <code><code>is-top-left</code></code>, <code><code>is-top-right</code></code>, <code><code>is-bottom-left</code></code>, <code><code>is-bottom-right</code></code>",
+      "longname": "module:Tooltip~position",
+      "scope": "inner",
+      "memberof": "module:Tooltip",
+      "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Tooltip.svelte",
+        "lineno": 25,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Tooltip will be always active",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "always",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "always"
+      },
+      "kind": "prop",
+      "longname": "module:Tooltip~always",
+      "scope": "inner",
+      "memberof": "module:Tooltip",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tooltip.svelte",
+        "lineno": 30,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Tooltip will have a little fade animation",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "animated",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "animated"
+      },
+      "kind": "prop",
+      "longname": "module:Tooltip~animated",
+      "scope": "inner",
+      "memberof": "module:Tooltip",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tooltip.svelte",
+        "lineno": 35,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Tooltip will be square (not rounded corners)",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "square",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "square"
+      },
+      "kind": "prop",
+      "longname": "module:Tooltip~square",
+      "scope": "inner",
+      "memberof": "module:Tooltip",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tooltip.svelte",
+        "lineno": 40,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Tooltip slot will have a dashed underline",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "dashed",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "dashed"
+      },
+      "kind": "prop",
+      "longname": "module:Tooltip~dashed",
+      "scope": "inner",
+      "memberof": "module:Tooltip",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tooltip.svelte",
+        "lineno": 45,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Tooltip will be multilined",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "multilined",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "multilined"
+      },
+      "kind": "prop",
+      "longname": "module:Tooltip~multilined",
+      "scope": "inner",
+      "memberof": "module:Tooltip",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tooltip.svelte",
+        "lineno": 50,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Tooltip multiline size (only works for multilined tooltips)",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": "is-medium",
+      "name": "size",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": "is-medium",
+        "name": "size"
+      },
+      "kind": "prop",
+      "values": "<code><code>is-small</code></code>, <code><code>is-medium</code></code>, <code><code>is-large</code></code>",
+      "longname": "module:Tooltip~size",
+      "scope": "inner",
+      "memberof": "module:Tooltip",
       "___s": true
     }
   ]

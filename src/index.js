@@ -15,9 +15,29 @@ import Switch from './components/Switch.svelte'
 import { Tabs, Tab } from './components/Tabs'
 import Toast from './components/Toast'
 import Tooltip from './components/Tooltip.svelte'
-import {Tag, Taglist} from './components/Tag'
+import { Tag, Taglist } from './components/Tag'
 
-export { Button, Collapse, Dialog, Field, Icon, Input, Message, Progress, Modal, Select, Snackbar, Switch, Tabs, Tab, Tag, Taglist, Toast, Tooltip}
+export {
+  Button,
+  Collapse,
+  Dialog,
+  Field,
+  Icon,
+  Input,
+  Message,
+  Notification,
+  Progress,
+  Modal,
+  Select,
+  Snackbar,
+  Switch,
+  Tabs,
+  Tab,
+  Tag,
+  Taglist,
+  Toast,
+  Tooltip,
+}
 
 export const Svelma = {
   Button,
