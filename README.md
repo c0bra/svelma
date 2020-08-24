@@ -1,10 +1,12 @@
 # Svelma
+
 > Svelma is a set of UI components for [Svelte](https://svelte.dev) based on the [Bulma](http://bulma.io) CSS framework.
 
 <a href="https://www.npmjs.com/package/svelma"><img src="https://img.shields.io/npm/v/svelma.svg" /></a>
 <a href="https://www.npmjs.com/package/svelma"><img src="https://img.shields.io/npm/l/svelma.svg" /></a>
 <a href="https://bundlephobia.com/result?p=svelma"><img src="https://badgen.net/bundlephobia/minzip/svelma"></a>
 <a href="https://travis-ci.com/c0bra/svelma"><img src="https://travis-ci.com/c0bra/svelma.svg?branch=master"></a>
+
 <!-- <a href="https://circleci.com/gh/c0bra/svelma"><img src="https://img.shields.io/circleci/project/c0bra/svelma/svelma.svg?style=flat-square" /></a> -->
 <!-- <a href="https://codecov.io/gh/svelma/svelma"><img src="https://img.shields.io/codecov/c/github/svelma/svelma.svg?style=flat-square" /></a> -->
 
@@ -14,9 +16,9 @@ Much thanks to the [Buefy](https://buefy.org) project! It provided the inspirati
 
 # Features
 
-* Extremely lightweight thanks to Svelte, a compile-only javascript framework. The bundle is `50K` minified, `14K` gzipped.
-* Components can be used independently, so a modern tree-shaking bundler will reduce the final bundle size even further.
-* Svelma does not bundle Bulma, so you are free to include it in your project however you wish, themes and all.
+- Extremely lightweight thanks to Svelte, a compile-only javascript framework. The bundle is `50K` minified, `14K` gzipped.
+- Components can be used independently, so a modern tree-shaking bundler will reduce the final bundle size even further.
+- Svelma does not bundle Bulma, so you are free to include it in your project however you wish, themes and all.
 
 # Documentation
 
@@ -40,21 +42,23 @@ Note that you'll need a CSS processing plugin for rollup so that you can import 
 `<link>` tag in your HTML you can skip the plugin and the `import ... css` statement below in step #2
 
     $ npm install --save bulma svelma
-    $ npm install sass rollup-plugin-postcss --save-dev
+    $ npm install node-sass svelte-preprocess rollup-plugin-postcss --save-dev
 
 Add the postcss plugin to your rollup config (I don't think the order really matters):
 
 ```js
 // rollup.config.js
 import postcss from 'rollup-plugin-postcss'
+import preprocess from 'svelte-preprocess'
 
 // ...
 
 export default {
-  // ... 
+  // ...
   plugins: [
     svelte({
       // ...
+      preprocess: preprocess()
     }),
 
     postcss(),
@@ -71,7 +75,7 @@ export default {
   import { Button } from 'svelma'
 </script>
 
-<Button type="is-primary">I'm a Button!</Button>
+<button type="is-primary">I'm a Button!</button>
 ```
 
 ### 4. Include [Font Awesome](https://fontawesome.com/) icons
@@ -94,7 +98,7 @@ From CDN in your HTML page:
 </script>
 ```
 
-### SSR 
+### SSR
 
 If you are doing server-side rendering with Sapper, you'll need to import the .svelte files directly so that your app can compile them, rather than importing from the compiled module.
 
