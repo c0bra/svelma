@@ -50,7 +50,7 @@
     "rollup-plugin-scss": "^1.0.1",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
-    "semantic-release": "^15.13.24",
+    "semantic-release": "^17.2.3",
     "sirv-cli": "^0.3.1",
     "standard-version": "^6.0.1",
     "svelte": "^3.9.2",
