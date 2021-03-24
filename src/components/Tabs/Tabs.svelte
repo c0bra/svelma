@@ -50,7 +50,7 @@
     }
   })
 
-  function changeTab(tabNumber) {
+  export function changeTab(tabNumber) {
     const ts = get(tabs)
     // NOTE: change this back to using changeTab instead of activate/deactivate once transitions/animations are working
     if (ts[activeTab]) ts[activeTab].deactivate()
