@@ -43,4 +43,4 @@ newValue.subscribe(val => {
 
 </script>
 
-<progress class="progress {type}" bind:this={el} {max}>{value}%</progress>
+<progress class="progress {type}" bind:this={el} {value} {max}></progress>
