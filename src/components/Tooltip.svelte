@@ -1,4 +1,6 @@
 <script>
+  import { fly } from 'svelte/transition'
+
   /** Type (color) of the tooltip
    * @svelte-prop {String} [type=is-primary]
    * @values <code>is-white</code>, <code>is-black</code>, <code>is-light</code>, <code>is-dark</code>, <code>is-primary</code>, <code>is-info</code>, <code>is-success</code>, <code>is-warning</code>, <code>is-danger</code>, and any other colors you've set in the <code>$colors</code> list on Sass
@@ -27,9 +29,9 @@
   export let always = false
 
   /** Tooltip will have a little fade animation
-   * @svelte-prop {Boolean} [animated=false]
+   * @svelte-prop {Boolean|Object} [animated=true]
    * */
-  export let animated = false
+  export let animate = true
 
   /** Tooltip will be square (not rounded corners)
    * @svelte-prop {Boolean} [square=false]
@@ -63,6 +65,30 @@
   export let style = undefined
 
   let hovering = false
+
+  let animationProps
+  $: {
+    if (animate === false || animate === 'false') animationProps = { duration: 0 }
+    else if (animate != null && typeof animate === Object) animationProps = animate
+    else {
+      // default animation props
+      switch (position) {
+        case 'is-top':
+          animationProps = { x: 0, y: -10 }
+          break
+        case 'is-right':
+          animationProps = { x: 10, y: 0 }
+          break
+        case 'is-bottom':
+          animationProps = { x: 0, y: 10 }
+          break
+        case 'is-left':
+          animationProps = { x: -10, y: 0 }
+          break
+      }
+      animationProps = { ...animationProps, duration: 200 }
+    }
+  }
 </script>
 
 <style lang="scss">
@@ -175,6 +201,7 @@
   <slot />
   {#if always || (active && hovering)}
     <div
+      transition:fly={animationProps}
       class="tooltip tag {type}
       {size}
       {position}"
@@ -183,7 +210,7 @@
       class:is-square={square}
       class:is-multiline={multilined}
       {style}>
-       {label}
+      {label}
     </div>
   {/if}
 </span>
