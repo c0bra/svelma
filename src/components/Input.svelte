@@ -4,7 +4,6 @@
   import { current_component } from 'svelte/internal'
 	
   import Icon from './Icon.svelte'
-  import { omit } from '../utils'
 
   /** Binding value
    * @svelte-prop {String|Number} [value]
@@ -77,7 +76,6 @@
   const getType = getContext('type')
   if (getType) statusType = getType() || ''
 
-  const dispatch = createEventDispatcher()
 
   $: props = {
     ...omit($$props, 'class', 'value', 'type', 'size', 'passwordReveal', 'hasCounter', 'loading', 'disabled'),
