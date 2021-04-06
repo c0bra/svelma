@@ -98,4 +98,4 @@ import { Button } from 'svelma'
 
 # Inspiration
 
-Much thanks to the [Buefy](https://buefy.org) and [Svelma](https://c0bra.github.io/svelma/) projects! It provided the inspiration and lots of code examples for this version of Svelma.
+Much thanks to the [Buefy](https://buefy.org) and [Svelma2](https://github.com/abbychau/svelma2) projects! It provided the inspiration and lots of code examples for this version of Svelma.
