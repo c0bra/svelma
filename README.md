@@ -1,30 +1,28 @@
-# Svelma
+<h1 align="center">Svelma</h1>
 
-> Svelma is a set of UI components for [Svelte](https://svelte.dev) based on the [Bulma](http://bulma.io) CSS framework. Forked from https://github.com/c0bra/svelma
+<div align="center">
 
-<a href="https://www.npmjs.com/package/svelma"><img src="https://img.shields.io/npm/v/svelma.svg" /></a>
-<a href="https://www.npmjs.com/package/svelma"><img src="https://img.shields.io/npm/l/svelma.svg" /></a>
-<a href="https://bundlephobia.com/result?p=svelma"><img src="https://badgen.net/bundlephobia/minzip/svelma"></a>
-<a href="https://travis-ci.com/saravanabalagi/svelma"><img src="https://travis-ci.com/saravanabalagi/svelma.svg?branch=master"></a>
+<a href="https://www.npmjs.com/package/svelma-enhanced"><img src="https://img.shields.io/npm/v/svelma-enhanced.svg" /></a>
+<a href="https://www.npmjs.com/package/svelma-enhanced"><img src="https://img.shields.io/npm/l/svelma-enhanced.svg" /></a>
+<a href="https://bundlephobia.com/result?p=svelma-enhanced"><img src="https://badgen.net/bundlephobia/minzip/svelma-enhanced"></a>
+<a href="https://travis-ci.org/saravanabalagi/svelma"><img src="https://travis-ci.org/saravanabalagi/svelma.svg?branch=master"></a>
 
-<!-- <a href="https://circleci.com/gh/saravanabalagi/svelma"><img src="https://img.shields.io/circleci/project/saravanabalagi/svelma/svelma.svg?style=flat-square" /></a> -->
-<!-- <a href="https://codecov.io/gh/svelma/svelma"><img src="https://img.shields.io/codecov/c/github/svelma/svelma.svg?style=flat-square" /></a> -->
+Svelma is a set of UI components for [Svelte](https://svelte.dev) based on the [Bulma](http://bulma.io) CSS framework. Some features are experimental and are being developed. Pull requests are welcome. Forked from https://github.com/c0bra/svelma
 
-# Inspiration
+</div>
 
-Much thanks to the [Buefy](https://buefy.org) project! It provided the inspiration and lots of code examples for Svelma.. If you like Vue.js and Bulma, check it out.
 
-# Features
+## Features
 
 - Extremely lightweight thanks to Svelte, a compile-only javascript framework. The bundle is `50K` minified, `14K` gzipped.
 - Components can be used independently, so a modern tree-shaking bundler will reduce the final bundle size even further.
 - Svelma does not bundle Bulma, so you are free to include it in your project however you wish, themes and all.
 
-# Documentation
+## Documentation
 
 [See docs + demos site here](https://saravanabalagi.github.io/svelma)
 
-# Quick Start
+## Quick Start
 
 ### 1. Create a svelte app from the template
 
@@ -41,7 +39,7 @@ _NOTE_: There are of course other ways to set up a project using svelte. This is
 Note that you'll need a CSS processing plugin for rollup so that you can import css files. Here we're using `rollup-plugin-postcss`. If you're going to use a
 `<link>` tag in your HTML you can skip the plugin and the `import ... css` statement below in step #2
 
-    $ npm install --save bulma saravanabalagi/svelma
+    $ npm install --save bulma svelma-enhanced
     $ npm install node-sass svelte-preprocess rollup-plugin-postcss --save-dev
 
 Add the postcss plugin to your rollup config (I don't think the order really matters):
@@ -114,7 +112,7 @@ instead of
 import { Button } from 'svelma'
 ```
 
-# Development
+## Development
 
 1. Clone this repo: `git clone https://github.com/saravanabalagi/svelma.git`
 2. Install dependencies:
@@ -127,7 +125,7 @@ import { Button } from 'svelma'
 
     $ git cz
 
-# Publish
+## Publish
 
 _NOTE_: CI should publish new versions using `semantic-release` automatically
 
@@ -136,8 +134,6 @@ $ npm version <version>
 $ npm publish
 ```
 
-# License
+## License
 
-Code released under MIT license.
-
-Copyright &copy;, Brian Hann.
+See attached [Licence](LICENCE)
