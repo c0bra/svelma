@@ -1,6 +1,6 @@
 <script>
   import Clipboard from 'clipboard'
-  import hljs from 'highlight.js/lib/highlight'
+  import hljs from 'highlight.js/lib/core'
   import { beforeUpdate, tick, onMount, onDestroy } from 'svelte'
 
   export let lang = 'js'

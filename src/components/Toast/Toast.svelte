@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher, onDestroy, onMount } from 'svelte'
   import { fly, fade } from 'svelte/transition'
-  import Notice, { fitlerProps } from '../Notice.svelte'
+  import Notice, { filterProps } from '../Notice.svelte'
 
   /** Text or html message for toast
    * @svelte-prop {String} message
@@ -47,7 +47,7 @@
   }
 </style>
 
-<Notice {...fitlerProps($$props)}>
+<Notice {...filterProps($$props)}>
   <div class="toast {type} {newBackground}" role="alert">
     <div class="text"> <!-- NOTE: this extra div is for dynamic text styling with background-clip -->
       {@html message}

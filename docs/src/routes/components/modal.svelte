@@ -24,7 +24,7 @@
     <Button class="block" on:click={() => active = !active}>Toggle</Button>
     <Modal bind:active={active}>
       <p class="image is-4by3">
-        <img alt="Test image" src="https://via.placeholder.com/1280x920"/>
+        <img alt="Test" src="https://via.placeholder.com/1280x920"/>
       </p>
     </Modal>
   </div>

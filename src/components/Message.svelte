@@ -1,5 +1,5 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher } from 'svelte'
   import { fade } from 'svelte/transition'
   import Icon from './Icon.svelte'
 
@@ -69,7 +69,7 @@
           <p>{title}</p>
         {/if}
         {#if showClose}
-          <button class="delete" aria-label="ariaCloseLabel" on:click={close} />
+          <button class="delete" aria-label={ariaCloseLabel} on:click={close} />
         {/if}
       </div>
     {/if}

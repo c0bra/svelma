@@ -1,10 +1,10 @@
 <script context="module">
-	export async function preload(page, session) {
-		const res = await this.fetch(`components/button.json`);
-    const jsdoc = await res.json();
+  export async function preload(page, session) {
+    const res = await this.fetch(`components/button.json`)
+    const jsdoc = await res.json()
 
-		return { jsdoc };
-	}
+    return { jsdoc }
+  }
 </script>
 
 <script>
@@ -29,31 +29,21 @@
 
 <DocHeader title="Buttons" subtitle="Tasty clickable buttons" />
 
-<Example code={`<script>
-  import { Button } from 'svelma'
-
-  let counter = 0
-</script>
-
-<Button type="is-primary" on:click={() => counter++}>
+<Example
+  code={`<Button type="is-primary" on:click={() => counter++}>
   Click!: {counter}
 </Button>`}>
   <div slot="preview">
-    <Button type="is-primary" on:click={() => counter++}>
-      Click!: {counter}
-    </Button>
+    <Button type="is-primary" on:click={() => counter++}>Click!: {counter}</Button>
   </div>
 </Example>
 
-<hr class="is-medium">
+<hr class="is-medium" />
 
-<p class="title is-4">States and styles</p>
+<p class="title is-4">States, styles, and types</p>
 
-<Example code={`<script>
-  import { Button } from 'svelma'
-</script>
-
-<div class="buttons">
+<Example
+  code={`<div class="buttons">
   <Button type="is-primary">Primary</Button>
   <Button type="is-success">Success</Button>
   <Button type="is-danger">Danger</Button>
@@ -75,6 +65,10 @@
     <Button type="is-primary" inverted>Inverted</Button>
     <Button type="is-primary" inverted outlined>Invert Outlined</Button>
   </div>
+</div>
+<div class="buttons">
+  <Button type="is-primary" nativeType="submit">Submit</Button>
+  <Button type="is-primary" nativeType="reset">Reset</Button>
 </div>`}>
   <div slot="preview">
     <div class="buttons">
@@ -100,18 +94,19 @@
         <Button type="is-primary" inverted outlined>Invert Outlined</Button>
       </div>
     </div>
+    <div class="buttons">
+      <Button type="is-primary" nativeType="submit">Submit</Button>
+      <Button type="is-primary" nativeType="reset">Reset</Button>
+    </div>
   </div>
 </Example>
 
-<hr class="is-medium">
+<hr class="is-medium" />
 
 <p class="title is-4">Sizes</p>
 
-<Example code={`<script>
-  import { Button } from 'svelma'
-</script>
-
-<div class="buttons">
+<Example
+  code={`<div class="buttons">
   <Button size="is-small">Small</Button>
   <Button>Default</Button>
   <Button size="is-medium">Medium</Button>
@@ -127,15 +122,12 @@
   </div>
 </Example>
 
-<hr class="is-medium">
+<hr class="is-medium" />
 
 <p class="title is-4">Icons</p>
 
-<Example code={`<script>
-  import { Button, Icon } from 'svelma'
-</script>
-
-<div class="buttons">
+<Example
+  code={`<div class="buttons">
   <Button>
     <Icon icon="bold" />
   </Button>
@@ -185,4 +177,4 @@
   </div>
 </Example>
 
-<JSDoc {jsdoc}></JSDoc>
+<JSDoc {jsdoc} />

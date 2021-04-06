@@ -1,8 +1,9 @@
 {
   "name": "svelma",
+  "svelte": "src/index.js",
   "description": "Bulma components for Svelte",
-  "version": "0.0.9",
-  "author": "Brian Hann",
+  "version": "0.4.4",
+  "author": "Abby Chau, Brian Hann",
   "license": "MIT",
   "keywords": [
     "svelte",
@@ -14,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/c0bra/svelma"
+    "url": "git+https://github.com/c0bra/svelma.git"
   },
   "bugs": {
     "url": "https://github.com/c0bra/svelma/issues"
@@ -25,43 +26,51 @@
     "dist",
     "src"
   ],
+  "peerDependencies": {
+    "bulma": "^0.9.2"
+  },
   "devDependencies": {
-    "autoprefixer": "^9.6.0",
-    "bulma": "^0.7.5",
-    "conventional-changelog-cli": "^2.0.21",
+    "@rollup/plugin-alias": "3.1.2",
+    "@rollup/plugin-commonjs": "17.1.0",
+    "@rollup/plugin-node-resolve": "11.2.0",
+    "autoprefixer": "^10.2.5",
+    "bulma": "^0.9.2",
+    "conventional-changelog-cli": "^2.1.1",
     "get-port-cli": "^2.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^5.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^7.0.17",
-    "prettier": "^1.17.1",
-    "prettier-plugin-svelte": "^0.5.1",
-    "rollup": "^1.2.2",
-    "rollup-plugin-alias": "^1.5.1",
-    "rollup-plugin-analyzer": "^3.0.1",
+    "postcss": "^8.2.8",
+    "prettier": "^2.2.1",
+    "prettier-plugin-svelte": "^2.2.0",
+    "rollup": "^2.41.5",
     "rollup-plugin-bundle-size": "^1.0.3",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-copy": "^2.0.1",
-    "rollup-plugin-livereload": "^1.0.1",
-    "rollup-plugin-node-resolve": "^4.0.1",
-    "rollup-plugin-scss": "^1.0.1",
-    "rollup-plugin-svelte": "^5.0.3",
-    "rollup-plugin-terser": "^4.0.4",
-    "sirv-cli": "^0.3.1",
-    "standard-version": "^6.0.1",
-    "svelte": "^3.4.4",
-    "svelte-preprocess": "^2.12.0",
-    "wait-for-localhost-cli": "^1.1.0"
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-scss": "^2.6.1",
+    "rollup-plugin-svelte": "^7.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "semantic-release": "^17.4.2",
+    "sirv-cli": "^1.0.11",
+    "standard-version": "^9.1.1",
+    "svelte": "^3.35.0",
+    "svelte-preprocess": "^4.6.9",
+    "wait-for-localhost-cli": "^2.0.0"
   },
   "scripts": {
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p autobuild autodocs",
-    "docs": "(cd docs; npx sapper export --basepath svelma)",
-    "docs:deploy": "./docs.sh",
+    "docs": "(cd docs; npm i -f; npx sapper export --basepath svelma)",
     "autodocs": "(cd docs; npx sapper dev --basepath svelma)",
     "jsdocs": "(cd docs; npx jsdoc -c jsdoc/conf.js)",
-    "prepublish": "npm run build",
-    "changelog": "conventional-changelog -i CHANGELOG.md -p angular"
+    "prepublishOnly": "npm run build",
+    "changelog": "conventional-changelog -i CHANGELOG.md -p angular",
+    "semantic-release": "semantic-release"
   },
-  "browserslist": "last 2 versions"
+  "browserslist": "last 2 versions",
+  "homepage": "https://github.com/c0bra/svelma#readme",
+  "directories": {
+    "doc": "docs"
+  }
 }

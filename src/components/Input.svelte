@@ -1,5 +1,8 @@
 <script>
-  import { createEventDispatcher, getContext, onMount, tick } from 'svelte'
+  import { createEventDispatcher, onMount, getContext, tick } from 'svelte'
+  import { omit, getEventsAction } from '../utils'
+  import { current_component } from 'svelte/internal'
+	
   import Icon from './Icon.svelte'
   import { omit } from '../utils'
 
@@ -20,8 +23,13 @@
    * */
   export let size = ''
 
+  /** Makes input full-width when inside a grouped or addon field
+   * @svelte-prop {boolean} expanded=false
+   * */
+  export let expanded = false
+
   /** Show the password reveal toggle button
-   * @svelte-prop {boolean} [passwordReveal]
+   * @svelte-prop {boolean} passwordReveal=false
    * */
   export let passwordReveal = false
 
@@ -40,6 +48,17 @@
    * */
   export let loading = false
 
+  /** Show this icon on left side of input
+   * @svelte-prop {String} [icon]
+   * */
+  export let icon = ''
+
+  /** Fontawesome icon pack to use. By default the <code>Icon</code> component uses <code>fas</code>
+   * @svelte-prop {String} [iconPack]
+   * @values <code>fas</code>, <code>fab</code>, etc...
+   * */
+  export let iconPack = ''
+
   /** Input is disabled
    * @svelte-prop {boolean} [disabled=false]
    * */
@@ -53,6 +72,8 @@
   let statusTypeIcon = ''
   let valueLength = null
 
+  const dispatch = createEventDispatcher();
+
   const getType = getContext('type')
   if (getType) statusType = getType() || ''
 
@@ -61,6 +82,7 @@
   $: props = {
     ...omit($$props, 'class', 'value', 'type', 'size', 'passwordReveal', 'hasCounter', 'loading', 'disabled'),
   }
+  $: hasIconLeft = !!icon
   $: hasIconRight = passwordReveal || loading || statusType
   $: passwordVisibleIcon = isPasswordVisible ? 'eye-slash' : 'eye'
   $: {
@@ -104,20 +126,12 @@
     value = e.target.value
     $$props.value = value
 
-    dispatch('input', { value })
+    dispatch('input', e)
   }
+  const onFocus = () => (isFocused = true)
+  const onBlur = () => (isFocused = false)
 
-  function onFocus() {
-    isFocused = true
-
-    dispatch('focus')
-  }
-
-   function onBlur() {
-     isFocused = false
-
-     dispatch('blur')
-   }
+  const events = getEventsAction(current_component);
 </script>
 
 <style>
@@ -127,23 +141,24 @@
   }
 </style>
 
-<div class="control" class:has-icons-right={hasIconRight} class:is-loading={loading}>
+<div class="control" class:has-icons-left={hasIconLeft} class:has-icons-right={hasIconRight} class:is-loading={loading} class:is-expanded={expanded}>
 
   {#if type !== 'textarea'}
     <input
+      use:events
       {...props}
       type={newType}
       {value}
-      class="input {statusType}
-      {size}
-      {$$props.class || ''}"
+      class="input {statusType} {size} {$$props.class || ''}"
       bind:this={input}
       on:input={onInput}
       on:focus={onFocus}
       on:blur={onBlur}
+      on:change
       {disabled} />
   {:else}
     <textarea
+      use:events
       {...props}
       {value}
       class="textarea {statusType}
@@ -152,7 +167,15 @@
       on:input={onInput}
       on:focus={onFocus}
       on:blur={onBlur}
+      on:change
       {disabled} />
+  {/if}
+
+  {#if icon}
+    <Icon
+      pack={iconPack}
+      isLeft={true}
+      {icon} />
   {/if}
 
   {#if !loading && (passwordReveal || statusType)}

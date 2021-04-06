@@ -6,9 +6,9 @@
 </script>
 
 <svelte:head>
+  <meta property="og:type" content="article" />
   <meta property="og:title" content={newTitle} />
   <meta property="og:description" content={subtitle} />
-  <meta property="og:image" content="https://c0bra.github.io/svelma/svelma-logo.svg" />
 </svelte:head>
 
 <!-- Doc for a Svelma Component -->

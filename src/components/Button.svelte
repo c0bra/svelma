@@ -26,6 +26,12 @@
    * */
   export let href = ''
 
+  /** Native button type
+   * @svelte-prop {String} [nativeType]=button
+   * @values Any native button type (button, submit, reset)
+   * */
+  export let nativeType = 'button'
+
   export let loading = false
   export let inverted = false
   export let outlined = false
@@ -42,7 +48,7 @@
   })
 
   $: props = {
-    ...omit($$props, 'loading', 'inverted', 'outlined', 'rounded'),
+    ...omit($$props, 'loading', 'inverted', 'nativeType', 'outlined', 'rounded', 'type'),
     class: `button ${type} ${size} ${$$props.class || ''}`,
   }
 
@@ -60,6 +66,7 @@
 {#if tag === 'button'}
   <button
     {...props}
+    type={nativeType}
     class:is-inverted={inverted}
     class:is-loading={loading}
     class:is-outlined={outlined}

@@ -3,6 +3,7 @@
   import { chooseAnimation, isEscKey } from '../../utils'
 
   export let active = true
+  export let title = "Modal Title"
   export let animation = 'scale'
   export let animProps = { start: 1.2 }
   export let size = ''
@@ -14,14 +15,11 @@
   $: _animation = chooseAnimation(animation)
   $: {
     if (modal && active && onBody) {
-      // modal.parentNode?.removeChild(modal)
       document.body.appendChild(modal)
     }
   }
 
-  onMount(() => {
-    
-  })
+  onMount(() => {})
 
   function close() {
     active = false
@@ -34,14 +32,21 @@
   }
 </script>
 
-<svelte:window on:keydown={keydown}></svelte:window>
+<svelte:window on:keydown={keydown} />
 
-<div class="modal {size}" class:is-active={active} bind:this={modal}>
+<div class="modal {size}"  class:is-active={active} bind:this={modal}>
   <div class="modal-background" on:click={close}></div>
-  <div class="modal-content" transition:_animation|local={animProps}> <!-- transition:_animation|local -->
-    <slot />
+  <div class="modal-card" transition:_animation|local={animProps}>
+    <header class="modal-card-head">
+      <p class="modal-card-title">{title}</p>
+      <button class="delete" aria-label="close" on:click={close} />
+    </header>
+    <section class="modal-card-body">
+      <slot />
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success">Save changes</button>
+      <button class="button">Cancel</button>
+    </footer>
   </div>
-  {#if showClose}
-    <button class="modal-close is-large" aria-label="close" on:click={close}></button>
-  {/if}
 </div>
