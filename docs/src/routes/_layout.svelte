@@ -1,6 +1,6 @@
 <script context="module">
   export async function preload({ path }) {
-    const url = 'https://c0bra.github.io' + `/svelma/${path}`.replace(/\/\//g, '/').replace(/([^\/]$)/, '$1/')
+    const url = 'https://saravanabalagi.github.io' + `/svelma/${path}`.replace(/\/\//g, '/').replace(/([^\/]$)/, '$1/')
 
     return { url };
   }
@@ -21,7 +21,7 @@
   let url
 
   page.subscribe(({ path }) => {
-    url = 'https://c0bra.github.io' + `/svelma/${path}`.replace(/\/\//g, '/').replace(/([^\/]$)/, '$1/')
+    url = 'https://saravanabalagi.github.io' + `/svelma/${path}`.replace(/\/\//g, '/').replace(/([^\/]$)/, '$1/')
   })
 
   // afterUpdate(function() {
@@ -59,7 +59,7 @@
 <svelte:head>
   <title>Svelma</title>
   <meta property="og:site_name" content="Svelma" />
-  <meta property="og:image" content="https://c0bra.github.io/svelma/svelma-logo.png" />
+  <meta property="og:image" content="https://saravanabalagi.github.io/svelma/svelma-logo.png" />
   <meta property="og:image:width" content="200" />
   <meta property="og:image:height" content="200" />
   <meta property="og:url" content={url}>

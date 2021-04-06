@@ -3050,7 +3050,7 @@
     {
       "meta": {
         "filename": "Tooltip.svelte",
-        "lineno": 3,
+        "lineno": 5,
         "columnno": 2,
         "path": "src/components"
       },
@@ -3082,7 +3082,7 @@
     {
       "meta": {
         "filename": "Tooltip.svelte",
-        "lineno": 9,
+        "lineno": 11,
         "columnno": 2,
         "path": "src/components"
       },
@@ -3114,7 +3114,7 @@
     {
       "meta": {
         "filename": "Tooltip.svelte",
-        "lineno": 14,
+        "lineno": 16,
         "columnno": 2,
         "path": "src/components"
       },
@@ -3142,7 +3142,7 @@
     {
       "meta": {
         "filename": "Tooltip.svelte",
-        "lineno": 19,
+        "lineno": 21,
         "columnno": 2,
         "path": "src/components"
       },
@@ -3174,7 +3174,7 @@
     {
       "meta": {
         "filename": "Tooltip.svelte",
-        "lineno": 25,
+        "lineno": 27,
         "columnno": 2,
         "path": "src/components"
       },
@@ -3206,30 +3206,32 @@
     {
       "meta": {
         "filename": "Tooltip.svelte",
-        "lineno": 30,
+        "lineno": 32,
         "columnno": 2,
         "path": "src/components"
       },
-      "description": "Tooltip will have a little fade animation",
+      "description": "Tooltip will have fly animation, customizable",
       "type": [
-        "Boolean"
+        "Boolean",
+        "Object"
       ],
       "optional": true,
-      "defaultvalue": false,
-      "name": "animated",
+      "defaultvalue": true,
+      "name": "animate",
       "_isSvelteDoc": true,
       "_svelteProps": {
         "type": {
           "names": [
-            "Boolean"
+            "Boolean",
+            "Object"
           ]
         },
         "optional": true,
-        "defaultvalue": false,
-        "name": "animated"
+        "defaultvalue": true,
+        "name": "animate"
       },
       "kind": "prop",
-      "longname": "module:Tooltip~animated",
+      "longname": "module:Tooltip~animate",
       "scope": "inner",
       "memberof": "module:Tooltip",
       "___s": true,
@@ -3238,7 +3240,7 @@
     {
       "meta": {
         "filename": "Tooltip.svelte",
-        "lineno": 35,
+        "lineno": 37,
         "columnno": 2,
         "path": "src/components"
       },
@@ -3270,7 +3272,7 @@
     {
       "meta": {
         "filename": "Tooltip.svelte",
-        "lineno": 40,
+        "lineno": 42,
         "columnno": 2,
         "path": "src/components"
       },
@@ -3302,7 +3304,7 @@
     {
       "meta": {
         "filename": "Tooltip.svelte",
-        "lineno": 45,
+        "lineno": 47,
         "columnno": 2,
         "path": "src/components"
       },
@@ -3334,13 +3336,13 @@
     {
       "meta": {
         "filename": "Tooltip.svelte",
-        "lineno": 50,
+        "lineno": 52,
         "columnno": 2,
         "path": "src/components"
       },
       "description": "Tooltip multiline size (only works for multilined tooltips)",
       "type": [
-        "Boolean"
+        "String"
       ],
       "optional": true,
       "defaultvalue": "is-medium",
@@ -3349,7 +3351,7 @@
       "_svelteProps": {
         "type": {
           "names": [
-            "Boolean"
+            "String"
           ]
         },
         "optional": true,
@@ -3362,6 +3364,68 @@
       "scope": "inner",
       "memberof": "module:Tooltip",
       "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Tooltip.svelte",
+        "lineno": 58,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Tooltip will be fully rounded on left and right edges",
+      "type": [
+        "Boolean"
+      ],
+      "optional": true,
+      "defaultvalue": false,
+      "name": "rounded",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "name": "rounded"
+      },
+      "kind": "prop",
+      "longname": "module:Tooltip~rounded",
+      "scope": "inner",
+      "memberof": "module:Tooltip",
+      "___s": true,
+      "values": ""
+    },
+    {
+      "meta": {
+        "filename": "Tooltip.svelte",
+        "lineno": 63,
+        "columnno": 2,
+        "path": "src/components"
+      },
+      "description": "Tooltip style override",
+      "type": [
+        "String"
+      ],
+      "optional": true,
+      "name": "style",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "optional": true,
+        "name": "style"
+      },
+      "kind": "prop",
+      "longname": "module:Tooltip~style",
+      "scope": "inner",
+      "memberof": "module:Tooltip",
+      "___s": true,
+      "values": ""
     }
   ]
 }

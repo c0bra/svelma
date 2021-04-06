@@ -1,13 +1,13 @@
 # Svelma
 
-> Svelma is a set of UI components for [Svelte](https://svelte.dev) based on the [Bulma](http://bulma.io) CSS framework.
+> Svelma is a set of UI components for [Svelte](https://svelte.dev) based on the [Bulma](http://bulma.io) CSS framework. Forked from https://github.com/c0bra/svelma
 
 <a href="https://www.npmjs.com/package/svelma"><img src="https://img.shields.io/npm/v/svelma.svg" /></a>
 <a href="https://www.npmjs.com/package/svelma"><img src="https://img.shields.io/npm/l/svelma.svg" /></a>
 <a href="https://bundlephobia.com/result?p=svelma"><img src="https://badgen.net/bundlephobia/minzip/svelma"></a>
-<a href="https://travis-ci.com/c0bra/svelma"><img src="https://travis-ci.com/c0bra/svelma.svg?branch=master"></a>
+<a href="https://travis-ci.com/saravanabalagi/svelma"><img src="https://travis-ci.com/saravanabalagi/svelma.svg?branch=master"></a>
 
-<!-- <a href="https://circleci.com/gh/c0bra/svelma"><img src="https://img.shields.io/circleci/project/c0bra/svelma/svelma.svg?style=flat-square" /></a> -->
+<!-- <a href="https://circleci.com/gh/saravanabalagi/svelma"><img src="https://img.shields.io/circleci/project/saravanabalagi/svelma/svelma.svg?style=flat-square" /></a> -->
 <!-- <a href="https://codecov.io/gh/svelma/svelma"><img src="https://img.shields.io/codecov/c/github/svelma/svelma.svg?style=flat-square" /></a> -->
 
 # Inspiration
@@ -22,7 +22,7 @@ Much thanks to the [Buefy](https://buefy.org) project! It provided the inspirati
 
 # Documentation
 
-[See docs + demos site here](https://c0bra.github.io/svelma)
+[See docs + demos site here](https://saravanabalagi.github.io/svelma)
 
 # Quick Start
 
@@ -41,7 +41,7 @@ _NOTE_: There are of course other ways to set up a project using svelte. This is
 Note that you'll need a CSS processing plugin for rollup so that you can import css files. Here we're using `rollup-plugin-postcss`. If you're going to use a
 `<link>` tag in your HTML you can skip the plugin and the `import ... css` statement below in step #2
 
-    $ npm install --save bulma svelma
+    $ npm install --save bulma saravanabalagi/svelma
     $ npm install node-sass svelte-preprocess rollup-plugin-postcss --save-dev
 
 Add the postcss plugin to your rollup config (I don't think the order really matters):
@@ -116,7 +116,7 @@ import { Button } from 'svelma'
 
 # Development
 
-1. Clone this repo: `git clone https://github.com/c0bra/svelma.git`
+1. Clone this repo: `git clone https://github.com/saravanabalagi/svelma.git`
 2. Install dependencies:
    1. `npm i && (cd docs; npm i)`
    2. `npm install -g semantic-release-cli commitizen`

@@ -1,12 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # abort on errors
 set -e
 
-NODE_ENV=production npm run build
-if [[ $CI ]] ; then (cd docs; npm ci) ; fi
-NODE_ENV=production npm run jsdocs
-NODE_ENV=production npm run docs
+NODE_ENV=production yarn run build
+if [ $CI ] ; then (cd docs; yarn ci) ; fi
+NODE_ENV=production yarn run jsdocs
+NODE_ENV=production yarn run docs
 
 # navigate into the build output directory
 cd docs/__sapper__/export/svelma
@@ -22,11 +22,11 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-if [[ $CI ]]
+if [ $CI ]
 then
-  git push -f https://${GITHUB_TOKEN}@github.com/c0bra/svelma.git master:gh-pages
+  git push -f https://${GITHUB_TOKEN}@github.com/saravanabalagi/svelma.git master:gh-pages
 else
-  git push -f git@github.com:c0bra/svelma.git master:gh-pages
+  git push -f git@github.com:saravanabalagi/svelma.git master:gh-pages
 fi
 
 cd -

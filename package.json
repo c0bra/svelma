@@ -2,8 +2,8 @@
   "name": "svelma",
   "svelte": "src/index.js",
   "description": "Bulma components for Svelte",
-  "version": "0.4.0",
-  "author": "Brian Hann",
+  "version": "0.4.1",
+  "author": "Saravanabalagi Ramachandran",
   "license": "MIT",
   "keywords": [
     "svelte",
@@ -15,10 +15,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/c0bra/svelma"
+    "url": "https://github.com/saravanabalagi/svelma"
   },
   "bugs": {
-    "url": "https://github.com/c0bra/svelma/issues"
+    "url": "https://github.com/saravanabalagi/svelma/issues"
   },
   "module": "dist/module.js",
   "main": "dist/index.js",
@@ -48,7 +48,7 @@
     "rollup-plugin-livereload": "^1.0.4",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-scss": "^1.0.1",
-    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-svelte": "^6.1.1",
     "rollup-plugin-terser": "^4.0.4",
     "semantic-release": "^15.13.24",
     "sirv-cli": "^0.3.1",
