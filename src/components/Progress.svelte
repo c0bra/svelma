@@ -30,17 +30,10 @@ export let duration = 400
  * */
 export let easing = cubicOut
 
-let el
-let newValue = tweened(value, { duration, easing })
-
-$: newValue.set(value)
-
-newValue.subscribe(val => {
-  if (el && typeof(value !== undefined)) {
-    el.setAttribute('value', get(newValue))
-  }
-})
+let tweenedValue = tweened(value, { duration, easing })
+$: tweenedValue.set(value);
+$: valueObj = (value == null) ? {} : {value: $tweenedValue}
 
 </script>
 
-<progress class="progress {type}" bind:this={el} {value} {max}></progress>
+<progress class="progress {type}" {...valueObj} {max}></progress>
