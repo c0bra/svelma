@@ -20,7 +20,7 @@
 <style>
 .buttons {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 </style>
@@ -28,25 +28,25 @@
 <DocHeader title="Tooltip" subtitle="Display a brief helper text to your user" />
 
 <Example code={`
-  <script>
-    import { Button, Tooltip} from 'svelma'
-  </script>
+<script>
+  import { Button, Tooltip} from 'svelma'
+</script>
 
-  <Tooltip label="Tooltip left" position="is-left">
-    <Button>Left</Button>
-  </Tooltip>
+<Tooltip label="Tooltip left" position="is-left">
+  <Button>Left</Button>
+</Tooltip>
 
-  <Tooltip label="Tooltip top">
-    <Button>Top (default)</Button>
-  </Tooltip>
+<Tooltip label="Tooltip top">
+  <Button>Top (default)</Button>
+</Tooltip>
 
-  <Tooltip label="Tooltip bottom" position="is-bottom">
-    <Button>Bottom</Button>
-  </Tooltip>
+<Tooltip label="Tooltip bottom" position="is-bottom">
+  <Button>Bottom</Button>
+</Tooltip>
 
-  <Tooltip label="Tooltip right" position="is-right">
-    <Button>Right</Button>
-  </Tooltip>`}>
+<Tooltip label="Tooltip right" position="is-right">
+  <Button>Right</Button>
+</Tooltip>`}>
 
   <div slot="preview">
     <div class="buttons">
@@ -74,9 +74,9 @@
 <p class="title is-4">Sizes</p>
 
 <Example code={`
-  <Tooltip label="Tooltip left" size="is-small"> <Button>Small</Button> </Tooltip>
-  <Tooltip label="Tooltip bottom"> <Button>Medium</Button> </Tooltip>
-  <Tooltip label="Tooltip right" size="is-large"> <Button>Large</Button> </Tooltip>`}>
+<Tooltip label="Tooltip left" size="is-small"> <Button>Small</Button> </Tooltip>
+<Tooltip label="Tooltip bottom"> <Button>Medium</Button> </Tooltip>
+<Tooltip label="Tooltip right" size="is-large"> <Button>Large</Button> </Tooltip>`}>
   <div slot="preview">
     <div class="buttons">
       <Tooltip label="Tooltip small" size="is-small">
@@ -99,15 +99,14 @@
 <p class="title is-4">Color</p>
 
 <Example code={`
-  <Tooltip label="Tooltip primary"> <Button>Primary</Button> </Tooltip>
-  <Tooltip label="Tooltip success" type="is-success"> <Button>Success</Button> </Tooltip>
-  <Tooltip label="Tooltip danger" type="is-danger"> <Button>Danger</Button> </Tooltip>
-  <Tooltip label="Tooltip warning" type="is-warning"> <Button>Warning</Button> </Tooltip>
-  <Tooltip label="Tooltip info" type="is-info"> <Button>Info</Button> </Tooltip>
-  <Tooltip label="Tooltip link" type="is-link"> <Button>Link</Button> </Tooltip>
-  <Tooltip label="Tooltip light" type="is-light"> <Button>Light</Button> </Tooltip>
-  <Tooltip label="Tooltip dark" type="is-dark"> <Button>Dark</Button> </Tooltip>
-  <Tooltip label="Tooltip text" type="is-text"> <Button>Text</Button> </Tooltip>`}>
+<Tooltip label="Tooltip primary"> <Button>Primary</Button> </Tooltip>
+<Tooltip label="Tooltip success" type="is-success"> <Button>Success</Button> </Tooltip>
+<Tooltip label="Tooltip danger" type="is-danger"> <Button>Danger</Button> </Tooltip>
+<Tooltip label="Tooltip warning" type="is-warning"> <Button>Warning</Button> </Tooltip>
+<Tooltip label="Tooltip info" type="is-info"> <Button>Info</Button> </Tooltip>
+<Tooltip label="Tooltip link" type="is-link"> <Button>Link</Button> </Tooltip>
+<Tooltip label="Tooltip light" type="is-light"> <Button>Light</Button> </Tooltip>
+<Tooltip label="Tooltip dark" type="is-dark"> <Button>Dark</Button> </Tooltip>`}>
   <div slot="preview">
     <div class="buttons">
       <Tooltip label="Tooltip primary">
@@ -141,10 +140,6 @@
       <Tooltip label="Tooltip dark" type="is-dark">
         <Button>Dark</Button>
       </Tooltip>
-
-      <Tooltip label="Tooltip text" type="is-text">
-        <Button>Text</Button>
-      </Tooltip>
     </div>
   </div>
 </Example>
@@ -154,13 +149,13 @@
 <p class="title is-4">Styles</p>
 
 <Example code={`
-  <Tooltip label="Tooltip rounded" rounded={true}> <Button>Rounded</Button> </Tooltip>
-  <Tooltip label="Tooltip square" square={true}> <Button>Square</Button> </Tooltip>
-  <Tooltip label="Tooltip dashed" dashed={true}> <Button>Dashed</Button> </Tooltip>
-  <Tooltip label="Tooltip always" always={true}> <Button>Always</Button> </Tooltip>
-  <Tooltip label={"Tooltip\nmultilined"} multilined={true}> <Button>Multilined</Button> </Tooltip>
-  <Tooltip label="Not animated" animate={false}> <Button>Not Animated</Button> </Tooltip>
-  <Tooltip label="Not active" active={false}> <Button>Inactive</Button> </Tooltip>`}>
+<Tooltip label="Tooltip rounded" rounded={true}> <Button>Rounded</Button> </Tooltip>
+<Tooltip label="Tooltip square" square={true}> <Button>Square</Button> </Tooltip>
+<Tooltip label="Tooltip dashed" dashed={true}> <Button>Dashed</Button> </Tooltip>
+<Tooltip label={"Tooltip\\nmultilined"} multilined={true}> <Button>Multilined</Button> </Tooltip>
+<Tooltip label="Not animated" animate={false}> <Button>Not Animated</Button> </Tooltip>
+<Tooltip label="Not active" active={false}> <Button>Inactive</Button> </Tooltip>
+<Tooltip label="Tooltip always" always={true} position="is-bottom"> <Button>Always</Button> </Tooltip>`}>
   <div slot="preview">
     <div class="buttons">
       <Tooltip label="Tooltip rounded" rounded={true}>
@@ -175,10 +170,6 @@
         <Button>Dashed</Button>
       </Tooltip>
 
-      <Tooltip label="Tooltip always" always={true}>
-        <Button>Always</Button>
-      </Tooltip>
-
       <Tooltip label={"Tooltip\nmultilined"} multilined={true}>
         <Button>Multilined</Button>
       </Tooltip>
@@ -190,6 +181,10 @@
       <Tooltip label="Not active" active={false}>
         <Button>Inactive</Button>
       </Tooltip>
+
+      <Tooltip label="Tooltip always" always={true} position="is-bottom">
+        <Button>Always</Button>
+      </Tooltip>
     </div>
   </div>
 </Example>
@@ -199,8 +194,8 @@
 <p class="title is-4">Advanced</p>
 
 <Example code={`
-  <Tooltip label="Tooltip customized" animate={{x: 50, duration: 2000}}> <Button>Customized Animation</Button> </Tooltip>
-  <Tooltip label="Long Tooltip" style="width: 180px"> <Button>Custom Styles</Button> </Tooltip>  `}>
+<Tooltip label="Tooltip customized" animate={{x: 50, duration: 2000}}> <Button>Customized Animation</Button> </Tooltip>
+<Tooltip label="Long Tooltip" style="width: 180px"> <Button>Custom Styles</Button> </Tooltip>  `}>
   <div slot="preview">
     <div class="buttons">
       <Tooltip label="Tooltip customized" animate={{x: 50, duration: 2000}}>

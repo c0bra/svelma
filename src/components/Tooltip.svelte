@@ -28,8 +28,8 @@
    * */
   export let always = false
 
-  /** Tooltip will have a little fade animation
-   * @svelte-prop {Boolean|Object} [animated=true]
+  /** Tooltip will have fly animation, customizable
+   * @svelte-prop {Boolean|Object} [animate=true]
    * */
   export let animate = true
 
@@ -197,8 +197,10 @@
   }
 </style>
 
-<span class="tooltip-wrapper" on:mouseenter={() => (hovering = true)} on:mouseleave={() => (hovering = false)}>
-  <slot />
+<div class="tooltip-wrapper">
+  <div class="tooltip-trigger" on:mouseenter={() => (hovering = true)} on:mouseleave={() => (hovering = false)}>
+    <slot />
+  </div>
   {#if always || (active && hovering)}
     <div
       transition:fly={animationProps}
@@ -210,7 +212,7 @@
       class:is-square={square}
       class:is-multiline={multilined}
       {style}>
-      {label}
+       {label}
     </div>
   {/if}
-</span>
+</div>
