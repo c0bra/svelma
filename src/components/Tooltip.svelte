@@ -69,7 +69,7 @@
   let animationProps
   $: {
     if (animate === false || animate === 'false') animationProps = { duration: 0 }
-    else if (animate != null && typeof animate === Object) animationProps = animate
+    else if (animate != null && typeof animate === "object") animationProps = animate
     else {
       // default animation props
       switch (position) {
