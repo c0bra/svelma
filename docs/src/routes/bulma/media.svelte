@@ -96,7 +96,7 @@
         <div class="media-left">
           <figure class="image is-64x64">
             {#if user}
-              <img transition:fade class="is-rounded" src={user.picture.medium} alt="Profile picture" />
+              <img transition:fade class="is-rounded" src={user.picture.medium} alt="Profile" />
             {/if}
           </figure>
         </div>

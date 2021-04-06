@@ -2,7 +2,7 @@
   import { onDestroy, onMount } from 'svelte'
   import DocHeader from '../../components/DocHeader.svelte'
   import Example from '../../components/Example.svelte'
-
+let Draggabilly;
   async function waitForDraggabilly() {
     return new Promise((resolve, reject) => {
       const interval = setInterval(() => {

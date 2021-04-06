@@ -1,7 +1,7 @@
 <script>
   import { getParameters } from 'codesandbox/lib/api/define'
 
-  export let title = 'Svelma Example'
+  //export let title = 'Svelma Example'
   export let code
 
   let form
@@ -76,7 +76,7 @@ export default app;`,
             'sirv-cli': '^0.3.1',
           },
           dependencies: {
-            svelte: 'latest',
+            svelte: '^3.0.0',
             svelma: 'latest',
             '@fortawesome/fontawesome-free': 'latest',
             bulma: 'latest',

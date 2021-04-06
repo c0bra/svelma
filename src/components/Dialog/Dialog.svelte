@@ -84,8 +84,9 @@
 
   // export let showClose = true
   let resolve
-  export const promise = new Promise((fulfil) => (resolve = fulfil))
 
+  // export let promise = new Promise((fulfil) => (resolve = fulfil))
+  
   // TODO: programmatic subcomponents
   // export let subComponent = null
   export let appendToBody = true
@@ -101,7 +102,7 @@
   $: _animation = chooseAnimation(animation)
   $: {
     if (modal && active && appendToBody) {
-      modal.parentNode.removeChild(modal)
+      modal.parentNode?.removeChild(modal)
       document.body.appendChild(modal)
     }
   }
@@ -128,7 +129,7 @@
   function close() {
     resolve(hasInput ? null : false)
     active = false
-    dispatch('destroyed')
+    dispatch('destroy')
   }
 
   async function confirm() {
