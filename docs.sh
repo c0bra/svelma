@@ -4,6 +4,7 @@
 set -e
 
 NODE_ENV=production npm run build
+if [[ $CI ]] ; then (cd docs; npm ci) ; fi
 NODE_ENV=production npm run jsdocs
 NODE_ENV=production npm run docs
 
@@ -21,6 +22,11 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:c0bra/svelma.git master:gh-pages
+if [[ $CI ]]
+then
+  git push -f https://${GITHUB_TOKEN}@github.com/c0bra/svelma.git master:gh-pages
+else
+  git push -f git@github.com:c0bra/svelma.git master:gh-pages
+fi
 
 cd -

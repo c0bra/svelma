@@ -1,24 +1,25 @@
 <script context="module">
-  const allowedProps = ['active', 'type', 'position', 'duration'];
+  const allowedProps = ['active', 'position', 'duration'];
 
-  export function fitlerProps(props) {
+  export function filterProps(props) {
+    const newProps = {}
+
     Object.keys(props).forEach(key => {
-      if (!allowedProps.includes(key)) delete props[key]
+      if (allowedProps.includes(key)) newProps[key] = props[key]
     })
 
-    return props
+    return newProps
   }
 </script>
 
 <script>
-  import { createEventDispatcher, onDestroy, onMount } from 'svelte'
+  import { createEventDispatcher, onDestroy, onMount, tick } from 'svelte'
   import { fly, fade } from 'svelte/transition'
   import Notices, { notices } from './Notices.svelte'
 
   const dispatch = createEventDispatcher()
 
   export let active = true
-  export let type = 'is-dark'
   export let position = 'is-top'
   export let duration = 2000
   export let transitionOut = true
@@ -26,7 +27,6 @@
   let el
   let parent
   let timer
-  const div = () => document.createElement('div')
 
   $: transitionY = ~position.indexOf('is-top') ? -200 : 200
 
@@ -43,16 +43,25 @@
     dispatch('destroyed')
   }
 
-  function setupContainers() {
+  async function setupContainers() {
+    await tick
+
     if (!notices.top) {
-      notices.top = div()
-      notices.top.className = 'notices is-top'
-      document.body.appendChild(notices.top)
+      notices.top = new Notices({
+        target: document.body,
+        props: {
+          position: 'top'
+        },
+      });
     }
+
     if (!notices.bottom) {
-      notices.bottom = div()
-      notices.bottom.className = 'notices is-bottom'
-      document.body.appendChild(notices.bottom)
+      notices.bottom = new Notices({
+        target: document.body,
+        props: {
+          position: 'bottom',
+        },
+      });
     }
   }
 
@@ -60,11 +69,11 @@
     parent = notices.top
     if (position && position.indexOf('is-bottom') === 0) parent = notices.bottom
 
-    parent.insertAdjacentElement('afterbegin', el)
+    parent.insert(el)
   }
 
-  onMount(() => {
-    setupContainers()
+  onMount(async () => {
+    await setupContainers()
     chooseParent()
 
     timer = setTimeout(() => {

@@ -76,7 +76,7 @@ export default app;`,
             'sirv-cli': '^0.3.1',
           },
           dependencies: {
-            svelte: '^3.4.4',
+            svelte: 'latest',
             svelma: 'latest',
             '@fortawesome/fontawesome-free': 'latest',
             bulma: 'latest',

@@ -1,7 +1,8 @@
 {
   "name": "svelma",
+  "svelte": "src/index.js",
   "description": "Bulma components for Svelte",
-  "version": "0.0.13",
+  "version": "0.4.0",
   "author": "Brian Hann",
   "license": "MIT",
   "keywords": [
@@ -25,9 +26,12 @@
     "dist",
     "src"
   ],
+  "peerDependencies": {
+    "bulma": "^0.9.0"
+  },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
-    "bulma": "^0.7.5",
+    "bulma": "^0.9.0",
     "conventional-changelog-cli": "^2.0.21",
     "get-port-cli": "^2.0.0",
     "node-sass": "^4.12.0",
@@ -41,11 +45,12 @@
     "rollup-plugin-bundle-size": "^1.0.3",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-copy": "^2.0.1",
-    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-livereload": "^1.0.4",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-scss": "^1.0.1",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
+    "semantic-release": "^15.13.24",
     "sirv-cli": "^0.3.1",
     "standard-version": "^6.0.1",
     "svelte": "^3.9.2",
@@ -60,9 +65,10 @@
     "docs:deploy": "./docs.sh",
     "autodocs": "(cd docs; npx sapper dev --basepath svelma)",
     "jsdocs": "(cd docs; npx jsdoc -c jsdoc/conf.js)",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "postpublish": "npm run docs:deploy",
-    "changelog": "conventional-changelog -i CHANGELOG.md -p angular"
+    "changelog": "conventional-changelog -i CHANGELOG.md -p angular",
+    "semantic-release": "semantic-release"
   },
   "browserslist": "last 2 versions"
 }

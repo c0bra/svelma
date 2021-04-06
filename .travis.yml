@@ -1,0 +1,32 @@
+language: node_js
+node_js: lts/*
+
+branches:
+  only:
+    - master
+    - dev
+    # Tags
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+    - /^greenkeeper\//
+
+addons:
+  apt:
+    packages:
+      - xvfb
+
+install:
+  - export DISPLAY=':99.0'
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+  - npm ci || npm install
+
+script: skip
+
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
