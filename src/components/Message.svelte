@@ -69,7 +69,7 @@
           <p>{title}</p>
         {/if}
         {#if showClose}
-          <button class="delete" aria-label="ariaCloseLabel" on:click={close} />
+          <button class="delete" aria-label={ariaCloseLabel} on:click={close} />
         {/if}
       </div>
     {/if}

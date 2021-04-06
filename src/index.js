@@ -6,7 +6,7 @@ import Field from './components/Field.svelte'
 import Icon from './components/Icon.svelte'
 import Input from './components/Input.svelte'
 import Message from './components/Message.svelte'
-import Modal from './components/Modal'
+import Modal, {ModalCard} from './components/Modal'
 import Notification from './components/Notification'
 import Progress from './components/Progress.svelte'
 import Select from './components/Select.svelte'
@@ -28,6 +28,7 @@ export {
   Notification,
   Progress,
   Modal,
+  ModalCard,
   Select,
   Snackbar,
   Switch,
@@ -48,6 +49,7 @@ export const Svelma = {
   Field,
   Message,
   Modal,
+  ModalCard,
   Notification,
   Progress,
   Select,

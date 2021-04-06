@@ -1,7 +1,7 @@
 <script>
   import { getParameters } from 'codesandbox/lib/api/define'
 
-  export let title = 'Svelma Example'
+  //export let title = 'Svelma Example'
   export let code
 
   let form
