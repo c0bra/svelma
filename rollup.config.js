@@ -17,7 +17,8 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: name,
-		file: 'public/build/bundle.js'
+		file: 'public/build/bundle.js',
+    extend: true
 	},
   plugins: [
     css({ output: 'bundle.css' }),

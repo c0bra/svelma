@@ -1,36 +1,35 @@
-# Svelma
+<h1 align="center">Svelma</h1>
 
-> Svelma is a set of UI components for [Svelte](https://svelte.dev) based on the [Bulma](http://bulma.io) CSS framework.
+<div align="center">
 
-<a href="https://www.npmjs.com/package/svelma"><img src="https://img.shields.io/npm/v/svelma.svg" /></a>
-<a href="https://www.npmjs.com/package/svelma"><img src="https://img.shields.io/npm/l/svelma.svg" /></a>
-<a href="https://bundlephobia.com/result?p=svelma"><img src="https://badgen.net/bundlephobia/minzip/svelma"></a>
-<a href="https://travis-ci.com/c0bra/svelma"><img src="https://travis-ci.com/c0bra/svelma.svg?branch=master"></a>
+<a href="https://www.npmjs.com/package/svelma-enhanced"><img src="https://img.shields.io/npm/v/svelma-enhanced.svg" /></a>
+<a href="https://www.npmjs.com/package/svelma-enhanced"><img src="https://img.shields.io/npm/l/svelma-enhanced.svg" /></a>
+<a href="https://bundlephobia.com/result?p=svelma-enhanced"><img src="https://badgen.net/bundlephobia/minzip/svelma-enhanced"></a>
+<a href="https://travis-ci.org/saravanabalagi/svelma"><img src="https://travis-ci.org/saravanabalagi/svelma.svg?branch=master"></a>
 
+Svelma is a set of UI components for [Svelte](https://svelte.dev) based on the [Bulma](http://bulma.io) CSS framework. Some features are experimental and are being developed. Pull requests are welcome. Forked from https://github.com/c0bra/svelma
 
-[Change Log](CHANGELOG.md)
+</div>
 
+## Documentation
 
+See documentation and demo [here](https://saravanabalagi.github.io/svelma)
 
-# Documentation
+## Setup
 
-[See docs + demos site here](https://c0bra.github.io/svelma)
+#### 1. Install svelma and dependencies via npm
 
-# Quick Start
-
-### 1. Import svelma and dependencies via npm to your project
-
-```bash
-$ npm install --save bulma svelma
-$ npm install node-sass svelte-preprocess rollup-plugin-postcss --save-dev
+```sh
+yarn add bulma svelma-enhanced
+yarn add -D node-sass svelte-preprocess rollup-plugin-postcss
 ```
 
-### 2. Add the postcss plugin to your rollup config
+#### 2. Add the postcss plugin to your rollup config
 
 ```js
 // rollup.config.js
-import postcss from 'rollup-plugin-postcss'
-import preprocess from 'svelte-preprocess'
+import postcss from 'rollup-plugin-postcss';
+import preprocess from 'svelte-preprocess';
 
 // ...
 
@@ -43,59 +42,64 @@ export default {
     }),
 
     postcss(),
-  }
+    // ...
+  ]
 }
 ```
 
-### 3. Import Bulma's CSS and Svelma components
+#### 3. Import Bulma's CSS and Svelma components
 
 ```html
 <!-- App.svelte -->
 <script>
-  import 'bulma/css/bulma.css'
-  import { Button } from 'svelma'
+  import 'bulma/css/bulma.css';
+  import { Button } from 'svelma';
 </script>
 
 <button type="is-primary">I'm a Button!</button>
 ```
+You can [customize](https://bulma.io/documentation/customize/with-node-sass/#6-add-your-own-bulma-styles) Bulma to suit your branding:
 
-### 4. Include [Font Awesome](https://fontawesome.com/) icons
+1. Create SASS/SCSS file, say `app.scss`, and add it to App.svelte
+1. Import required SASS files from Bulma in `app.scss`
+1. Override SASS/SCSS variables
 
-From CDN in your HTML page:
+#### 4. Install [Font Awesome](https://fontawesome.com/) icons
 
-```html
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+Fontawesome Webfonts come with certain side effects and so SVG Icons are recommended for use with svelte.
+
+```sh
+# add SVG icons
+yarn add -D @fortawesome/fontawesome-svg-core @fortawesome/free-brands-svg-icons @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
 ```
 
-Or as an npm package imported into your root component:
-
-`$ npm install --save @fortawesome/fontawesome-free`
+Add fontawesome to your App. The following will add all icons, but you can also add SVG icons [selectively](https://fontawesome.com/how-to-use/on-the-web/advanced/svg-javascript-core) if you wanted to make you app a lot smaller.
 
 ```html
 <!-- App.svelte -->
 <script>
-  import 'bulma/css/bulma.css'
-  import '@fortawesome/fontawesome-free/css/all.css'
+  import 'bulma/css/bulma.css';
+
+  // add all fontawesome icons
+  import { library } from '@fortawesome/fontawesome-svg-core';
+  import { fas } from '@fortawesome/free-solid-svg-icons';
+  import { far } from '@fortawesome/free-regular-svg-icons';
+  import { fab } from '@fortawesome/free-brands-svg-icons';
+  library.add(fab, fas, far);
 </script>
 ```
 
-### SSR
+Alternatively, you shall also use a link tag in your `index.html` using a [CDN](https://cdnjs.com/libraries/font-awesome), or use [webfonts](https://www.npmjs.com/package/@fortawesome/fontawesome-free) but this is not recommended.
 
-If you are doing server-side rendering with Sapper, you'll need to import the .svelte files directly so that your app can compile them, rather than importing from the compiled module.
+## SSR
 
-i.e.:
-
-```js
-import Button from 'svelma/src/components/Button.svelte'
-```
-
-instead of
+If you are doing Server-Side Rendering (SSR) with Sapper, you'll need to import the `.svelte` files directly so that your app can compile them, rather than importing from the compiled module
 
 ```js
-import { Button } from 'svelma'
+import Button from 'svelma/src/components/Button.svelte';          // Use this
+// import { Button } from 'svelma';                                // Don't use this
 ```
 
+## License
 
-# Inspiration
-
-Much thanks to the [Buefy](https://buefy.org) and [Svelma2](https://github.com/abbychau/svelma2) projects! It provided the inspiration and lots of code examples for this version of Svelma.
+See attached [Licence](LICENCE)
