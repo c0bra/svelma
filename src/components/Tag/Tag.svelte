@@ -62,7 +62,7 @@
                 <slot/>
             </span>
         </span>
-        <button role="button"
+        <a  role="button"
             class="tag is-delete {size}"
             class:is-rounded={rounded}
             {disabled}
@@ -79,7 +79,7 @@
             <slot/>
         </span>
         {#if closable}
-            <button  role="button"
+            <a  role="button"
                 class="delete is-small"
                 {disabled}
                 tabindex={tabstop ? 0 : false}
