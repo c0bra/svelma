@@ -1,6 +1,6 @@
 <script>
-  import { setContext, getContext, onMount, onDestroy, createEventDispatcher } from 'svelte'
-  import { get, writable } from 'svelte/store'
+  import { setContext, onMount, createEventDispatcher } from 'svelte'
+  import { writable } from 'svelte/store'
   import Icon from '../Icon.svelte'
 
   const dispatch = createEventDispatcher()
@@ -28,43 +28,41 @@
    * */
   export let style = ''
 
+  /** Sets active tab index, can be used when bind:active cannot be used
+   * @svelte-prop {Function} [setActive]
+   * */
+  export const setActive = index => active = index;
+
+  // deferred assignment of active variable, to avoid triggering infinite reactive loop
+  // during changeActiveTab, holds previous active value
   let activeFinished = active
-  $: changeTab(active)
+
+  $: changeActiveTab(active)
 
   const tabs = writable([])
 
   const tabConfig = {
-    activeTab: active,
+    active,
     tabs
   }
 
   setContext('tabs', tabConfig)
 
-  // This only runs as tabs are added/removed
-  const unsubscribe = tabs.subscribe(ts => {
-    if (ts.length > 0 && ts.length > active - 1) {
-      ts.forEach(t => t.deactivate())
-      if (ts[active]) ts[active].activate()
-    }
-  })
-
-  export function changeTab(newActive) {
-    const ts = get(tabs)
+  const changeActiveTab = newActive => {
     // NOTE: change this back to using changeTab instead of activate/deactivate once transitions/animations are working
-    if (ts[activeFinished]) ts[activeFinished].deactivate()
-    if (ts[newActive]) ts[newActive].activate()
-    // ts.forEach(t => t.changeTab({ from: activeTab, to: newActive }))
-    activeFinished = tabConfig.activeTab = newActive;
-    dispatch('activeTabChanged', newActive)
+    if ($tabs[activeFinished]) $tabs[activeFinished].deactivate()
+    if ($tabs[newActive]) $tabs[newActive].activate()
+    // $tabs.forEach(t => t.changeTab({ from: activeTab, to: newActive }))
+
+    // deferred assignment of active variable
+    activeFinished = tabConfig.activeTab = newActive
+
+    // allows using on:change on Tabs
+    // can be used when bind:active cannot be used
+    dispatch('change', activeFinished)
   }
 
-  onMount(() => {
-    changeTab(activeFinished)
-  })
-
-  onDestroy(() => {
-    unsubscribe()
-  })
+  onMount(() => changeActiveTab(active))
 </script>
 
 <style lang="scss">
