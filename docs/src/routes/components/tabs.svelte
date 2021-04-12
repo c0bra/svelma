@@ -10,13 +10,20 @@
 </script>
 
 <script>
-  import { Tabs, Tab } from 'svelma'
+  import { Tabs, Tab, Button } from 'svelma'
+  import { Select } from 'svelma'
   import DocHeader from '../../components/DocHeader.svelte'
   import Example from '../../components/Example.svelte'
   import JSDoc from '../../components/JSDoc.svelte'
 
   export let jsdocTabs
   export let jsdocTab
+
+  let active = 0
+  let tabs = ["Tab 1", "Tab 2", "Tab 3"]
+
+  const addTab = () => tabs = [...tabs, `Tab ${tabs.length + 1}`]
+  const removeTab = (index) => tabs = tabs.filter((t, i) => i !== index);
 </script>
 
 <DocHeader title="Tabs" subtitle="Horizontal navigation tabs" />
@@ -190,6 +197,74 @@
       <Tab label="People" icon="users"></Tab>
       <Tab label="Places" icon="map-marker-alt"></Tab>
       <Tab label="Things" icon="ellipsis-h"></Tab>
+    </Tabs>
+  </div>
+</Example>
+
+<hr class="is-medium">
+
+<p class="title is-4">Change Tab</p>
+
+<!-- <p class="content">
+  Use <code>is-boxed</code>, <code>is-toggle</code>, <code>is-toggle</code> and <code>is-toggle-rounded</code>, or
+  <code>is-fullwidth</code> to alter to style of your tabs.
+</p> -->
+
+<Example code={`
+<script>
+  import { Tabs, Tab, Select, Button } from 'svelma'
+
+  let active = 0
+  let tabs = ["Tab 1", "Tab 2", "Tab 3"]
+
+  const addTab = () => tabs = [...tabs, "Tab " + (tabs.length + 1)]
+  const removeTab = (index) => tabs = tabs.filter((t, i) => i !== index)
+</script>
+
+<div class="mb-5">
+    <div class="is-flex is-align-items-center p-2"> 
+      <div class="mr-3">Total tabs: {tabs.length}</div>
+      <Button type="is-success" on:click={addTab}>Add Tab</Button>
+    </div>
+    <div class="is-flex is-align-items-center p-2">
+      <div class="mr-3">Active Tab Index: {active}</div>
+      <Select placeholder="Change Tab" bind:selected={active}>
+        {#each tabs as tab, i}
+          <option value={i}>{tab}</option>
+        {/each}
+      </Select>
+    </div>
+  </div>
+  <Tabs bind:active style="is-fullwidth">
+    {#each tabs as tab, i}
+      <Tab label={tab}>
+        <Button type="is-danger" on:click={() => removeTab(i)}>Remove {tab}</Button>
+      </Tab>
+    {/each}
+  </Tabs>
+</script>
+`}>
+  <div slot="preview">
+    <div class="mb-5">
+      <div class="is-flex is-align-items-center p-2"> 
+        <div class="mr-3">Total tabs: {tabs.length}</div>
+        <Button type="is-success" on:click={addTab}>Add Tab</Button>
+      </div>
+      <div class="is-flex is-align-items-center p-2">
+        <div class="mr-3">Active Tab Index: {active}</div>
+        <Select placeholder="Change Tab" bind:selected={active}>
+          {#each tabs as tab, i}
+            <option value={i}>{tab}</option>
+          {/each}
+        </Select>
+      </div>
+    </div>
+    <Tabs bind:active style="is-fullwidth">
+      {#each tabs as tab, i}
+        <Tab label={tab}>
+          <Button type="is-danger" on:click={() => removeTab(i)}>Remove {tab}</Button>
+        </Tab>
+      {/each}
     </Tabs>
   </div>
 </Example>
