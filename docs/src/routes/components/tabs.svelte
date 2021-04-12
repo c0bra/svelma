@@ -203,12 +203,13 @@
 
 <hr class="is-medium">
 
-<p class="title is-4">Change Tab</p>
+<p class="title is-4">Dynamic Tabs</p>
 
-<!-- <p class="content">
-  Use <code>is-boxed</code>, <code>is-toggle</code>, <code>is-toggle</code> and <code>is-toggle-rounded</code>, or
-  <code>is-fullwidth</code> to alter to style of your tabs.
-</p> -->
+<p class="content">
+  Tabs can be be added and removed dynamically. <code>active</code> prop is bindable, bound to the active tab index. 
+  In cases where <code>bind:active</code> cannot be used or to execute any code after the active tab is changed, <code>on:change</code> event can be listened to.
+  <code>setActive(index)</code> function is also exposed to change the active tab and can be called on the component reference.
+</p>
 
 <Example code={`
 <script>

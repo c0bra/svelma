@@ -1,6 +1,5 @@
 <script>
   import { beforeUpdate, getContext, tick, onMount } from 'svelte'
-  import Icon from '../Icon.svelte'
 
   /** Label for tab
    * @svelte-prop {String} label
@@ -54,9 +53,9 @@
   }
 
   async function transitionend(event) {
-    // console.log({ index, active, activeTab: tabConfig.activeTab })
+    // console.log({ index, active, active: tabConfig.active })
     // console.log(event.target)
-    active = index === tabConfig.activeTab
+    active = index === tabConfig.active
     await tick()
     direction = ''
   }
@@ -86,7 +85,7 @@
   })
 
   beforeUpdate(async () => {
-    if (index === tabConfig.activeTab && direction) {
+    if (index === tabConfig.active && direction) {
       await tick()
       setTimeout(() => {
         direction = ''
