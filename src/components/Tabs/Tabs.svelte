@@ -28,8 +28,6 @@
    * */
   export let style = ''
 
-  export let expanded = false
-
   let activeTab = 0
   $: changeTab(value)
 
@@ -71,10 +69,6 @@
 
 <style lang="scss">
   .tabs-wrapper {
-    &.is-fullwidth {
-      /* TODO */
-    }
-
     .tab-content {
       display: flex;
       flex-direction: row;
@@ -84,7 +78,7 @@
   }
 </style>
 
-<div class="tabs-wrapper" class:is-fullwidth={expanded}>
+<div class="tabs-wrapper">
   <nav class="tabs {size} {position} {style}">
     <ul>
       {#each $tabs as tab, index}
