@@ -6,9 +6,9 @@
   const dispatch = createEventDispatcher()
 
   /** Index of the active tab (zero-based)
-   * @svelte-prop {Number} [value=0]
+   * @svelte-prop {Number} [active=0]
    * */
-  export let value = 0
+  export let active = 0
 
   /** Size of tabs
    * @svelte-prop {String} [size]
@@ -28,38 +28,38 @@
    * */
   export let style = ''
 
-  let activeTab = 0
-  $: changeTab(value)
+  let activeFinished = active
+  $: changeTab(active)
 
   const tabs = writable([])
 
   const tabConfig = {
-    activeTab,
-    tabs,
+    activeTab: active,
+    tabs
   }
 
   setContext('tabs', tabConfig)
 
   // This only runs as tabs are added/removed
   const unsubscribe = tabs.subscribe(ts => {
-    if (ts.length > 0 && ts.length > value - 1) {
+    if (ts.length > 0 && ts.length > active - 1) {
       ts.forEach(t => t.deactivate())
-      if (ts[value]) ts[value].activate()
+      if (ts[active]) ts[active].activate()
     }
   })
 
-  export function changeTab(tabNumber) {
+  export function changeTab(newActive) {
     const ts = get(tabs)
     // NOTE: change this back to using changeTab instead of activate/deactivate once transitions/animations are working
-    if (ts[activeTab]) ts[activeTab].deactivate()
-    if (ts[tabNumber]) ts[tabNumber].activate()
-    // ts.forEach(t => t.changeTab({ from: activeTab, to: tabNumber }))
-    activeTab = tabConfig.activeTab = tabNumber
-    dispatch('activeTabChanged', tabNumber)
+    if (ts[activeFinished]) ts[activeFinished].deactivate()
+    if (ts[newActive]) ts[newActive].activate()
+    // ts.forEach(t => t.changeTab({ from: activeTab, to: newActive }))
+    activeFinished = tabConfig.activeTab = newActive;
+    dispatch('activeTabChanged', newActive)
   }
 
   onMount(() => {
-    changeTab(activeTab)
+    changeTab(activeFinished)
   })
 
   onDestroy(() => {
@@ -82,8 +82,8 @@
   <nav class="tabs {size} {position} {style}">
     <ul>
       {#each $tabs as tab, index}
-        <li class:is-active={index === activeTab}>
-          <a href on:click|preventDefault={() => changeTab(index)}>
+        <li class:is-active={index === activeFinished}>
+          <a href on:click|preventDefault={() => active = index}>
             {#if tab.icon}
               <Icon pack={tab.iconPack} icon={tab.icon} />
             {/if}
