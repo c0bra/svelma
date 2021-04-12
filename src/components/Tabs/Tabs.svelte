@@ -46,6 +46,10 @@
     tabs
   }
 
+  // As tabs get deleted, keep active within bounds
+  $: if (active < 0 || active >= $tabs.length) 
+    active = $tabs.length - 1
+
   setContext('tabs', tabConfig)
 
   const changeActiveTab = newActive => {
