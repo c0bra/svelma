@@ -76,6 +76,7 @@
   const getType = getContext('type')
   if (getType) statusType = getType() || ''
 
+
   $: props = {
     ...omit($$props, 'class', 'value', 'type', 'size', 'passwordReveal', 'hasCounter', 'loading', 'disabled'),
   }
@@ -119,7 +120,7 @@
     input.focus()
   }
 
-  const onInput = e => {
+  function onInput(e) {
     value = e.target.value
     $$props.value = value
 

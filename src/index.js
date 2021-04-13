@@ -1,4 +1,5 @@
 // import './scss/main.scss'
+import Autocomplete from './components/Autocomplete.svelte'
 import Button from './components/Button.svelte'
 import Collapse from './components/Collapse.svelte'
 import Dialog from './components/Dialog'
@@ -41,6 +42,7 @@ export {
 }
 
 export const Svelma = {
+  Autocomplete,
   Button,
   Collapse,
   Dialog,

@@ -64,7 +64,6 @@
     "docs": "(cd docs; npm i -f; npx sapper export --basepath svelma)",
     "autodocs": "(cd docs; npx sapper dev --basepath svelma)",
     "jsdocs": "(cd docs; npx jsdoc -c jsdoc/conf.js)",
-    "prepublishOnly": "npm run build",
     "changelog": "conventional-changelog -i CHANGELOG.md -p angular",
     "semantic-release": "semantic-release"
   },
