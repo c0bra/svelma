@@ -1,14 +1,14 @@
 <script>
-  import { setContext, getContext, onMount, onDestroy, createEventDispatcher } from 'svelte'
-  import { get, writable } from 'svelte/store'
+  import { setContext, onMount, createEventDispatcher } from 'svelte'
+  import { writable } from 'svelte/store'
   import Icon from '../Icon.svelte'
 
   const dispatch = createEventDispatcher()
 
   /** Index of the active tab (zero-based)
-   * @svelte-prop {Number} [value=0]
+   * @svelte-prop {Number} [active=0]
    * */
-  export let value = 0
+  export let active = 0
 
   /** Size of tabs
    * @svelte-prop {String} [size]
@@ -28,53 +28,49 @@
    * */
   export let style = ''
 
-  export let expanded = false
+  /** Sets active tab index, can be used when bind:active cannot be used
+   * @svelte-prop {Function} [setActive]
+   * */
+  export const setActive = index => active = index;
 
-  let activeTab = 0
-  $: changeTab(value)
+  // deferred assignment of active variable, to avoid triggering infinite reactive loop
+  // during changeActiveTab, holds previous active value
+  let activeFinished = active
+
+  $: changeActiveTab(active)
 
   const tabs = writable([])
 
   const tabConfig = {
-    activeTab,
-    tabs,
+    active,
+    tabs
   }
+
+  // As tabs get deleted, keep active within bounds
+  $: if (active < 0 || active >= $tabs.length) 
+    active = $tabs.length - 1
 
   setContext('tabs', tabConfig)
 
-  // This only runs as tabs are added/removed
-  const unsubscribe = tabs.subscribe(ts => {
-    if (ts.length > 0 && ts.length > value - 1) {
-      ts.forEach(t => t.deactivate())
-      if (ts[value]) ts[value].activate()
-    }
-  })
-
-  export function changeTab(tabNumber) {
-    const ts = get(tabs)
+  const changeActiveTab = newActive => {
     // NOTE: change this back to using changeTab instead of activate/deactivate once transitions/animations are working
-    if (ts[activeTab]) ts[activeTab].deactivate()
-    if (ts[tabNumber]) ts[tabNumber].activate()
-    // ts.forEach(t => t.changeTab({ from: activeTab, to: tabNumber }))
-    activeTab = tabConfig.activeTab = tabNumber
-    dispatch('activeTabChanged', tabNumber)
+    if ($tabs[activeFinished]) $tabs[activeFinished].deactivate()
+    if ($tabs[newActive]) $tabs[newActive].activate()
+    // $tabs.forEach(t => t.changeTab({ from: activeTab, to: newActive }))
+
+    // deferred assignment of active variable
+    activeFinished = tabConfig.activeTab = newActive
+
+    // allows using on:change on Tabs
+    // can be used when bind:active cannot be used
+    dispatch('change', activeFinished)
   }
 
-  onMount(() => {
-    changeTab(activeTab)
-  })
-
-  onDestroy(() => {
-    unsubscribe()
-  })
+  onMount(() => changeActiveTab(active))
 </script>
 
 <style lang="scss">
   .tabs-wrapper {
-    &.is-fullwidth {
-      /* TODO */
-    }
-
     .tab-content {
       display: flex;
       flex-direction: row;
@@ -84,12 +80,12 @@
   }
 </style>
 
-<div class="tabs-wrapper" class:is-fullwidth={expanded}>
+<div class="tabs-wrapper">
   <nav class="tabs {size} {position} {style}">
     <ul>
       {#each $tabs as tab, index}
-        <li class:is-active={index === activeTab}>
-          <a href on:click|preventDefault={() => changeTab(index)}>
+        <li class:is-active={index === activeFinished}>
+          <a href on:click|preventDefault={() => active = index}>
             {#if tab.icon}
               <Icon pack={tab.iconPack} icon={tab.icon} />
             {/if}

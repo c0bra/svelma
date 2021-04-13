@@ -1,6 +1,5 @@
 <script>
-  import { beforeUpdate, setContext, getContext, tick, onMount } from 'svelte'
-  import Icon from '../Icon.svelte'
+  import { beforeUpdate, getContext, tick, onMount } from 'svelte'
 
   /** Label for tab
    * @svelte-prop {String} label
@@ -26,7 +25,10 @@
   let direction = ''
   let isIn = false
 
+  const key = {}
   const tabConfig = getContext('tabs')
+
+  $: tabConfig.tabs.update(tabs => tabs.map(t => t.key === key ? {...t, label, icon, iconPack} : t))
 
   export async function changeTab({ from, to }) {
     if (from === to) return
@@ -46,14 +48,14 @@
   }
 
   function updateIndex() {
-    if (!el) return
+    if (el == null || el.parentNode == null) return
     index = Array.prototype.indexOf.call(el.parentNode.children, el)
   }
 
   async function transitionend(event) {
-    // console.log({ index, active, activeTab: tabConfig.activeTab })
+    // console.log({ index, active, active: tabConfig.active })
     // console.log(event.target)
-    active = index === tabConfig.activeTab
+    active = index === tabConfig.active
     await tick()
     direction = ''
   }
@@ -68,6 +70,7 @@
     tabConfig.tabs.update(tabs => [
       ...tabs,
       {
+        key,
         index,
         label,
         icon,
@@ -77,10 +80,12 @@
         changeTab,
       },
     ])
+
+    return () => tabConfig.tabs.update(tabs => tabs.filter(t => t.key !== key));
   })
 
   beforeUpdate(async () => {
-    if (index === tabConfig.activeTab && direction) {
+    if (index === tabConfig.active && direction) {
       await tick()
       setTimeout(() => {
         direction = ''
