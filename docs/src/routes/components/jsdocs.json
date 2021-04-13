@@ -2492,7 +2492,7 @@
         "columnno": 2,
         "path": "src/components/Tabs"
       },
-      "description": "Index of the active tab (zero-based)",
+      "description": "Index of the active tab (zero-based), bindable",
       "type": [
         "Number"
       ],
