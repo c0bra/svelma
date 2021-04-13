@@ -895,6 +895,7 @@
       "values": ""
     }
   ],
+  "File": [],
   "Icon": [],
   "Input": [
     {
@@ -1240,6 +1241,7 @@
   ],
   "Message": [],
   "Modal": [],
+  "ModalCard": [],
   "Notice": [],
   "Notices": [],
   "Notification": [
@@ -2396,7 +2398,7 @@
     {
       "meta": {
         "filename": "Tab.svelte",
-        "lineno": 6,
+        "lineno": 5,
         "columnno": 2,
         "path": "src/components/Tabs"
       },
@@ -2424,7 +2426,7 @@
     {
       "meta": {
         "filename": "Tab.svelte",
-        "lineno": 11,
+        "lineno": 10,
         "columnno": 2,
         "path": "src/components/Tabs"
       },
@@ -2454,7 +2456,7 @@
     {
       "meta": {
         "filename": "Tab.svelte",
-        "lineno": 16,
+        "lineno": 15,
         "columnno": 2,
         "path": "src/components/Tabs"
       },
@@ -2496,7 +2498,7 @@
       ],
       "optional": true,
       "defaultvalue": 0,
-      "name": "value",
+      "name": "active",
       "_isSvelteDoc": true,
       "_svelteProps": {
         "type": {
@@ -2506,10 +2508,10 @@
         },
         "optional": true,
         "defaultvalue": 0,
-        "name": "value"
+        "name": "active"
       },
       "kind": "prop",
-      "longname": "module:Tabs~value",
+      "longname": "module:Tabs~active",
       "scope": "inner",
       "memberof": "module:Tabs",
       "___s": true,
@@ -2604,6 +2606,36 @@
       "scope": "inner",
       "memberof": "module:Tabs",
       "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Tabs.svelte",
+        "lineno": 32,
+        "columnno": 2,
+        "path": "src/components/Tabs"
+      },
+      "description": "Sets active tab index, can be used when bind:active cannot be used",
+      "type": [
+        "function"
+      ],
+      "optional": true,
+      "name": "setActive",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "optional": true,
+        "name": "setActive"
+      },
+      "kind": "prop",
+      "longname": "module:Tabs~setActive",
+      "scope": "inner",
+      "memberof": "module:Tabs",
+      "___s": true,
+      "values": ""
     }
   ],
   "Tag": [
