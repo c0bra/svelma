@@ -5,7 +5,7 @@
 
   const dispatch = createEventDispatcher()
 
-  /** Index of the active tab (zero-based)
+  /** Index of the active tab (zero-based), bindable
    * @svelte-prop {Number} [active=0]
    * */
   export let active = 0
@@ -37,36 +37,49 @@
   // during changeActiveTab, holds previous active value
   let activeFinished = active
 
-  $: changeActiveTab(active)
+  // keep track of whether the component is mounted or not
+  let mounted = false
+  onMount(() => {
+    mounted = true
+  })
 
+  // create tabs store and update context
   const tabs = writable([])
-
   const tabConfig = {
     active,
     tabs
   }
-
-  // As tabs get deleted, keep active within bounds
-  $: if (active < 0 || active >= $tabs.length) 
-    active = $tabs.length - 1
-
   setContext('tabs', tabConfig)
 
-  const changeActiveTab = newActive => {
+  // Changing active or mounted should call updateActiveTab
+  $: mounted, active, updateActiveTab()
+
+  // As tabs get deleted, keep active within bounds
+  $: if (mounted)
+    if ($tabs.length === 0) // there are no tabs, set active to -1
+      active = -1
+    else if (active < 0) // there are tabs, but active is -1
+      active = 0
+    else if (active >= $tabs.length) // there are tabs, but active is out of bounds
+      active = $tabs.length - 1
+
+  const updateActiveTab = () => {
+
+    // no-op if component not mounted
+    if (!mounted) return;
+
     // NOTE: change this back to using changeTab instead of activate/deactivate once transitions/animations are working
     if ($tabs[activeFinished]) $tabs[activeFinished].deactivate()
-    if ($tabs[newActive]) $tabs[newActive].activate()
+    if ($tabs[active]) $tabs[active].activate()
     // $tabs.forEach(t => t.changeTab({ from: activeTab, to: newActive }))
 
     // deferred assignment of active variable
-    activeFinished = tabConfig.activeTab = newActive
+    activeFinished = tabConfig.activeTab = active
 
     // allows using on:change on Tabs
     // can be used when bind:active cannot be used
     dispatch('change', activeFinished)
   }
-
-  onMount(() => changeActiveTab(active))
 </script>
 
 <style lang="scss">
