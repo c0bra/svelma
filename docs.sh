@@ -17,6 +17,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f https://${GITHUB_TOKEN}@github.com/c0bra/svelma.git master:gh-pages
+git push -f https://${GITHUB_TOKEN_SVELMA}@github.com/c0bra/svelma.git master:gh-pages
 
 cd -
