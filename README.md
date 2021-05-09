@@ -81,7 +81,7 @@ Or as an npm package imported into your root component:
 
 ### SSR
 
-If you are doing server-side rendering with Sapper, you'll need to import the .svelte files directly so that your app can compile them, rather than importing from the compiled module.
+If you are doing server-side rendering with Sapper (or [SvelteKit](https://kit.svelte.dev/)), you'll need to import the .svelte files directly so that your app can compile them, rather than importing from the compiled module.
 
 i.e.:
 
