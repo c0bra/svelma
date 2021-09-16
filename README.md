@@ -4,10 +4,10 @@
 
 <a href="https://www.npmjs.com/package/svelma-enhanced"><img src="https://img.shields.io/npm/v/svelma-enhanced.svg" /></a>
 <a href="https://www.npmjs.com/package/svelma-enhanced"><img src="https://img.shields.io/npm/l/svelma-enhanced.svg" /></a>
-<a href="https://bundlephobia.com/result?p=svelma-enhanced"><img src="https://badgen.net/bundlephobia/minzip/svelma-enhanced"></a>
+<a href="https://www.npmjs.com/package/svelma-enhanced"><img src="https://img.shields.io/npm/dm/svelma-enhanced"></a>
 <a href="https://travis-ci.org/saravanabalagi/svelma"><img src="https://travis-ci.org/saravanabalagi/svelma.svg?branch=master"></a>
 
-Svelma is a set of UI components for [Svelte](https://svelte.dev) based on the [Bulma](http://bulma.io) CSS framework. Some features are experimental and are being developed. Pull requests are welcome. Forked from https://github.com/c0bra/svelma
+Svelma is a set of UI components for [Svelte](https://svelte.dev) based on the [Bulma](http://bulma.io) CSS framework. Some features are experimental and are being developed. Pull requests are welcome. Forked from https://github.com/c0bra/svelma. This fork currently only has bug fixes.
 
 </div>
 
