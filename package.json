@@ -2,7 +2,7 @@
   "name": "svelma-enhanced",
   "svelte": "src/index.js",
   "description": "Bulma components for Svelte",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "author": "Saravanabalagi Ramachandran",
   "license": "MIT",
   "keywords": [
