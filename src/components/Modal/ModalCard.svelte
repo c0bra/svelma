@@ -39,7 +39,9 @@
   <div class="modal-card" transition:_animation|local={animProps}>
     <header class="modal-card-head">
       <p class="modal-card-title">{title}</p>
-      <button class="delete" aria-label="close" on:click={close} />
+      {#if showClose}
+        <button class="delete" aria-label="close" on:click={close} />
+      {/if}
     </header>
     <section class="modal-card-body">
       <slot />
