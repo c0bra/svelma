@@ -14,7 +14,7 @@
 
 # Documentation
 
-[See docs + demos site here](https://c0bra.github.io/svelma)
+[See docs + demos site here](https://docs-abbychau.vercel.app/svelma)
 
 # Quick Start
 
