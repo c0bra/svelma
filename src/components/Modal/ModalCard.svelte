@@ -1,5 +1,5 @@
 <script>
-  import { onDestroy, onMount } from 'svelte'
+  import { onDestroy, onMount, createEventDispatcher } from 'svelte'
   import { chooseAnimation, isEscKey } from '../../utils'
 
   export let active = true
@@ -10,6 +10,7 @@
   export let showClose = true
   export let onBody = true
 
+  const dispatch = createEventDispatcher();
   let modal
 
   $: _animation = chooseAnimation(animation)
@@ -30,6 +31,16 @@
       close()
     }
   }
+
+  function closeSuccess() {
+    dispatch('success');
+    close();
+  }
+  function closeFailure() {
+    dispatch('failure');
+    close();
+  }
+
 </script>
 
 <svelte:window on:keydown={keydown} />
@@ -45,8 +56,8 @@
       <slot />
     </section>
     <footer class="modal-card-foot">
-      <button class="button is-success">Save changes</button>
-      <button class="button">Cancel</button>
+      <button class="button is-success" on:click={closeSuccess}>Save changes</button>
+      <button class="button" on:click={closeFailure}>Cancel</button>
     </footer>
   </div>
 </div>
