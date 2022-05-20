@@ -74,7 +74,8 @@
   const dispatch = createEventDispatcher();
 
   const getType = getContext('type')
-  const unsubscribeGetType = getType().subscribe(v => statusType = v)
+  let unsubscribeGetType = () => {}
+  if (getType) unsubscribeGetType = getType().subscribe(v => statusType = v)
 
   onDestroy(() => {
     unsubscribeGetType()
