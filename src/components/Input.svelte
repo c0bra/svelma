@@ -1,8 +1,8 @@
 <script>
-  import { createEventDispatcher, onMount, getContext, tick } from 'svelte'
+  import { createEventDispatcher, onMount, onDestroy, getContext, tick } from 'svelte'
   import { omit, getEventsAction } from '../utils'
   import { current_component } from 'svelte/internal'
-	
+ 
   import Icon from './Icon.svelte'
 
   /** Binding value
@@ -74,7 +74,11 @@
   const dispatch = createEventDispatcher();
 
   const getType = getContext('type')
-  if (getType) statusType = getType() || ''
+  const unsubscribeGetType = getType().subscribe(v => statusType = v)
+
+  onDestroy(() => {
+    unsubscribeGetType()
+  })
 
   $: props = {
     ...omit($$props, 'class', 'value', 'type', 'size', 'passwordReveal', 'hasCounter', 'loading', 'disabled'),
