@@ -56,7 +56,7 @@ export default {
   import { Button } from 'svelma';
 </script>
 
-<button type="is-primary">I'm a Button!</button>
+<Button type="is-primary">I'm a Button!</Button>
 ```
 You can [customize](https://bulma.io/documentation/customize/with-node-sass/#6-add-your-own-bulma-styles) Bulma to suit your branding:
 
@@ -81,19 +81,19 @@ Add fontawesome to your App. The following will add all icons, but you can also 
   import 'bulma/css/bulma.css';
 
   // add all fontawesome icons
-  import { library } from '@fortawesome/fontawesome-svg-core';
+  import { library, dom } from '@fortawesome/fontawesome-svg-core';
   import { fas } from '@fortawesome/free-solid-svg-icons';
   import { far } from '@fortawesome/free-regular-svg-icons';
   import { fab } from '@fortawesome/free-brands-svg-icons';
   library.add(fab, fas, far);
+  dom.watch();
 </script>
 ```
 
 Alternatively, you shall also use a link tag in your `index.html` using a [CDN](https://cdnjs.com/libraries/font-awesome), or use [webfonts](https://www.npmjs.com/package/@fortawesome/fontawesome-free) but this is not recommended.
 
-## SSR
 
-If you are doing Server-Side Rendering (SSR) with Sapper, you'll need to import the `.svelte` files directly so that your app can compile them, rather than importing from the compiled module
+If you are doing server-side rendering with Sapper (or [SvelteKit](https://kit.svelte.dev/)), you'll need to import the `.svelte` files directly so that your app can compile them, rather than importing from the compiled module.
 
 ```js
 import Button from 'svelma/src/components/Button.svelte';          // Use this
