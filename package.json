@@ -1,5 +1,5 @@
 {
-  "name": "svelma-enhanced",
+  "name": "@saravanabalagi/svelma",
   "svelte": "src/index.js",
   "description": "Bulma components for Svelte",
   "version": "0.4.8",

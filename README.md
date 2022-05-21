@@ -20,7 +20,7 @@ See documentation and demo [here](https://saravanabalagi.github.io/svelma)
 #### 1. Install svelma and dependencies via npm
 
 ```sh
-yarn add bulma svelma-enhanced
+yarn add bulma @saravanbalagi/svelma
 yarn add -D node-sass svelte-preprocess rollup-plugin-postcss
 ```
 
