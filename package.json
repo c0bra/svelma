@@ -2,7 +2,7 @@
   "name": "svelma-enhanced",
   "svelte": "src/index.js",
   "description": "Bulma components for Svelte",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "author": "Saravanabalagi Ramachandran",
   "license": "MIT",
   "keywords": [
@@ -61,10 +61,10 @@
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p autobuild autodocs",
-    "docs": "(cd docs; yarn install -f; npx sapper export --basepath svelma)",
+    "docs": "(cd docs; npm i -f; npx sapper export --basepath svelma)",
     "autodocs": "(cd docs; npx sapper dev --basepath svelma)",
     "jsdocs": "(cd docs; npx jsdoc -c jsdoc/conf.js)",
-    "prepublishOnly": "yarn run build",
+    "prepublishOnly": "npm run build",
     "changelog": "conventional-changelog -i CHANGELOG.md -p angular",
     "semantic-release": "semantic-release"
   },
