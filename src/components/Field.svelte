@@ -1,5 +1,6 @@
 <script>
   import { onMount, setContext } from 'svelte'
+  import { writable } from 'svelte/store'
   import { omit } from '../utils'
 
   /** Type (color) of the field and help message. Also adds a matching icon.
@@ -46,7 +47,9 @@
 
   export let expanded = false
 
-  setContext('type', () => type)
+  const typeStore = writable('')
+  setContext('type', () => typeStore)
+  $: $typeStore = type
 
   let el
   let labelEl

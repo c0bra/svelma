@@ -8,12 +8,13 @@
 </script>
 
 <script>
-  import { Button, Field, Icon, Input } from 'svelma'
+  import { Button, Field, Icon, Input, Switch } from 'svelma'
   import DocHeader from '../../components/DocHeader.svelte'
   import Example from '../../components/Example.svelte'
   import JSDoc from '../../components/JSDoc.svelte'
 
   let name = 'Moby Dick'
+  let ua = true;
 
   export let jsdoc
 </script>
@@ -21,7 +22,8 @@
 <DocHeader title="Field" subtitle="Add functionality and styling to form elements/inputs by grouping components together" />
 
 <Example code={`<script>
-  import { Field, Input } from 'svelma'
+  import { Field, Input, Switch } from 'svelma'
+  let ua = false;
 </script>
 
 <Field label="Name">
@@ -32,7 +34,9 @@
   <Input value="john@" />
 </Field>
 
-<Field label="Username" type="is-success" message="Username is available">
+<Switch bind:checked={ua}>Username Available</Switch>
+
+<Field label="Username" type={ua?"is-success":"is-danger"} message="Username is available">
   <Input value="joey55" />
 </Field>`}>
   <div slot="preview">
@@ -44,7 +48,9 @@
       <Input value="john@" />
     </Field>
 
-    <Field label="Username" type="is-success" message="Username is available">
+    <Switch bind:checked={ua}>Username Available</Switch>
+
+    <Field label="Username" type={ua?"is-success":"is-danger"} message="Username is available">
       <Input value="joey55" />
     </Field>
   </div>
