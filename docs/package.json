@@ -45,7 +45,7 @@
     "sapper": "^0.29.3",
     "sass": "^1.46.0",
     "svelma": "file:../",
-    "svelte": "^3.44.3",
+    "svelte": "^3.49.0",
     "svelte-preprocess": "^4.10.1"
   }
 }
