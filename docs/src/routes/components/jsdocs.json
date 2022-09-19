@@ -657,7 +657,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 6,
+        "lineno": 7,
         "columnno": 2,
         "path": "src/components"
       },
@@ -687,7 +687,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 12,
+        "lineno": 13,
         "columnno": 2,
         "path": "src/components"
       },
@@ -717,7 +717,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 17,
+        "lineno": 18,
         "columnno": 2,
         "path": "src/components"
       },
@@ -747,7 +747,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 22,
+        "lineno": 23,
         "columnno": 2,
         "path": "src/components"
       },
@@ -777,7 +777,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 27,
+        "lineno": 28,
         "columnno": 2,
         "path": "src/components"
       },
@@ -807,7 +807,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 32,
+        "lineno": 33,
         "columnno": 2,
         "path": "src/components"
       },
@@ -837,7 +837,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 37,
+        "lineno": 38,
         "columnno": 2,
         "path": "src/components"
       },
@@ -867,7 +867,7 @@
     {
       "meta": {
         "filename": "Field.svelte",
-        "lineno": 43,
+        "lineno": 44,
         "columnno": 2,
         "path": "src/components"
       },
@@ -2430,7 +2430,7 @@
         "columnno": 2,
         "path": "src/components/Tabs"
       },
-      "description": "Show this icon on left-side of the tab",
+      "description": "Icon to be shown on the left-side of the tab",
       "type": [
         "String"
       ],
@@ -2482,6 +2482,36 @@
       "scope": "inner",
       "memberof": "module:Tab",
       "___s": true
+    },
+    {
+      "meta": {
+        "filename": "Tab.svelte",
+        "lineno": 21,
+        "columnno": 2,
+        "path": "src/components/Tabs"
+      },
+      "description": "Set this tab as active",
+      "type": [
+        "Boolean"
+      ],
+      "defaultvalue": false,
+      "name": "active",
+      "_isSvelteDoc": true,
+      "_svelteProps": {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "defaultvalue": false,
+        "name": "active"
+      },
+      "kind": "prop",
+      "values": "<code>true</code>, <code>false</code>",
+      "longname": "module:Tab~active",
+      "scope": "inner",
+      "memberof": "module:Tab",
+      "___s": true
     }
   ],
   "Tabs": [
@@ -2489,38 +2519,6 @@
       "meta": {
         "filename": "Tabs.svelte",
         "lineno": 9,
-        "columnno": 2,
-        "path": "src/components/Tabs"
-      },
-      "description": "Index of the active tab (zero-based), bindable",
-      "type": [
-        "Number"
-      ],
-      "optional": true,
-      "defaultvalue": 0,
-      "name": "active",
-      "_isSvelteDoc": true,
-      "_svelteProps": {
-        "type": {
-          "names": [
-            "Number"
-          ]
-        },
-        "optional": true,
-        "defaultvalue": 0,
-        "name": "active"
-      },
-      "kind": "prop",
-      "longname": "module:Tabs~active",
-      "scope": "inner",
-      "memberof": "module:Tabs",
-      "___s": true,
-      "values": ""
-    },
-    {
-      "meta": {
-        "filename": "Tabs.svelte",
-        "lineno": 14,
         "columnno": 2,
         "path": "src/components/Tabs"
       },
@@ -2550,7 +2548,7 @@
     {
       "meta": {
         "filename": "Tabs.svelte",
-        "lineno": 20,
+        "lineno": 15,
         "columnno": 2,
         "path": "src/components/Tabs"
       },
@@ -2580,7 +2578,7 @@
     {
       "meta": {
         "filename": "Tabs.svelte",
-        "lineno": 26,
+        "lineno": 21,
         "columnno": 2,
         "path": "src/components/Tabs"
       },
@@ -2606,36 +2604,6 @@
       "scope": "inner",
       "memberof": "module:Tabs",
       "___s": true
-    },
-    {
-      "meta": {
-        "filename": "Tabs.svelte",
-        "lineno": 32,
-        "columnno": 2,
-        "path": "src/components/Tabs"
-      },
-      "description": "Sets active tab index, can be used when bind:active cannot be used",
-      "type": [
-        "function"
-      ],
-      "optional": true,
-      "name": "setActive",
-      "_isSvelteDoc": true,
-      "_svelteProps": {
-        "type": {
-          "names": [
-            "function"
-          ]
-        },
-        "optional": true,
-        "name": "setActive"
-      },
-      "kind": "prop",
-      "longname": "module:Tabs~setActive",
-      "scope": "inner",
-      "memberof": "module:Tabs",
-      "___s": true,
-      "values": ""
     }
   ],
   "Tag": [

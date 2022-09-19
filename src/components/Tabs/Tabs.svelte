@@ -1,14 +1,9 @@
 <script>
-  import { setContext, onMount, createEventDispatcher } from 'svelte'
+  import { setContext, onMount, createEventDispatcher, onDestroy } from 'svelte'
   import { writable } from 'svelte/store'
   import Icon from '../Icon.svelte'
 
   const dispatch = createEventDispatcher()
-
-  /** Index of the active tab (zero-based), bindable
-   * @svelte-prop {Number} [active=0]
-   * */
-  export let active = 0
 
   /** Size of tabs
    * @svelte-prop {String} [size]
@@ -28,58 +23,34 @@
    * */
   export let style = ''
 
-  /** Sets active tab index, can be used when bind:active cannot be used
-   * @svelte-prop {Function} [setActive]
-   * */
-  export const setActive = index => active = index;
+  let tabs = []
+  const selectedTab = writable(null)
 
-  // deferred assignment of active variable, to avoid triggering infinite reactive loop
-  // during changeActiveTab, holds previous active value
-  let activeFinished = active
+  const registerTab = (tab) => {
+    tabs = [...tabs, tab]
+    selectedTab.update(current => current || tab)
+    
+    onDestroy(() => {
+      const i = tabs.indexOf(tab)
+      tabs = tabs.filter(t => t !== tab)
+      if ($selectedTab === tab) {
+        if (i < tabs.length)
+          selectTab(tabs[i])
+        else selectTab(tabs[tabs.length - 1])
+      }
+    });
+  }
 
-  // keep track of whether the component is mounted or not
-  let mounted = false
-  onMount(() => {
-    mounted = true
+  const selectTab = (tab) => {
+    selectedTab.set(tab)
+    dispatch('change', {...tab, index: tabs.indexOf(tab)})
+  }
+
+  setContext('tabs', {
+    registerTab,
+    selectedTab,
+    selectTab
   })
-
-  // create tabs store and update context
-  const tabs = writable([])
-  const tabConfig = {
-    active,
-    tabs
-  }
-  setContext('tabs', tabConfig)
-
-  // Changing active or mounted should call updateActiveTab
-  $: mounted, active, updateActiveTab()
-
-  // As tabs get deleted, keep active within bounds
-  $: if (mounted)
-    if ($tabs.length === 0) // there are no tabs, set active to -1
-      active = -1
-    else if (active < 0) // there are tabs, but active is -1
-      active = 0
-    else if (active >= $tabs.length) // there are tabs, but active is out of bounds
-      active = $tabs.length - 1
-
-  const updateActiveTab = () => {
-
-    // no-op if component not mounted
-    if (!mounted) return;
-
-    // NOTE: change this back to using changeTab instead of activate/deactivate once transitions/animations are working
-    if ($tabs[activeFinished]) $tabs[activeFinished].deactivate()
-    if ($tabs[active]) $tabs[active].activate()
-    // $tabs.forEach(t => t.changeTab({ from: activeTab, to: newActive }))
-
-    // deferred assignment of active variable
-    activeFinished = tabConfig.activeTab = active
-
-    // allows using on:change on Tabs
-    // can be used when bind:active cannot be used
-    dispatch('change', activeFinished)
-  }
 </script>
 
 <style lang="scss">
@@ -96,13 +67,12 @@
 <div class="tabs-wrapper">
   <nav class="tabs {size} {position} {style}">
     <ul>
-      {#each $tabs as tab, index}
-        <li class:is-active={index === activeFinished}>
-          <a href on:click|preventDefault={() => active = index}>
+      {#each tabs as tab, index (tab.key)}
+        <li class:is-active={$selectedTab === tab}>
+          <a href on:click|preventDefault={() => selectTab(tab)}>
             {#if tab.icon}
               <Icon pack={tab.iconPack} icon={tab.icon} />
             {/if}
-
             <span>{tab.label}</span>
           </a>
         </li>

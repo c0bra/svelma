@@ -11,7 +11,7 @@
 
 <script>
   import { Tabs, Tab, Button } from 'svelma'
-  import { Select } from 'svelma'
+  import { Select, Switch } from 'svelma'
   import DocHeader from '../../components/DocHeader.svelte'
   import Example from '../../components/Example.svelte'
   import JSDoc from '../../components/JSDoc.svelte'
@@ -22,8 +22,11 @@
   let active = 0
   let tabs = ["Tab 1", "Tab 2", "Tab 3"]
 
-  const addTab = () => tabs = [...tabs, `Tab ${tabs.length + 1}`]
+  let counter = tabs.length
+  const addTab = () => tabs = [...tabs, `Tab ${++counter}`]
   const removeTab = (index) => tabs = tabs.filter((t, i) => i !== index);
+
+  let tabChangedTo;
 </script>
 
 <DocHeader title="Tabs" subtitle="Horizontal navigation tabs" />
@@ -45,20 +48,53 @@
 </Tabs>`}>
   <div slot="preview">
     <Tabs>
-      <Tab label="Svelte">
-        Is cool
-      </Tab>
-      <Tab label="Vue">
-        Is good
-      </Tab>
-      <Tab label="Angular">
-        lol no
-      </Tab>
+      <Tab label="Svelte">Is Cool</Tab>
+      <Tab label="Vue">Is Good</Tab>
+      <Tab label="Angular">Lol no</Tab>
     </Tabs>
   </div>
 </Example>
 
 <hr class="is-medium">
+
+<p class="title is-4">Active and Events</p>
+
+<p class="content">
+  Use <code>active</code> on the tab which should be active initially. Use <code>on:change</code> on <code>Tabs</code> to listen to tab changes.
+</p>
+
+<Example code={`<script>
+  import { Tabs, Tab } from 'svelma'
+  let tabChangedTo
+</script>
+
+<Tabs on:change={(e) => tabChangedTo = e.detail.label + " (Index " + e.detail.index + ")"}>
+  <Tab label="People" icon="users"></Tab>
+  <Tab label="Places" icon="map-marker-alt" active></Tab>
+  <Tab label="Things" icon="ellipsis-h"></Tab>
+</Tabs>
+
+{#if tabChangedTo}
+  Tab Changed to: {tabChangedTo}
+{:else}
+  Change a tab to see the event in action
+{/if}`}>
+  <div slot="preview">
+    <Tabs on:change={(e) => tabChangedTo = e.detail.label + " (Index " + e.detail.index + ")"}>
+      <Tab label="People" icon="users"></Tab>
+      <Tab label="Places" icon="map-marker-alt" active></Tab>
+      <Tab label="Things" icon="ellipsis-h"></Tab>
+    </Tabs>
+    {#if tabChangedTo}
+      Tab Changed to: {tabChangedTo}
+    {:else}
+      Change a tab to see the event in action
+    {/if}
+
+  </div>
+</Example>
+
+<hr class="is-medium" />
 
 <p class="title is-4">Icons and Sizes</p>
 
@@ -206,44 +242,42 @@
 <p class="title is-4">Dynamic Tabs</p>
 
 <p class="content">
-  Tabs can be be added and removed dynamically. <code>active</code> prop is bindable, bound to the active tab index. 
-  In cases where <code>bind:active</code> cannot be used or to execute any code after the active tab is changed, <code>on:change</code> event can be listened to.
-  <code>setActive(index)</code> function is also exposed to change the active tab and can be called on the component reference.
+  Tabs can be be added and removed dynamically. Make sure to specify a <code>key</code> for each tab when using <code>each</code> blocks. If you don't specify a key, by default, elements will be added/remove at the end of the block, and often, <a href="https://svelte.dev/tutorial/keyed-each-blocks">that might not be what you want</a>.
 </p>
 
 <Example code={`
 <script>
   import { Tabs, Tab, Select, Button } from 'svelma'
 
-  let active = 0
   let tabs = ["Tab 1", "Tab 2", "Tab 3"]
+  let active = 0
+  let counter = tabs.length
 
-  const addTab = () => tabs = [...tabs, "Tab " + (tabs.length + 1)]
+  const addTab = () => tabs = [...tabs, "Tab " + ++counter]
   const removeTab = (index) => tabs = tabs.filter((t, i) => i !== index)
 </script>
 
 <div class="mb-5">
-    <div class="is-flex is-align-items-center p-2"> 
-      <div class="mr-3">Total tabs: {tabs.length}</div>
-      <Button type="is-success" on:click={addTab}>Add Tab</Button>
-    </div>
-    <div class="is-flex is-align-items-center p-2">
-      <div class="mr-3">Active Tab Index: {active}</div>
-      <Select placeholder="Change Tab" bind:selected={active}>
-        {#each tabs as tab, i}
-          <option value={i}>{tab}</option>
-        {/each}
-      </Select>
-    </div>
+  <div class="is-flex is-align-items-center p-2"> 
+    <div class="mr-3">Total tabs: {tabs.length}</div>
+    <Button type="is-success" on:click={addTab}>Add Tab</Button>
   </div>
-  <Tabs bind:active style="is-fullwidth">
-    {#each tabs as tab, i}
-      <Tab label={tab}>
-        <Button type="is-danger" on:click={() => removeTab(i)}>Remove {tab}</Button>
-      </Tab>
-    {/each}
-  </Tabs>
-</script>
+  <div class="is-flex is-align-items-center p-2">
+    <div class="mr-3">Active Tab Index: {active}</div>
+    <Select placeholder="Change Tab" bind:selected={active}>
+      {#each tabs as tab, i}
+        <option value={i}>{tab}</option>
+      {/each}
+    </Select>
+  </div>
+</div>
+<Tabs style="is-fullwidth" on:change={(e) => active = e.detail.index}>
+  {#each tabs as tab, i (tab)}
+    <Tab label={tab} active={active === i}>
+      <Button type="is-danger" on:click={() => removeTab(i)}>Remove {tab}</Button>
+    </Tab>
+  {/each}
+</Tabs>
 `}>
   <div slot="preview">
     <div class="mb-5">
@@ -260,9 +294,9 @@
         </Select>
       </div>
     </div>
-    <Tabs bind:active style="is-fullwidth">
-      {#each tabs as tab, i}
-        <Tab label={tab}>
+    <Tabs style="is-fullwidth" on:change={(e) => active = e.detail.index}>
+      {#each tabs as tab, i (tab)}
+        <Tab label={tab} active={active === i}>
           <Button type="is-danger" on:click={() => removeTab(i)}>Remove {tab}</Button>
         </Tab>
       {/each}
