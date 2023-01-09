@@ -155,6 +155,7 @@
 <Tooltip label={"Tooltip\\nmultilined"} multilined={true}> <Button>Multilined</Button> </Tooltip>
 <Tooltip label="Not animated" animate={false}> <Button>Not Animated</Button> </Tooltip>
 <Tooltip label="Not active" active={false}> <Button>Inactive</Button> </Tooltip>
+<Tooltip label="I will disappear" timeout={1000}> <Button>Timeout</Button> </Tooltip>
 <Tooltip label="Tooltip always" always={true} position="is-bottom"> <Button>Always</Button> </Tooltip>`}>
   <div slot="preview">
     <div class="buttons">
@@ -180,6 +181,10 @@
 
       <Tooltip label="Not active" active={false}>
         <Button>Inactive</Button>
+      </Tooltip>
+
+      <Tooltip label="I will disappear" timeout={1000}>
+        <Button>Timeout</Button>
       </Tooltip>
 
       <Tooltip label="Tooltip always" always={true} position="is-bottom">

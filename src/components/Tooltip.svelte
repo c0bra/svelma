@@ -64,6 +64,12 @@
    * */
   export let style = undefined
 
+  /** Tooltip timeout (only works for non-always tooltips)
+   * @svelte-prop {Number} [timeout=undefined]
+   * 
+   * */
+  export let timeout = null
+
   let hovering = false
 
   let animationProps
@@ -198,7 +204,13 @@
 </style>
 
 <div class="tooltip-wrapper">
-  <div class="tooltip-trigger" on:mouseenter={() => (hovering = true)} on:mouseleave={() => (hovering = false)}>
+  <div class="tooltip-trigger" 
+      on:mouseenter={() => {
+        hovering = true
+        if (timeout) 
+          setTimeout(() => hovering = false, timeout)
+      }} 
+      on:mouseleave={() => (hovering = false)}>
     <slot />
   </div>
   {#if always || (active && hovering)}
