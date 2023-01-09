@@ -71,6 +71,7 @@
   export let timeout = null
 
   let hovering = false
+  let timeoutId = null
 
   let animationProps
   $: {
@@ -207,10 +208,13 @@
   <div class="tooltip-trigger" 
       on:mouseenter={() => {
         hovering = true
+        if (timeoutId) clearTimeout(timeoutId)
         if (timeout) 
-          setTimeout(() => hovering = false, timeout)
+          timeoutId = setTimeout(() => hovering = false, timeout)
       }} 
-      on:mouseleave={() => (hovering = false)}>
+      on:mouseleave={() => {
+        hovering = false
+      }}>
     <slot />
   </div>
   {#if always || (active && hovering)}
