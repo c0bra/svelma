@@ -1,10 +1,5 @@
-<script context="module">
-  export async function preload({ params, query }) {
-    // const res = await this.fetch('')
-  }
-</script>
-
 <script>
+  import { base } from '$app/paths';
   import difference from 'lodash/difference'
   import { Svelma as Components } from 'svelma'
 
@@ -71,15 +66,15 @@
   <p class="sidebar-label">Installation</p>
   <ul>
     <li>
-      <a href="install">Start</a>
+      <a href="{base}/install">Start</a>
     </li>
   </ul>
   <p class="sidebar-label">Bulma Elements</p>
   <ul>
-    <li><a href="bulma/intro">Intro</a></li>
+    <li><a href="{base}/bulma/intro">Intro</a></li>
     {#each bulmaElements as c}
       <li>
-        <a href="bulma/{c.toLowerCase()}">{c}</a>
+        <a href="{base}/bulma/{c.toLowerCase()}">{c}</a>
       </li>
     {/each}
   </ul>
@@ -92,20 +87,14 @@
           <ul>
             {#each formComponents as fc}
               <li>
-                <a href="components/{fc.toLowerCase()}">{fc}</a>
+                <a href="{base}/components/{fc.toLowerCase()}">{fc}</a>
               </li>
             {/each}
           </ul>
         {:else}
-          <a href="components/{c.toLowerCase()}">{c}</a>
+          <a href="{base}/components/{c.toLowerCase()}">{c}</a>
         {/if}
       </li>
     {/each}
-    <!-- <li>
-      <a href="/components/collapse">Collapse</a>
-    </li>
-    <li>
-      <a href="/components/icon">Icon</a>
-    </li> -->
   </ul>
 </aside>

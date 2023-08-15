@@ -1,8 +1,7 @@
 <script>
-  import { createEventDispatcher, onDestroy, onMount } from 'svelte'
-  import { fly, fade } from 'svelte/transition'
+  import { createEventDispatcher } from 'svelte'
+  import { fade } from 'svelte/transition'
   import Icon from '../Icon.svelte'
-  import Notice, { filterProps } from '../Notice.svelte'
   import { typeToIcon } from '../../utils'
 
   /** Type (color)
@@ -62,7 +61,7 @@
   let timer
 
   $: {
-    if (icon === true) {
+    if (icon !== '') {
       newIcon = typeToIcon(type)
     } else {
       newIcon = icon
@@ -85,6 +84,9 @@
 </script>
 
 <style lang="scss">
+  .notification {
+    margin: 0.5em 0;
+  }
   .message .media {
     padding-top: 0;
     border: 0;

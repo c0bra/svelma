@@ -1,4 +1,3 @@
-
 <script>
   /** Binding for whether the switch to "on" or not
    * @svelte-prop {Any} [checked=false]
@@ -41,7 +40,8 @@
 </script>
 
 <style lang="scss">
-@import 'node_modules/bulma/sass/utilities/all';
+
+@import '../../node_modules/bulma/sass/utilities/all';
 
 .switch {
   position: relative;
