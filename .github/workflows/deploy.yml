@@ -18,7 +18,9 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd docs
+          npm install
 
       - name: build
         env:
