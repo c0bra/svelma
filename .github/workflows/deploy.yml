@@ -24,6 +24,7 @@ jobs:
         env:
           BASE_PATH: '/svelma'
         run: |
+          cd docs
           npm run build
           touch build/.nojekyll
 
@@ -31,7 +32,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # this should match the `pages` option in your adapter-static options
-          path: 'build/'
+          path: 'docs/build/'
 
   deploy:
     needs: build_site
