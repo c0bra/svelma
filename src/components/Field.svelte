@@ -12,7 +12,7 @@
   /** Label for input
    * @svelte-prop {String} [label]
    * */
-  export let label = null
+  export let label = ''
 
   /** Same as native <code>for</code> on label
    * @svelte-prop {String} [labelFor]

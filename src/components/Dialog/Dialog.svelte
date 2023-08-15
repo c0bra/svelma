@@ -84,7 +84,7 @@
 
   // export let showClose = true
   let resolve
-  export let promise = new Promise((fulfil) => (resolve = fulfil))
+  export const promise = new Promise((fulfil) => (resolve = fulfil))
   
   // TODO: programmatic subcomponents
   // export let subComponent = null
@@ -155,7 +155,7 @@
 </script>
 
 <style lang="scss">
-@import 'node_modules/bulma/sass/utilities/all';
+@import '../../../node_modules/bulma/sass/utilities/all';
 
  .dialog {
    .modal-card {

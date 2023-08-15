@@ -7,7 +7,7 @@
   export let animation = 'scale'
   export let animProps = { start: 1.2 }
   export let size = ''
-  export let showClose = true
+  export const showClose = true
   export let onBody = true
 
   const dispatch = createEventDispatcher();

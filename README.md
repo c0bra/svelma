@@ -21,45 +21,10 @@
 ### 1. Import svelma and dependencies via npm to your project
 
 ```bash
-$ npm install --save bulma svelma
-$ npm install node-sass svelte-preprocess rollup-plugin-postcss --save-dev
+$ npm install --save-dev svelma @fortawesome/fontawesome-free bulma
 ```
 
-### 2. Add the postcss plugin to your rollup config
-
-```js
-// rollup.config.js
-import postcss from 'rollup-plugin-postcss'
-import preprocess from 'svelte-preprocess'
-
-// ...
-
-export default {
-  // ...
-  plugins: [
-    svelte({
-      // ...
-      preprocess: preprocess()
-    }),
-
-    postcss(),
-  ]
-}
-```
-
-### 3. Import Bulma's CSS and Svelma components
-
-```html
-<!-- App.svelte -->
-<script>
-  import 'bulma/css/bulma.css'
-  import { Button } from 'svelma'
-</script>
-
-<Button type="is-primary">I'm a Button!</Button>
-```
-
-### 4. Include [Font Awesome](https://fontawesome.com/) icons
+### 2. Import CSS dependencies
 
 From CDN in your HTML page:
 
@@ -67,21 +32,20 @@ From CDN in your HTML page:
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
 ```
 
-Or as an npm package imported into your root component:
-
-`$ npm install --save @fortawesome/fontawesome-free`
-
 ```html
 <!-- App.svelte -->
 <script>
   import 'bulma/css/bulma.css'
   import '@fortawesome/fontawesome-free/css/all.css'
+  import { Button } from 'svelma'
 </script>
+
+<Button type="is-primary">I'm a Button!</Button>
 ```
 
 ### SSR
 
-If you are doing server-side rendering with Sapper (or [SvelteKit](https://kit.svelte.dev/)), you'll need to import the .svelte files directly so that your app can compile them, rather than importing from the compiled module.
+If you are doing server-side rendering with [SvelteKit](https://kit.svelte.dev/)). You'll need to import the .svelte files directly so that your app can compile them, rather than importing from the compiled module.
 
 i.e.:
 

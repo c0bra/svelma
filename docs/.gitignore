@@ -1,7 +1,10 @@
 .DS_Store
 node_modules
-yarn-error.log
-/cypress/screenshots/
-/__sapper__/
-
-.vercel
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
