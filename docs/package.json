@@ -18,6 +18,7 @@
 		"codesandbox": "^2.2.3",
 		"highlight.js": "^11.8.0",
 		"lodash": "^4.17.21",
+		"sass": "^1.65.1",
 		"svelma": "file:../",
 		"svelte": "^4.0.5",
 		"svelte-check": "^3.4.3",
