@@ -64,13 +64,13 @@
 <div class="sidebar-bg" />
 <aside class="sidebar">
   <p class="sidebar-label">Installation</p>
-  <ul>
+  <ul class="menu-list">
     <li>
       <a href="{base}/install">Start</a>
     </li>
   </ul>
   <p class="sidebar-label">Bulma Elements</p>
-  <ul>
+  <ul class="menu-list">
     <li><a href="{base}/bulma/intro">Intro</a></li>
     {#each bulmaElements as c}
       <li>
@@ -79,15 +79,15 @@
     {/each}
   </ul>
   <p class="sidebar-label">Svelma Components</p>
-  <ul>
+  <ul class="menu-list">
     {#each components as c}
       <li>
         {#if c === 'Form'}
-          <p>{c}</p>
-          <ul>
+          <p style="padding: 0.5em 0.75em;">{c}</p>
+          <ul class="menu-list">
             {#each formComponents as fc}
               <li>
-                <a href="{base}/components/{fc.toLowerCase()}">{fc}</a>
+                <a href="{base}/components/{fc.toLowerCase()}" >{fc}</a>
               </li>
             {/each}
           </ul>
