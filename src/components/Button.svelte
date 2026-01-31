@@ -37,9 +37,9 @@
   export let outlined = false
   export let rounded = false
 
-  export let iconLeft = null
-  export let iconRight = null
-  export let iconPack = null
+  export let iconLeft = ''
+  export let iconRight = ''
+  export let iconPack = 'fab'
 
   let iconSize = ''
 

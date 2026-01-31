@@ -1,7 +1,5 @@
 <script>
-  export let segment
-
-  const rootUrl = process.env.NODE_ENV === 'development' ? '/' : '/svelma'
+  const rootUrl = process.env.NODE_ENV === 'development' ? '/' : 'https://c0bra.github.io/svelma'
   const github = 'https://github.com/c0bra/svelma'
 </script>
 
@@ -17,30 +15,11 @@
   }
 </style>
 
-{#if false}
-  <nav>
-    <ul>
-      <li>
-        <a class={segment === undefined ? 'selected' : ''} href=".">home</a>
-      </li>
-      <li>
-        <a class={segment === 'about' ? 'selected' : ''} href="about">about</a>
-      </li>
-
-      <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
-      <li>
-        <a rel="prefetch" class={segment === 'blog' ? 'selected' : ''} href="blog">blog</a>
-      </li>
-    </ul>
-  </nav>
-{/if}
-
 <nav id="navbar" class="navbar has-shadow is-spaced">
   <div class="container">
     <div class="navbar-brand">
-      <a href={rootUrl} class="navbar-item brand">
-        <img src="svelma-logo.svg" class="logo" alt="Svelma: Bulma components for Svelte" />
+      <a href="{rootUrl}" class="navbar-item brand">
+        <img src="/svelma-logo.svg" class="logo" alt="Svelma: Bulma components for Svelte" />
         Svelma
       </a>
       <a class="navbar-item is-hidden-desktop" href={github} target="_blank">

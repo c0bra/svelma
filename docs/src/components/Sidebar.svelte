@@ -1,10 +1,5 @@
-<script context="module">
-  export async function preload({ params, query }) {
-    // const res = await this.fetch('')
-  }
-</script>
-
 <script>
+  import { base } from '$app/paths';
   import difference from 'lodash/difference'
   import { Svelma as Components } from 'svelma'
 
@@ -69,43 +64,37 @@
 <div class="sidebar-bg" />
 <aside class="sidebar">
   <p class="sidebar-label">Installation</p>
-  <ul>
+  <ul class="menu-list">
     <li>
-      <a href="install">Start</a>
+      <a href="{base}/install">Start</a>
     </li>
   </ul>
   <p class="sidebar-label">Bulma Elements</p>
-  <ul>
-    <li><a href="bulma/intro">Intro</a></li>
+  <ul class="menu-list">
+    <li><a href="{base}/bulma/intro">Intro</a></li>
     {#each bulmaElements as c}
       <li>
-        <a href="bulma/{c.toLowerCase()}">{c}</a>
+        <a href="{base}/bulma/{c.toLowerCase()}">{c}</a>
       </li>
     {/each}
   </ul>
   <p class="sidebar-label">Svelma Components</p>
-  <ul>
+  <ul class="menu-list">
     {#each components as c}
       <li>
         {#if c === 'Form'}
-          <p>{c}</p>
-          <ul>
+          <p style="padding: 0.5em 0.75em;">{c}</p>
+          <ul class="menu-list">
             {#each formComponents as fc}
               <li>
-                <a href="components/{fc.toLowerCase()}">{fc}</a>
+                <a href="{base}/components/{fc.toLowerCase()}" >{fc}</a>
               </li>
             {/each}
           </ul>
         {:else}
-          <a href="components/{c.toLowerCase()}">{c}</a>
+          <a href="{base}/components/{c.toLowerCase()}">{c}</a>
         {/if}
       </li>
     {/each}
-    <!-- <li>
-      <a href="/components/collapse">Collapse</a>
-    </li>
-    <li>
-      <a href="/components/icon">Icon</a>
-    </li> -->
   </ul>
 </aside>

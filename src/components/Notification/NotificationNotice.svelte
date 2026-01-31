@@ -1,6 +1,4 @@
 <script>
-  import { createEventDispatcher, onDestroy, onMount } from 'svelte'
-  import { fly, fade } from 'svelte/transition'
   import Notice, { filterProps } from '../Notice.svelte'
   import Notification from './Notification.svelte'
 
@@ -23,12 +21,6 @@
     return newProps
   }
 </script>
-
-<style>
-:global(.notification) {
-  margin: 0.5em 0;
-}
-</style>
 
 <Notice {...props} transitionOut={true}>
   <Notification {...notificationProps}>
