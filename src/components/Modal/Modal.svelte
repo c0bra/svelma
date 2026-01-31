@@ -1,5 +1,5 @@
 <script>
-  import { onDestroy, onMount } from 'svelte'
+  import { onDestroy } from 'svelte'
   import { chooseAnimation, isEscKey } from '../../utils'
 
   export let active = true
@@ -14,14 +14,14 @@
   $: _animation = chooseAnimation(animation)
   $: {
     if (modal && active && onBody) {
-      // modal.parentNode?.removeChild(modal)
+      if (modal.parentNode && modal.parentNode !== document.body) {
+        modal.parentNode.removeChild(modal)
+      }
       document.body.appendChild(modal)
     }
   }
 
-  onMount(() => {
-    
-  })
+
 
   function close() {
     active = false

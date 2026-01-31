@@ -73,7 +73,6 @@
     const dispatch = createEventDispatcher()
 
     let focused = false;
-    let hovered = false;
 
     function onChange() {
         dispatch('input', selected)
@@ -82,11 +81,6 @@
     function onBlur() {
         focused = false
         dispatch('blur')
-    }
-
-    function onHover() {
-        hovered = true
-        dispatch('hover')
     }
 
     function onFocus() {
@@ -101,24 +95,19 @@
     class="control"
     class:is-expanded={expanded}
     class:has-icons-left={icon}>
-    <span 
-        class="select {size} {type}" 
+    <span
+        class="select {size} {type}"
         class:is-fullwidth={expanded}
         class:is-loading={loading}
         class:is-multiple={multiple}
-        class:is-rounded={rounded}
-        class:is-empty={selected === ''}
-        class:is-focused={focused}
-        class:is-hovered={hovered}
-        class:is-required={required}>
+        class:is-rounded={rounded}>
         {#if !multiple}
             <select
                 bind:value={selected}
                 size={nativeSize}
-                disabled={disabled ? 'disabled' : ''}
+                {disabled}
                 on:change={onChange}
                 on:blur={onBlur}
-                on:hover={onHover}
                 on:focus={onFocus}>
 
                 {#if placeholder && selected === ''}
@@ -136,10 +125,9 @@
                 bind:value={selected}
                 multiple
                 size={nativeSize}
-                disabled={disabled ? 'disabled' : ''}
+                {disabled}
                 on:change={onChange}
                 on:blur={onBlur}
-                on:hover={onHover}
                 on:focus={onFocus}>
 
                 {#if placeholder && selected === ''}

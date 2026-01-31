@@ -11,11 +11,9 @@
 </style>
 {#if showCopy}
   <div class="copy">
-    <button class="button is-small is-white" on:click={() => {
-      navigator.clipboard.write(
-        [new ClipboardItem({ ["text/plain"]: new Blob([code], { type: "text/plain" }) })]
-      )
-    }}>
+   <button class="button is-small is-white" on:click={() => {
+       navigator.clipboard.writeText(code)
+     }}>
       <span class="icon">
         <i class="fa fa-clipboard"></i> 
       </span>

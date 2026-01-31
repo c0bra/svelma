@@ -126,7 +126,6 @@
 
   const onInput = e => {
     value = e.target.value
-    $$props.value = value
 
     dispatch('input', e)
   }

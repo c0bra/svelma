@@ -12,6 +12,13 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "main": "src/main.ts",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./src/main.ts"
+    }
+  },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
     "@tsconfig/svelte": "^5.0.0",

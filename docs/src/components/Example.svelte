@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte'
   import { Button } from 'svelma'
   import Code from './Code.svelte'
   import CodepenButton from './CodepenButton.svelte'
@@ -7,17 +6,6 @@
   export let lang = 'xml'
   export let code
   export let horizontal = false
-
-  let showCode = false
-
-  function show() {
-    showCode = true
-  }
-
-  function hide(e) {
-    e.stopPropagation()
-    showCode = false
-  }
 </script>
 
 <style lang="scss">
@@ -57,51 +45,6 @@
     border-left: 1px solid #f5f5f5;
     overflow: hidden;
     position: relative;
-    /* cursor: pointer;
-    pointer-events: auto; */
-
-    /*
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      opacity: 0.8;
-      background-color: white;
-      content: '<> Show Code';
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1;
-      font-size: 0.75rem;
-    }*/
-
-    /*
-    &:hover::before {
-      background-color: #ffdd57;
-    }
-
-    & :global(pre),
-    & :global(pre code) {
-      overflow: hidden;
-    }
-
-    &.show-code {
-      cursor: auto;
-
-      &::before {
-        content: inherit;
-      }
-
-      & :global(figure) {
-        margin-bottom: 3em;
-      }
-
-      & :global(pre) {
-        overflow: auto;
-      }
-    }*/
   }
 
   .snippet::before {
@@ -144,30 +87,8 @@
     line-height: 17px;
   }
 
-  /*.code {
-    :global(.codeview) {
-      height: 100%;
-
-      :global(figure) {
-        height: 100%;
-
-        :global(pre:not(.hidden)) {
-          height: 100%;
-        }
-      }
-    }
-  }*/
-
   :global(.codeview) {
     margin-bottom: 0 !important;
-  }
-
-  :global(.btn-show-code) {
-    align-self: center;
-    margin: 2em 0 0.5em;
-    position: absolute;
-    bottom: 0;
-    background: none;
   }
 </style>
 
@@ -182,13 +103,6 @@
     <slot name="preview" />
   </div>
   <div class="code">
-    <!-- class:show-code={showCode} on:click={show} -->
     <Code {lang} {code} />
-
-    <!-- {#if showCode}
-      <Button class="btn-show-code is-rounded is-outline has-text-grey-light" on:click|stopPropagation={hide}>
-        Hide Code
-      </Button>
-    {/if} -->
   </div>
 </div>
